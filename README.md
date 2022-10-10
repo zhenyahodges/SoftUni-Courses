@@ -1,3 +1,5 @@
 # SoftUni-Courses
 
-## :computer: Homeworks, exams, projects
+### :computer: Homeworks, exams, projects
+
+## JavaScript Web Development
