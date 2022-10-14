@@ -5,6 +5,7 @@ function calc(a, b) {
 //default
 // module.exports=calc
 
+
 //named
 exports.calc = calc;
 
