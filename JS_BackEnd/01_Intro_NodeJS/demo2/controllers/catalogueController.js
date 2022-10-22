@@ -46,9 +46,16 @@ function createItem(req, res) {
       color: fields.color
     }
     data.push(item)
+
+    res.statusCode = 301
+    res.writeHead(301,[
+      'Location',
+      '/catalogue'
+    ])
+    
+    res.end()
   })
 
-  res.end()
 }
 
 module.exports = {
