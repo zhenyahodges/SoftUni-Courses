@@ -17,20 +17,22 @@ const http = require("http");
 // </html>`;
 
 const homePage = `
-<a href="/about">About</a>
     <h1>Welcome to my site!</h1>`;
 
 const aboutPage = `
-<a href="/">Home</a>
     <h1>About us...</h1>`;
+
+const cataloguePage = `
+    <p>List of items</p>`;
 
 const defaultPage = `
     <h1>404 Not Found</h1>`;
 
-const routes ={
-      '/': homePage,
-      '/about': aboutPage
-    }
+const routes = {
+  "/": homePage,
+  "/about": aboutPage,
+  "/cataloguePage": cataloguePage,
+};
 
 const server = http.createServer((req, res) => {
   console.log("Req received");
@@ -63,35 +65,35 @@ const server = http.createServer((req, res) => {
   //   }
   // });
 
-  const page=routes[url.pathname]
+  const page = routes[url.pathname];
 
-  if(page!=undefined){
+  if (page != undefined) {
     res.write(html(page));
     res.end();
-  }else{
+  } else {
     res.statusCode = 404;
     res.write(html(defaultPage));
     res.end();
   }
 
-//   if (url.pathname == "/") {
-//     // res.writeHead(200, ['Content-Type', 'text/plain'])
-//     // res.write('<h1>');
-//     // res.write('Hello, world!');
-//     // res.write('</h1>');
+  //   if (url.pathname == "/") {
+  //     // res.writeHead(200, ['Content-Type', 'text/plain'])
+  //     // res.write('<h1>');
+  //     // res.write('Hello, world!');
+  //     // res.write('</h1>');
 
-//     // res.write(homePage);
-//     res.write(html(homePage));
-//     res.end();
-//   } else if (url.pathname == "/about") {
-//     // res.write(aboutPage);
-//     res.write(html(aboutPage));
-//     res.end();
-//   } else {
-//     res.statusCode = 404;
-//     res.write(html(defaultPage));
-//     res.end();
-//   }
+  //     // res.write(homePage);
+  //     res.write(html(homePage));
+  //     res.end();
+  //   } else if (url.pathname == "/about") {
+  //     // res.write(aboutPage);
+  //     res.write(html(aboutPage));
+  //     res.end();
+  //   } else {
+  //     res.statusCode = 404;
+  //     res.write(html(defaultPage));
+  //     res.end();
+  //   }
 });
 
 server.listen(3000);
@@ -100,7 +102,14 @@ function html(body) {
   return `<!DOCTYPE html>
   <html lang="en">
   <body>
-      ${body}
+  <nav>
+  <ul>
+  <li><a href ="/">Home</li>
+  <li><a href ="/about">About</li>
+  <li><a href ="/cataloguePage">Catalogue</a></li>
+  </ul>    
+    </nav>
+      ${body}      
   </body>
-  </html>`
+  </html>`;
 }
