@@ -7,7 +7,7 @@ function cataloguePage(req, res) {
       `<h1>Catalogue</h1>
     <p>List of items</p>
     <ul>
-    ${data.map((p) => `<li>${p.name} - ${p.color}</li>`).join("\n")}
+    ${data.map((p) => `<li date-id=${p.id}>${p.name} - ${p.color}</li>`).join("\n")}
     </ul>    
     `,
       "Catalogue"
@@ -40,7 +40,12 @@ function createItem(req, res) {
   // formidable.IncomingForm(req)
   const form=new IncomingForm()
   form.parse(req, (err,fields)=>{
-    console.log(fields)
+    const item={
+      id: 'abc'+('000'+(Math.random()*9999|0)).slice(-4),
+      name: fields.name,
+      color: fields.color
+    }
+    data.push(item)
   })
 
   res.end()
