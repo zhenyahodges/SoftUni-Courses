@@ -24,8 +24,13 @@ const aboutPage = `
 <a href="/">Home</a>
     <h1>About us...</h1>`;
 
-    const defaultPage = `
-    <h1>404 Not Found</h1>`
+const defaultPage = `
+    <h1>404 Not Found</h1>`;
+
+const routes ={
+      '/': homePage,
+      '/about': aboutPage
+    }
 
 const server = http.createServer((req, res) => {
   console.log("Req received");
@@ -58,24 +63,35 @@ const server = http.createServer((req, res) => {
   //   }
   // });
 
-  if (url.pathname == "/") {
-    // res.writeHead(200, ['Content-Type', 'text/plain'])
-    // res.write('<h1>');
-    // res.write('Hello, world!');
-    // res.write('</h1>');
+  const page=routes[url.pathname]
 
-    // res.write(homePage);
-    res.write(html(homePage));
+  if(page!=undefined){
+    res.write(html(page));
     res.end();
-  } else if (url.pathname == "/about") {
-    // res.write(aboutPage);
-    res.write(html(aboutPage));
-    res.end();
-  } else {
+  }else{
     res.statusCode = 404;
     res.write(html(defaultPage));
     res.end();
   }
+
+//   if (url.pathname == "/") {
+//     // res.writeHead(200, ['Content-Type', 'text/plain'])
+//     // res.write('<h1>');
+//     // res.write('Hello, world!');
+//     // res.write('</h1>');
+
+//     // res.write(homePage);
+//     res.write(html(homePage));
+//     res.end();
+//   } else if (url.pathname == "/about") {
+//     // res.write(aboutPage);
+//     res.write(html(aboutPage));
+//     res.end();
+//   } else {
+//     res.statusCode = 404;
+//     res.write(html(defaultPage));
+//     res.end();
+//   }
 });
 
 server.listen(3000);
@@ -86,5 +102,5 @@ function html(body) {
   <body>
       ${body}
   </body>
-  </html>`;
+  </html>`
 }
