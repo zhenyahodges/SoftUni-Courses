@@ -29,7 +29,7 @@ function aboutPage(req, res) {
 
 function cataloguePage(req, res) {
   res.write(html(`<h1>Catalogue</h1>
-  <p>List of items</p>`));
+  <p>List of items</p>`, 'Catalogue'));
   res.end();
 }
 
