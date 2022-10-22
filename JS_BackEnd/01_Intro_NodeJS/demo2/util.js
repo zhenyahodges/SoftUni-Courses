@@ -31,7 +31,11 @@ const data = [
   },
 ];
 
-module.exports = {
-  html,
-  data,
-};
+// module.exports = {
+//   html,
+//   data,
+// };
+
+exports.html =html
+exports.data =data
+

@@ -17,8 +17,13 @@ function homePage(req, res) {
     res.end();
   }
 
-  module.exports={
-    homePage,
-    aboutPage,
-    defaultPage
-  }
+  // module.exports={
+  //   homePage,
+  //   aboutPage,
+  //   defaultPage
+  // }
+
+exports.homePage =homePage
+exports.aboutPage =aboutPage
+exports.defaultPage =defaultPage
+  

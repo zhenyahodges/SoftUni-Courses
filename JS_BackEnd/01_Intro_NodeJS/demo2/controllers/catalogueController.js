@@ -58,8 +58,13 @@ function createItem(req, res) {
 
 }
 
-module.exports = {
-  cataloguePage,
-  createPage,
-  createItem
-};
+// module.exports = {
+//   // cataloguePage,
+//   // createPage,
+//   // createItem
+// };
+
+exports.createPage =createPage
+exports.cataloguePage =cataloguePage
+exports.createItem =createItem
+

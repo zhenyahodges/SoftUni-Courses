@@ -35,3 +35,4 @@ module.exports = {
   post: register.bind(null, "POST"),
   match,
 };
+
