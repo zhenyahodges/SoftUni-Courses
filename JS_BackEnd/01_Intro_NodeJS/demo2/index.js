@@ -1,6 +1,6 @@
 const http = require("http");
 const router = require("./router.js");
-const { cataloguePage } = require("./controllers/catalogueController.js");
+const { cataloguePage, createPage } = require("./controllers/catalogueController.js");
 const {
   homePage,
   aboutPage,
@@ -49,6 +49,7 @@ const {
 router.register("/",homePage);
 router.register('/about',aboutPage)
 router.register('/cataloguePage', cataloguePage)
+router.register('/createPage', createPage)
 router.register('default', defaultPage)
 
 // const routes = {

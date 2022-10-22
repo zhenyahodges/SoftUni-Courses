@@ -10,6 +10,7 @@ function html(body,title='Demo') {
     <li><a href ="/">Home</li>
     <li><a href ="/about">About</li>
     <li><a href ="/cataloguePage">Catalogue</a></li>
+    <li><a href ="/createPage">Create</a></li>
     </ul>    
       </nav>
         ${body}      

@@ -10,7 +10,21 @@ function cataloguePage(req, res) {
     `, 'Catalogue'));
     res.end();
   }
+
+function createPage(req,res){
+  res.write(`
+  <h1>Create Item</h1>
+  <form>
+  <label>Color: <select name="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  </label>
+  </form`)
+  res.end()
+}
   
   module.exports={
-    cataloguePage
+    cataloguePage,
+    createPage
   }
