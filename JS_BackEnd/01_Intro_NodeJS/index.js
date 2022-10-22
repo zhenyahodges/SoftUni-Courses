@@ -16,17 +16,28 @@ const http = require("http");
 // </body>
 // </html>`;
 
-const homePage = `
-    <h1>Welcome to my site!</h1>`;
+function homePage(req, res) {
+  res.write(html(`<h1>Home Page</h1>
+  <p>Welcome to my site!</p>`));
+  res.end();
+}
 
-const aboutPage = `
-    <h1>About us...</h1>`;
+function aboutPage(req, res) {
+  res.write(html(`<h1>About us...</h1>`));
+  res.end();
+}
 
-const cataloguePage = `
-    <p>List of items</p>`;
+function cataloguePage(req, res) {
+  res.write(html(`<h1>Catalogue</h1>
+  <p>List of items</p>`));
+  res.end();
+}
 
-const defaultPage = `
-    <h1>404 Not Found</h1>`;
+function defaultPage(req, res) {
+  res.statusCode=404
+  res.write(html(`<h1>404 Not Found</h1>`));
+  res.end();
+}
 
 const routes = {
   "/": homePage,
@@ -36,7 +47,7 @@ const routes = {
 
 const server = http.createServer((req, res) => {
   console.log("Req received");
-  // console.log(req)
+    // console.log(req)
 
   // console.log(req.method);
   // console.log(req.headers);
@@ -65,15 +76,17 @@ const server = http.createServer((req, res) => {
   //   }
   // });
 
-  const page = routes[url.pathname];
+  const handler = routes[url.pathname];
 
-  if (page != undefined) {
-    res.write(html(page));
-    res.end();
+  if (typeof handler == 'function') {
+    handler(req,res)
+    // res.write(html(handler));
+    // res.end();
   } else {
-    res.statusCode = 404;
-    res.write(html(defaultPage));
-    res.end();
+    defaultPage(req, res)
+    // res.statusCode = 404;
+    // res.write(html(defaultPage));
+    // res.end();
   }
 
   //   if (url.pathname == "/") {
@@ -98,9 +111,12 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000);
 
-function html(body) {
+function html(body,title='Demo') {
   return `<!DOCTYPE html>
   <html lang="en">
+  <head>
+  <title>${title}</title>
+  </head>
   <body>
   <nav>
   <ul>
