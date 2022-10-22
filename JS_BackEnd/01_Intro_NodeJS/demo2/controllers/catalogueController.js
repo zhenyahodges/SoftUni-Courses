@@ -15,6 +15,7 @@ function createPage(req,res){
   res.write(`
   <h1>Create Item</h1>
   <form>
+  <label>Name: <input type="text" name="name"></label>
   <label>Color: <select name="color">
   <option value="red">Red</option>
   <option value="green">Green</option>
