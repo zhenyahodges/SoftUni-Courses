@@ -14,13 +14,14 @@ function cataloguePage(req, res) {
 function createPage(req,res){
   res.write(`
   <h1>Create Item</h1>
-  <form>
+  <form method="POST" action="/create">
   <label>Name: <input type="text" name="name"></label>
   <label>Color: <select name="color">
   <option value="red">Red</option>
   <option value="green">Green</option>
   <option value="blue">Blue</option>
   </label>
+  <input type="submit" value="Create">
   </form`)
   res.end()
 }

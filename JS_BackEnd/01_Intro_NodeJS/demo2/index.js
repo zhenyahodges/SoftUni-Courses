@@ -49,7 +49,7 @@ const {
 router.register("/",homePage);
 router.register('/about',aboutPage)
 router.register('/cataloguePage', cataloguePage)
-router.register('/createPage', createPage)
+router.register('/create', createPage)
 router.register('default', defaultPage)
 
 // const routes = {
