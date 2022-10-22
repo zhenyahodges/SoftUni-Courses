@@ -1,4 +1,5 @@
 const { html, data } = require("../util.js");
+const {IncomingForm}=require('formidable')
 
 function cataloguePage(req, res) {
   res.write(
@@ -33,11 +34,20 @@ function createPage(req, res) {
   res.end();
 }
 
-// function createItem(req, res) {
-//   //handle post req
-// }
+function createItem(req, res) {
+  console.log('create req');
+
+  // formidable.IncomingForm(req)
+  const form=new IncomingForm()
+  form.parse(req, (err,fields)=>{
+    console.log(fields)
+  })
+
+  res.end()
+}
 
 module.exports = {
   cataloguePage,
-  createPage
+  createPage,
+  createItem
 };

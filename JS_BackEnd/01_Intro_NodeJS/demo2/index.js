@@ -4,6 +4,7 @@ const router = require("./router.js");
 const {
   cataloguePage,
   createPage,
+  createItem,
 } = require("./controllers/catalogueController.js");
 
 const {
@@ -16,6 +17,7 @@ router.get("/", homePage);
 router.get("/about", aboutPage);
 router.get("/catalogue", cataloguePage);
 router.get("/create", createPage);
+router.post("/create",createItem)
 router.get("default", defaultPage);
 
 const server = http.createServer(router.match);
