@@ -1,6 +1,11 @@
 const http = require("http");
+const router = require("./router.js");
 const { cataloguePage } = require("./controllers/catalogueController.js");
-const { homePage, aboutPage,defaultPage } = require("./controllers/homeController.js");
+const {
+  homePage,
+  aboutPage,
+  defaultPage,
+} = require("./controllers/homeController.js");
 
 // const homePage = `<!DOCTYPE html>
 // <html lang="en">
@@ -18,49 +23,57 @@ const { homePage, aboutPage,defaultPage } = require("./controllers/homeControlle
 // </body>
 // </html>`;
 
-      // function homePage(req, res) {
-      //   res.write(html(`<h1>Home Page</h1>
-      //   <p>Welcome to my site!</p>`));
-      //   res.end();
-      // }
+// function homePage(req, res) {
+//   res.write(html(`<h1>Home Page</h1>
+//   <p>Welcome to my site!</p>`));
+//   res.end();
+// }
 
-      // function aboutPage(req, res) {
-      //   res.write(html(`<h1>About us...</h1>`));
-      //   res.end();
-      // }
+// function aboutPage(req, res) {
+//   res.write(html(`<h1>About us...</h1>`));
+//   res.end();
+// }
 
-      // function cataloguePage(req, res) {
-      //   res.write(html(`<h1>Catalogue</h1>
-      //   <p>List of items</p>`, 'Catalogue'));
-      //   res.end();
-      // }
+// function cataloguePage(req, res) {
+//   res.write(html(`<h1>Catalogue</h1>
+//   <p>List of items</p>`, 'Catalogue'));
+//   res.end();
+// }
 
-      // function defaultPage(req, res) {
-      //   res.statusCode=404
-      //   res.write(html(`<h1>404 Not Found</h1>`));
-      //   res.end();
-      // }
+// function defaultPage(req, res) {
+//   res.statusCode=404
+//   res.write(html(`<h1>404 Not Found</h1>`));
+//   res.end();
+// }
 
-const routes = {
-  "/": homePage,
-  "/about": aboutPage,
-  "/cataloguePage": cataloguePage,
-};
+router.register("/",homePage);
+router.register('/about',aboutPage)
+router.register('/cataloguePage', cataloguePage)
+router.register('default', defaultPage)
 
-const server = http.createServer((req, res) => {
-  console.log("Req received");
-    // console.log(req)
+// const routes = {
+//   "/": homePage,
+//   "/about": aboutPage,
+//   "/cataloguePage": cataloguePage,
+// };
 
-  // console.log(req.method);
-  // console.log(req.headers);
-  // console.log(req.url);
+const server = http.createServer(router.match)
+//  => {
+//   // console.log("Req received");
+//   // console.log(req)
 
-  console.log(">>>", req.method, req.url);
+//   // console.log(req.method);
+//   // console.log(req.headers);
+//   // console.log(req.url);
+
+//   console.log(">>>", req.method, req.url);
+//   router.match(req,res)
 
   // const url=new URL(req.url, 'http://localhost:3000')
-  const url = new URL(req.url, `http://${req.headers.host}`);
 
-  console.log(url);
+  // const url = new URL(req.url, `http://${req.headers.host}`);
+
+  // console.log(url);
 
   //   if (req.url == "/") {
   //     // res.writeHead(200, ['Content-Type', 'text/plain'])
@@ -78,18 +91,18 @@ const server = http.createServer((req, res) => {
   //   }
   // });
 
-  const handler = routes[url.pathname];
+  // const handler = routes[url.pathname];
 
-  if (typeof handler == 'function') {
-    handler(req,res)
-    // res.write(html(handler));
-    // res.end();
-  } else {
-    defaultPage(req, res)
-    // res.statusCode = 404;
-    // res.write(html(defaultPage));
-    // res.end();
-  }
+  // if (typeof handler == "function") {
+  //   handler(req, res);
+  //   // res.write(html(handler));
+  //   // res.end();
+  // } else {
+  //   defaultPage(req, res);
+  //   // res.statusCode = 404;
+  //   // res.write(html(defaultPage));
+  //   // res.end();
+  // }
 
   //   if (url.pathname == "/") {
   //     // res.writeHead(200, ['Content-Type', 'text/plain'])
@@ -109,7 +122,7 @@ const server = http.createServer((req, res) => {
   //     res.write(html(defaultPage));
   //     res.end();
   //   }
-});
+// });
 
 server.listen(3000);
 
@@ -125,9 +138,9 @@ server.listen(3000);
 //   <li><a href ="/">Home</li>
 //   <li><a href ="/about">About</li>
 //   <li><a href ="/cataloguePage">Catalogue</a></li>
-//   </ul>    
+//   </ul>
 //     </nav>
-//       ${body}      
+//       ${body}
 //   </body>
 //   </html>`;
 // }
