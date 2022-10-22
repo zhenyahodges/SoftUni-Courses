@@ -24,8 +24,8 @@ function match(req, res) {
   if (typeof handler == "function") {
     handler(req, res);
   } else {
-     routes.default=defaultPage(req,res)
-    //  routes.default(req,res) //does not work,possibly deprecated
+    //  routes.default=defaultPage(req,res)
+     routes.default['GET'](req,res)
   }
 }
 
