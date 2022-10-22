@@ -1,4 +1,6 @@
 const http = require("http");
+const { cataloguePage } = require("./controllers/catalogueController.js");
+const { homePage, aboutPage,defaultPage } = require("./controllers/homeController.js");
 
 // const homePage = `<!DOCTYPE html>
 // <html lang="en">
@@ -16,28 +18,28 @@ const http = require("http");
 // </body>
 // </html>`;
 
-function homePage(req, res) {
-  res.write(html(`<h1>Home Page</h1>
-  <p>Welcome to my site!</p>`));
-  res.end();
-}
+      // function homePage(req, res) {
+      //   res.write(html(`<h1>Home Page</h1>
+      //   <p>Welcome to my site!</p>`));
+      //   res.end();
+      // }
 
-function aboutPage(req, res) {
-  res.write(html(`<h1>About us...</h1>`));
-  res.end();
-}
+      // function aboutPage(req, res) {
+      //   res.write(html(`<h1>About us...</h1>`));
+      //   res.end();
+      // }
 
-function cataloguePage(req, res) {
-  res.write(html(`<h1>Catalogue</h1>
-  <p>List of items</p>`, 'Catalogue'));
-  res.end();
-}
+      // function cataloguePage(req, res) {
+      //   res.write(html(`<h1>Catalogue</h1>
+      //   <p>List of items</p>`, 'Catalogue'));
+      //   res.end();
+      // }
 
-function defaultPage(req, res) {
-  res.statusCode=404
-  res.write(html(`<h1>404 Not Found</h1>`));
-  res.end();
-}
+      // function defaultPage(req, res) {
+      //   res.statusCode=404
+      //   res.write(html(`<h1>404 Not Found</h1>`));
+      //   res.end();
+      // }
 
 const routes = {
   "/": homePage,
@@ -111,21 +113,21 @@ const server = http.createServer((req, res) => {
 
 server.listen(3000);
 
-function html(body,title='Demo') {
-  return `<!DOCTYPE html>
-  <html lang="en">
-  <head>
-  <title>${title}</title>
-  </head>
-  <body>
-  <nav>
-  <ul>
-  <li><a href ="/">Home</li>
-  <li><a href ="/about">About</li>
-  <li><a href ="/cataloguePage">Catalogue</a></li>
-  </ul>    
-    </nav>
-      ${body}      
-  </body>
-  </html>`;
-}
+// function html(body,title='Demo') {
+//   return `<!DOCTYPE html>
+//   <html lang="en">
+//   <head>
+//   <title>${title}</title>
+//   </head>
+//   <body>
+//   <nav>
+//   <ul>
+//   <li><a href ="/">Home</li>
+//   <li><a href ="/about">About</li>
+//   <li><a href ="/cataloguePage">Catalogue</a></li>
+//   </ul>    
+//     </nav>
+//       ${body}      
+//   </body>
+//   </html>`;
+// }
