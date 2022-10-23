@@ -28,12 +28,10 @@ const server = http
             'content-type': 'text/html'
         })
         res.write(addCatPage)   
-    
     } else {
       res.writeHead(200, {
         "Content-Type": "text/html",
       });
-
       res.write(homePage);
     }
     res.end();
