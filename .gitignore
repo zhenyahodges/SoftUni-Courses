@@ -127,3 +127,8 @@ dist
 
 # Ignore code-workspaces
 *.code-workspace
+
+# Packages #
+############
+*.rar
+*.zip
