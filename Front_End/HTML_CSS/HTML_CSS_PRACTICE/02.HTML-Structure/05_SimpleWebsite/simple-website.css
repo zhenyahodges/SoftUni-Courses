@@ -1,0 +1,52 @@
+body{
+    background-color: #CCCCCC;
+}
+footer,ul,nav{
+    background-color: #444;
+}
+
+nav,ul,body{
+    margin: 0px;
+    padding: 0px;
+}
+ul,footer>p{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+
+li{
+    line-height: 40px;
+    height: 40px;
+    padding: 20px;
+    display:inline-block;
+}
+/* footer{
+    color: #fff;
+} */
+a{
+    text-decoration: none; 
+    color: #ffffff;   
+}
+
+section{
+    margin-left: 20px;
+}
+
+section article header h1{
+    font-size: 28px;
+}
+
+section article header p{
+    font-style: italic;
+}
+
+section article p,li{
+font-size: 24px;
+}
+
+footer p{
+    padding: 10px;
+    color: #fff;
+}
