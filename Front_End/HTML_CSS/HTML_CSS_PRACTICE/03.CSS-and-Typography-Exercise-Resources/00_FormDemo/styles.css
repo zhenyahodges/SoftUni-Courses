@@ -1,0 +1,21 @@
+form {
+    border: 1px solid red;
+    width: 40%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 70%;
+    padding-left: 20px;
+    margin: auto;
+    margin-bottom: 1em;
+}
+i{
+    position: relative;
+    left: 21px;
+    top: 1px;
+}
