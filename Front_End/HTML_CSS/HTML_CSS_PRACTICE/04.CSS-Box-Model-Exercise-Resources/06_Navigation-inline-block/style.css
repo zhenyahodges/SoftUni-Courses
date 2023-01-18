@@ -1,0 +1,42 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-family: Helvetica, sans-serif;
+}
+
+nav,
+li,
+a {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    left: 70px;
+    top: -13px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    margin-top: 20px;
+}
+
+h1 {
+    padding-top: 40px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+hr {
+    position: relative;
+    top: -20px;
+}
