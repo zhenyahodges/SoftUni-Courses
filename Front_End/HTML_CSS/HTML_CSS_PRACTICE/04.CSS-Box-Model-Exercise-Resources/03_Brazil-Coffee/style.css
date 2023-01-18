@@ -1,3 +1,11 @@
+/* html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } */
+
+
 section {
     border: 8px solid #e6e6e6;
     padding: 16px;
@@ -17,7 +25,7 @@ h2 {
 
 div {
     font-weight: 600;
-    font-style: 20px;
+    font-size: 20px;
 }
 
 button {
@@ -37,8 +45,9 @@ button {
 }
 
 p {
-    font-family: Georgia,Cambria,Times New Roman,Times,serif;
-font-style: 18px;
+    font-family: Georgia, Cambria, Times New Roman, Times, serif;
+    font-style: 18px;
+    line-height: 30px;
+    margin-top: 0;
 
 }
- 18px Height of the line: 30px Top margin: 0
