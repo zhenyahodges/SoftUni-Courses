@@ -1,3 +1,12 @@
+html{
+    padding: 0;
+    margin: 0;
+     box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
     background-color: rgb(238, 238, 238);
@@ -13,6 +22,7 @@ body {
     min-width: 10rem;
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
+    text-align: right;
 }
 
 button {
@@ -20,10 +30,8 @@ button {
     color: white;
     border: none;
     padding: 2% 4%;
-    position: absolute;
-    left: 67%;
-    bottom: 4%;
     border-radius: 3px;
+  
 }
 
 h3 {
@@ -35,9 +43,12 @@ h3 {
 p {
     font-family: Arial, serif;
 }
+h3,p{
+    text-align: left;
+}
 
 .card-text {
-    padding: 5%;
+    padding: 7%;
 }
 
 img {
