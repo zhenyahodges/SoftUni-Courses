@@ -1,4 +1,4 @@
-/* body {
+body {
     margin: 0;
     background-color: rgb(238, 238, 238);
 }
@@ -9,7 +9,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 0px 15px 5px rgba(179, 179, 179, 0.8);
-    max-width: 30%;
+    max-width: 30rem;
+    min-width: 10rem;
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
 }
@@ -18,9 +19,10 @@ button {
     background-color: rgb(0, 153, 0);
     color: white;
     border: none;
-    padding: 7px 15px;
-    position: relative;
-    left: 72%;
+    padding: 2% 4%;
+    position: absolute;
+    left: 67%;
+    bottom: 4%;
     border-radius: 3px;
 }
 
@@ -29,8 +31,6 @@ h3 {
     font-size: 1em;
     line-height: 1.2;
 }
-
-
 
 p {
     font-family: Arial, serif;
@@ -42,19 +42,20 @@ p {
 
 img {
     /* position: absolute; */
-    /* width: 100%;
+    width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-} */
+}
+
+/* ===================== */
+
 /* 
-=============================================
- */
 /* body {
     margin: 0;
     background-color: rgb(238, 238, 238);
 }
-
 .card {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -63,7 +64,6 @@ img {
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
 }
-
 button {
     background-color: rgb(0, 153, 0);
     color: white;
@@ -73,70 +73,22 @@ button {
     left: 72%;
     border-radius: 3px;
 }
-
 h3 {
     font-family: Georgia, serif;
     font-size: 1em;
     line-height: 1.2;
 }
-
-
-
 p {
     font-family: Arial, serif;
 }
-
 .card-text {
     padding: 5%;
 }
-
 img {
-    width: 100%;
+    /* position: absolute; */
+    /* width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-}
-card,button,h3,img,p{
-    position: absolute;
 } */
-/* ================== */
-body{
-    background-color: rgb(238, 238, 238);
-}
-.card{
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.card div button{
-    background-color: rgb(0, 153, 0);
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-    padding: 7px;
-    border-radius: 4px;
-    border-color: rgb(0, 153, 0);
-}
-.card img{
-    position: absolute;
-    width: 100%;
-}
-h3{
-    font-family: Georgia, serif;
-    font-size: 1em;
-    top: 340px;
-}
-h3, p{
-    position: absolute;
-    padding: 5px 30px 0px 30px;
-}
-p{
-    top: 370px;
-}
-a{
-    color: white;
-    text-decoration: none;
-}
+/* 
+*/
