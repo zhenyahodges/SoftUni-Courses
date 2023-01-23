@@ -13,20 +13,10 @@ main{
     width: 700px;
     height: 500px;
     margin: 60px;
-    display: inline-block;;
-    position: absolute;
-    top:200px;
-    left:600px; 
 }
 
 img.new{
-    display: inline-block;
     position: relative;
     top: -200px;
-    right: -150px;
-}
-
-.cup{
-    display: inline-block;
-    position: absolute;
+    right: 150px;
 }
