@@ -14,17 +14,20 @@ html {
     margin: 0;
     padding: 0;
   }
+  body{
+    font-size: 20px;
+  }
 
 ul {
     display: inline-block;
-    position: absolute;
+    /* position: absolute; */
     list-style-type: none;
  
 }
 
 li {
     display: inline-block;
-    position: relative;
+    /* position: relative; */
     margin: 5px;
 }
 
@@ -45,4 +48,20 @@ i {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.fa-square-facebook:hover{
+color: rgb(32, 32, 222);
+}
+.fa-square-twitter:hover{
+color: rgb(60, 163, 242);
+}
+.fa-google-plus:hover{
+color: red;
+}
+.fa-linkedin:hover{
+color: #00A0DC;
+}
+.fa-instagram:hover{
+color: #833AB4;
 }
