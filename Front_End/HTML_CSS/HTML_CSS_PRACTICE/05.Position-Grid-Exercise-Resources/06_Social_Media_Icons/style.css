@@ -10,29 +10,32 @@ html {
     box-sizing: inherit;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+  }
 
 ul {
     display: inline-block;
+    position: absolute;
     list-style-type: none;
-    padding: 0;
-    /* position: relative; */
+ 
 }
 
 li {
     display: inline-block;
-    width: 5%;
-    height: auto;
-    padding: 10%;
+    position: relative;
+    margin: 5px;
 }
 
 a {
     display: inline-block;
+    position: relative;
     background-color: #ccc;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     padding: 50%;
-    position: relative;
 }
 
 i {
