@@ -1,14 +1,16 @@
-@import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap);
+/* @import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap); */
 
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
