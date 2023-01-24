@@ -35,6 +35,7 @@ body {
   height: 60%;
   border-radius: 20px;
   box-shadow: 12px 11px 9px 7px rgba(90, 90, 90, 0.73);
+
 }
 
 div.container{
@@ -103,10 +104,10 @@ label,input{
   width: 40%;
 }
 
-.fname{
+.fname,.lname{
   /* display: block; */
-  /* display: inline-block;
-  position: relative; */
+  display: inline-block;
+  position: absolute;
   /* float: left; */
   
 }
@@ -121,5 +122,42 @@ left */
 
 #checkbox, label.checkbox {
   display: block;
+  position: relative;
+
+}
+#checkbox{
+  left: -47%;
+  /* vertical-align: middle; */
+  top: 1px;
 }
 
+label.checkbox{
+  left: 7%;
+  bottom: 4%;
+}
+
+
+/* Hide the browser's default checkbox */
+#checkbox{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 63%;
+  left: 1%;
+  height: 12px;
+  width: 12px;
+  border: 0.5px solid rgb(202, 202, 202);
+  background-color: #eee;
+}
+
+.checkbox{
+  position: absolute;
+  top: -0.5%;
+}
