@@ -10,7 +10,33 @@ html {
   box-sizing: inherit;
 }
 
-/* * {
+*{
   margin: 0;
   padding: 0;
-} */
+} 
+
+body{
+  background-image: url("/images/background.png");
+background-repeat: no-repeat;
+position: relative;
+}
+
+div.card{
+  display: inline-block;
+  position: absolute;
+  /* background-image: url("/images/form-background.png"); */
+  max-width: 50rem;
+    min-width: 30rem;
+    top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+}
+.card img{
+  display: inline-block;
+  position: absolute;
+  /* object-fit: cover; */
+  width: 100%;
+  top: 50%;
+  left: 50%;
+    transform: translate(-50%, -50%);
+}
