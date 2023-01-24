@@ -94,8 +94,9 @@ button{
   transform: translate(-50%, -50%);
   
 }
-label{
-  display: block;
+label,input{
+  /* display: inline-block;
+  position: relative; */
  
 }
 #first-name,#last-name{
@@ -107,6 +108,7 @@ label{
   /* display: inline-block;
   position: relative; */
   /* float: left; */
+  
 }
 .lname{
   /* display: block; */
