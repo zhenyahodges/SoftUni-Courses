@@ -8,38 +8,45 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <section>
-        <div class="card">
-          <img src="/images/form-background.png" alt="form-background" />
-          <section class="form-section">
-            <head>
-              <h1>REGISTRATION FORM</h1>
-            </head>
-        
-              <form action="POST">
-                <label for="first-name">First Name</label
-                ><input type="first-name" />
+    <div class="card">
+      <!-- <div class="container"> -->
+      <form action="POST">
+        <h1>REGISTRATION FORM</h1>
 
-                <label for="last-name">last-name</label>
-                <input type="last-name" /> <label for="email">Email</label>
+        <!-- names -->
 
-                <input type="email" /> <label for="password">Password</label>
-                <input type="password" />
-
-                <label for="confirm-password">Confirm Password</label>
-                <input type="confirm-password" />
-
-                <label for="checkbox"
-                  >I accept the Terms of Use & Privacy Policy</label>
-                <input type="checkbox" />
-                
-                <button type="button"></button>
-              </form>
-          
-          </section>
+        <div class="fname">
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" />
         </div>
-      </section>
-    </main>
+        <div class="lname">
+          <label for="last-name">last-name</label>
+          <input type="text" name="last-name" id="last-name" />
+        </div>
+
+        <!-- rest of inputs -->
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="confirm-password"
+          name="confirm-password"
+          id="confirm-password"
+        />
+
+        <!-- checkbox -->
+        
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <label for="checkbox" class="checkbox"
+          >I accept the Terms of Use & Privacy Policy</label>
+
+        <button type="button">REGISTER NOW</button>
+      </form>
+    </div>
   </body>
 </html>

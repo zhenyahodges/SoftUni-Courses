@@ -1,7 +1,9 @@
-/* @import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap); */
+@import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap);
+
 
 html {
   box-sizing: border-box;
+  font-family: Mulish, sans-serif;
 }
 
 *,
@@ -17,43 +19,105 @@ html {
 
 body {
   background-image: url("/images/background.png");
-  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-div.card {
+.card {
   display: inline-block;
   position: absolute;
-  min-width: 55rem;
+  background-image: url(/images/form-background.png);
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* border-radius: 7px; */
-}
-
-.card img {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
   border-radius: 20px;
-  box-shadow: 12px 11px 9px 7px rgba(90,90,90,0.73);
+  box-shadow: 12px 11px 9px 7px rgba(90, 90, 90, 0.73);
 }
 
-.form-section{
-  width: 70%;
-  height: auto;
+div.container{
+display: inline-block;
+position: relative;
 }
+
 h1{
-  display: inline-block;
-  position: absolute;
-  /* text-align: center;
-  top:5%;
+  /* top:25%;
   left: 25%; */
+  text-align: center;
+  letter-spacing:2px;
 }
-/* 
-.form{
+
+div>form{
   display: inline-block;
   position: absolute;
-} */
+  width: 60%;
+  height: 100%;
+  line-height: 2;
+ margin: auto;
+ padding: 2px 0; 
+ font-size: 13px;
+ left: 7%;
+}
+
+h1{
+    color: #312828;
+    font-size: 22px;
+} 
+
+ input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+    border: 0.5px solid rgb(198, 196, 196);
+  border-radius: 25px;
+    background-color: transparent;
+  color: white;
+} 
+
+#first-name,#last-name{
+  width: 25%;
+}
+
+button{
+  background-color: #8f312b;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 17px;
+  color: #F9F9F9;
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+label{
+  display: block;
+ 
+}
+#first-name,#last-name{
+  width: 40%;
+}
+
+.fname{
+  /* display: block; */
+  /* display: inline-block;
+  position: relative; */
+  /* float: left; */
+}
+.lname{
+  /* display: block; */
+/* display: inline-block;
+position: absolute;
+top: 0;
+left */
+/* float: right; */
+}
+
+#checkbox, label.checkbox {
+  display: block;
+}
+
