@@ -68,6 +68,7 @@ div>form{
 h1{
     color: #312828;
     font-size: 22px;
+    position: relative;
 } 
 
  input {
