@@ -1,0 +1,85 @@
+@import url('https://use.fontawesome.com/releases/v6.2.1/css/all.css');
+
+* {
+    margin: 0;
+    padding-left: 0;
+}
+
+body {}
+
+.viewport {
+    position: relative;
+    height: 100vh;
+    background-color: rgb(80, 153, 255);
+}
+
+div:nth-child(2) {
+    background-color: rgb(217, 131, 103);
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12em;
+    overflow: hidden;
+    border-radius: 0.2em;
+    box-shadow: 0 0 1.5rem 0.1em rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition:transform 0.3s ease-in;
+}
+
+.card:before {
+    display: block;
+    content: '';
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 2em 0.2em rgba(0, 0, 0, 0.9) inset;
+
+    /* to animate(not good to animate box shadow!,so use this) */
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.card:hover:before {
+    opacity: 0.1;
+}
+
+.card.ar-16x9:before {
+    padding-top: calc((16/9)*100%);
+}
+
+.card.ar-9x16 {
+    width: 8em;
+}
+
+.card.ar-9x16:before {
+    /* 56.25% */
+    padding-top: calc((9/16)*100%);
+
+}
+
+.card .media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card.portrait img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.card.landscape img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
