@@ -22,7 +22,7 @@ div:nth-child(2) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 12em;
+    width: 8em;
     overflow: hidden;
     border-radius: 0.2em;
     box-shadow: 0 0 1.5rem 0.1em rgba(0, 0, 0, 0.2);
@@ -39,6 +39,7 @@ div:nth-child(2) {
 
     /* to animate(not good to animate box shadow!,so use this) */
     transition: opacity 0.3s ease-in;
+    pointer-events: none;
 }
 
 .card:hover {
@@ -83,3 +84,14 @@ div:nth-child(2) {
     height: auto;
     width: 100%;
 }
+
+.card .icon{
+    line-height: 1;
+    position: absolute;
+    color: #FFF;
+    bottom: 1.5em;
+    right: 1.5em;
+    font-size: 10px;
+}
+
+/* sep 2019 course -konstantin dankov */
