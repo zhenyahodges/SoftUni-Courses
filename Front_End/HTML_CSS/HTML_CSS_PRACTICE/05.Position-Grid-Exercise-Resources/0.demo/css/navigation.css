@@ -1,0 +1,60 @@
+.site-nav {
+
+}
+
+.site-nav ul {
+    padding: 0;
+    margin: 0;
+    /* background-color: #333; */
+}
+
+.site-nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 10em;
+    /* background-color: black; */
+}
+.site-nav ul ul ul{
+   top: 0;
+   left: 100%;
+
+}
+
+/* cleaner option */
+
+/* .site-nav ul:after{
+    display: block;
+    content: '';
+    clear: both;
+} */
+
+/* collapsible menu */
+.site-nav>ul>li{
+    float: left;
+}
+
+.site-nav li {
+    display: block;
+    list-style: none;
+    position: relative;
+}
+
+.site-nav li:hover>ul{
+    display: block;
+}
+
+.site-nav a {
+    display: block;
+    background-color: black;
+    color: #fff;
+    padding: 1em 1.5em;
+    text-decoration: none;
+}
+
+.site-nav li:hover>a,
+.site-nav a:hover {
+    background-color: #090;
+
+}

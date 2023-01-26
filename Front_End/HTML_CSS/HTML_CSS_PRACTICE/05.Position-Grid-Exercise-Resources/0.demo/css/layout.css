@@ -1,20 +1,39 @@
-site{
+.site{
 max-width: 60em;
 margin: 0 auto;
+background-color:aqua;
 }
 .site-main{
 
 }
-
 .site-header{
+    padding: 1em;
+}
 
+.site-header .site-title{
+float: left;
+}
+
+.site-header .site-nav{
+/* float: left; */
+/* to display nav next to title need to be floated right */
+float: right;
 }
 .site-main{
+    padding: 1em;
 
 }
 .site-sidebar{
+    padding: 1em;
 
 }
 .site-footer{
+padding: 1em;
+}
 
+/* cleaner added as class in html to elements to clean float*/
+.cleaner:after{
+    display: block;
+    content:'';
+    clear: both;
 }

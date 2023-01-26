@@ -9,25 +9,39 @@
   </head>
   <body>
     <div class="site">
-      <header class="site-header">
-<h1 class="site-title">Blog Title</h1>
-<nav>
-    <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Contacts</a></li>
-    </ul>
-</nav>
+      <header class="site-header cleaner">
+        <h1 class="site-title">Blog Title</h1>
+        <nav class="site-nav">
+          <ul class="cleaner">
+            <li><a href="">Home</a></li>
+            <li>
+              <a href="">About</a>
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a>
+                  <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contacts</a></li>
+                  </ul>
+                </li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacts</a></li>
+              </ul>
+            </li>
+
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contacts</a></li>
+          </ul>
+        </nav>
       </header>
-      <main class="site-content">
-
+      <main class="site-main">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est eum blanditiis debitis et tempora provident minima labore tenetur sapiente in! Quae explicabo quo eligendi corporis provident ipsam illum voluptate obcaecati?</p>
       </main>
-      <aside class="site-sidebar">
-
-      </aside>
+      <aside class="site-sidebar"></aside>
       <footer class="site-footer">
-<p>All rights reserved &copy 2023</p>
+        <p>All rights reserved &copy 2023</p>
       </footer>
     </div>
   </body>
