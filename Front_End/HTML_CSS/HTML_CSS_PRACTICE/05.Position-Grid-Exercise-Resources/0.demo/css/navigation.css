@@ -37,7 +37,7 @@
 
 .site-nav li {
     display: block;
-    list-style: none;
+    list-style: none outside;
     position: relative;
 }
 

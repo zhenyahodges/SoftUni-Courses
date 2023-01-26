@@ -12,7 +12,6 @@
 
 .site-header {
     padding: 1em;
-    width: 60%;
 }
 
 .site-header .site-title {
@@ -21,7 +20,8 @@
 
 .site-header .site-nav {
     /* float: left; */
-    /* to display nav next to title need to be floated right */
+    /* to display nav next the title needs
+     to be floated right */
     float: right;
 }
 
@@ -33,9 +33,11 @@
 
 .site-footer {
     padding: 1em;
+    clear: both;
 }
 
-/* cleaner added as class in html to elements to clean float*/
+/* cleaner added as class in html to elements to
+clean float*/
 .cleaner:after {
     display: block;
     content: '';
