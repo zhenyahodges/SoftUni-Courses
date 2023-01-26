@@ -1,39 +1,43 @@
-.site{
-max-width: 60em;
-margin: 0 auto;
-background-color:aqua;
+.site {
+    max-width: 60em;
+    margin: 0 auto;
+    background-color: aqua;
 }
-.site-main{
 
-}
-.site-header{
+.site-main {
     padding: 1em;
+    width: 60%;
+    float: left;
 }
 
-.site-header .site-title{
-float: left;
-}
-
-.site-header .site-nav{
-/* float: left; */
-/* to display nav next to title need to be floated right */
-float: right;
-}
-.site-main{
+.site-header {
     padding: 1em;
-
+    width: 60%;
 }
-.site-sidebar{
+
+.site-header .site-title {
+    float: left;
+}
+
+.site-header .site-nav {
+    /* float: left; */
+    /* to display nav next to title need to be floated right */
+    float: right;
+}
+
+.site-sidebar {
     padding: 1em;
-
+    width: 40%;
+    float: left;
 }
-.site-footer{
-padding: 1em;
+
+.site-footer {
+    padding: 1em;
 }
 
 /* cleaner added as class in html to elements to clean float*/
-.cleaner:after{
+.cleaner:after {
     display: block;
-    content:'';
+    content: '';
     clear: both;
 }
