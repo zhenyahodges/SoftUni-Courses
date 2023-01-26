@@ -43,3 +43,42 @@ clean float*/
     content: '';
     clear: both;
 }
+
+/* ar box 16:9*/
+.arbox{
+ display: block;
+ background-color: #333;
+border-radius: 0.5em;
+min-height: 100px;
+margin-bottom: 1.5em;
+overflow: hidden;
+position: relative;
+}
+
+.arbox::after{
+    display: block;
+    content: '';
+    /* height: 200px; */
+    background-color: #f00;
+/* padding-bottom: 50%; */
+/* 2:1 */
+/* aspect ratio:  */
+padding-top: calc((9/16)*100*1%);
+}
+.arbox .inner {
+    position: absolute;
+    /* sizing of the mimg acc to parent */
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.arbox img{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
