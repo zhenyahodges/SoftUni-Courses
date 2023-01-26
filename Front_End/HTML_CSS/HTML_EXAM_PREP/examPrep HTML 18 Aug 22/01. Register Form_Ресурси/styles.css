@@ -41,51 +41,52 @@ body {
 
 }
 
-div.container{
-display: inline-block;
-position: relative;
+div.container {
+  display: inline-block;
+  position: relative;
 }
 
-h1{
+h1 {
   /* top:25%;
   left: 25%; */
   text-align: center;
-  letter-spacing:2px;
+  letter-spacing: 2px;
 }
 
-div>form{
+div>form {
   display: inline-block;
   position: absolute;
   width: 60%;
   height: 100%;
   line-height: 2;
- margin: auto;
- padding: 2px 0; 
- font-size: 13px;
- left: 7%;
+  margin: auto;
+  padding: 2px 0;
+  font-size: 13px;
+  left: 7%;
 }
 
-h1{
-    color: #312828;
-    font-size: 22px;
-    position: relative;
-} 
+h1 {
+  color: #312828;
+  font-size: 22px;
+  position: relative;
+}
 
- input {
+input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-    border: 0.5px solid rgb(198, 196, 196);
+  border: 0.5px solid rgb(198, 196, 196);
   border-radius: 25px;
-    background-color: transparent;
+  background-color: transparent;
   color: white;
-} 
+}
 
-#first-name,#last-name{
+#first-name,
+#last-name {
   width: 25%;
 }
 
-button{
+button {
   background-color: #8f312b;
   border: none;
   border-radius: 25px;
@@ -95,54 +96,61 @@ button{
   position: absolute;
   top: 90%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  
+
 }
-label,input{
+
+label,
+input {
   /* display: inline-block;
   position: relative; */
- 
+
 }
-#first-name,#last-name{
+
+#first-name,
+#last-name {
   width: 40%;
 }
 
-.fname,.lname{
+.fname,
+.lname {
   /* display: block; */
   display: inline-block;
   position: absolute;
   /* float: left; */
-  
+
 }
-.lname{
+
+.lname {
   /* display: block; */
-/* display: inline-block;
+  /* display: inline-block;
 position: absolute;
 top: 0;
 left */
-/* float: right; */
+  /* float: right; */
 }
 
-#checkbox, label.checkbox {
+#checkbox,
+label.checkbox {
   display: block;
   position: relative;
 
 }
-#checkbox{
+
+#checkbox {
   left: -47%;
   /* vertical-align: middle; */
   top: 1px;
 }
 
-label.checkbox{
+label.checkbox {
   left: 7%;
   bottom: 4%;
 }
 
 
 /* Hide the browser's default checkbox */
-#checkbox{
+#checkbox {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -161,7 +169,7 @@ label.checkbox{
   background-color: #eee;
 }
 
-.checkbox{
+.checkbox {
   position: absolute;
   top: -0.5%;
 }
