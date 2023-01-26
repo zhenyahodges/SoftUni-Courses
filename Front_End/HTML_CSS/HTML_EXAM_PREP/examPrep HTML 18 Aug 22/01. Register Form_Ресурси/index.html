@@ -14,37 +14,44 @@
         <h1>REGISTRATION FORM</h1>
 
         <!-- names -->
-
-        <div class="fname">
-          <label for="first-name">First Name</label>
+       
+          <div class="fname">
+            <label for="first-name">First Name</label>
+          </div>
           <input type="text" name="first-name" id="first-name" />
-        </div>
-        <div class="lname">
-          <label for="last-name">last-name</label>
+
+          <div class="lname">
+            <label for="last-name">Last Name</label>
+          </div>
           <input type="text" name="last-name" id="last-name" />
-        </div>
+   
 
         <!-- rest of inputs -->
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
-
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
-
-        <label for="confirm-password">Confirm Password</label>
-        <input
-          type="confirm-password"
-          name="confirm-password"
-          id="confirm-password"
-        />
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div>
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="confirm-password"
+            name="confirm-password"
+            id="confirm-password"
+          />
+        </div>
 
         <!-- checkbox -->
-        
+        <div>
+          <label for="checkbox" class="checkbox">
+            I accept the Terms of Use & Privacy Policy</label
+          >
+        </div>
         <input type="checkbox" name="checkbox" id="checkbox" />
-        <span class="checkmark"></span>
-        <label for="checkbox" class="checkbox"
-          >I accept the Terms of Use & Privacy Policy</label>
 
         <button type="button">REGISTER NOW</button>
       </form>
