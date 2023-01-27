@@ -19,11 +19,17 @@ header,footer {
 }
 main{
     flex: 8 1 40rem;
-    align-self: stretch;
-    height: 50px;
+   
+    /* align-self: stretch; */
+    /* height: 50px; */
   
 }
 aside{
     flex: 2 1 20rem;
-    align-self:stretch;
+   
+    /* align-self:stretch; */
+    /* justify-content: flex-end; */
 }
+/* main,aside{
+    flex-direction: column;
+} */
