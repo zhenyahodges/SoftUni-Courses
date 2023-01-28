@@ -1,0 +1,50 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    max-width: 15vw;
+    height: 35rem;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+span {
+    border: 1px solid black;
+    width: 30%;
+    padding: 10%;
+    text-align: center;
+}
+
+body > div > span:nth-child(11){
+    order:-9;
+}
+body > div > span:nth-child(2){
+    order: -8;
+}
+body > div > span:nth-child(12){
+    order:-7;
+}
+body > div > span:nth-child(4){
+    order: -6;
+}
+body > div > span:nth-child(8){
+    order: -5;
+}
+body > div > span:nth-child(9){
+    order: -4;
+}
+
+body > div > span:nth-child(6){
+    order:-3;
+}
+body > div > span:nth-child(5){
+    order:-2;
+}
+
+body>div>span:nth-child(1) {
+    order: -1;
+}
