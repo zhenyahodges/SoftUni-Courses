@@ -14,15 +14,13 @@ body {
     background-color: rgb(238, 238, 238);
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
 }
 
 div {
     display: flex;
     flex-wrap: wrap;
-    max-width: 90vw;
     align-content: center;
-    /* justify-content: space-between; */
+    min-width: 20%;
 }
 
 h1,
@@ -65,8 +63,8 @@ a {
 
 blockquote {
     /* display: flex;
-    flex-direction: row wrap;
-    align-self:flex-end; */
+    flex-direction: row wrap; */
+    align-self:flex-end;
     font-family: Georgia, serif;
     border-left: 5px solid #ccc;
     margin: 0px 20px 0 30px;
@@ -76,43 +74,46 @@ blockquote {
     line-height: 1.2;
     text-align: left;
 }
+
 p.author {
     text-align: right;
 }
 
 img {
-    /* display: flex;
-    flex-flow: row wrap; */
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 15px 5px #AFAFAF;
     padding: 0.5%;
     border: 3px solid black;
-    /* align-self: flex-end; */
+    flex:2;
+    /* align-items: flex-end; */
 }
+
+/* body > div > main > article > section > p:nth-child(2),
+body > div > main > article > section > p:nth-child(3){
+flex: 1;
+align-items: flex-start;
+} */
 
 .aside-nav-ul li {
     list-style-type: square;
 }
 
-.main{
-    display: flex;
-    flex-flow: row wrap;
-    /* max-width: 60vw; */
-    flex: 2 1 70%;
-    /* justify-content: flex-start; */
+main {
+    flex: 1 1 70%;
+    /* flex-wrap: wrap; */
 }
-aside{
-    display: flex;
-    flex-flow: column wrap;
-    /* max-width: 60vw; */
-    flex: 1 1 30%;
+
+aside {
+    flex: 1 1 20%;
+    margin-left: 2%;
 }
-/* article{
-    justify-content: space-between;
-} */
-/* .right{
- justify-content: flex-end;
+
+.right {
+    /* justify-content: flex-end;
+    align-items: flex-start; */
+    align-self: flex-end;
 }
-.left{
-justify-content: flex-start;
-} */
+
+.left {
+    justify-content: flex-start;
+}
