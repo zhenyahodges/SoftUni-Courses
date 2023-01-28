@@ -1,0 +1,26 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-family: Helvetica, sans-serif;
+}
+header{
+    border-bottom: 2px solid rgb(0,0,0);
+    display:flex;
+    justify-content: space-between;
+}
+li{
+    list-style-type: none;
+    padding: 0.5rem;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 153, 0);
+}
+ul{
+    display: flex;
+}
