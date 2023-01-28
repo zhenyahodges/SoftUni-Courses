@@ -1,9 +1,47 @@
-    div,sections{
-        display: flex;
-        align-items: center;
-        max-width: 65vw;
-    }
+   * {
+       box-sizing: border-box;
+       font-family: sans-serif;
+       text-align: center;
+   }
 
-    span{
-        border: 
-    }
+   div,
+   section {
+       display: flex;
+       /* align-items: center; */
+   }
+
+   div {
+       max-width: 65vw;
+   }
+
+   span {
+       border: 1px solid black;
+       padding: 0.25rem;
+   }
+
+   .notes {
+       display: flex;
+       flex-direction: column;
+   }
+
+   .week {
+       flex-flow: row wrap;
+   }
+
+   .week span {
+       width: 20%;
+   }
+
+   section.week>span:nth-child(1),
+   section.week>span:nth-child(7) {
+       width: 100%;
+   }
+
+   section.week>span:nth-child(8),
+   section.week>span:nth-child(9) {
+       width: 50%;
+   }
+
+   .notes span {
+       height: 50%;
+   }
