@@ -10,33 +10,19 @@ html {
 }
 
 body {
+    display: flex;
     background-color: rgb(238, 238, 238);
     justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
 }
 
 div {
     display: flex;
     flex-wrap: wrap;
-    max-width: 80vw;
+    max-width: 90vw;
     align-content: center;
-}
-
-img {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 15px 5px #AFAFAF;
-    padding: 0.5%;
-    border: 3px solid black;
-
-}
-
-blockquote {
-    font-family: Georgia, serif;
-}
-
-a {
-    color: rgb(0, 153, 0);
-    text-decoration: none;
-
+    /* justify-content: space-between; */
 }
 
 h1,
@@ -45,30 +31,88 @@ h3,
 h4,
 h5 {
     font-family: Georgia, serif;
+    font-size: 1.5em;
+    line-height: 1.2;
 }
 
-ul{
-    list-style-type: square;
+.page.header {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    justify-content: space-between;
 }
 
-.page.header{
-    display:flex;
-    justify-content: space-between;
-    border-bottom: 2px solid rgb(0,0,0);
-    justify-content: space-between;
-}
-.page.header h1{
+.page.header h1 {
     font-family: sans-serif;
+    font-size: 30px;
+    /* margin: 50px 0px 0px 0px; */
 }
 
-li{
+.page.header ul {
+    display: flex;
+}
+
+.page.header li {
     list-style-type: none;
     padding: 0.5rem;
 }
-a{
+
+a {
     text-decoration: none;
     color: rgb(0, 153, 0);
 }
-ul{
-    display: flex;
+
+blockquote {
+    /* display: flex;
+    flex-direction: row wrap;
+    align-self:flex-end; */
+    font-family: Georgia, serif;
+    border-left: 5px solid #ccc;
+    margin: 0px 20px 0 30px;
+    padding-left: 20px;
+    font-style: italic;
+    width: 40%;
+    line-height: 1.2;
+    text-align: left;
 }
+p.author {
+    text-align: right;
+}
+
+img {
+    /* display: flex;
+    flex-flow: row wrap; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px 5px #AFAFAF;
+    padding: 0.5%;
+    border: 3px solid black;
+    /* align-self: flex-end; */
+}
+
+.aside-nav-ul li {
+    list-style-type: square;
+}
+
+.main{
+    display: flex;
+    flex-flow: row wrap;
+    /* max-width: 60vw; */
+    flex: 2 1 70%;
+    /* justify-content: flex-start; */
+}
+aside{
+    display: flex;
+    flex-flow: column wrap;
+    /* max-width: 60vw; */
+    flex: 1 1 30%;
+}
+/* article{
+    justify-content: space-between;
+} */
+/* .right{
+ justify-content: flex-end;
+}
+.left{
+justify-content: flex-start;
+} */
