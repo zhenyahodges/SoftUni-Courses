@@ -1,4 +1,9 @@
     div,sections{
         display: flex;
         align-items: center;
+        max-width: 65vw;
+    }
+
+    span{
+        border: 
     }
