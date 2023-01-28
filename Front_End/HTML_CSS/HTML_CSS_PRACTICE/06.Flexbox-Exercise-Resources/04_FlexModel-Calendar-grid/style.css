@@ -1,0 +1,60 @@
+   * {
+       box-sizing: border-box;
+       font-family: sans-serif;
+       text-align: center;
+   }
+
+   div {
+       max-width: 65vw;
+   }
+
+   span {
+       border: 1px solid black;
+       padding: 0.25rem;
+   }
+
+   .container{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(4,36px);
+    grid-template-areas:
+    "workweek workweek workweek workweek workweek workweek workweek workweek workweek workweek reminder reminder"
+    "mon mon tue tue wed wed thu thu fri fri reminder reminder"
+    "weekend weekend weekend weekend weekend weekend weekend weekend weekend weekend dates dates"
+    "sat sat sat sat sat sun sun sun sun sun dates dates"
+    ;
+   }
+
+   .workweek{
+    grid-area: workweek;
+   }
+   .mon{
+    grid-area: mon;
+   }
+   .tue{
+    grid-area: tue;
+   }
+   .wed{
+    grid-area: wed;
+   }
+   .thu{
+    grid-area: thu;
+   }
+   .fri{
+    grid-area: fri;
+   }
+   .weekend{
+    grid-area: weekend;
+   }
+   .sat{
+    grid-area: sat;
+   }
+   .sun{
+    grid-area: sun;
+   }
+   .reminder{
+    grid-area: reminder;
+   }
+   .dates{
+    grid-area: dates;
+   }
