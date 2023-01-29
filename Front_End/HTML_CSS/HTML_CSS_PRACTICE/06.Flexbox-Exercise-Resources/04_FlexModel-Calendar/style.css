@@ -1,13 +1,15 @@
-   * {
+   /* * {
        box-sizing: border-box;
        font-family: sans-serif;
        text-align: center;
-   }
+       padding: 0;
+       margin: 0;
+   } */
 
+   /* 
    div,
    section {
        display: flex;
-       /* align-items: center; */
    }
 
    div {
@@ -16,7 +18,7 @@
 
    span {
        border: 1px solid black;
-       padding: 0.25rem;
+       padding: 1rem;
    }
 
    .notes {
@@ -44,4 +46,82 @@
 
    .notes span {
        height: 50%;
+   } */
+
+   /* second solution */
+
+   * {
+       box-sizing: border-box;
+       padding: 0;
+       margin: 0;
    }
+
+   html {
+       text-align: center;
+       font: 14px/1.5 "Verdana", sans-serif;
+   }
+
+   body {
+       padding: 4em;
+   }
+
+   .calendar {
+       border: 2px solid #333;
+       counter-reset: day;
+       /* counter! */
+   }
+
+   .calendar-row {
+       display: flex;
+
+   }
+
+   .calendar-row+.calendar-row {
+       border-top: 2px solid #333;
+   }
+
+   .calendar-row-main {
+       display: flex;
+       flex: 0 0 80%;
+       border-right: 2px solid #333;
+       flex-wrap: wrap;
+   }
+
+   .calendar-row-main>.item:first-child {
+       flex-basis: 100%;
+       flex-shrink: 0;
+       border-bottom: 2px solid #333;
+       padding: 2em 1.5em;
+   }
+
+
+   .calendar-row-aside {
+       flex: 0 0 20%;
+       padding: 1.5em 1.5em;
+       text-align: center;
+       text-transform: uppercase;
+   }
+
+   .item {
+       padding: 1em 1.5em;
+       flex: 1 1 auto;
+       text-align: center;
+   }
+
+   /* counter! */
+
+   /* .item.day{
+    content: counter(day);
+   } */
+   .item.day::before {
+       counter-increment: day;
+       content: counter(day);
+       display: inline-block;
+       padding-right: 1em;
+   }
+
+   .item.day+.item.day {
+       border-left: 2px solid #333;
+   }
+
+   /* still not working properly when shrunk */
