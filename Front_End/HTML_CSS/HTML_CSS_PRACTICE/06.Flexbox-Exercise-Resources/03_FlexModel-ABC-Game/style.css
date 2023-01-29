@@ -8,15 +8,16 @@ div {
     align-items: center;
     max-width: 15vw;
     height: 35rem;
-    flex-flow: column wrap;
-    justify-content: space-between;
+    flex-flow: column wrap;    
 }
 
 span {
+   
     border: 1px solid black;
     width: 30%;
-    padding: 10%;
+    padding: 12%;
     text-align: center;
+    margin: 2%;
 }
 
 body>div>span:nth-child(11) {
