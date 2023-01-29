@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 238, 238);
+    min-height: 100vh;
+}
+
+main {
+    padding: 2rem;
+    flex:1;
+}
+
+header {
+
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding-left: 2rem;
+
+}
+
+footer {
+    flex-shrink: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(102, 102, 102);
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+}
