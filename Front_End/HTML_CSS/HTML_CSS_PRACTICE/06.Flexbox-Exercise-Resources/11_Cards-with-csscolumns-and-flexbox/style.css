@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    margin: 2rem;
+    width: 90vw;
+}
+
+div {
+    display: flex;
+    max-height: 200vh;
+}
+
+.cards-layout.masonry {
+     flex-flow: column wrap; 
+    align-content: flex-start;
+   
+}
+
+article {
+    border: 1px solid rgb(176, 174, 174);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 3px #c9c9c9;
+    overflow: hidden;
+    background-color: white; 
+    width: 200px;
+    margin: 10px;
+}
+
+section {
+    padding: 1rem;
+}
+
+img {
+    width: 100%;
+   
+}
+
+footer {
+    padding: 1rem;
+    border-top: 1px solid rgb(176, 174, 174);
+}
+
+.cards-layout.flex{
+    flex-flow: column wrap; 
+    justify-content: flex-start;  
+
+}
+
+.cards-layout.flex article{
+    display: flex;
+    min-height: 42rem;
+    max-height: 42rem;
+    flex-direction: column; 
+
+}
+
+.cards-layout.flex article section{
+    flex:1;
+}
