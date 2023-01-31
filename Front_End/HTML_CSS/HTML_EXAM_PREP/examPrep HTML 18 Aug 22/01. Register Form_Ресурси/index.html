@@ -5,54 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/layout.css">
   </head>
   <body>
-    <div class="card">
-      <!-- <div class="container"> -->
+    <section class="card"></section>
+    <div class="card-form">
+      <h1>REGISTRATION FORM</h1>
       <form action="POST">
-        <h1>REGISTRATION FORM</h1>
-
-        <!-- names -->
        
-          <div class="fname">
             <label for="first-name">First Name</label>
-          </div>
-          <input type="text" name="first-name" id="first-name" />
+          <input type="text" name="first-name" id="first-name"/>
 
-          <div class="lname">
-            <label for="last-name">Last Name</label>
-          </div>
-          <input type="text" name="last-name" id="last-name" />
-   
+            <label for="last-name">Last Name</label>         
+          <input type="text" name="last-name" id="last-name"/>
 
-        <!-- rest of inputs -->
-
-        <div>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div>
+          <input type="email" name="email" id="email"/>
+     
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div>
+          <input type="password" name="password" id="password"/>
+      
           <label for="confirm-password">Confirm Password</label>
           <input
             type="confirm-password"
             name="confirm-password"
-            id="confirm-password"
-          />
-        </div>
+            id="confirm-password"/>
 
-        <!-- checkbox -->
-        <div>
           <label for="checkbox" class="checkbox">
-            I accept the Terms of Use & Privacy Policy</label
-          >
-        </div>
-        <input type="checkbox" name="checkbox" id="checkbox" />
-
+            I accept the Terms of Use & Privacy Policy</label>   
+            <div class="filled-checkbox"> <input type="checkbox" name="checkbox" id="checkbox" /></div>     
+       
         <button type="button">REGISTER NOW</button>
       </form>
     </div>

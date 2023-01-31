@@ -1,7 +1,11 @@
 html {
     box-sizing: border-box;
+    font-family: Mulish, sans-serif;
   }
-  *, *:before, *:after {
+  
+  *,
+  *:before,
+  *:after {
     box-sizing: inherit;
   }
   

@@ -1,59 +1,37 @@
 @import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap);
 
 
-html {
-  box-sizing: border-box;
-  font-family: Mulish, sans-serif;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-image: url("/images/background.png");
-  background-size: cover;
-  background-repeat: none;
-  width: vw;
-  height: vh;
-}
-
 .card {
-  display: inline-block;
-  position: absolute;
-  background-image: url(/images/form-background.png);
-  background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  border-radius: 20px;
-  box-shadow: 12px 11px 9px 7px rgba(90, 90, 90, 0.73);
+  display: flex;
+  justify-self: center;
+  align-items: center;
 
-}
-
+    background-image: url(/images/form-background.png);
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+    box-shadow: 12px 11px 9px 7px rgba(90, 90, 90, 0.73);
+  
+  }
+/* 
 div.container {
   display: inline-block;
   position: relative;
-}
+} */
 
 h1 {
   /* top:25%;
   left: 25%; */
-  text-align: center;
-  letter-spacing: 2px;
+  /* text-align: center;
+  letter-spacing: 2px; */
 }
 
-div>form {
+/* div>form {
   display: inline-block;
   position: absolute;
   width: 60%;
@@ -63,31 +41,31 @@ div>form {
   padding: 2px 0;
   font-size: 13px;
   left: 7%;
-}
+} */
 
 h1 {
-  color: #312828;
+  /* color: #312828;
   font-size: 22px;
-  position: relative;
+  position: relative; */
 }
 
 input {
-  width: 100%;
+  /* width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   border: 0.5px solid rgb(198, 196, 196);
   border-radius: 25px;
   background-color: transparent;
-  color: white;
+  color: white; */
 }
 
 #first-name,
 #last-name {
-  width: 25%;
+  /* width: 25%; */
 }
 
 button {
-  background-color: #8f312b;
+  /* background-color: #8f312b;
   border: none;
   border-radius: 25px;
   padding: 12px 17px;
@@ -96,7 +74,7 @@ button {
   position: absolute;
   top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 
 }
 
@@ -106,20 +84,20 @@ input {
   position: relative; */
 
 }
-
+/* 
 #first-name,
 #last-name {
   width: 40%;
-}
+} */
 
-.fname,
+/* .fname,
 .lname {
   /* display: block; */
-  display: inline-block;
-  position: absolute;
+  /* display: inline-block;
+  position: absolute; */
   /* float: left; */
 
-}
+/* } */ */
 
 .lname {
   /* display: block; */
@@ -130,46 +108,46 @@ left */
   /* float: right; */
 }
 
-#checkbox,
+/* #checkbox,
 label.checkbox {
   display: block;
   position: relative;
 
-}
+} */
 
-#checkbox {
+/* #checkbox {
   left: -47%;
   /* vertical-align: middle; */
-  top: 1px;
-}
-
+  /* top: 1px; */
+/* }  */
+/* 
 label.checkbox {
   left: 7%;
   bottom: 4%;
-}
+} */
 
 
 /* Hide the browser's default checkbox */
-#checkbox {
+/* #checkbox {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
-}
+} */
 
 /* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 63%;
-  left: 1%;
-  height: 12px;
-  width: 12px;
+.filled-checkbox {
+  /* position: absolute; */
+  /* top: 63%;*/
+  /* left: 1%;
+  height: 12px; 
+  width: 12px; 
   border: 0.5px solid rgb(202, 202, 202);
-  background-color: #eee;
+  background-color: rgb(219, 16, 16); */
 }
 
-.checkbox {
+/* .checkbox {
   position: absolute;
   top: -0.5%;
-}
+} */
