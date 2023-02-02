@@ -1,3 +1,3 @@
 # SoftUni-Courses
 
-### :computer: Homeworks, lectures, demos, projects, exams
+### :computer: Homeworks, demos, exams, workshops, projects
