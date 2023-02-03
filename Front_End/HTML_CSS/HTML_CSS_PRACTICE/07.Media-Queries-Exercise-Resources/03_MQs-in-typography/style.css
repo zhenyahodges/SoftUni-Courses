@@ -1,0 +1,131 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    ;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    line-height: 1.2;
+    padding: 1rem 0;
+}
+
+.page.header {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+}
+
+.page.header h1 {
+    font-family: sans-serif;
+    /* font-size: 30px;     */
+    font-size: 3rem;
+
+}
+
+blockquote {
+    float: right;
+    /* align-self: flex-end; */
+    font-family: Georgia, serif;
+    border-left: 0.2rem solid #ccc;
+    margin: 5px 20px 5px 30px;
+    padding-left: 20px;
+    font-style: italic;
+    width: 40%;
+    line-height: 1.2;
+    text-align: left;
+}
+
+p.author {
+    text-align: right;
+}
+
+img {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px 5px #AFAFAF;
+    padding: 0.7%;
+    border: 3px solid black;
+}
+
+main {
+    flex: 1 1 70%;
+}
+
+.right,
+.left {
+    margin-bottom: 1.3rem;
+}
+
+.right {
+    float: right;
+    margin-left: 1.3rem;
+
+}
+
+.left {
+    float: left;
+    margin-right: 1.3rem;
+}
+
+p {
+    padding: 1rem 0;
+}
+
+@media screen and (min-width: 1800px) {
+    body {
+        font-size: 23px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        font-size: 21px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+}
