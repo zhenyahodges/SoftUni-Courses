@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      
-        <span class="title-span">Login</span>
-     
-
-      <form action="post">
-        <p class="user">
+ 
+      <form action="post"></form>
+        <fieldset class="title-span">
+          <legend>Login</legend>
+          <p class="user">
           <label for="username" class="username">Username</label>
           <i class="fa-solid fa-user"></i>
-          <input type="text" id="username" />
+          <input type="text" id="username" name="username" />
         </p>
         <p class="pass">
           <label for="password" class="password">Password</label>
-          <input type="text" id="password" />
           <i class="fa-solid fa-key"></i>
+          <input type="password" id="password" name="password"/>
         </p>
 
         <button type="submit">Login</button>
+        </fieldset>   
       </form>
-    </div>
+    
   </body>
 </html>
