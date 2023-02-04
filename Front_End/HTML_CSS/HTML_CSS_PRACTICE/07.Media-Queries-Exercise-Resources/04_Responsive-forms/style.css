@@ -41,9 +41,10 @@ fieldset {
 }
 
 i {
-    position: relative;
-    left: 6%;
+    position: absolute;
+    left: 26%;
     font-size: 16px;
+    top: 37%;
 }
 
 .user,
@@ -61,15 +62,21 @@ input {
     border: 0.1rem solid #d8d8d8;
 }
 
-input:focus {
-    background-color: rgb(237, 237, 237);
+.input-user:focus,
+.input-pass:focus {
+    background-color: lightblue;
+}
+
+.input-user:focus+i,
+.input-pass:focus+i {
+    color: pink;
 }
 
 button {
     background-color: var(--btn-and-font-color);
     color: var(--input-bgr-lbl-color);
     font-size: 16px;
-    min-width: 8vw;
+    min-width: 20%;
     height: 5vh;
     margin: 1.5rem;
 }
@@ -82,7 +89,8 @@ legend {
 }
 
 .username,
-.password {
+.password,
+legend {
     font-size: 20px;
 }
 
@@ -90,40 +98,45 @@ legend {
     background-color: var(--backgr-color-card);
     padding: 0.5rem;
     border: 0.1rem solid var(--btn-and-font-color);
-    width: 20vw;
+    width: 30%;
     margin-bottom: 1rem;
 }
 
 p {
+    position: relative;
     padding: 1rem 1.5rem 1rem 1.5rem;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1299px) {
-    fieldset {
-        min-width: 75vw;
-        min-height: 25vh;
-        /* max-width: 75vw;
-        max-height: 35vh; */
-    }
-   
-}
+/******** media queries********/
+@media screen and (min-width: 400) and (max-width: 499px) {
+    /* fieldset {
+        min-width: 80%;
+        min-height: 30%;
+    } */
 
-@media screen and (min-width: 600px) {
-     
-    fieldset {
-        min-width: 62vw;
-        min-height: 25vh;
-        max-width: 62vw;
-        max-height: 25vh;
+
+    /* button {
+        width: 20%;
+        margin: 0 0 0 0.5rem;
+
     }
 
-     button {
-        width: 14vw;
-        padding: 0.5rem;
+    .username,
+    .password,
+    legend,
+    button,
+    i {
+        font-size: 10px;
     }
+
+    i {
+        left: 8%;
+    }
+
     p {
-        padding: 0.5rem 1rem;
-    } 
+        padding: 0.5rem;
+    } */
+
 }
 
 @media screen and (min-width: 500px) and (max-width: 599px) {
@@ -136,5 +149,35 @@ p {
 
     button {
         width: 14vw;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width:799px) {
+
+    fieldset {
+        min-width: 62vw;
+        min-height: 25vh;
+        max-width: 62vw;
+        max-height: 25vh;
+    }
+
+    button {
+        width: 14vw;
+        padding: 0.5rem;
+    }
+
+    p {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1299px) {
+    fieldset {
+        max-width: 75vw;
+        max-height: 35vh;
+    }
+
+    i {     
+        left: 32%;        
     }
 }
