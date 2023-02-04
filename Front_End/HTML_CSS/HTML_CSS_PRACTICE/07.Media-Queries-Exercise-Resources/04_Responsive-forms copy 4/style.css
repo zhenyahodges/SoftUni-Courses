@@ -1,0 +1,91 @@
+@import url('https://use.fontawesome.com/releases/v6.2.1/css/all.css');
+
+:root {
+    --backgr-color: #ffffff;
+    --backgr-color-card: #f8f8f8;
+    --btn-and-font-color: #2d2d2d;
+    --input-bgr-lbl-color: #ffffff;
+    --box-shadow: 5px 5px 15px 1px #d4d4d4ab;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* position: relative; */
+    color: var(--btn-and-font-color);
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 2em;
+  }
+  
+  legend {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  p {
+    position: relative;
+    margin-bottom: 2em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 2px solid gray;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-bottom: 2px solid blue;
+  }
+  
+  input[type="text"]:focus + i,
+  input[type="password"]:focus + i {
+    color: blue;
+  }
+  
+  i {
+    position: absolute;
+    right: 0;
+    bottom: -1em;
+    color: gray;
+    transition: 0.3s ease-in-out;
+  }
+  
+  button[type="submit"] {
+    background-color: lightblue;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1em;
+  }
