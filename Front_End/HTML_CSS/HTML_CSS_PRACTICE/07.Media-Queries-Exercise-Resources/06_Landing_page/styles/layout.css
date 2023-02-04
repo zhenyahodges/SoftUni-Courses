@@ -6,7 +6,7 @@
 
 body {
     background-color: var(--backgr-col);
-    width: 80%;
+    /* width: 100%; */
     margin: 0 auto;
 }
 
@@ -18,13 +18,17 @@ hr {
     border-top: 0.15rem solid black;
 }
 
-/* || header */
 .photo {
-    width: 10%;
+    /* text-align: center; */
+    width: 30%;
     border-radius: 50%;
     border: 0.4rem solid rgba(118, 125, 133, 0.103);
 }
 
+/* || HEADER */
+/* header{
+    width: 80%;
+} */
 .logo {
     padding-right: 1rem;
 }
@@ -44,10 +48,10 @@ hr {
 header {
     display: flex;
     flex-flow: row;
-    width: 100%;
+    /* width: 80%; */
     height: 20%;
     justify-content: space-between;
-    margin: 2% 0 7% 0;
+    margin: 2% 10% 2% 10%;
 }
 
 header img {
@@ -81,15 +85,21 @@ a {
 }
 
 main {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
 }
 
-/* || intro */
+.intro.container,
+section.testimonials {
+    width: 100%;
+    margin: 2% 10% 2% 10%;
+}
+
+/* || INTRO */
 .intro.container {
     display: flex;
     flex-flow: row;
-    width: 100%;
+    /* width: 100%; */
+    justify-content: center;
 }
 
 .intro.text {
@@ -105,31 +115,33 @@ main {
     padding-left: 2rem;
 }
 
-/*  || team */
-.team {
-    margin: 5% 0 2% 0;
+/*  || TEAM */
+section.team {
+    margin: 5% 10% 5% 10%;
+    top:50%;
+    left:50%;
 }
 
 .team.heading {
+    padding-bottom: 1%;
     text-align: center;
-    /* display: flex;
-    flex-flow: column; */
 }
 
-.team-content {
-    display: flex;
-    flex-flow: row wrap;
+section.team-content-main {
+    padding-top: 2%;    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20% 0;
+    padding: 5% 2%;
+    text-align: center;
 }
 
-.team-article {
-    display: flex;
-    flex-flow: column wrap;
-    width: 25%;
-    height: auto;
-    /* flex: 1 1 25%; */
+.team.person.title{  
+    padding-bottom: 2%;
 }
 
-/* || news */
+
+/* || NEWSLETTER */
 .news {
     background-color: var(--purple-bgr);
     padding: 1.5%;
@@ -141,16 +153,16 @@ main {
     color: var(--backgr-col);
 }
 
-/*  || testimonials */
+/*  || TESTIMONIALS */
 
-/* || footer */
+/* || FOOTER */
 footer {
     display: flex;
     max-height: 20%;
     margin-top: 5%;
     width: 100%;
     height: 20%;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 89%, rgba(232,232,232,1) 96%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 89%, rgba(232, 232, 232, 1) 96%);
 }
 
 .foot.descr {
@@ -165,7 +177,7 @@ footer {
     padding: 1%;
 }
 
-.foot-nav-container>nav>ul{
+.foot-nav-container>nav>ul {
     display: flex;
     flex-flow: row wrap;
 }
@@ -173,11 +185,13 @@ footer {
 .foot.nav-nav-ul>li:nth-child(n) {
     flex: 1;
     justify-content: space-between;
-  
+
 }
-.foot-nav-nav-ul li{
-padding-right: 3.5rem;
+
+.foot-nav-nav-ul li {
+    padding-right: 3.5rem;
 }
+
 .foot.contacts {
     width: 25%;
     padding: 1%;
