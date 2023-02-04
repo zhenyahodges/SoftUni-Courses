@@ -1,0 +1,12 @@
+form{
+    padding: 2%;
+}
+
+.sign-up{
+    padding: 0.5% 1%;
+    margin-left: 0.5%;
+}
+#email{
+    padding: 0.6%;
+    width: 20%;
+}

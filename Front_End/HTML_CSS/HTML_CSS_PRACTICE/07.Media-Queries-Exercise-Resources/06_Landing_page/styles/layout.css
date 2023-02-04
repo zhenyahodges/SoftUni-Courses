@@ -10,16 +10,13 @@ body {
     margin: 0 auto;
 }
 
-hr {
-    width: 10%;
+.small-hr{
+    width: 6%;
     margin: 0 auto;
-    color: black;
-    border: none;
-    border-top: 0.15rem solid black;
+    border: 0.12rem solid black;    
 }
 
 .photo {
-    /* text-align: center; */
     width: 30%;
     border-radius: 50%;
     border: 0.4rem solid rgba(118, 125, 133, 0.103);
@@ -144,13 +141,13 @@ section.team-content-main {
 /* || NEWSLETTER */
 .news {
     background-color: var(--purple-bgr);
-    padding: 1.5%;
+    padding: 0.5%;
     text-align: center;
-
 }
 
 .news.heading {
     color: var(--backgr-col);
+    padding-bottom: 1%;
 }
 
 /*  || TESTIMONIALS */
