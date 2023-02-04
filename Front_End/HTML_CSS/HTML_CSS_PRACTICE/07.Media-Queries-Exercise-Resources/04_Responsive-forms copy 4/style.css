@@ -1,91 +1,118 @@
 @import url('https://use.fontawesome.com/releases/v6.2.1/css/all.css');
 
 :root {
-    --backgr-color: #ffffff;
-    --backgr-color-card: #f8f8f8;
-    --btn-and-font-color: #2d2d2d;
-    --input-bgr-lbl-color: #ffffff;
-    --box-shadow: 5px 5px 15px 1px #d4d4d4ab;
+  --backgr-color: #ffffff;
+  --backgr-color-card: #f8f8f8;
+  --btn-and-font-color: #2d2d2d;
+  --input-bgr-lbl-color: #ffffff;
+  --box-shadow: 5px 5px 15px 1px #d4d4d4ab;
 }
 
 html {
-    box-sizing: border-box;
-    font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    /* position: relative; */
-    color: var(--btn-and-font-color);
+  /* position: relative; */
+  color: var(--btn-and-font-color);
+  font-weight: 700;
 }
+
 form {
-    width: 50%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 10% auto;
+  border: 0.1rem solid var(--btn-and-font-color);
+  box-shadow: var(--box-shadow);
+  background-color: var(--backgr-color-card);
+
+}
+
+fieldset {
+  border: none;
+  padding: 2em;
+}
+
+legend {
+  font-size: 1rem;
+  margin-bottom: 1em;
+  text-align: left;
+  border: 0.1rem solid var(--btn-and-font-color);
+  background-color: var(--backgr-color-card);
+  padding: 0.5rem 6rem 0.5rem 0.5rem;
+  margin-right: 0;
+
+  position: relative;
+  left: -5%;
+  top: -1rem;
+}
+
+p {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border: 0.1rem solid #d8d8d8;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+background-color: lightblue;
+}
+
+input[type="text"]:focus+i,
+input[type="password"]:focus+i {
+  color: blue;
+}
+
+i {
+  position: absolute;
+  right: 96%;
+  bottom: 35%;
+  color: var(--btn-and-font-color);
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  background-color: var(--btn-and-font-color);
+  color: var(--input-bgr-lbl-color);
+  padding: 0.5em 1em;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px) {
+  i{
+    right: 87%;
   }
+  legend{
+    left: -18%;
+  }
+
+}
+
+@media screen {
   
-  fieldset {
-    border: none;
-    padding: 2em;
-  }
-  
-  legend {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-    text-align: center;
-  }
-  
-  p {
-    position: relative;
-    margin-bottom: 2em;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5em;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 0.5em;
-    font-size: 1em;
-    margin-bottom: 1em;
-    border: none;
-    border-bottom: 2px solid gray;
-    box-sizing: border-box;
-  }
-  
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    border-bottom: 2px solid blue;
-  }
-  
-  input[type="text"]:focus + i,
-  input[type="password"]:focus + i {
-    color: blue;
-  }
-  
-  i {
-    position: absolute;
-    right: 0;
-    bottom: -1em;
-    color: gray;
-    transition: 0.3s ease-in-out;
-  }
-  
-  button[type="submit"] {
-    background-color: lightblue;
-    color: white;
-    padding: 0.5em 1em;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1em;
-  }
+}
