@@ -10,11 +10,11 @@ h2{
 }
 
 h4{
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 h6{
-font-size: 1.2rem;
+font-size: 1.1rem;
 }
 
 .foot.contacts > ul > li:nth-child(n){
@@ -23,5 +23,5 @@ font-size: 1.2rem;
 }
 
 footer{
-    font-size: 12px;
+    font-size: 10px;
 }
