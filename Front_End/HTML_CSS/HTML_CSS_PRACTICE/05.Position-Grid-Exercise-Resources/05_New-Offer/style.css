@@ -16,7 +16,7 @@ main{
 }
 
 img.new{
-    position: relative;
+    position: relative; 
     top: -200px;
     right: 150px;
 }
