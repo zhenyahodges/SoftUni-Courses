@@ -6,10 +6,18 @@
 
 body {
     background-color: var(--backgr-col);
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
+hr {
+    width: 10%;
+    margin: 0 auto;
+    color: black;
+    border: none;
+    border-top: 0.15rem solid black;
+} 
+/* || header */
 .photo {
     width: 10%;
     border-radius: 50%;
@@ -67,9 +75,58 @@ li,a {
     color: black;
 }
 
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* || intro */
+.intro.container{
+display: flex;
+flex-flow: row;
+width: 100%;
+}
+
+.intro.text{
+    width: 65%;
+}
+
+.intro.icon{
+    width: 35%;
+}
+
+.fa-earth-americas{  
+    font-size: 650%;
+    padding-left: 2rem;
+}
+
+/*  || team */
+.team{
+    margin: 5% 0 2% 0;
+}
+
+.team.heading{
+    text-align: center;
+    /* display: flex;
+    flex-flow: column; */
+}
+.team-content{
+display: flex;
+flex-flow: row wrap;
+}
+
+.team-article{
+display: flex;
+flex-flow: column wrap;
+width: 25%;
+height: auto;
+/* flex: 1 1 25%; */
+}
+
+/* || news */
 .news {
     background-color: var(--purple-bgr);
-    padding: 1rem;
+    padding: 1.5%;
     text-align: center;
 
 }
@@ -78,10 +135,38 @@ li,a {
     color: var(--backgr-col);
 }
 
-.news.hr {
-    width: 13%;
-    margin: 0 auto;
-    color: black;
-    border: none;
-    border-top: 0.2rem solid black;
+/*  || testimonials */
+
+/* || footer */
+footer{
+    display: flex;
+    max-height: 20%;
+    border-top: 1% solid rgb(212, 34, 34);
+    margin-top: 5%;
+}
+.foot.descr{
+    /* display: flex; */
+    width: 30%;
+    text-align: left;
+    padding: 1%;
+}
+.foot.nav{
+    width: 40%;
+    padding: 1%;
+     /* display: flex;
+     flex-flow: column; */
+}
+
+.foot.nav>nav>ul{
+    /* display: flex; */
+    flex-flow: row wrap;
+    padding-right: 1%;
+}
+.foot.contacts{
+    width: 30%;
+    padding: 1%;
+}
+
+.foot.contacts > ul >li> i:nth-child(n){
+/* padding-right: %; */
 }
