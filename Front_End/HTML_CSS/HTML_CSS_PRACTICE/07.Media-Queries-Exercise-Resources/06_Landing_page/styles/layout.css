@@ -10,10 +10,10 @@ body {
     margin: 0 auto;
 }
 
-.small-hr{
+.small-hr {
     width: 6%;
     margin: 0 auto;
-    border: 0.12rem solid black;    
+    border: 0.12rem solid black;
 }
 
 .photo {
@@ -23,9 +23,6 @@ body {
 }
 
 /* || HEADER */
-/* header{
-    width: 80%;
-} */
 .logo {
     padding-right: 1rem;
 }
@@ -48,7 +45,7 @@ header {
     /* width: 80%; */
     height: 20%;
     justify-content: space-between;
-    margin: 2% 10% 2% 10%;
+    margin: 1% 10% 2% 10%;
 }
 
 header img {
@@ -68,7 +65,7 @@ header nav ul {
 }
 
 header nav ul li {
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 a {
@@ -88,52 +85,62 @@ main {
 .intro.container,
 section.testimonials {
     width: 100%;
-    margin: 2% 10% 2% 10%;
+    margin: 5% 10% 2% 10%;
 }
 
 /* || INTRO */
 .intro.container {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     /* width: 100%; */
     justify-content: center;
+    flex: 1 0 auto;
 }
 
 .intro.text {
-    width: 65%;
+    width: 35%;
+    margin-right: 2%;
+}
+
+section.intro.container>div.intro.text>p {
+    padding: 2% 0;
 }
 
 .intro.icon {
     width: 35%;
+
 }
 
 .fa-earth-americas {
-    font-size: 650%;
+    font-size: 700%;
     padding-left: 2rem;
+}
+
+section.intro.container > div.intro.text > button{
+    padding: 0.5rem 1rem;
 }
 
 /*  || TEAM */
 section.team {
     margin: 5% 10% 5% 10%;
-    top:50%;
-    left:50%;
 }
 
-.team.heading {
+.team.heading,
+.testimonials-heading {
     padding-bottom: 1%;
     text-align: center;
 }
 
 section.team-content-main {
-    padding-top: 2%;    
+    padding-top: 2%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20% 0;
     padding: 5% 2%;
     text-align: center;
 }
 
-.team.person.title{  
+.team.person.title {
     padding-bottom: 2%;
 }
 
@@ -151,6 +158,27 @@ section.team-content-main {
 }
 
 /*  || TESTIMONIALS */
+p.testimonials.person {
+    padding-top: 1%;
+}
+
+section.testimonials {
+    width: 80%
+}
+
+.testimonials-main {
+    /* width:  */
+    /* left:50%;
+    top:50%;
+    transform: translate(-50%,-50%); */
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20% 0%;
+    padding: 5% 2%;
+    text-align: center;
+}
+
 
 /* || FOOTER */
 footer {
