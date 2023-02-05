@@ -6,7 +6,6 @@
 
 body {
     background-color: var(--backgr-col);
-  
 }
 
 .small-hr {
@@ -80,34 +79,27 @@ a {
 
 main {
     /* width: 100%; */
-    
+
 }
 
 /* || INTRO */
 .intro.container {
     display: flex;
     flex-flow: row wrap;
-    /* width: 100%; */
     justify-content: center;
     align-items: center;
     padding: 0 10%;
     flex: 1 0 auto;
-    width: 100%;
     margin: 5% 10% 2% 10%;
 }
 
 .intro.text {
-    width: 35%;
+    width: 50%;
     margin-right: 2%;
 }
 
 section.intro.container>div.intro.text>p {
     padding: 2% 0;
-}
-
-.intro.icon {
-    width: 35%;
-
 }
 
 .fa-earth-americas {
@@ -121,11 +113,9 @@ section.intro.container>div.intro.text>button {
 
 /*  || TEAM */
 section.team {
-    /* width: 100%; */
     margin: 5% 10% 5% 10%;
     align-items: center;
     padding: 0 10%;
-
 }
 
 .team.heading,
@@ -134,8 +124,7 @@ section.testimonials>h2 {
     text-align: center;
 }
 
-section.team-content-main,
-section.testimonials-main {
+section.team-content-main{
     padding-top: 2%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -150,37 +139,39 @@ section.testimonials-main {
 
 /* || NEWSLETTER */
 .news {
-    /* display: block; */
-   display: flex; 
+    display: flex;
     flex-flow: column;
-    /* width: 100%; */
     align-items: center;
     padding: 0 10%;
-    /* height: 20%;
-    justify-content: space-between;
-    margin: 1% 10% 2% 10%; */
     background-color: var(--purple-bgr);
     padding: 0.5%;
-    text-align: center;
-    /* width: 100%; */
 }
 
-.news.heading {
+h2.news.heading {
     color: var(--backgr-col);
-    padding-bottom: 1%;
+    padding: 0.5%;
+    margin: 0;
 }
 
 /*  || TESTIMONIALS */
-p.testimonials.person {
-    padding-top: 3%;
+
+section.testimonials {
+    margin: 5% 10% 5% 10%;
+    align-items: center;
+    padding: 0 10%;
 }
 
-section.testimonials-main section {
-    padding: 2%;
+.testimonials-main-content{
+    text-align: center;
 }
 
-section.testimonials{
-    margin: 5% 10% 10% 10%;
+.testimonials-main {
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20% 0;
+    padding: 5% 2%;
+    text-align: center;
 }
 
 /* || FOOTER */

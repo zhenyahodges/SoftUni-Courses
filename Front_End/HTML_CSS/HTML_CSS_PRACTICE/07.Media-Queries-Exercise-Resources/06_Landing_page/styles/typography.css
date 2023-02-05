@@ -58,3 +58,10 @@ section.footer-logo > article > p,
 header nav {
     font-size: 18px;
 }
+
+p.testimonials.person,
+p.testimonials.subtitle,
+p.team.person.name,
+p.team.person.title{
+    line-height: 50%;
+}
