@@ -77,11 +77,6 @@ a {
     color: black;
 }
 
-main {
-    /* width: 100%; */
-
-}
-
 /* || INTRO */
 .intro.container {
     display: flex;
@@ -124,7 +119,7 @@ section.testimonials>h2 {
     text-align: center;
 }
 
-section.team-content-main{
+section.team-content-main {
     padding-top: 2%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -156,12 +151,12 @@ h2.news.heading {
 /*  || TESTIMONIALS */
 
 section.testimonials {
-    margin: 5% 10% 5% 10%;
+    margin: 5% 10% 10% 10%;
     align-items: center;
     padding: 0 10%;
 }
 
-.testimonials-main-content{
+.testimonials-main-content {
     text-align: center;
 }
 
