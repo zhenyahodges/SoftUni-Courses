@@ -186,8 +186,8 @@ section.footer.container {
     padding-top: 2%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-    "section section section";
+    /* grid-template-areas: 
+    "section section section"; */
     gap: 0% 10%;
     padding: 2% 2%;
     text-align: center;
