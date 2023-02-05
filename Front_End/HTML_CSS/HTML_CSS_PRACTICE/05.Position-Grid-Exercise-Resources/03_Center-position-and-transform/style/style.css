@@ -41,7 +41,7 @@ p {
 }
 
 img {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
