@@ -23,7 +23,10 @@ h6 {
 }
 
 footer {
-    font-size: 10px;
+    font-size: 14px;
+}
+h4,h6,footer{
+    font-weight: bold;
 }
 
 header nav,
@@ -40,7 +43,10 @@ p.testimonials.person {
 
 article p,
 header nav,
-section.intro.container>div.intro.text>p {
+section.intro.container>div.intro.text>p,
+section.footer-logo > article > p,
+.foot-nav-nav-ul
+ {
     font-family: sans-serif;
 }
 
