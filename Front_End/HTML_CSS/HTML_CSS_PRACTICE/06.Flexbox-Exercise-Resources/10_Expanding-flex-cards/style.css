@@ -26,11 +26,12 @@ body {
 
 article.photo {
     flex-shrink: 7;
+   transition: flex-shrink 1s ease-in-out; 
 }
 
 article.photo:hover {
-    flex-shrink: 0;
-}
+   flex-shrink: 2;   
+}   
 
 article {
     object-fit: cover;
