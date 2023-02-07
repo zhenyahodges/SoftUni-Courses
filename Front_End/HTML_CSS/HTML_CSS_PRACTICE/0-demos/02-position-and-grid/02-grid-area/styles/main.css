@@ -1,0 +1,31 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(6,100px);
+    grid-template-rows: repeat(6,100px);
+    gap:16px;
+
+    grid-template-areas: 
+    "head head head head head head"
+    "side . content content content content"
+    "side . content content content content"
+    "side . content content content content"
+    "side . content content content content"
+    "foot foot foot foot foot foot";
+}
+
+.header{
+    background-color: rgb(223, 230, 223);
+    grid-area: head;
+}
+.sidebar{
+    background-color: rgb(197, 197, 143);
+    grid-area: side;
+}
+.content{
+   background-color: rgb(196, 196, 219);
+    grid-area: content;
+}
+.footer{
+    background-color: rgb(234, 215, 215);
+    grid-area: foot;
+}
