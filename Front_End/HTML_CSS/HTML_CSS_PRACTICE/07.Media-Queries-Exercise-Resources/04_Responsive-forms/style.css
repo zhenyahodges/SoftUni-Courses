@@ -120,16 +120,19 @@ legend {
 /* || MEDIA QUERIES */
 
 @media screen and (min-width: 1692px) and (max-width: 1884px) {
-    i {
+    /* i {
         left: 20%;
-    }
-}
-
-@media screen and (min-width: 400px) and (max-width: 1691px) {
-    form {
+    } */
+    /* form {
         width: 35%;
         height: 20%;
-    }
+    } */
+
+@media screen and (min-width: 400px) and (max-width: 1691px) {
+    /* form {
+        width: 35%;
+        height: 20%;
+    } */
 
 /* 
     button {
