@@ -10,41 +10,79 @@
 
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+
 }
 
 body {
-    position: relative;
+    font-family: sans-serif;
     color: var(--btn-and-font-color);
 }
 
-fieldset {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, 20%);
-    background-color: var(--backgr-color-card);
-    box-shadow: var(--box-shadow);
+form {
+    width: 35%;
+    height: 20%;
+    margin: 10% auto;
     border: 0.1rem solid var(--btn-and-font-color);
-    max-width: 35vw;
-    max-height: 30vh;
-    min-width: 35vw;
-    min-height: 25vh;
+    box-shadow: var(--box-shadow);
+    background-color: var(--backgr-color-card);
 }
+
+fieldset {
+    padding: 2em;
+    border: none;
+}
+
+legend {
+    font-size: 1rem;
+    border: 0.1rem solid var(--btn-and-font-color);
+    background-color: var(--backgr-color-card);
+    padding: 0.5rem 6rem 0.5rem 1.5rem;
+    position: relative;
+    left: -6%;
+    top: -1rem;
+}
+
+p {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    width: 80%;
+    padding: 0.5em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    border: none;
+    border: 0.1rem solid #d8d8d8;
+  }
+
+  #username:focus,
+  #password:focus {
+  background-color: lightblue;
+  }
+  
+  #username:focus+i,
+  #password:focus+i {
+    color: blue;  
+  }
 
 i {
     position: absolute;
-    left: 26%;
-    font-size: 16px;
-    top: 37%;
+    top: 17%;
+    left: 18%;
 }
 
 .user,
@@ -56,30 +94,15 @@ input {
     border-radius: 0.3rem;
 }
 
-input {
-    height: 4vh;
-    width: 70%;
-    border: 0.1rem solid #d8d8d8;
-}
-
-.input-user:focus,
-.input-pass:focus {
-    background-color: lightblue;
-}
-
-.input-user:focus+i,
-.input-pass:focus+i {
-    color: pink;
-}
-
-button {
+ button {
     background-color: var(--btn-and-font-color);
     color: var(--input-bgr-lbl-color);
     font-size: 16px;
-    min-width: 20%;
-    height: 5vh;
-    margin: 1.5rem;
-}
+    width: 15%;
+    padding: 0.7rem 0.7rem;
+    margin: 0.5% 0;
+    border: none;
+} 
 
 .username,
 .password,
@@ -94,34 +117,28 @@ legend {
     font-size: 20px;
 }
 
-legend {
-    background-color: var(--backgr-color-card);
-    padding: 0.5rem;
-    border: 0.1rem solid var(--btn-and-font-color);
-    width: 30%;
-    margin-bottom: 1rem;
+/* || MEDIA QUERIES */
+
+@media screen and (min-width: 1692px) and (max-width: 1884px) {
+    i {
+        left: 20%;
+    }
 }
 
-p {
-    position: relative;
-    padding: 1rem 1.5rem 1rem 1.5rem;
-}
+@media screen and (min-width: 400px) and (max-width: 1691px) {
+    form {
+        width: 35%;
+        height: 20%;
+    }
 
-/******** media queries********/
-@media screen and (min-width: 400) and (max-width: 499px) {
-    /* fieldset {
-        min-width: 80%;
-        min-height: 30%;
-    } */
-
-
-    /* button {
+/* 
+    button {
         width: 20%;
         margin: 0 0 0 0.5rem;
 
-    }
+    } */
 
-    .username,
+    /* .username,
     .password,
     legend,
     button,
@@ -136,10 +153,23 @@ p {
     p {
         padding: 0.5rem;
     } */
-
 }
 
-@media screen and (min-width: 500px) and (max-width: 599px) {
+/* @media screen and (min-width: 500px) and (max-width: 599px) { */
+    /* i{
+      right: 87%;
+    }
+    legend{
+      left: -18%;
+    }
+  
+  }
+  
+  @media screen {
+    
+  } */
+
+/* @media screen and (min-width: 500px) and (max-width: 599px) {
     fieldset {
         min-width: 90vw;
         min-height: 30vh;
@@ -150,9 +180,9 @@ p {
     button {
         width: 14vw;
     }
-}
+} */
 
-@media screen and (min-width: 600px) and (max-width:799px) {
+/* @media screen and (min-width: 600px) and (max-width:799px) {
 
     fieldset {
         min-width: 62vw;
@@ -169,15 +199,5 @@ p {
     p {
         padding: 0.5rem 1rem;
     }
-}
+} */
 
-@media screen and (min-width: 800px) and (max-width: 1299px) {
-    fieldset {
-        max-width: 75vw;
-        max-height: 35vh;
-    }
-
-    i {     
-        left: 32%;        
-    }
-}

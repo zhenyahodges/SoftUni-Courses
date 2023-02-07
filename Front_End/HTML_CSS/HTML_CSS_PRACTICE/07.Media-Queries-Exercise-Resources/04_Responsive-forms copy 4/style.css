@@ -10,19 +10,18 @@
 
 html {
   box-sizing: border-box;
-  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+  font-family: sans-serif;
 }
 
 body {
-  /* position: relative; */
   color: var(--btn-and-font-color);
   font-weight: 700;
 }
@@ -33,18 +32,16 @@ form {
   border: 0.1rem solid var(--btn-and-font-color);
   box-shadow: var(--box-shadow);
   background-color: var(--backgr-color-card);
-
 }
 
 fieldset {
-  border: none;
   padding: 2em;
+  border:none;
 }
 
 legend {
   font-size: 1rem;
   margin-bottom: 1em;
-  text-align: left;
   border: 0.1rem solid var(--btn-and-font-color);
   background-color: var(--backgr-color-card);
   padding: 0.5rem 6rem 0.5rem 0.5rem;
@@ -66,23 +63,22 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 60%;
   padding: 0.5em;
   font-size: 1em;
   margin-bottom: 1em;
   border: none;
   border: 0.1rem solid #d8d8d8;
-  box-sizing: border-box;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
+#username:focus,
+#password:focus {
 background-color: lightblue;
 }
 
-input[type="text"]:focus+i,
-input[type="password"]:focus+i {
-  color: blue;
+#username:focus+i,
+#password:focus+i {
+  color: blue;  
 }
 
 i {
@@ -90,7 +86,6 @@ i {
   right: 96%;
   bottom: 35%;
   color: var(--btn-and-font-color);
-  transition: 0.3s ease-in-out;
 }
 
 button {
@@ -98,7 +93,6 @@ button {
   color: var(--input-bgr-lbl-color);
   padding: 0.5em 1em;
   border: none;
-  cursor: pointer;
   width: 35%;
   margin-top: 1em;
 }

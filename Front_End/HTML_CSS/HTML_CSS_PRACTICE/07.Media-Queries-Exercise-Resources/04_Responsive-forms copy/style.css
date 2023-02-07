@@ -10,18 +10,19 @@
 
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+
 }
 
 body {
+    font-family: sans-serif;
     position: relative;
     color: var(--btn-and-font-color);
     font-weight: 700;
@@ -98,7 +99,19 @@ label {
     padding: 1.5rem;
 }
 
-@media screen and (max-width: 1799px) {
+/*  || MEDIA QUERIES */
+
+@media screen and (min-width: 800px) and (max-width: 1299px) {
+
+   }
+
+@media screen and (min-width: 1692px) and (max-width: 1884px) {
+    i {
+        left: 20%;
+    }
+}
+
+/* @media screen and (max-width: 1799px) {
     form {
         min-width: 35vw;
         min-height: 25vh;
@@ -125,9 +138,9 @@ label {
     .login {
         padding: 0.5rem 8rem 0.5rem 0.5rem;
     }
-}
+} */
 
-@media screen and (max-width: 1299px) {
+/* @media screen and (max-width: 1299px) {
     form {
         min-width: 45vw;
         min-height: 25vh;
@@ -154,9 +167,9 @@ label {
     .login {
         padding: 0.5rem 9rem 0.5rem 0.5rem;
     }
-}
+} */
 
-@media screen and (max-width: 799px) {
+/* @media screen and (max-width: 799px) {
     form {
         min-width: 80vw;
         min-height: 25vh;
@@ -183,9 +196,9 @@ label {
     .login {
         padding: 0.5rem 8rem 0.5rem 0.5rem;
     }
-}
+} */
 
-@media screen and (max-width: 599px) {
+/* @media screen and (max-width: 599px) {
     form {
         min-width: 80vw;
         min-height: 25vh;
@@ -212,4 +225,4 @@ label {
     .login {
         padding: 0.5rem 8rem 0.5rem 0.5rem;
     }
-}
+} */
