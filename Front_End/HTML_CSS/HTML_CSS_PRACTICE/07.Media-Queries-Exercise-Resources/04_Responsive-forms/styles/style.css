@@ -1,4 +1,5 @@
 @import url('https://use.fontawesome.com/releases/v6.2.1/css/all.css');
+@import url("./reset.css");
 
 :root {
     --backgr-color: #ffffff;
@@ -8,36 +9,28 @@
     --box-shadow: 5px 5px 15px 1px #d4d4d4ab;
 }
 
-html {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-
-}
-
 body {
     font-family: sans-serif;
     color: var(--btn-and-font-color);
 }
 
 form {
-    width: 37%;
-    height: 20%;
+    width: 35vw;
+    height: 30vh;
     margin: 10% auto;
     border: 0.1rem solid var(--btn-and-font-color);
     box-shadow: var(--box-shadow);
     background-color: var(--backgr-color-card);
+    position: relative;
 }
 
 fieldset {
+    width: 35vw;
+    height: 35vh;
     padding: 2em;
     border: none;
+    /* position: relative; */
+
 }
 
 legend {
@@ -49,20 +42,26 @@ legend {
     left: -6%;
     top: -1rem;
 }
+.container{
+    position: absolute;
+    width: 90%;
+}
 
-p {
-    position: relative;
-    margin-bottom: 1rem;
+.p-container {
+    display: inline;
+    /* position: relative; */
+    /* width: 70%; */
+    /* margin-bottom: 1rem; */
 }
 
 label {
     display: inline-block;
-    margin-bottom: 0.5em;
-    margin-right: 0.5rem;
+    /* margin-bottom: 0.5em; */
+    margin-right: 1rem;
 }
 
 input {
-    width: 80%;
+    width: 60%;
     padding: 0.5em;
     font-size: 1em;
     margin-bottom: 1em;
@@ -79,9 +78,20 @@ input {
 #password:focus+i {
     color: blue;
 }
+p{
+    position: relative;
+}
 
 i {
     position: absolute;
+}
+
+.fa-user{
+    top: 15%;
+    left: 23%;
+}
+
+.fa-key{
     top: 17%;
     left: 22%;
 }
@@ -120,7 +130,7 @@ legend {
 
 /* || MEDIA QUERIES */
 
-@media screen and (min-width: 800px) and (max-width: 1335px) {
+/* @media screen and (min-width: 800px) and (max-width: 1335px) {
     form {
         width: 45%
     }
@@ -187,4 +197,4 @@ legend {
         width: 40%;
         height: 20%;
     }
-}
+} */
