@@ -15,7 +15,7 @@ body {
 }
 
 form {
-    width: 35vw;
+    width: 90vw;
     height: 30vh;
     margin: 10% auto;
     border: 0.1rem solid var(--btn-and-font-color);
@@ -25,46 +25,38 @@ form {
 }
 
 fieldset {
-    width: 35vw;
-    height: 35vh;
-    padding: 2em;
     border: none;
-    /* position: relative; */
-
 }
 
 legend {
-    font-size: 1rem;
+    font-size: 0.5rem;
     border: 0.1rem solid var(--btn-and-font-color);
     background-color: var(--backgr-color-card);
     padding: 0.5rem 6rem 0.5rem 1.5rem;
     position: relative;
-    left: -6%;
+    left: -5%;
     top: -1rem;
 }
-.container{
+
+.container {
     position: absolute;
     width: 90%;
-}
-
-.p-container {
-    display: inline;
-    /* position: relative; */
-    /* width: 70%; */
-    /* margin-bottom: 1rem; */
+    display: inline-block;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 label {
     display: inline-block;
-    /* margin-bottom: 0.5em; */
     margin-right: 1rem;
 }
 
 input {
-    width: 60%;
+    width: 65%;
     padding: 0.5em;
-    font-size: 1em;
-    margin-bottom: 1em;
+    font-size: 0.7em;
+    margin-bottom: 0.5em;
     border: none;
     border: 0.1rem solid #d8d8d8;
 }
@@ -78,22 +70,24 @@ input {
 #password:focus+i {
     color: blue;
 }
-p{
+
+p {
     position: relative;
 }
 
 i {
     position: absolute;
+    font-size: 0.8rem;
 }
 
-.fa-user{
-    top: 15%;
-    left: 23%;
+.fa-user {
+    top: 20%;
+    left: 36%;
 }
 
-.fa-key{
-    top: 17%;
-    left: 22%;
+.fa-key {
+    top: 21%;
+    left: 35%;
 }
 
 .user,
@@ -109,7 +103,7 @@ button {
     background-color: var(--btn-and-font-color);
     color: var(--input-bgr-lbl-color);
     font-size: 1rem;
-    width: 15%;
+    width: 25%;
     padding: 0.7rem 0.7rem;
     margin: 0.5% 0;
     border: none;
@@ -125,10 +119,58 @@ legend {
 .username,
 .password,
 legend {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 /* || MEDIA QUERIES */
+
+@media screen and (min-width:414px) and (max-width: 819) {
+    .fa-user {
+        left: 32%;
+    }
+
+    .fa-key {
+        left: 31%;
+    }
+}
+
+
+
+@media screen and (min-width:820px) {
+    form {
+        width: 80vw;
+    }
+
+    .username,
+    .password,
+    legend {
+        font-size: 1.5rem;
+    }
+
+    input,
+    i {
+        font-size: 1.2rem;
+    }
+
+    .fa-user {
+        left: 26%;
+    }
+
+    .fa-key {
+        left: 25%;
+    }
+
+    button {
+        margin-top: 1rem;
+    }
+    input{
+        width: 75%;
+    }
+    legend{
+        left: -3%
+    }
+
+}
 
 /* @media screen and (min-width: 800px) and (max-width: 1335px) {
     form {
