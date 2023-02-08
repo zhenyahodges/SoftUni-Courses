@@ -186,7 +186,7 @@ footer {
 footer>section>section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 15rem;
+    grid-template-rows: 12rem;
     gap: 1%;
     grid-template-areas:
         "desc desc sitemap sitemap contact contact";
@@ -196,22 +196,11 @@ footer>section>section {
     grid-area: desc;
 }
 
-.foot-nav-nav-ul {
-    grid-area: sitemap;
-    /* display: flex;
-    flex-flow: column wrap; */
-    /* height: 30%; */
-}
-/* .foot-nav-nav-ul li{
-display: flex;
-flex-flow: column wrap;
-} */
-
-/* .foot-nav-nav-ul li a{
+.sitemap-links{
+    height: 10vh;
     display: flex;
     flex-flow: column wrap;
-
-    } */
+}
 
 .foot-contacts {
     grid-area: contact;
