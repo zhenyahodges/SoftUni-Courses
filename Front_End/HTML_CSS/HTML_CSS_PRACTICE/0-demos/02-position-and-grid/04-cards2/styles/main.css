@@ -6,7 +6,7 @@ body {
 .designer-card {
     border-radius: 6px;
     overflow: hidden;
-   max-width: 400px;
+    max-width: 700px;
     position: relative;
     color: antiquewhite;
 }
@@ -153,24 +153,27 @@ body {
 }
 
 /*  || GRID AREAS */
+
+ul.areas-grid{
+    margin-bottom: 30px;
+}
 .areas-grid {
     margin-top: 32px;
     padding: 12px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6,50px);
+    grid-template-rows: repeat(6, 50px);
     gap: 12px;
-    grid-template-areas: 
-    "small1 medium1 large"
-    "small1 medium1 large"
-    "small2 medium1 large"
-    "small2 medium2 large"
-    "small3 medium2 large"
-    "small3 medium2 large" 
-    ;
+    grid-template-areas:
+        "small1 medium1 large"
+        "small1 medium1 large"
+        "small2 medium1 large"
+        "small2 medium2 large"
+        "small3 medium2 large"
+        "small3 medium2 large";
 }
 
-.areas-grid .item{
+.areas-grid .item {
     overflow: hidden;
 }
 
@@ -194,23 +197,51 @@ body {
     color: white;
 }
 
-.areas-grid .item1{
+.areas-grid .item1 {
     grid-area: small1;
 }
-.areas-grid .item2{
+
+.areas-grid .item2 {
     grid-area: small2;
 }
-.areas-grid .item3{
+
+.areas-grid .item3 {
     grid-area: small3;
 }
-.areas-grid .item4{
+
+.areas-grid .item4 {
     grid-area: medium1;
 }
-.areas-grid .item5{
+
+.areas-grid .item5 {
     grid-area: medium2;
 }
-.areas-grid .item6{
+
+.areas-grid .item6 {
     grid-area: large;
 }
 
-/*  ||  */
+/*  || Cards Grid */
+.cards-grid {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 20px;
+    grid-template-areas: 
+    
+    "land1 land1 land1 land1 port1 port2"
+    ". . land2 land2 land2 land2";
+}
+
+.cards-grid .card{
+    aspect-ratio: auto;
+    height: 100%;
+}
+
+.cards-grid .lands:first-of-type{
+    grid-area: land1;
+}
+
+.cards-grid .lands:last-of-type{
+    grid-area: land2;
+}
