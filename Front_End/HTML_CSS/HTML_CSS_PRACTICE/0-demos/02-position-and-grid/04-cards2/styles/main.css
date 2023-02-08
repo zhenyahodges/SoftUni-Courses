@@ -3,7 +3,7 @@ body {
     padding: 20px;
 }
 
-.designer-card{
+.designer-card {
     border-radius: 6px;
     overflow: hidden;
     width: 400px;
@@ -20,12 +20,22 @@ body {
     position: absolute;
     background-color: rgb(0, 0, 0);
     opacity: 0.2;
+    z-index: 1;
+    transition: opacity 300ms ease-in-out;
 }
+.designer-card:hover .img-bg{
+    transform: scale(1.3);
+}
+.designer-card:hover::before{
+    opacity: 0.6;
+}
+
 
 .img-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 300ms ease-in-out;
 }
 
 .content {
@@ -34,19 +44,20 @@ body {
     bottom: 0;
     width: 100%;
     padding: 12px;
+    z-index: 2;
 }
 
-.tag{
-font-size: 14px;
-color: orange;
+.tag {
+    font-size: 14px;
+    color: orange;
 }
 
-.title{
+.title {
     font-size: 18px;
     margin-bottom: 12px;
 }
 
-.meta-info{
+.meta-info {
     display: grid;
     grid-template-columns: 20px 2fr 3fr;
     gap: 6px
@@ -54,7 +65,7 @@ color: orange;
 
 .writer {
     width: 100%;
-aspect-ratio: 1/1;
+    aspect-ratio: 1/1;
     border-radius: 100%;
     overflow: hidden;
 }
@@ -65,10 +76,11 @@ aspect-ratio: 1/1;
     object-fit: cover;
 }
 
+
 /*  || 2nd CARD */
 
-.card{
-    width: 300px;
+.card {
+    width: 350px;
     aspect-ratio: 1/1.5;
     border-radius: 6px;
     overflow: hidden;
@@ -76,22 +88,45 @@ aspect-ratio: 1/1;
     color: antiquewhite;
 }
 
-.card-bg{
+.card-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.content-card{
+.content-card {
     position: absolute;
-    bottom: 0;
+    bottom: -201px;
     left: 0;
     width: 100%;
     padding: 12px;
 
-    background: rgb(0,0,0);
-    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.468312324929972) 50%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.31985294117647056) 29%, rgba(0, 0, 0, 1) 60%);
+    
+    /* usu around this */
+    transition: bottom 300ms linear;
 }
 
+.meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    text-align: center;
+    margin-bottom: 12px;
+}
 
+.content-card .title {
+    font-size: 22px;
+    text-align: center;
+}
 
+.descr {
+    height: 191px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.card:hover .content-card {
+    bottom: 0;
+}
