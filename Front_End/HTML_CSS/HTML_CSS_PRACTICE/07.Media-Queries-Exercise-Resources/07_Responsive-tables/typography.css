@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(237, 234, 234);
+    font-weight: 600;
+}
+
+table {
+    width: 80vw;
+    height: 20vh;
+    margin: 0 auto;
+    font-family: sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr:not(:first-child):nth-child(odd) {
+    background-color: white;
+}
+
+th,
+td {
+    padding-left: 1%;
+}
+
+table,
+td,
+th {
+    border: 1px solid #b4b2b2;
+    text-align: left;
+}
