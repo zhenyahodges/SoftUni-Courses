@@ -14,46 +14,42 @@ body {
 }
 
 form {
-    width: 37%;
+    max-width: 760px;
     height: 20%;
-    margin: 10% auto;
+    margin: 20% auto;
     border: 0.1rem solid var(--btn-and-font-color);
     box-shadow: var(--box-shadow);
     background-color: var(--backgr-color-card);
 }
 
 fieldset {
-    padding: 2em;
+    padding: 5%;
     border: none;
+    text-align: left;
 }
 
 legend {
-    font-size: 1rem;
     border: 0.1rem solid var(--btn-and-font-color);
     background-color: var(--backgr-color-card);
-    padding: 0.5rem 6rem 0.5rem 1.5rem;
+    padding: 3% 20% 3% 5%;
     position: relative;
     left: -6%;
-    top: -1rem;
+    top: -2rem;
 }
 
 p {
     position: relative;
-    margin-bottom: 1rem;
 }
 
 label {
     display: inline-block;
-    margin-bottom: 0.5em;
-    margin-right: 0.5rem;
+    margin-bottom: 5%;
+    margin-right: 2%;
 }
 
 input {
-    width: 80%;
-    padding: 0.5em;
-    font-size: 1em;
-    margin-bottom: 1em;
-    border: none;
+    min-width: 80%;
+    padding: 1.5%;
     border: 0.1rem solid #d8d8d8;
 }
 
@@ -64,13 +60,14 @@ input {
 
 #username:focus+i,
 #password:focus+i {
-    color: blue;
+    color: rgba(115, 100, 171, 0.404);
 }
 
 i {
     position: absolute;
-    top: 17%;
-    left: 22%;
+    top: 13%;
+    left: 21%;
+    font-size: 100%;
 }
 
 .user,
@@ -85,11 +82,11 @@ input {
 button {
     background-color: var(--btn-and-font-color);
     color: var(--input-bgr-lbl-color);
-    font-size: 1rem;
-    width: 15%;
-    padding: 0.7rem 0.7rem;
+    max-width: 35%;
+    padding: 2% 3%;
     margin: 0.5% 0;
     border: none;
+    font-size: 120%;
 }
 
 .username,
@@ -102,76 +99,18 @@ legend {
 .username,
 .password,
 legend {
-    font-size: 1.5rem;
+    font-size: 140%;
 }
 
 /* || MEDIA QUERIES */
 
-@media screen and (min-width: 800px) and (max-width: 1335px) {
-    form {
-        width: 45%
+@media all and (max-width: 1023px) {
+    i{
+        top: 67%;
+        left: 3%; 
     }
-
-    .username,
-    .password,
-    legend {
-        font-size: 1rem;
-    }
-
-    legend {
-        left: -5%
-    }
-}
-
-@media screen and (min-width: 1336px) and (max-width: 1507px) {
-
-    .username,
-    .password,
-    legend {
-        font-size: 1rem;
-    }
-
-    i {
-        font-size: smaller;
-    }
-
-    button {
-        font-size: smaller;
-    }
-
-    legend {
-        left: -8%;
-    }
-
-    input {
-        width: 70%;
-    }
-}
-
-@media screen and (min-width: 1508px) and (max-width: 1720px) {
-    form {
-        width: 40%;
-        height: 30%;
-    }
-}
-
-@media screen and (min-width: 1721px) and (max-width: 1797px) {
-
-    .username,
-    .password,
-    legend {
-        font-size: 1.2rem;
-    }
-
-    form {
-        width: 35%;
-    }
-}
-
-@media screen and (min-width: 1798px) and (max-width: 1941px) {
-
-    form {
-        width: 40%;
-        height: 20%;
+    label{
+        display: block;
+        margin-bottom: 3%;
     }
 }
