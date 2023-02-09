@@ -8,6 +8,6 @@ form{
 }
 #email{
     padding: 0.6%;
-    width: 71%;
+    max-width: 71%;
     background-color: white;
 }

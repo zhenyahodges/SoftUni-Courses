@@ -19,21 +19,18 @@ h6 {
 
 .foot.contacts>ul>li:nth-child(n) {
     font-weight: 700;
-    font-family: sans-serif;
 }
 
 footer {
     font-size: 14px;
-}
-h4,h6,footer{
-    font-weight: bold;
 }
 
 header nav,
 .intro,
 .team.person.name,
 .team.person.desc,
-p.testimonials.person {
+p.testimonials.person,
+h4,h6,footer {
     font-weight: bold;
 }
 
@@ -45,7 +42,7 @@ article p,
 header nav,
 section.intro.container>div.intro.text>p,
 section.footer-logo > article > p,
-.foot-nav-nav-ul
+footer p, footer li,footer a
  {
     font-family: sans-serif;
 }
@@ -65,3 +62,5 @@ p.team.person.name,
 p.team.person.title{
     line-height: 50%;
 }
+
+ 

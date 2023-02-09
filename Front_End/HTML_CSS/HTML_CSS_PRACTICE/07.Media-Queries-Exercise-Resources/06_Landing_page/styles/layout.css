@@ -9,13 +9,13 @@ body {
 }
 
 .small-hr {
-    width: 6%;
+    max-width: 6%;
     margin: 0 auto;
     border: 0.12rem solid black;
 }
 
 .photo {
-    width: 30%;
+    max-width: 30%;
     border-radius: 50%;
     border: 0.4rem solid rgba(118, 125, 133, 0.103);
 }
@@ -45,11 +45,6 @@ header {
     align-items: center;
     padding: 0 10%;
     margin: 1% 10% 2% 10%;
-}
-
-header img {
-    width: 15%;
-    height: auto;
 }
 
 header nav {
@@ -89,7 +84,7 @@ a {
 }
 
 .intro.text {
-    width: 50%;
+    max-width: 50%;
     margin-right: 2%;
 }
 
@@ -180,24 +175,23 @@ footer {
     margin: 0% 10%;
     align-items: center;
     text-align: left;
-
 }
 
 footer>section>section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 12rem;
-    gap: 1%;
+    grid-template-columns:repeat(3,1fr);
+    gap: 20% 0;
     grid-template-areas:
-        "desc desc sitemap sitemap contact contact";
+        "desc sitemap contact";
 }
 
 .foot-descr {
     grid-area: desc;
+    padding-right: 2%;
 }
 
 .sitemap-links{
-    height: 10vh;
+    max-height: 10vh;
     display: flex;
     flex-flow: column wrap;
 }
