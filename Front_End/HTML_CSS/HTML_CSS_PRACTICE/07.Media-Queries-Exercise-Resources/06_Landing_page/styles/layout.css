@@ -164,9 +164,9 @@ section.testimonials {
     text-align: center;
 }
 
-/* || FOOTER */
+/*** || FOOTER ***/
 footer {
-    max-height: 30vh;
+    max-height: 20vh;
     padding: 0% 10%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 89%, rgba(232, 232, 232, 1) 96%);
 }
@@ -188,12 +188,28 @@ footer>section>section {
 .foot-descr {
     grid-area: desc;
     padding-right: 2%;
+     display: flex;
+    flex-flow: row wrap;
+    /* max-width: 50%; */
 }
 
 .sitemap-links{
     max-height: 10vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-right: 20%;
+}
+.sitemap-links li:nth-child(odd){
+    padding-right: 30%;  
+}
+
+.sitemap-links:nth-child(even){
+    /* padding-left: 60%;  */
+    /* padding-right: 10%; */
+}
+.sitemap-links li,a{
+    /* max-width: 50%; */
 }
 
 .foot-contacts {

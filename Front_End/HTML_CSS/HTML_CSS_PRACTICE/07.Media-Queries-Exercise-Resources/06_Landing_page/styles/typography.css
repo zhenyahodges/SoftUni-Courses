@@ -17,12 +17,15 @@ h6 {
     font-size: 1.1rem;
 }
 
-.foot.contacts>ul>li:nth-child(n) {
+.foot-contacts>ul>li:nth-child(n) {
     font-weight: 700;
+}
+.foot-contacts{
+    line-height: 1.7;
 }
 
 footer {
-    font-size: 14px;
+    font-size: 90%;
 }
 
 header nav,
