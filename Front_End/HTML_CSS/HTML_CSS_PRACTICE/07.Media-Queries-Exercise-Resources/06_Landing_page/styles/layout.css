@@ -21,8 +21,14 @@ body {
 }
 
 /* || HEADER */
-.logo {
-    padding-right: 1rem;
+header {
+    display: flex;
+    flex-flow: row;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    margin: 1% 10% 2% 10%;
 }
 
 .logo.brand {
@@ -35,16 +41,6 @@ body {
     text-transform: uppercase;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 0.6rem;
-}
-
-header {
-    display: flex;
-    flex-flow: row;
-    height: 20%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    margin: 1% 10% 2% 10%;
 }
 
 header nav {
@@ -144,7 +140,6 @@ h2.news.heading {
 }
 
 /*  || TESTIMONIALS */
-
 section.testimonials {
     margin: 5% 10% 10% 10%;
     align-items: center;
@@ -166,7 +161,7 @@ section.testimonials {
 
 /*** || FOOTER ***/
 footer {
-    max-height: 20vh;
+    max-height: 20%;
     padding: 0% 10%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 89%, rgba(232, 232, 232, 1) 96%);
 }
@@ -179,7 +174,7 @@ footer {
 
 footer>section>section {
     display: grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20% 0;
     grid-template-areas:
         "desc sitemap contact";
@@ -188,53 +183,51 @@ footer>section>section {
 .foot-descr {
     grid-area: desc;
     padding-right: 2%;
-     display: flex;
+    display: flex;
     flex-flow: row wrap;
-    /* max-width: 50%; */
 }
 
-.sitemap-links{
-    max-height: 10vh;
+.sitemap-links {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     padding-right: 20%;
 }
-.sitemap-links li:nth-child(odd){
-    padding-right: 30%;  
-}
 
-.sitemap-links:nth-child(even){
-    /* padding-left: 60%;  */
-    /* padding-right: 10%; */
-}
-.sitemap-links li,a{
-    /* max-width: 50%; */
+.sitemap-links li:nth-child(odd) {
+    padding-right: 25%;
 }
 
 .foot-contacts {
     grid-area: contact;
 }
 
-.foot-contacts i{
+.foot-contacts i {
     padding-right: 3%;
 }
 
-footer ul{
+footer ul {
     padding-left: 0;
     padding-top: 0;
     margin: 0;
 }
 
-footer h6{
+footer h6 {
     margin: 0;
     padding: 2rem 0 0.5rem 0;
 }
-section.footer-logo > article > p{
+
+section.footer-logo>article>p {
     margin: 0;
 }
-section.footer-logo > article > h4{
+
+section.footer-logo>article>h4 {
     margin: 0;
     padding: 2rem 0 0.5rem 0;
     font-size: 1.5rem;
+}
+
+/* *** || MEDIA QUERIES *** */
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    
 }
