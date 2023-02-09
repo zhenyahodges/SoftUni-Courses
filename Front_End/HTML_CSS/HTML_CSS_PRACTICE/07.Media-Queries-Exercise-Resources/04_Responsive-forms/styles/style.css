@@ -1,5 +1,4 @@
 @import url('https://use.fontawesome.com/releases/v6.2.1/css/all.css');
-@import url("./reset.css");
 
 :root {
     --backgr-color: #ffffff;
@@ -15,48 +14,45 @@ body {
 }
 
 form {
-    width: 90vw;
-    height: 30vh;
+    width: 37%;
+    height: 20%;
     margin: 10% auto;
     border: 0.1rem solid var(--btn-and-font-color);
     box-shadow: var(--box-shadow);
     background-color: var(--backgr-color-card);
-    position: relative;
 }
 
 fieldset {
+    padding: 2em;
     border: none;
 }
 
 legend {
-    font-size: 0.5rem;
+    font-size: 1rem;
     border: 0.1rem solid var(--btn-and-font-color);
     background-color: var(--backgr-color-card);
     padding: 0.5rem 6rem 0.5rem 1.5rem;
     position: relative;
-    left: -5%;
+    left: -6%;
     top: -1rem;
 }
 
-.container {
-    position: absolute;
-    width: 90%;
-    display: inline-block;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+p {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
 label {
     display: inline-block;
-    margin-right: 1rem;
+    margin-bottom: 0.5em;
+    margin-right: 0.5rem;
 }
 
 input {
-    width: 65%;
+    width: 80%;
     padding: 0.5em;
-    font-size: 0.7em;
-    margin-bottom: 0.5em;
+    font-size: 1em;
+    margin-bottom: 1em;
     border: none;
     border: 0.1rem solid #d8d8d8;
 }
@@ -71,23 +67,10 @@ input {
     color: blue;
 }
 
-p {
-    position: relative;
-}
-
 i {
     position: absolute;
-    font-size: 0.8rem;
-}
-
-.fa-user {
-    top: 20%;
-    left: 36%;
-}
-
-.fa-key {
-    top: 21%;
-    left: 35%;
+    top: 17%;
+    left: 22%;
 }
 
 .user,
@@ -103,7 +86,7 @@ button {
     background-color: var(--btn-and-font-color);
     color: var(--input-bgr-lbl-color);
     font-size: 1rem;
-    width: 25%;
+    width: 15%;
     padding: 0.7rem 0.7rem;
     margin: 0.5% 0;
     border: none;
@@ -119,60 +102,12 @@ legend {
 .username,
 .password,
 legend {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 /* || MEDIA QUERIES */
 
-@media screen and (min-width:414px) and (max-width: 819) {
-    .fa-user {
-        left: 32%;
-    }
-
-    .fa-key {
-        left: 31%;
-    }
-}
-
-
-
-@media screen and (min-width:820px) {
-    form {
-        width: 80vw;
-    }
-
-    .username,
-    .password,
-    legend {
-        font-size: 1.5rem;
-    }
-
-    input,
-    i {
-        font-size: 1.2rem;
-    }
-
-    .fa-user {
-        left: 26%;
-    }
-
-    .fa-key {
-        left: 25%;
-    }
-
-    button {
-        margin-top: 1rem;
-    }
-    input{
-        width: 75%;
-    }
-    legend{
-        left: -3%
-    }
-
-}
-
-/* @media screen and (min-width: 800px) and (max-width: 1335px) {
+@media screen and (min-width: 800px) and (max-width: 1335px) {
     form {
         width: 45%
     }
@@ -239,4 +174,4 @@ legend {
         width: 40%;
         height: 20%;
     }
-} */
+}
