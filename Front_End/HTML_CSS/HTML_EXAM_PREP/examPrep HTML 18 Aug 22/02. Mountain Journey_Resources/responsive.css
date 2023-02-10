@@ -1,0 +1,43 @@
+/* width <= 600px (mobile) */
+
+@media screen and (max-width: 600px) {
+
+    header nav ul li {
+        display: flex;
+        padding-top: 10%;
+        justify-content: center;
+    }
+
+    header>nav {
+        flex-flow: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .header-title {
+        padding: 1em 0;
+    }
+
+    .header-title h1 {
+        font-size: 32px;
+        padding-bottom: 0.2em;
+    }
+
+    .header-title p {
+        font-size: 15px;
+    }
+
+    .header-title button {
+        font-size: 12px;
+    }
+
+    header{
+       /* width: 100%; */
+       margin: 0 auto;
+    }
+    header img{
+        /* object-fit: contain; */
+    }
+
+
+}
