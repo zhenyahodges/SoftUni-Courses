@@ -1,17 +1,17 @@
 /* width <= 600px (mobile) */
 
 @media screen and (max-width: 600px) {
-
     header nav ul li {
         display: flex;
         padding-top: 10%;
         justify-content: center;
+        align-items: center;
     }
 
     header>nav {
         flex-flow: column;
         justify-content: center;
-        margin: 0;
+        margin: 0 auto;
     }
 
     .header-title {
@@ -19,25 +19,109 @@
     }
 
     .header-title h1 {
-        font-size: 32px;
+        font-size: 38px;
         padding-bottom: 0.2em;
     }
 
-    .header-title p {
-        font-size: 15px;
+    .header-title button {
+        font-size: 14px;
     }
 
-    .header-title button {
+    /* ABOUT */
+    .about-us {
+        display: flex;
+        flex-flow: column;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    section.about-us>p:nth-child(2) {
+        /* padding-bottom: 1rem; */
+        padding-top: 0.1rem;
+    }
+
+    .about-us p,
+    .team-description p,
+    .choose-us p,
+    .blog-news p {
         font-size: 12px;
     }
 
-    header{
-       /* width: 100%; */
-       margin: 0 auto;
+    /* team */
+
+    .team-description-wrapper,
+    .about-us,
+    .blog-news,
+    .choose-us {
+        padding: 2rem 0;
     }
-    header img{
-        /* object-fit: contain; */
+
+    .team-description-wrapper {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .team-description ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .team-description-wrapper li {
+        padding-bottom: 1rem;
+    }
+
+    .team-description-wrapper ul li img {
+        width: 200px;
+        height: 200px;
     }
 
 
+    /* left to finish */
+    /* choose us */
+    .choose-us ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 55%;
+        justify-content: center;
+        align-content: center;
+        margin: 0 auto;
+        padding: 0 5px;
+    }
+
+    .choose-us li img {
+        width: 5em;
+        height: 5rem;
+    }
+
+
+
+    /*  bBLOG*/
+    .blog-news {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-news ul {
+        flex-flow: column;
+        align-items: center;
+    }
+
+
+    .blog-news ul li:li:nth-child(1) {
+        padding-bottom: 1rem;
+    }
+
+
+    section.avatar {
+        width: 10rem;
+    }
+
+    .blog-news .content {
+        width: 10rem;
+        font-size: 8px;
+    }
+
+    /* to finish */
 }
