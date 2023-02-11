@@ -25,7 +25,7 @@
         font-size: 14px;
     }
 
-    /* ABOUT */
+ 
     .about-us {
         display: flex;
         flex-flow: column;
@@ -36,7 +36,6 @@
     }
 
     section.about-us>p:nth-child(2) {
-        /* padding-bottom: 1rem; */
         padding-top: 0.1rem;
     }
 
@@ -47,7 +46,7 @@
         font-size: 12px;
     }
 
-    /* team */
+  
     .team-description-wrapper,
     .about-us,
     .blog-news,
@@ -74,7 +73,7 @@
         height: 200px;
     }
 
-    /* choose us */
+
     .choose-us ul {
         flex-direction: column;
         gap: 0.5rem;
@@ -90,7 +89,7 @@
         height: 5rem;
     }
 
-    /*  bBLOG*/
+
     .blog-news {
         display: flex;
         flex-direction: column;
