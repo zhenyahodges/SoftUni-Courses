@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto&display=swap');
 @import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 html {
   box-sizing: border-box;
@@ -26,6 +27,7 @@ html {
 
 body {
   font-family: Roboto, sans-serif;
+  color: var(--text-clr);
 }
 
 /* ***HEADER/HERO*** */
@@ -82,11 +84,11 @@ h3 {
 
 h2 {
   font-size: 8px;
-  color: rgb(74, 74, 74);
+  color: var(--subtitle-clr);
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 52px;
   font-weight: 900;
   padding-bottom: 20px;
 }
@@ -101,8 +103,7 @@ h1 {
   height: 35%;
   bottom: 38%;
   right: 3%;
-  background: linear-gradient(to right, #97928f 0%, #c7c2bf 39%, #f8f3ee 100%);
-  box-shadow: 5px 5px 10px 0px #7E7C7C;
+  background: linear-gradient(to right, #97928f 0%, #c7c2bf 39%, rgb(206 203 200) 100%);  box-shadow: 5px 5px 10px 0px #7E7C7C;
 }
 
 .intro-text {
@@ -161,7 +162,7 @@ main {
 }
 
 .services-list {
-  padding: 4% 10% 5% 10%;
+  padding: 4% 10% 0% 10%;
 }
 
 li {
@@ -234,6 +235,22 @@ label {
 /* **ASIDE** */
 .aside {
   display: flex;
+  flex-flow: column;
   flex: 0 1 30%;
+  justify-content: space-around;
   background-color: var(--beige);
+  padding:0 2%;
+  /* font-family: R; */
+}
+
+.big{
+  color: white;
+  font-size: 84px;
+  font-weight: 100;
+ 
+}
+
+.small{
+  text-transform: uppercase;
+  font-size: 22px;
 }
