@@ -38,7 +38,6 @@ body {
     max-width: 50%;
     height: 50%;
     min-width: 80px;
-    /* check min-width when done to look like image */
     background-image: url(/images/form-background.png);
     background-size: cover;
     border-radius: 1.5rem;
@@ -78,7 +77,6 @@ input {
     display: flex;
     flex-flow: row wrap;
     min-width: 80px;
-    /* width:100% ; */
     justify-content: space-between;
     margin-top: 1.5rem;
 }
