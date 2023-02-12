@@ -9,4 +9,55 @@ html {
     margin: 0;
     padding: 0;
   }
-  
+
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto&display=swap');
+
+  @import url("https://use.fontawesome.com/releases/v6.2.1/css/all.css");
+
+/* <i class="fa-solid fa-circle-arrow-right"></i> */
+:root{
+  --beige:rgb(186, 177, 173);
+  --bgr-clr:rgb(242, 240, 243);
+  --btn-clr:rgb(97, 115, 74);
+  --text-clr:rgb(51, 51, 51);
+  --subtitle-clr:rgb(51, 52, 55)
+}
+
+  body{
+font-family: Roboto, sans-serif;
+color: var(--text-clr);
+  }
+
+  .header{
+    display: flex;
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+  }
+  .header-img{
+    object-fit: scale-down;
+  }
+
+  .header-container{
+    display: inline-block;
+    position: absolute;
+  }
+
+  .header-container{
+    background-color: transparent;
+    /* display: flex; */
+  }
+
+  h1,h3{
+    font-family: "Abril Fatface",serif;
+  }
+
+  .line{
+    border-bottom: 1px solid white;
+    width: 40px;
+  }
+  h2{
+    font-size: 8px;
+    color: ;
+  }
