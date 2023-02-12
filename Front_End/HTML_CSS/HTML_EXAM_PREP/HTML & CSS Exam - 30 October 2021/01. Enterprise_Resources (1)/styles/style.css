@@ -1,0 +1,75 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.main {
+    width: 80vw;
+    height: 50vh;
+    margin: 5% auto;
+    background-color: #f6f8f9;
+    position: relative;
+}
+
+.content {
+    width: 50%;  
+    padding-right: 15%;
+    position: absolute;  
+    top: 16%;
+    left:7%;
+}
+
+h2 {
+    font-size: 14px;
+    color: rgb(39, 49, 64);
+    font-weight: 100;
+
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(39, 49, 64);
+    padding-top: 2%;
+    font-weight: 100;
+}
+
+p{
+    font-size: 24px;
+    padding-top: 2%;
+    padding-bottom: 7%;
+    color: #737d86;
+    font-weight: 100;
+    line-height: 1.7;
+}
+
+.img-container {
+    width: 50%;
+ 
+    /* height: 600px; */
+    background-color: red;
+    /* position: relative; */
+}
+
+img {
+    width: 30%;
+    height: 82%;
+    object-fit: contain;
+    position: absolute;
+    bottom:0%;
+    left:60%;
+}
+
+.btn{
+    padding: 2.5% 7.5%;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.btn.contact{
+    background-color: #786eff;
+    color: white;
+    margin-right: 2%;
+}
+.btn.more{
+    background-color: transparent;
+    border: 1px solid black;
+    color: rgb(39, 49, 64);
+}
