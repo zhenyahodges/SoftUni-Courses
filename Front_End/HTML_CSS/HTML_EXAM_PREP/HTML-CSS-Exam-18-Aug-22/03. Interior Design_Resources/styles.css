@@ -20,12 +20,12 @@ html {
   --beige: rgb(186, 177, 173);
   --btn-clr: rgb(97, 115, 74);
   --text-clr: rgb(51, 51, 51);
-  --subtitle-clr: rgb(51, 52, 55)
+  --subtitle-clr: rgb(51, 52, 55);
+  --bgr-clr-info: #f2f0f3;
 }
 
 body {
   font-family: Roboto, sans-serif;
-  color: var(--text-clr);
 }
 
 /* ***HEADER/HERO*** */
@@ -138,9 +138,8 @@ main {
   width: 80%;
   height: 100vh;
   margin: 0 auto;
-  background-color: var(--bgr-clr);
+  background-color: var(--bgr-clr-info);
   display: flex;
-  /* flex-flow: ; */
 }
 
 .info {
@@ -150,6 +149,9 @@ main {
 }
 
 /*** SERVICES** */
+.services{
+  margin-top: 2%;
+}
 .services-icon {
   margin-right: 10px;
 }
@@ -159,7 +161,7 @@ main {
 }
 
 .services-list {
-  padding: 3% 10% 5% 10%;
+  padding: 4% 10% 5% 10%;
 }
 
 li {
@@ -167,57 +169,68 @@ li {
 }
 
 .services li {
-  font-size: 18px;
+  font-size: 22px;
   padding-bottom: 5%;
 }
 
-
 h3 {
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 48px;
   padding-left: 10%;
   padding-top: 5%;
 }
-.contact-line{
+
+/* contact */
+.contact-line {
   width: 100%;
- border-bottom: 1px solid var(--text-clr);
- padding-top: 1%;
+  border-bottom: 1px solid var(--text-clr);
+  padding-top: 1%;
 }
 
 .contact-list {
   display: flex;
   flex-flow: row wrap;
   padding: 3% 10%;
-  font-size: 18px;
+  font-size: 20px;
 }
 
-.contact-list li{
+.contact-list li {
   padding-right: 3%;
 }
 
-.contact-item{
+.contact-item {
   font-style: italic;
 }
 
 /* form */
-form{
+form {
   padding: 2% 10%;
 }
-input{
-  background-color: var(--beige);  
-  padding: 10px 12px;
+
+input {
+  background-color: var(--beige);
+  padding: 12px 15px;
+  margin-right: 15px;
+  width:51%;
 }
 
-input,label{
+input,
+label {
   border: none;
   color: white;
-  border-radius: 5%;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-label{
-  background-color: var(--btn-clr);
-  padding: 10px 12px;
+input::placeholder {
+  color: white;
 }
+
+label {
+  background-color: var(--btn-clr);
+  padding: 12px 24px;
+}
+
 /* **ASIDE** */
 .aside {
   display: flex;
