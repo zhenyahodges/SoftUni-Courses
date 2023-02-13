@@ -5,10 +5,6 @@
     --bgr-clr: #efefef;
 }
 
-/* <i class="fa-brands fa-square-facebook"></i> */
-/* <i class="fa-brands fa-square-instagram"></i> */
-/* <i class="fa-brands fa-square-twitter"></i> */
-/* <i class="fa-brands fa-square-pinterest"></i> */
 body {
     /* font-family: Raleway; */
 }
@@ -57,17 +53,13 @@ nav h5 {
 }
 
 p {
-    font-size: 26px;
+    font-size: 24px;
     font-style: italic;
     padding-top: 6%;
 }
 
-.line {
+.line.vertical {
     border-left: 1px solid black;
-}
-
-.line,
-.vertical {
     height: 80px;
     margin-top: 5%;
 }
@@ -119,19 +111,33 @@ left:0;
 flex-flow: row-reverse;
 }
 
-.content.left.intro p{
-    /* padding-bottom: 1%; */
-}
-
-.content.left.intro {
-    padding: ;
-}
-
 .content.left.intro h2 {
     font-size: 50px;
     font-weight: 100;
 }
-.on
-.line.horizontal{
-    
+
+ .line.horizontal{
+    display: inline-block;
+    border-top: 1px solid black;
+ height: 0px;
+ width: 80px;
+ margin-right: 5%;
+ }
+
+ .fa-brands{
+    font-size: 30px;
+    color: #b6b6b6;
+ }
+
+ .social{
+    width: 30%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-top: 5%;
+ }
+
+ .content.left.intro {
+    width: 50%;
+    padding: 7% 2% 7% 0;
 }
