@@ -5,11 +5,6 @@
     --bgr-clr: #efefef;
 }
 
-body {
-    /* font-family: Raleway; */
-}
-
-
 .slide {
     background-color: var(--bgr-clr);
     width: 95%;
@@ -18,8 +13,8 @@ body {
     display: flex;
 }
 
-.slide.header { 
-    /* display: flex; */
+/*  ||***HEADER*** */
+.slide.header {
     flex-flow: row;
     position: relative;
 }
@@ -43,11 +38,11 @@ body {
 h1,
 h2,
 .letter.container,
-nav h5 {
-    font-family: Raleway, sans-serif;
+nav h5{
+    font-family: "Raleway", "sans-serif";
 }
 
-.content.left.header h1 {
+.content.left.header h1,h2 {
     font-size: 50px;
     font-weight: 100;
 }
@@ -82,68 +77,67 @@ p {
     left: 0%;
     z-index: 1;
 }
-.content.right.header-nav{
+
+.content.right.header-nav {
     position: relative;
 }
-.content.right.header-nav nav{
+
+.content.right.header-nav nav {
     position: absolute;
-    top:2%;
-    right:0%;
+    top: 2%;
+    right: 0%;
 }
 
-nav h5{
+nav h5 {
     width: 100px;
     margin: 0;
     font-size: 16px;
 }
-.fa-solid.fa-bars{
+
+.fa-solid.fa-bars {
     padding-left: 10%;
 }
 
-.header-img{
-width: 88%;
-position: absolute;
-bottom: 0%;
-left:0;
+.header-img {
+    width: 88%;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
 }
 
 /* || ***INTRO*** */
-.slide.intro{
-flex-flow: row-reverse;
+.slide.intro {
+    flex-flow: row-reverse;
 }
 
-.content.left.intro h2 {
-    font-size: 50px;
-    font-weight: 100;
-}
-
- .line.horizontal{
+.line.horizontal {
     display: inline-block;
     border-top: 1px solid black;
- height: 0px;
- width: 80px;
- margin-right: 5%;
- }
+    height: 0px;
+    width: 80px;
+    margin-right: 5%;
+    vertical-align: middle;
+}
 
- .fa-brands{
+.fa-brands {
     font-size: 30px;
     color: #b6b6b6;
- }
+}
 
- .social{
+.social {
     width: 30%;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     padding-top: 5%;
- }
+}
 
- .content.left.intro {
+.content.left.intro {
     width: 50%;
     padding: 7% 2% 7% 0;
 }
 
-.content.right.intro{
+.content.right.intro {
     position: relative;
 }
 
@@ -155,5 +149,31 @@ flex-flow: row-reverse;
 }
 
 /* ||APPOLLO PHOTO */
+.apollo {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/*  ||***FEATURED */
+.content.left.featured{
+    padding: 12% 10%;
+}
+.content.right.featured{
+    position: relative;
+}
+.featured-img{
+    width:90%;
+    position: relative;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+  
+
+}
+
+/*  ||***GALLERY */
 
 
+/*  ||***CONTACT */
