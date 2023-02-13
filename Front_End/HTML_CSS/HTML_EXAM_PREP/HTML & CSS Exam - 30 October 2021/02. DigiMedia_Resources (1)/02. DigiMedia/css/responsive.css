@@ -1,1 +1,163 @@
 /* TODO: Add responsive styles here... */
+@media screen and (max-width:600px) {
+    body {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 5px 20px;
+        position: relative;
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: -99999;
+        left: -9999;
+    }
+
+    .navbar-nav {
+        display: none;
+        position: absolute;
+        top: -99999;
+        left: -9999;
+    }
+
+    .contact-btn {
+        display: none;
+        position: absolute;
+        top: -99999;
+        left: -9999;
+    }
+
+    .navbar-light .navbar-brand {
+        margin-right: 10%;
+    }
+
+    nav {
+        flex-flow: column;
+    }
+    .navbar{
+        padding-top: 5px;
+    }
+   
+    .container-fluid {
+        position: relative;
+    }
+
+    div.service-box {
+        position: relative;
+    }
+
+    h3 {
+        padding-top: 40%;
+    }
+
+    .hero h1 {
+        margin-top: 20px;
+    }
+
+    .hero p {
+        margin-bottom: 69px;
+        /* text-align: left; */
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-flow: column;
+        width: 60%;
+        margin: 0 auto 96px auto;
+        text-align: center;
+    }
+
+    .row {
+        flex-flow: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .col-12 {
+        max-width: 100%;
+        text-align: left;
+
+    }
+
+    .container-fluid.hero img {
+        display: none;
+        position: absolute;
+        top: -99999;
+        left: -99999;
+    }
+
+    .service-box {
+        min-height: 512px
+    }
+
+    .service-box img {
+        height: 13%;
+    }
+
+    .services p {
+        line-height: 2;
+    }
+
+    img {
+        margin-bottom: 15%;
+    }
+
+    .about {
+        margin-bottom: 78px;
+    }
+
+    .contact-nav {
+        display: flex;
+        flex-flow: column;
+
+    }
+
+    .hero-btns.contact-btn a {
+        display: none;
+        position: absolute;
+        top: -9999;
+        left: -9999;
+    }
+
+    .footer {
+        padding: 68px 0px 0px 0px;
+        text-align: center;
+    }
+
+    footer .container .row div.col-12 {
+        text-align: center;
+    }
+
+    footer h3 {
+        padding-top: 5%;
+    }
+
+    footer ul {
+        font-size: 18px;
+        line-height: 2;
+        padding-top: 5%;
+    }
+
+    footer h6 {
+        font-size: 18px;
+        padding-bottom: 0;
+    }
+    /* .side-img {
+        position: absolute;
+        top: 10%;
+        left: 0;
+    }
+    .side2-img{
+        position: absolute;
+        top: 10%;
+        right: 0;
+    } */
+
+}
