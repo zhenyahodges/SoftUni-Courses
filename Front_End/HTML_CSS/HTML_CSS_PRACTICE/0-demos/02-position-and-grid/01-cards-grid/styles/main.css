@@ -60,7 +60,7 @@ card component
 }
 
 .content__section-title {
-    text-align-last: left;
+    text-align: left;
     font-size: 14px;
     margin-bottom: 6px;
     color: gray;
