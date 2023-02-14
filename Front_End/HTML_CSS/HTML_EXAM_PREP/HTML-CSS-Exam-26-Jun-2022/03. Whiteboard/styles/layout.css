@@ -1,0 +1,120 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+:root {
+    --bgr-clr: #b2f1dd;
+    --highlight-clr: #00d08e;
+}
+
+body {
+    font-family: "PT Sans", "san-serif";
+}
+
+/* ||***HEADER*** */
+header,
+main,
+footer {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header {
+    position: relative;
+    color: white;
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.46271008403361347) 100%);
+    opacity: 0.4;
+}
+
+header nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 70%;
+    margin: 2% 10%;
+}
+
+.logo {
+    font-size: 22px;
+
+}
+
+.cart {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+}
+header,.cart{
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.header-content {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+    margin: 0% auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 74px;
+}
+
+.header-content p {
+    font-size: 25px;
+    padding: 2% 30%;
+}
+
+.buy {
+    background-color: var(--highlight-clr);
+    border: none;
+    border-radius: 7%;
+    width: 10%;
+    color: white;
+    padding: 0.7% 0.8%;
+    font-size: 20px;
+    margin: 6% auto;
+}
+
+a{
+    color:white;
+    font-size: 26px;
+}
+.fa-circle-arrow-right{
+    margin-left: 1%;
+    font-weight: 700;
+}
+
+/* *** || MAIN*** */
+.details-right-list i,.details-left-items{
+    color: var(--highlight-clr);
+}
+.details-image{
+    
+}
+
