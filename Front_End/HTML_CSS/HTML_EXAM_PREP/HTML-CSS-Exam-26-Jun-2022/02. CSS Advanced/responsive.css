@@ -1,33 +1,55 @@
 @media all and (max-width:600px) {
-    main {
-        width: 100%;
+    * {
+        overflow: hidden;
     }
 
     body {
         margin: 0;
+        padding: 0;
     }
 
-    main .left-to-right article {
-        display: flex;
-        flex-flow: column;
-        flex: 0 3 auto;
-        /* width: 250px;
-       height: 250px; */
-        border-radius: 15%;
+    main {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    main section:nth-child(2) article,
+    main section:nth-child(4) article {
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    main section.left-to-right:nth-child(3) {
+        padding: 5% 0%;
+    }
+
+    main .left-to-right article,
+    main section:nth-child(2),
+    main section:nth-child(3) {
+        width: 70%;
+        height: 70%;
+        border-radius: 20%;
+        padding: 0% 5%;
+        position: relative;
+    }
+
+    /* hides buttons */
+    .left-to-right button,
+    body>main>section:nth-child(2)>article:nth-child(1)>button {
+        display: none;
+        position: absolute;
+        top: -9999;
+        left: -9999;
     }
 
     main section:nth-child(2),
     main section:nth-child(4) {
         flex-direction: column;
         padding: 0 20px;
-    }
-
-    .left-to-right button {
-        display: none;
-    }
-
-    main>section:nth-child(2)>article:nth-child(1)>button {
-        display: none;
     }
 
     main section:nth-child(2) button,
@@ -38,6 +60,7 @@
     form {
         display: flex;
         flex-flow: column;
+
     }
 
     form label {
@@ -48,12 +71,12 @@
         /* margin: 0 auto; */
         display: flex;
         align-content: center;
+
     }
 
-    main section:nth-child(4) article img {
+    /* main section:nth-child(4) article img {
         width: 40%;
         margin: 0 auto;
-    }
+    } */
 
-    main section:nth-child(4) article {}
 }
