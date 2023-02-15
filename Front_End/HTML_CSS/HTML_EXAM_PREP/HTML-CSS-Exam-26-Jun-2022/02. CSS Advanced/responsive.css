@@ -1,92 +1,60 @@
-@media all and (max-width:600px) {
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    main {
-        width: 100%;
-        height: auto;       
-        overflow: hidden;
-    }
-
-    section {
-        width: 100%;
-        height: 100vh;        
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* center elements 1st and 3rd section */
-    section,
-    .left-to-right:first-child,
-    main section.left-to-right:nth-child(3) {
-        padding:0;
-    }
-
-    main section:nth-child(2) {
-        flex-flow: column wrap;
-        margin: 0% auto;
-        width: 90%
+@media (max-width: 600px) {
+    * {
+        overflow-x: hidden;
     }
 
     main .left-to-right article {
-        border-radius: 20%;
-        padding: 2% 4%;
-        margin: 0%;
+        border-radius: 10%;
+        width: 80%;
+        height: min-content;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding: 40px;
     }
 
-    /* hides buttons */
-    .left-to-right button,
-    body>main>section:nth-child(2)>article:nth-child(1)>button {
+    main .left-to-right article button,
+    body > main:nth-child(1) > section:nth-child(2) > article:nth-child(1) > button:nth-child(3) {
         display: none;
-        position: absolute;
-        top: -9999;
-        left: -9999;
     }
 
-    /* || ***FORM ****/
+    .left-to-right:first-child {
+        height: min-content;
+        padding-bottom: 120px;
+    }
 
-    /* section */
-    body>main>section:nth-child(4)>article:nth-child(1) {
-        padding: 0;
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main section:nth-child(2),
+    main section:nth-child(4) {
+        margin: 00px auto;
+    }
+    main section:nth-child(2),
+    main section:nth-child(4) {
+        flex-direction: column;
         align-items: center;
     }
 
-    /* form */
-    main,section,
-    main section:nth-child(2),
-    main section:nth-child(4),
-    body>main>section:nth-child(4)>article:nth-child(1),
-    body>main>section:nth-child(4)>article:nth-child(1)>form  {
-        margin: 0 auto;
-    }
-
-    main section:nth-child(4),
-    body>main>section:nth-child(4)>article:nth-child(1)>form {
+    form {
         width: 100%;
+        font-size: 1.7rem;
     }
 
-    /* input */
     section form label input,
     section form textarea {
         width: 100%;
     }
-
-    /* button form */
-    body>main>section:nth-child(4)>article:nth-child(1)>form>label:nth-child(4) {
-        text-align: center;
+    section form label {
+        display: flex;
     }
 
-    /* bottom image */
-    body>main>section:nth-child(4)>article:nth-child(2)>img {
-        width: 70%
-    }
-
+    main section:nth-child(2) article,
     main section:nth-child(4) article {
-        flex-direction: row;
+        align-items: center;
     }
-
 }
