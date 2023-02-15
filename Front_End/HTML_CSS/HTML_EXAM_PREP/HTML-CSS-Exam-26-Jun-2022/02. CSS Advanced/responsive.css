@@ -1,8 +1,4 @@
 @media all and (max-width:600px) {
-    * {
-        overflow: hidden;
-    }
-
     body {
         margin: 0;
         padding: 0;
@@ -10,31 +6,42 @@
 
     main {
         width: 100%;
+        height: auto;
         margin: 0 auto;
+        overflow: hidden;
     }
 
     section {
         width: 100%;
+        height: 80vh;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
-    main section:nth-child(2) article,
-    main section:nth-child(4) article {
-        flex-direction: column;
-        margin-right: 0;
+    /* center elements 1st and 3rd section */
+    .left-to-right:first-child {
+        padding: 0;
     }
 
     main section.left-to-right:nth-child(3) {
-        padding: 5% 0%;
+        padding: 0;
     }
 
-    main .left-to-right article,
-    main section:nth-child(2),
-    main section:nth-child(3) {
-        width: 70%;
-        height: 70%;
+    main section:nth-child(2) {
+        /* display: flex; */
+        flex-flow: column wrap;
+        margin: 0% auto;
+        width: 90%
+    }
+
+    main .left-to-right article {
         border-radius: 20%;
-        padding: 0% 5%;
-        position: relative;
+        padding: 2% 4%;
+        margin: 0%;
     }
 
     /* hides buttons */
@@ -46,37 +53,53 @@
         left: -9999;
     }
 
+    /* || ***FORM ****/
+
+    /* section */
+    body>main>section:nth-child(4)>article:nth-child(1) {
+        margin: 0 auto;
+        padding: 0;
+        align-items: center;
+    }
+
+    /* form */
     main section:nth-child(2),
     main section:nth-child(4) {
-        flex-direction: column;
-        padding: 0 20px;
-    }
-
-    main section:nth-child(2) button,
-    main section:nth-child(4) button {
-        flex-direction: row;
-    }
-
-    form {
-        display: flex;
-        flex-flow: column;
-
-    }
-
-    form label {
-        display: flex;
-    }
-
-    form input[type="submit"] {
-        /* margin: 0 auto; */
-        display: flex;
-        align-content: center;
-
-    }
-
-    /* main section:nth-child(4) article img {
-        width: 40%;
         margin: 0 auto;
-    } */
+    }
+
+    body>main>section:nth-child(4)>article:nth-child(1)>form {
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+    }
+
+    main section:nth-child(4) {
+        width: 100%;
+    }
+
+    /* input */
+    section form label input,
+    section form textarea {
+        width: 100%;
+    }
+
+    /* button form */
+    body>main>section:nth-child(4)>article:nth-child(1)>form>label:nth-child(4) {
+        text-align: center;
+        /* position: absolute;
+        left:25%; */
+
+    }
+
+    /* bottom image */
+    body>main>section:nth-child(4)>article:nth-child(2)>img {
+        width: 50%
+    }
+
+    main section:nth-child(4) article {
+        flex-direction: row;
+
+    }
 
 }
