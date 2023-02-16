@@ -67,6 +67,7 @@ img {
     background-color: #786eff;
     color: white;
     margin-right: 2%;
+    border: 1px solid #786eff;
 }
 .btn.more{
     background-color: transparent;
