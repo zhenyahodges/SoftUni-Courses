@@ -8,6 +8,7 @@ body {
     margin: 5% auto;
     background-color: #f6f8f9;
     position: relative;
+    border-radius: 10px;
 }
 
 .content {
