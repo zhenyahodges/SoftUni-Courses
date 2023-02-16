@@ -5,15 +5,22 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        padding:0;
     }
 
     .container {
         text-align: center;
     }
+    #home > section.container,
+    #home > section.container-fluid.hero,
+    article.container{
+        padding: 0;
+        margin: 0 auto;
+    }
 
-    #about-us>div>div.container>div>div.col-12.col-sm-12.col-lg-4.service-txt,
-    body>section.about>div>div>div:nth-child(2) {
-        padding: 0 5%;
+    .col-sm-6 {
+         flex: 1 0 50%;
+        margin: 5% auto;
     }
 
     .navbar-collapse,
@@ -102,4 +109,18 @@
     footer {
         gap: 6px
     }
+    body > footer > div.container{
+        padding:0;
+        margin: 0 auto;
+    }
+    .service-box{
+        margin: 0 auto;
+    }
+    .service-txt,
+    .container-fluid{
+         margin: 0 auto;
+        padding: 0;
+    }
+
+    
 }
