@@ -27,12 +27,6 @@ body {
     z-index: -1;
 }
 
-.juice-card {
-    display: flex;
-    flex-flow: column wrap;
-    width: 100%;
-}
-
 .container {
     width: 50%;
     z-index: 1;
@@ -58,7 +52,7 @@ h1 {
 }
 
 .line {
-    border-bottom: 1px dotted var(--highlight-clr);
+    border-bottom: 1px dashed var(--highlight-clr);
 }
 
 strong {
@@ -68,7 +62,6 @@ strong {
 .details {
     font-size: 32px;
     display: flex;
-    flex-flow: row;
     justify-content: space-between;
     font-style: italic;
     padding-top: 1%;
@@ -88,19 +81,12 @@ strong {
     padding-bottom: 5%;
 }
 
-
-
 /* FOOTER */
-footer{
-    padding:0%;
-}
 table {
     width: 100%;
-    height: 15%;
+    border-collapse: collapse;
 }
 
-table,
-tr,
 td,
 th {
     text-align: center;
@@ -108,18 +94,12 @@ th {
     border: 1px solid var(--highlight-clr);
 }
 
-table{
-    border-collapse: collapse;
-}
-
-tr,
 td,
 th {
     padding: 0.5% 2%;
 }
 
 /* JUICE PHOTO */
-
 .juice-photo {
     height: 100%;
     object-fit: cover;
