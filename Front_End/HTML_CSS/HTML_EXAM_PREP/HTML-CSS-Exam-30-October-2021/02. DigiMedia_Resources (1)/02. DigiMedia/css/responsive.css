@@ -72,6 +72,9 @@
         width: 90%;
         margin: 0 auto;
     }
+    .row .col-12{
+        text-align: center;
+    }
 
     .col-12 {
         max-width: 100%;
