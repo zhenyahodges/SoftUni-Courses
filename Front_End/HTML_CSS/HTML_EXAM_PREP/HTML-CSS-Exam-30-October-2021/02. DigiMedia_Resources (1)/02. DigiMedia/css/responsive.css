@@ -12,31 +12,19 @@
         position: relative;
         text-align: center;
     }
-    #about-us > div > div.container > div > div.col-12.col-sm-12.col-lg-4.service-txt,
-    body > section.about > div > div > div:nth-child(2){
+
+    #about-us>div>div.container>div>div.col-12.col-sm-12.col-lg-4.service-txt,
+    body>section.about>div>div>div:nth-child(2) {
         text-align: center;
     }
 
 
-    .navbar-collapse {
+    .navbar-collapse,
+    .navbar-nav,
+    .contact-btn,
+    .container-fluid.hero img,
+    .hero-btns.contact-btn a  {
         display: none;
-        position: absolute;
-        top: -99999px;
-        left: -9999px;
-    }
-
-    .navbar-nav {
-        display: none;
-        position: absolute;
-        top: -99999px;
-        left: -9999px;
-    }
-
-    .contact-btn {
-        display: none;
-        position: absolute;
-        top: -99999px;
-        left: -99999px;
     }
 
     .navbar-light .navbar-brand {
@@ -88,20 +76,13 @@
     .col-12 {
         max-width: 100%;
         text-align: left;
-
-    }
-
-    .container-fluid.hero img {
-        display: none;
-        position: absolute;
-        top: -99999;
-        left: -99999;
     }
 
     .service-box {
         min-height: 512px
     }
-    .service-box p{
+
+    .service-box p {
         margin-top: 8%;
     }
 
@@ -124,13 +105,6 @@
     .contact-nav {
         display: flex;
         flex-flow: column;
-    }
-
-    .hero-btns.contact-btn a {
-        display: none;
-        position: absolute;
-        top: -9999;
-        left: -9999;
     }
 
     .footer {
