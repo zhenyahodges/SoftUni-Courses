@@ -41,10 +41,11 @@
     nav {
         flex-flow: column;
     }
-    .navbar{
+
+    .navbar {
         padding-top: 5px;
     }
-   
+
     .container-fluid {
         position: relative;
     }
@@ -54,7 +55,7 @@
     }
 
     h3 {
-        padding-top: 40%;
+        padding-top: 0%;
     }
 
     .hero h1 {
@@ -63,7 +64,6 @@
 
     .hero p {
         margin-bottom: 69px;
-        /* text-align: left; */
     }
 
     .hero-btns {
@@ -96,6 +96,9 @@
     .service-box {
         min-height: 512px
     }
+    .service-box p{
+        margin-top: 8%;
+    }
 
     .service-box img {
         height: 13%;
@@ -116,7 +119,6 @@
     .contact-nav {
         display: flex;
         flex-flow: column;
-
     }
 
     .hero-btns.contact-btn a {
@@ -149,15 +151,4 @@
         font-size: 18px;
         padding-bottom: 0;
     }
-    /* .side-img {
-        position: absolute;
-        top: 10%;
-        left: 0;
-    }
-    .side2-img{
-        position: absolute;
-        top: 10%;
-        right: 0;
-    } */
-
 }
