@@ -58,7 +58,7 @@ h1 {
 }
 
 .line {
-    border-bottom: 1px solid var(--highlight-clr);
+    border-bottom: 1px dotted var(--highlight-clr);
 }
 
 strong {
