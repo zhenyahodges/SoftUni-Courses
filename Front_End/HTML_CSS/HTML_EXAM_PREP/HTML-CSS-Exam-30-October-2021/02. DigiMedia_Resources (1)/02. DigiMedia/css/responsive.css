@@ -12,26 +12,31 @@
         position: relative;
         text-align: center;
     }
+    #about-us > div > div.container > div > div.col-12.col-sm-12.col-lg-4.service-txt,
+    body > section.about > div > div > div:nth-child(2){
+        text-align: center;
+    }
+
 
     .navbar-collapse {
         display: none;
         position: absolute;
-        top: -99999;
-        left: -9999;
+        top: -99999px;
+        left: -9999px;
     }
 
     .navbar-nav {
         display: none;
         position: absolute;
-        top: -99999;
-        left: -9999;
+        top: -99999px;
+        left: -9999px;
     }
 
     .contact-btn {
         display: none;
         position: absolute;
-        top: -99999;
-        left: -9999;
+        top: -99999px;
+        left: -99999px;
     }
 
     .navbar-light .navbar-brand {
