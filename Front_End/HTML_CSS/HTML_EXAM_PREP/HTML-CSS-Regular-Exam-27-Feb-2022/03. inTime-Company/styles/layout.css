@@ -1,0 +1,15 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+
+:root{
+   
+}
+body{
+    font-family: Helvetica, "sans-serif";
+}
+
+header,main,footer{
+width:100%;
+height:100%;
+margin: 0 auto;
+
+}
