@@ -9,7 +9,6 @@
 
     .container {
         text-align: center;
-        width:100%
     }
 
     #about-us>div>div.container>div>div.col-12.col-sm-12.col-lg-4.service-txt,
@@ -56,8 +55,9 @@
         margin: 0 auto 96px auto;
     }
 
-    .row {
-        flex-flow: column;
+    #contact-us > div {
+        margin:0;
+        padding:0 5%;
     }
 
     .row .col-12 {
