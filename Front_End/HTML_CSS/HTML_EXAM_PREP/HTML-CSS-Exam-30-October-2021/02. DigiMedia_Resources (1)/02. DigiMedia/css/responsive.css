@@ -7,8 +7,7 @@
 
     .container {
         width: 100%;
-        margin: 0 auto;
-        padding: 5px 20px;
+        margin: 0 auto;        
         position: relative;
         text-align: center;
     }
@@ -66,7 +65,10 @@
         text-align: center;
     }
 
-  
+    .row {
+        flex-flow: column;
+    }
+
     .row .col-12 {
         text-align: center;
     }
