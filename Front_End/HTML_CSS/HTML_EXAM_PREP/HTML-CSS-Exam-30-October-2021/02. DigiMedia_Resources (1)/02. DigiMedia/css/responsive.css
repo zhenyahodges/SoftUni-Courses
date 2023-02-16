@@ -5,8 +5,6 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-
-        /* width:100%; */
     }
 
     .container {
@@ -103,10 +101,5 @@
 
     footer {
         gap: 6px
-    }
-
-    .side-img,
-    .side2-img {
-        overflow: hidden;
     }
 }
