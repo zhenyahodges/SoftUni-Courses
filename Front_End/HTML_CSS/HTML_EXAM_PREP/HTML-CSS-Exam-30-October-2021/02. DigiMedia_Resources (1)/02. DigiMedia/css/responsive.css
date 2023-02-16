@@ -14,7 +14,10 @@
 
     #about-us>div>div.container>div>div.col-12.col-sm-12.col-lg-4.service-txt,
     body>section.about>div>div>div:nth-child(2) {
-        text-align: center;
+        /* text-align: center; */
+        margin: 0 auto;
+        padding: 0 5%;
+    }
     }
 
     .navbar-collapse,
@@ -26,7 +29,7 @@
     }
 
     .navbar-light .navbar-brand {
-        margin-right: 10%;
+        margin-right: 0%;
     }
 
     nav {
@@ -37,7 +40,8 @@
         padding-top: 5px;
     }
 
-    .container-fluid {
+    .container-fluid,
+    body > section.about > div > div > div:nth-child(1) {
         padding: 0;
     }
 
