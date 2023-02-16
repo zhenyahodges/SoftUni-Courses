@@ -18,12 +18,11 @@
         text-align: center;
     }
 
-
     .navbar-collapse,
     .navbar-nav,
     .contact-btn,
     .container-fluid.hero img,
-    .hero-btns.contact-btn a  {
+    .hero-btns.contact-btn a {
         display: none;
     }
 
@@ -40,7 +39,7 @@
     }
 
     .container-fluid {
-        position: relative;
+        padding: 0;
     }
 
     div.service-box {
@@ -67,12 +66,8 @@
         text-align: center;
     }
 
-    .row {
-        flex-flow: column;
-        width: 90%;
-        margin: 0 auto;
-    }
-    .row .col-12{
+  
+    .row .col-12 {
         text-align: center;
     }
 
@@ -82,7 +77,8 @@
     }
 
     .service-box {
-        min-height: 512px
+        min-height: 512px;
+        text-align: left;
     }
 
     .service-box p {
@@ -132,5 +128,10 @@
     footer h6 {
         font-size: 18px;
         padding-bottom: 0;
+    }
+
+    .side-img,
+    .side2-img {
+        overflow: hidden;
     }
 }
