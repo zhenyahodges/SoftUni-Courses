@@ -1,1 +1,72 @@
-/* TODO: Add the responsive styles here */
+@media screen and (max-width:600px) {
+    .tm-header {
+        width: 52%
+    }
+
+    .parallax-window nav {
+        position: absolute;
+        top: 0%;
+        left: 91%;
+    }
+
+    article.col-md-6.col-12 {
+        position: absolute;
+        top: -60%;
+        left: 0%;
+    }
+
+    .row {
+         width: 80%;
+    }
+
+    /*  main*/
+    /* header */
+    .tm-welcome-section h2 {
+        padding-top: 2%;
+    }
+
+    .tm-section-title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .col-lg-3,
+    .col-md-4,
+    .col-md-6,
+    .col-sm-6,
+    .col-12 {
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    /* gallery */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .tm-cta-section {
+        width: 100%;
+        padding: 0;
+    }
+
+    .tm-gallery-page {
+        margin: 0 auto
+    }
+  section.tm-cta-section.tm-section.tm-container-inner > article{
+        width: 100%;
+    }
+    .tm-gallery-item {
+        width: 100%;
+        height: 80%;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    /* footer */
+    .tm-footer {
+        padding: 25px 0px;
+    }
+}
