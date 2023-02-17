@@ -261,7 +261,7 @@ footer {
     padding: 4% 0;
     display: grid;
     grid-template-columns: 20% repeat();
-     gap: 15%;
+    gap: 15%;
 }
 
 .footer-nav p,
@@ -278,12 +278,11 @@ footer {
 .logo-footer {
     object-fit: cover;
     padding-bottom: 15%;
-    margin:-5%;
+    margin: -5%;
 }
 
-.footer-nav li{
+.footer-nav li {
     padding: 5% 0;
 }
-.footer-contact-list{
 
-}
+.footer-contact-list {}
