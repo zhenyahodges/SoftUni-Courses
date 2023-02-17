@@ -1,0 +1,45 @@
+.btn {
+    border-radius: 50px;
+    font-size: 18px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    padding: 13px 20px;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.btn.light {
+    background: linear-gradient(to right, #ED5B0E 0%, #EF5026 50%, #f04436 100%);
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.001);
+    transition: 256ms all;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn.light:before {
+    background: var(--clr-white);
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.btn.light:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(to right, #ED5B0E 0%, #EF5026 50%, #f04436 100%);
+    transition: 256ms all;
+    z-index: -1;
+}
