@@ -1,0 +1,77 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
+
+:root{
+   --clr-highl: #a4c538;
+   --bgr-card-clr:#f7f7f7;
+   --txt-clr:#636363;
+}
+
+body{
+    background-color: var(--body-clr);
+    font-family: Poppins, 'san-serif';
+}
+
+.container{
+    max-width: 1000px;
+    height: 50%;
+    margin: 5% auto;
+}
+
+header{
+text-align: center;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+span{
+    color: var(--clr-highl);
+}
+h2{
+    font-weight: 400;
+    color: var(--txt-clr);
+    font-size: 15px;
+    margin-bottom: 7%;
+}
+.card{
+    width:32%;
+    height: 70%;
+    background-color: var(--bgr-card-clr);
+}
+.card p{
+font-size: 14px;
+line-height: 2;
+margin-bottom: 5%;
+}
+
+button{
+    background-color: var(--clr-highl);
+    color: #fff;
+    font-size: 12px;
+    padding: 4% 12%;
+    margin-bottom: 5%;
+    border-radius: 25px;
+    font-weight: 700px;
+}
+.text.container{
+    padding: 3% 8%;
+    height: 100%;
+    width:100%;
+}
+h3{
+    padding-bottom: 5%;
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap:2%;
+
+}
+img{
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+}
