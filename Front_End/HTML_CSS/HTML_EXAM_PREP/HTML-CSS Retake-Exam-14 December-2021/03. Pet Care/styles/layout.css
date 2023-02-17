@@ -1,6 +1,6 @@
 @import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('./buttons.css');
 
 :root {
@@ -14,10 +14,20 @@
 }
 
 body {
-    font-family: Poppins, 'sans-serif';
+    font-family: 'Open sans', 'sans-serif';
 }
 
-/* font-family: 'Open-sans','sans-serif' */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+footer ul,
+header {
+    font-family: "Poppins", "sans-serif";
+}
 
 section.about>article>div>button {
     background: #ED5B0E;
@@ -203,7 +213,7 @@ h2 {
 }
 
 /* || INFO*/
-.info{
+.info {
     height: 60%;
     margin: 0% auto;
     position: relative;
@@ -211,28 +221,30 @@ h2 {
 
 }
 
-.info-container{
+.info-container {
     color: var(--clr-white);
-    width:40%;
+    width: 40%;
     height: 100%;
     padding: 8% 0%;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
 }
-.info-container h2{
+
+.info-container h2 {
     padding-bottom: 3%;
 }
-.info-container p{
-font-size: 26px;
+
+.info-container p {
+    font-size: 26px;
 }
 
-.info-contact{
+.info-contact {
     display: flex;
     width: 55%;
     justify-content: space-between;
@@ -241,3 +253,37 @@ font-size: 26px;
 }
 
 /* || FOOTER*/
+footer {
+    height: 40vh;
+}
+
+.footer-container {
+    padding: 4% 0;
+    display: grid;
+    grid-template-columns: 20% repeat();
+     gap: 15%;
+}
+
+.footer-nav p,
+.footer-nav li {
+    color: var(--grey-text-clr);
+    font-weight: 400;
+}
+
+.footer-nav h4 {
+    font-size: 22px;
+    padding-bottom: 20%;
+}
+
+.logo-footer {
+    object-fit: cover;
+    padding-bottom: 15%;
+    margin:-5%;
+}
+
+.footer-nav li{
+    padding: 5% 0;
+}
+.footer-contact-list{
+
+}
