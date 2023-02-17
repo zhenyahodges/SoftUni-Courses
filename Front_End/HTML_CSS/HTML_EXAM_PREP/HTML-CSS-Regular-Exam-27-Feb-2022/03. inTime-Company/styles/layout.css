@@ -258,6 +258,9 @@ label {
     border-radius: 6px;
     text-transform: uppercase;
 }
+form{
+    vertical-align: middle;
+}
 
 /* || FOOTER */
 footer {
@@ -270,6 +273,7 @@ footer {
     color: var(--light-bgr-clr);
     display: flex;
     flex-flow: row wrap;
+    gap:6%
 }
 
 h4 {
@@ -293,6 +297,11 @@ h4 {
 
 .address-links>p:nth-child(3) {
     padding-top: 7%;
+}
+
+i{
+    padding: 3%;
+    font-size: 20px;
 }
 
 .copywrite {
