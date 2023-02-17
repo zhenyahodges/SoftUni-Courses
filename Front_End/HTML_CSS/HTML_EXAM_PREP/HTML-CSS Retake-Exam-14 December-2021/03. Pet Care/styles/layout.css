@@ -1,5 +1,5 @@
 @import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -19,10 +19,50 @@ body {
 }
 
 /* font-family: 'Open-sans','sans-serif' */
-button {
-    padding: 2% 7%;
-    border-radius: 25px;
+.btn {
+    /* padding: 2% 7%; */
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
 }
+.btn.light {
+    display: block;
+    width: 150px;
+    background: linear-gradient(to right, #ED5B0E 0%, #EF5026 50%, #f04436 100%);    text-align: center;
+    padding: 13px 20px;
+    border-radius: 25px;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,0.001);
+    transition: 256ms all;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .btn.light:before {
+    background: var(--clr-white);
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+    border-radius: 50px;
+
+  }
+  
+  .btn.light:after {
+    content: '';
+    position: absolute;   
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(to right, #ED5B0E 0%, #EF5026 50%, #f04436 100%);    transition: 256ms all;
+    z-index: -1;    
+  }
+
+button.dark {}
 
 header,
 main,
@@ -32,12 +72,14 @@ footer {
     margin: 0 auto;
 }
 
-nav,
+
 .hero-container,
 .service.container,
 .about-container,
 footer.container {
-    /* margin: 2% 10%; */
+    width: 80%;
+    margin: 0 10%;
+    /* background-color: yellow; */
 }
 
 /* NAVIGATION */
@@ -46,30 +88,80 @@ nav {
     display: flex;
     justify-content: space-between;
     margin: 0 10%;
-    /* padding-left: 30px; */
-    /* padding-right: 10px; */
+    font-family: 'Open sans', 'sans-serif';
+    font-weight: 700;
+    padding: 2% 0;
+    font-size: 18px;
 }
 
 .nav-list {
     display: flex;
     align-items: center;
 }
-.nav-list li:not(:first-child){
-    padding-left: 5%;
-}
-.nav-list a{
+
+.nav-list a {
     display: inline-block;
     padding: 10px 15px;
-
-}
-.logo{
-    /* display: inline-block; */
 }
 
+.logo-container {
+    width: 100px;
+    height: 100px;
+}
 
-
+.logo {
+    object-fit: contain;
+}
 
 /* || HERO */
+.hero {
+    height: 65%;
+    position: relative;
+}
+
+.hero-bgr-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-dog {
+    object-fit: cover;
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    height: 90%;
+}
+
+/* hero text */
+.hero-text-container {
+    color: var(--clr-white);
+    position: absolute;
+    top: 32%;
+    left: 10%;
+    z-index: 10;
+    width: 25%
+}
+
+h1 {
+    font-size: 90px;
+    line-height: 1.2;
+}
+
+h1 span {
+    font-weight: 200;
+}
+
+.hero-text-container p {
+    font-size: 20px;
+    line-height: 2;
+    padding: 5% 0 10% 0;
+
+}
+
+
 /* || SERVICES */
 /* || ABOUT*/
 /* || INFO*/
