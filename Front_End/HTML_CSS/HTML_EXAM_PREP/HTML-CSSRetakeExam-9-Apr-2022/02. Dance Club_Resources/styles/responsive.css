@@ -1,6 +1,6 @@
 @media all and (max-width:800px) {
-    header.menu nav ul{
-        padding: 0;
+       body > header > nav > ul{
+        padding-inline-start: unset
     }
     nav {
         flex-flow: column wrap;
