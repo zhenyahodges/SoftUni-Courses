@@ -65,7 +65,7 @@ p {
     z-index: 2;
 }
 
-.letter {
+/* .letter {
     display: inline-block;
     font-weight: 700;
     font-size: 6922%;
@@ -78,7 +78,7 @@ p {
     top: -74%;
     left: 0%;
     z-index: 1;
-}
+} */
 
 .content.right.header-nav {
     position: relative;
