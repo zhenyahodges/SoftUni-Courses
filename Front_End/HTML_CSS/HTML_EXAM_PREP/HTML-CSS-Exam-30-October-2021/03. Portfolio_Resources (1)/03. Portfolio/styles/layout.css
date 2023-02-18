@@ -7,7 +7,8 @@
 
 .slide {
     background-color: var(--bgr-clr);
-    width: 95%;
+    /* width: 95%; */
+    max-width: 1800px;
     height: 70vh;
     margin: 2% auto;
     display: flex;
