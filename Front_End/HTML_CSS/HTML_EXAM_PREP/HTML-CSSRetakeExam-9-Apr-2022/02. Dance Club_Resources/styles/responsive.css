@@ -1,1 +1,61 @@
-//TODO
+@media all and (max-width:600px) {
+    nav {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .menu ul.nav-options {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+main{
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.trainings {
+    background: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    
+    align-items: center;
+}
+.instructors{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.instructors-pic{
+    justify-content: center;
+    align-items: center;
+}
+.getInTouch{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form {
+    flex: 1 1 56%;
+}
+
+.site-footer .wrapper {
+    justify-content: center;
+    padding: 1.5rem 0;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.site-footer .sitemap ul {
+  width:50%
+}
+.classes li div {
+    align-self: unset;
+}
+.classes li{
+    width: 35%
+}
+}
