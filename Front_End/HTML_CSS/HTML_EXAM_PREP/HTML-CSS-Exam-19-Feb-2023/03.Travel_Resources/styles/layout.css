@@ -153,6 +153,8 @@ h2 {
 .card {
     height: 40%;
     width: 24%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .photo-container {
@@ -165,9 +167,6 @@ h2 {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    overflow: hidden;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
 }
 
 .content-card .btn.light {
@@ -196,7 +195,6 @@ footer {
     height: 20vh;
     background-color: black;
     color: white;
-    /* padding: 15% 5px; */
 }
 
 .footer-container {
@@ -207,7 +205,6 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-
 
 .logo-footer {
     font-size: 25px;
