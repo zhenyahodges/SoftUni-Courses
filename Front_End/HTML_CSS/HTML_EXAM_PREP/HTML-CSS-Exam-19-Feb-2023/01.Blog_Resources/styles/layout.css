@@ -1,0 +1,83 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --text-clr: #62515b;
+    --bgr-clr: #f6e0b5;
+    --box-bgr: #66545e;
+}
+
+body {
+    background-color: var(--bgr-clr);
+    color: var(--text-clr);
+    font-family: "Open Sans", "Ariel";
+}
+
+.main-container {
+    width: 90%;
+    height: 80vh;
+    margin: 2% auto;
+    display: flex;
+    flex-flow: row;
+}
+
+.card-container {
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: start;
+    padding-right: 2%;
+}
+
+.card {
+    width: 46%;
+    height: 45%;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 6px 34px 13px rgba(0, 0, 0, 0.45);
+    margin: 2%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+}
+
+.card p {
+    background-color: var(--box-bgr);
+    color: white;
+    font-size: 30px;
+    padding: 0 0 0 2%;
+    width: 100%;
+    line-height: 2;
+}
+
+.text-container {
+    width: 30%;
+    height: 90%;
+    flex-flow: column wrap;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 2%;
+}
+
+.category-list li a,
+i {
+    color: var(--text-clr)
+}
+
+.fa-solid {
+    padding-right: 5%;
+}
+
+.category-list li {
+    padding-top: 5%;
+}

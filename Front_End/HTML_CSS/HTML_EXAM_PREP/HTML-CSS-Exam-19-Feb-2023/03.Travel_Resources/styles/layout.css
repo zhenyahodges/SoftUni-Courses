@@ -1,0 +1,230 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --btn-dark-clr: #370511;
+}
+
+body {
+    font-family: "Poppins", "sans-serif";
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* buttons */
+button {
+    width: 214px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn.dark {
+    background-color: var(--btn-dark-clr);
+    color: white;
+    padding: 1% 4%;
+
+}
+
+.btn.light {
+    background-color: white;
+    border: 1px solid #730a23;
+    padding: 4% 4%;
+}
+
+/* icons  */
+i {
+    color: white;
+    font-size: 20px;
+}
+
+/* ||HEADER */
+header {
+    height: 70vh;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.top-nav {
+    height: 10%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.top-nav-list {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.top-nav-list li a {
+    font-size: 16px;
+    color: black;
+    padding-left: 20px;
+}
+
+.top-nav .btn.dark {
+    margin-left: 60px;
+}
+
+/* hero content */
+.hero-content {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+
+h1 {
+    font-size: 60px;
+
+}
+
+.subtitle {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 7%;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+.hero-content .btn.dark {
+    margin-top: 7%;
+}
+
+/* ||MAIN */
+.places {
+    width: 80%;
+    height: 140vh;
+    margin: 0 auto;
+    padding-bottom: 05%;
+}
+
+.titles {
+    margin: 0 auto;
+    padding: 4% 0 2% 0;
+}
+
+h2 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.titles p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.gallery-container {
+    height: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4%;
+}
+
+.card {
+    height: 40%;
+    width: 24%;
+}
+
+.photo-container {
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.places-photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.content-card .btn.light {
+    margin-top: 5%;
+}
+
+.content-card {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.content-card h3 {
+    font-size: 24px;
+    padding: 4% 0;
+}
+
+.content-card p {
+    font-weight: 300;
+    padding-bottom: 4%;
+    font-size: 14px;
+}
+
+/* ||FOOTER */
+footer {
+    height: 20vh;
+    background-color: black;
+    color: white;
+    /* padding: 15% 5px; */
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo-footer {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+ul li {
+    line-height: 2;
+}
+
+.social {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.lis {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
