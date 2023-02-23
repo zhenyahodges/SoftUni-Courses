@@ -41,17 +41,16 @@ const Counter = (props) => {
     <div>
       {/* <h3>Counter: {counter}</h3> */}
       <h3>
-       <p style={{fontSize: (Math.max(counter,1))/2 + 'rem'}}>
-        {counter > 2 ? "Many" : getTitle(counter)}: {counter}
+        <p style={{ fontSize: Math.max(counter, 2) / 2 + "rem" }}>
+          {counter > 2 ? "Many" : getTitle(counter)}: {counter}
         </p>
       </h3>
-     
+
       <button onClick={decremCounter}>-</button>
-      
+
       {props.canReset && <button onClick={clearCounter}>Clear</button>}
-      
+
       {counter < 10 ? <button onClick={incremCounter}>+</button> : null}
-  
     </div>
   );
 };
