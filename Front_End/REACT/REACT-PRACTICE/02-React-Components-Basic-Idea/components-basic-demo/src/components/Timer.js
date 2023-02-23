@@ -1,15 +1,17 @@
-import React from 'react';
+// import React, { useState } from "react";
+import { useState } from "react";
 
 const Timer = (props) => {
-    const [seconds,setSeconds]=React.useState(props.start);
+//   const [seconds, setSeconds] = React.useState(props.start);
+  const [seconds, setSeconds] = useState(props.start);
 
-    console.log('seconds-' + seconds);
+  console.log("seconds-" + seconds);
 
-    setTimeout(() =>{
-        // setSeconds(seconds + 1)
-        // updater func
-        setSeconds((state)=>state++);
-;    },1000);
+  setTimeout(() => {
+    // setSeconds(seconds + 1)
+    // updater func
+    setSeconds((state) => state+1);
+  }, 1000);
 
   return <div>Time:{seconds}s</div>;
 };
