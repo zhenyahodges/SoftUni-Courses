@@ -11,7 +11,7 @@ return (
     <div className="App">
       <h1>React Demo</h1>
 
-      <Counter/>
+      <Counter canReset/>
 
       {/* <Timer start={5}/> */}
       <Timer start={0}/>
