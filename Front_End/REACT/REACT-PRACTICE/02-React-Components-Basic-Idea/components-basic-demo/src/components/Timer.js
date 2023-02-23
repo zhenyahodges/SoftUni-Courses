@@ -7,8 +7,10 @@ const Timer = (props) => {
 
   console.log("seconds-" + seconds);
 
+//  NB!!! NOT GOOD PRACTICE- useEffect is better
   setTimeout(() => {
     // setSeconds(seconds + 1)
+    
     // updater func
     setSeconds((state) => state+1);
   }, 1000);

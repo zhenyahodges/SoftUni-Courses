@@ -10,6 +10,8 @@ return (
     <div className="App">
       <h1>React Demo</h1>
       <Timer start={5}/>
+      <Timer start={0}/>
+      <Timer start={10}/>
       <MovieList movies={movies}/>
     </div>
   );
