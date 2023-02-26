@@ -1,36 +1,33 @@
 @import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
 
-:root{
-   --clr-gray-bgr: #303030 ;
-    --clr-border: #222222 ;
-    --clr-highlight: #e40914 ;
+:root {
+    --clr-gray-bgr: #303030;
+    --clr-border: #222222;
+    --clr-highlight: #e40914;
     --clr-text: white;
 }
 
-body{
-    font-family: Arial,Helvetica, "sans-serif";
+body {
+    font-family: Arial, Helvetica, "sans-serif";
     color: var(--clr-text);
-    background-color:var(--clr-gray-bgr);
-position: relative;
+    background-color: var(--clr-gray-bgr);
+    position: relative;
 }
-.btn{
+
+.btn {
     background-color: var(--clr-highlight);
     color: var(--clr-text);
     border-radius: 0.2rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.3rem 0.7rem;
     font-size: 0.8rem;
 }
-.btn.lrg{
+
+.btn.lrg {
     padding: 0.5rem 0.9rem;
 }
 
-.line{
-    height: 1.5vh;
-    background-color: transparent;
-}
-
 /* ||HEADER */
-header{
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,9 +43,9 @@ header{
 
 /* ||HERO */
 
-.hero{
+.hero {
     width: 100%;
-    height:70vh;
+    height: 100vh;
     position: relative;
     text-align: center;
     display: flex;
@@ -56,12 +53,13 @@ header{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 30% auto;;
+    padding: 30% auto;
 }
-.hero::before{
+
+.hero::before {
     content: "";
     width: 100%;
-    height:70vh;
+    height: 100vh;
     top: 0;
     left: 0;
     position: absolute;
@@ -71,72 +69,89 @@ header{
     z-index: 0;
 }
 
-.image-header-hero{
+.image-header-hero {
     position: absolute;
     width: 100%;
-    height:100%;
+    height: 100%;
     object-fit: cover;
-   z-index: -1;
+    z-index: -1;
 }
-.hero-content{
+
+.hero-content {
     width: 90%;
     z-index: 2;
 }
 
 .hero-content h1,
 .sub,
-.form-prompt,h2,h3{
-    padding-bottom: 3%;
+.form-prompt,
+h2,
+h3 {
+    padding-bottom: 0.2rem;
 }
 
-.hero-content h1{
+.hero-content h1 {
     font-size: 1.5rem;
 }
+
 .sub,
-.form-prompt{
+.form-prompt {
     font-size: 1rem;
 }
 
-.hero-form-input{
-    width:90%;
+.hero-form-input {
+    width: 90vw;
+    border: 1px solid gray;
     padding: 2%;
     font-size: 0.8rem;
     margin: 3% auto;
 }
 
-.offer-info{
-    padding-top: 3%;
+form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-info {
+    padding-top: 0.4rem;
     font-size: 0.8rem;
 }
 
 /* || MEDIA*/
-.media{
-    height:60vh;
+.media {
+    height: 60vh;
     background-color: black;
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 5%;
 }
 
-h2{
+.media,footer{
+    margin-top: 2%;
+}
+
+h2 {
     font-size: 1.3rem;
 }
-h3{
+
+h3 {
     font-size: 0.8rem;
     font-weight: 300;
 }
 
-.media img{
-    height: 50%;
-    width: auto;
+.media img {
+    width: 70%;
+    height: auto;
 }
 
 /* ||FAQ */
-.faq{
-    height:90vh;
+.faq {
+    height: 100vh;
     background-color: black;
     display: flex;
     flex-flow: column;
@@ -146,12 +161,16 @@ h3{
     padding: 0 4%;
 }
 
-.faq-list{
+.faq h2 {
+    padding-bottom: 1.5rem;
+}
+
+.faq-list {
     background-color: black;
     width: 100vw;
 }
 
-.faq-list li{
+.faq-list li {
     background-color: var(--clr-gray-bgr);
     border-bottom: 0.9rem solid black;
     width: 100%;
@@ -161,128 +180,174 @@ h3{
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-   margin: 0 auto;
+    margin: 0 auto;
 }
-.faq .form-prompt{
+
+.faq .form-prompt {
     padding-top: 3%;
 }
 
-i{
- font-size: 1.7rem;
+i {
+    font-size: 1.7rem;
 }
 
 /* ||FOOTER */
-footer{
-    height: 60vh;
+footer {
+    height: 70vh;
     background-color: black;
     color: rgb(183, 179, 179);
-    /* display: flex;
-    flex-flow: column  wrap; */
-   padding: 10%; 
+    padding: 10%;
 
 }
 
-.footer-nav{
-   /* padding: 10%;  */
-   height: 70%; 
-   /* display: flex;
-   flex-flow: column  wrap; */
+.footer-nav {
+
+    height: 70%;
+
 }
 
-h5{
+h5 {
     font-size: 0.8rem;
 }
 
-.footer-links-list{
-      display: flex;
-    flex-flow: row  wrap;
-    /* display: flex;
-    flex-flow: row wrap; */
+.footer-links-list {
+    display: flex;
+    flex-flow: row wrap;
 }
 
-.footer-links-list{
+.footer-links-list {
     font-size: 0.7rem;
     line-height: 2.5;
     gap: 37%;
     justify-content: start;
-    /* align-items: start;
-    text-align: left; */
     align-self: start;
 }
 
-footer p{
+footer p {
     font-size: 0.7rem;
     padding: 7% 0% 5% 0;
 }
 
-.footer-links-list li{
-    /* padding-right: 10%; */
+.footer-links-list li {
+
 }
 
 /* ||MEDIA QUERIES */
-/* @media all and (min-width: 943px){
-    .hero,.hero::before{
-        height: 70vh;
+@media all and (min-width:640px) {
+    .hero-form-input {
+        flex: 1 1 70%;
     }
 
-    .hero-content{
-        width: 60%;
-       
+    .btn.lrg {
+        flex: 0 1 30%;
+        padding: 0.8rem 0.9rem;
     }
 
-    .hero-content h1,
-    .sub,
-    .form-prompt,h2,h3{
-        padding-bottom: 1%;
+    form {
+        flex-flow: row wrap;
+        width: 80vw;
     }
 
-    .hero-content h1{
-        font-size: 2.7rem;
+    .media,
+    footer {
+        height: 100vh;
     }
-    .sub{
-        font-size: 1.4rem;
+
+    .media img {
+        padding-top: 2%;
+        width: 50%;
     }
-    .form-prompt{
+
+    .faq {
+        height: 140vh;
+    }
+
+    .faq-list {
+        width: 70vw;
+        margin: 0 auto;
+    }
+
+    .faq-form {
+        width: 70vw;
+    }
+
+    i {
+        font-size: 1.6rem;
+    }
+
+    .faq-list li {
         font-size: 1rem;
     }
 
-    .hero-form{
-        display: flex;
-        flex-flow: row;
+    .faq-form .btn.lrg {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .faq .form-prompt {
+        font-size: 0.8rem;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .btn {
+        padding: 0.4rem 0.9rem;
+        font-size: 1.2rem;
+    }
+
+    header {
+        height: 6rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .sub,
+    .form-prompt {
+        font-size: 1.9rem;
+    }
+
+    .offer-info {
+        font-size: 1.6rem;
+    }
+
+    form {
+        flex-flow: column wrap;
         justify-content: center;
         align-items: center;
     }
-    .btn.lrg{
-        width: 60%;
-        padding: 0.2rem 3%;
-        line-height: 2.8;
+
+    .media{
+        height: 90vh;
     }
 
-
-    .faq-list{
-        background-color: black;
-        width: 80vw;
+    .media img{
+        width: 90%;
     }
 
-    .faq-form{
-        width: 80vw;
+    h2{
+        font-size: 2.5rem;
     }
-    .faq-form .btn{
-        width: 45%;
+    h3{
+        font-size: 2rem;
     }
-    .faq-form input{
-        width: 100%;
+
+    .faq {
+        height: 100vh;
     }
-    .faq-form .btn{
-        line-height: 3.2;
+    .faq-form {
+        flex-flow: column;
+    }
+    .faq .form-prompt {
+        font-size: 1.2rem;
+    }
+
+    .btn{
+        border-radius: 0.2rem;
+    }
+
+    .hero-form-input {
+        width: 70vw;
     }
    
-} */
-
-/* @media all and (min-with-) { */
-    
-/* } */
-
-
-
-
+}
