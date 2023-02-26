@@ -100,7 +100,7 @@ h3 {
 }
 
 .hero-form-input {
-    width: 90vw;
+    /* width: 90vw; */
     border: 1px solid gray;
     padding: 2%;
     font-size: 0.8rem;
@@ -131,8 +131,10 @@ form {
     padding: 5%;
 }
 
-.media,footer{
-    margin-top: 2%;
+.media,
+.faq,
+footer {
+    margin-top: 1%;
 }
 
 h2 {
@@ -200,25 +202,22 @@ footer {
 
 }
 
-.footer-nav {
-
+/* .footer-nav {
     height: 70%;
-
-}
+} */
 
 h5 {
     font-size: 0.8rem;
 }
 
 .footer-links-list {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .footer-links-list {
     font-size: 0.7rem;
     line-height: 2.5;
-    gap: 37%;
     justify-content: start;
     align-self: start;
 }
@@ -228,9 +227,6 @@ footer p {
     padding: 7% 0% 5% 0;
 }
 
-.footer-links-list li {
-
-}
 
 /* ||MEDIA QUERIES */
 @media all and (min-width:640px) {
@@ -289,52 +285,73 @@ footer p {
 }
 
 @media all and (min-width: 768px) {
-    .btn {
-        padding: 0.4rem 0.9rem;
-        font-size: 1.2rem;
-    }
-
     header {
         height: 6rem;
     }
 
-    .hero-content h1 {
-        font-size: 2.8rem;
+    .hero,
+    .hero::before {
+        height: 50vh;
     }
 
-    .sub,
-    .form-prompt {
-        font-size: 1.9rem;
+    .hero-content {
+        width: 60%;
+        max-width: 1000px;
+
     }
 
-    .offer-info {
-        font-size: 1.6rem;
-    }
-
-    form {
-        flex-flow: column wrap;
+     .media {
+        height: 50vh;
+        display: flex;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
     }
 
-    .media{
-        height: 90vh;
+    .media-content {
+        width: 40%;
     }
 
-    .media img{
-        width: 90%;
+    .media img {
+        width: 60%;
+        max-width: 650px;     
     }
 
-    h2{
+    .media:nth-child(even) {
+        flex-flow: row-reverse;
+    }
+
+    .faq {
+        height: 53vh;
+    }
+
+    footer{
+        height: 45vh;
+        padding: 5% 10%;
+    }
+
+    .faq-list{
+        max-width: 840px;
+    }
+
+    .footer-links-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    form{
+        width: 100%;
+        max-width: 738px;
+        margin: 0 auto;
+    }
+
+    /* h2{ 
         font-size: 2.5rem;
     }
     h3{
         font-size: 2rem;
     }
 
-    .faq {
-        height: 100vh;
-    }
+   
     .faq-form {
         flex-flow: column;
     }
@@ -348,6 +365,7 @@ footer p {
 
     .hero-form-input {
         width: 70vw;
-    }
-   
+    }  */
 }
+
+/* @media all and (min-width:  ) */
