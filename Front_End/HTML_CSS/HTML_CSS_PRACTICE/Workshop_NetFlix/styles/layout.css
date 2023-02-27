@@ -42,7 +42,6 @@ header {
 }
 
 /* ||HERO */
-
 .hero {
     width: 100%;
     height: 100vh;
@@ -53,7 +52,7 @@ header {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 30% auto;
+    padding: 10%;
 }
 
 .hero::before {
@@ -79,6 +78,7 @@ header {
 
 .hero-content {
     width: 90%;
+    max-width: 700px;
     z-index: 2;
 }
 
@@ -99,19 +99,20 @@ h3 {
     font-size: 1rem;
 }
 
-.hero-form-input {
-    /* width: 90vw; */
-    border: 1px solid gray;
-    padding: 2%;
-    font-size: 0.8rem;
-    margin: 3% auto;
-}
-
 form {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.hero-form-input {
+    width: 100%;
+    border: 1px solid gray;
+    padding: 2%;
+    font-size: 0.8rem;
+    margin: 3% auto;
 }
 
 .offer-info {
@@ -123,12 +124,21 @@ form {
 .media {
     height: 60vh;
     background-color: black;
-    display: flex;
+    text-align: center;
+   /* display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: center; */
+}
+
+.media-wrapper {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 5%;
+    margin: 0% auto;
 }
 
 .media,
@@ -138,7 +148,7 @@ footer {
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 h3 {
@@ -147,8 +157,13 @@ h3 {
 }
 
 .media img {
-    width: 70%;
+    width: 75%;
     height: auto;
+}
+
+.media-content,
+.media img {
+    padding-top: 1rem;
 }
 
 /* ||FAQ */
@@ -202,10 +217,6 @@ footer {
 
 }
 
-/* .footer-nav {
-    height: 70%;
-} */
-
 h5 {
     font-size: 0.8rem;
 }
@@ -229,27 +240,54 @@ footer p {
 
 
 /* ||MEDIA QUERIES */
-@media all and (min-width:640px) {
-    .hero-form-input {
-        flex: 1 1 70%;
+@media all and (min-width:768px) {
+    /* .hero-form-input {
+        flex: 0 1 70%;
     }
 
     .btn.lrg {
         flex: 0 1 30%;
-        padding: 0.8rem 0.9rem;
+        padding: 0.7rem 0.9rem;
+    } */
+
+    .hero{
+        height: 60vh;
+    }
+    .hero::before {
+        height: 60vh;
     }
 
-    form {
-        flex-flow: row wrap;
-        width: 80vw;
+    .hero-title{
+        font-size: 3rem;
     }
+
+    /* form {
+        flex-flow: row wrap;
+    }  */
 
     .media,
     footer {
-        height: 100vh;
+        height: 40vh;
+    }
+
+    /* .media-wrapper{
+        flex-flow: row;
+    }
+
+    .media:nth-child(even){
+        flex-flow: row-reverse;
+    } */
+
+    .media-content{
+
     }
 
     .media img {
+        width: 50%;
+        height: auto;
+    }
+
+    /* .media img {
         padding-top: 2%;
         width: 50%;
     }
@@ -261,9 +299,9 @@ footer p {
     .faq-list {
         width: 70vw;
         margin: 0 auto;
-    }
+    } */
 
-    .faq-form {
+    /* .faq-form {
         width: 70vw;
     }
 
@@ -281,9 +319,9 @@ footer p {
 
     .faq .form-prompt {
         font-size: 0.8rem;
-    }
+    } */
 }
-
+/* 
 @media all and (min-width: 768px) {
     header {
         height: 6rem;
@@ -300,7 +338,7 @@ footer p {
 
     }
 
-     .media {
+    .media {
         height: 50vh;
         display: flex;
         flex-flow: row wrap;
@@ -314,7 +352,7 @@ footer p {
 
     .media img {
         width: 60%;
-        max-width: 650px;     
+        max-width: 650px;
     }
 
     .media:nth-child(even) {
@@ -325,12 +363,12 @@ footer p {
         height: 53vh;
     }
 
-    footer{
+    footer {
         height: 45vh;
         padding: 5% 10%;
     }
 
-    .faq-list{
+    .faq-list {
         max-width: 840px;
     }
 
@@ -338,34 +376,10 @@ footer p {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    form{
+    form {
         width: 100%;
         max-width: 738px;
         margin: 0 auto;
     }
 
-    /* h2{ 
-        font-size: 2.5rem;
-    }
-    h3{
-        font-size: 2rem;
-    }
-
-   
-    .faq-form {
-        flex-flow: column;
-    }
-    .faq .form-prompt {
-        font-size: 1.2rem;
-    }
-
-    .btn{
-        border-radius: 0.2rem;
-    }
-
-    .hero-form-input {
-        width: 70vw;
-    }  */
-}
-
-/* @media all and (min-width:  ) */
+} */
