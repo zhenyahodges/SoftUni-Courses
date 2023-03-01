@@ -32,9 +32,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     overflow: hidden;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +44,7 @@ header {
 /* ||HERO */
 .hero {
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     position: relative;
     text-align: center;
     display: flex;
@@ -58,7 +58,7 @@ header {
 .hero::before {
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     top: 0;
     left: 0;
     position: absolute;
@@ -82,7 +82,7 @@ header {
     z-index: 2;
 }
 
-.hero-content h1,
+.hero-title,
 .sub,
 .form-prompt,
 h2,
@@ -90,13 +90,13 @@ h3 {
     padding-bottom: 0.2rem;
 }
 
-.hero-content h1 {
+.hero-title {
     font-size: 1.5rem;
 }
 
 .sub,
 .form-prompt {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 form {
@@ -122,13 +122,9 @@ form {
 
 /* || MEDIA*/
 .media {
-    height: 60vh;
+    height: 55vh;
     background-color: black;
     text-align: center;
-   /* display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center; */
 }
 
 .media-wrapper {
@@ -168,7 +164,7 @@ h3 {
 
 /* ||FAQ */
 .faq {
-    height: 100vh;
+    height: 90vh;
     background-color: black;
     display: flex;
     flex-flow: column;
@@ -200,6 +196,10 @@ h3 {
     margin: 0 auto;
 }
 
+.faq form {
+    width: 90%
+}
+
 .faq .form-prompt {
     padding-top: 3%;
 }
@@ -210,10 +210,10 @@ i {
 
 /* ||FOOTER */
 footer {
-    height: 70vh;
+    height: 55vh;
     background-color: black;
     color: rgb(183, 179, 179);
-    padding: 10%;
+    padding: 5% 10%;
 
 }
 
@@ -239,147 +239,166 @@ footer p {
 }
 
 
-/* ||MEDIA QUERIES */
+/* || MEDIA QUERIES */
 @media all and (min-width:768px) {
-    /* .hero-form-input {
-        flex: 0 1 70%;
+
+    .hero-content .hero-title {
+        font-size: 2.2rem;
     }
 
-    .btn.lrg {
-        flex: 0 1 30%;
-        padding: 0.7rem 0.9rem;
-    } */
-
-    .hero{
-        height: 60vh;
-    }
-    .hero::before {
-        height: 60vh;
-    }
-
-    .hero-title{
-        font-size: 3rem;
-    }
-
-    /* form {
-        flex-flow: row wrap;
-    }  */
-
-    .media,
-    footer {
-        height: 40vh;
-    }
-
-    /* .media-wrapper{
-        flex-flow: row;
-    }
-
-    .media:nth-child(even){
-        flex-flow: row-reverse;
-    } */
-
-    .media-content{
-
+    .sub,
+    .form-prompt {
+        font-size: 1.4em;
     }
 
     .media img {
-        width: 50%;
+        max-width: 50%;
         height: auto;
     }
 
-    /* .media img {
-        padding-top: 2%;
-        width: 50%;
+    h2 {
+        font-size: 1.7rem;
     }
 
-    .faq {
-        height: 140vh;
+    h3 {
+        font-size: 1.4rem;
     }
 
-    .faq-list {
-        width: 70vw;
-        margin: 0 auto;
-    } */
-
-    /* .faq-form {
-        width: 70vw;
+    form {
+        flex-flow: row wrap;
+        gap: 0;
+        overflow: hidden;
     }
 
-    i {
-        font-size: 1.6rem;
+    .hero-form-input {
+        flex: 1 1 60%;
+        margin: 3% 0;
     }
 
-    .faq-list li {
+    .btn.lrg {
+        padding: 0.6rem 0.9rem;
+        flex: 1 1 40%;
+    }
+
+    .btn {
         font-size: 1rem;
     }
 
-    .faq-form .btn.lrg {
-        padding: 0.7rem 0.9rem;
+    h5 {
+        font-size: 1.2rem;
     }
 
-    .faq .form-prompt {
-        font-size: 0.8rem;
-    } */
+    footer {
+        height: 55vh;
+    }
+
+    .footer-links-list,
+    footer p {
+        font-size: 1rem;
+    }
+
+    .faq {
+        height: 70vh;
+    }
+
+    .faq-form {
+        width: 70%;
+    }
 }
-/* 
-@media all and (min-width: 768px) {
-    header {
-        height: 6rem;
+
+@media all and (min-width: 897px) {
+    .media {
+        height: 40vh;
     }
 
-    .hero,
-    .hero::before {
-        height: 50vh;
+    .media-wrapper {
+        flex-flow: row;
+        max-width: 1000px;
+    }
+
+    section.media:nth-of-type(odd) .media-wrapper {
+        display: flex;
+        flex-flow: row-reverse;
+    }
+
+    .media img {
+        height: auto;
+    }
+
+    .faq {
+        height: 60vh;
+    }
+
+    .faq-list {
+        width: 70%;
+        max-width: 700px;
     }
 
     .hero-content {
-        width: 60%;
-        max-width: 1000px;
+        width: 80%;
+    }
 
+    .faq .form-prompt {
+        font-size: 1rem;
+    }
+
+    .faq-form {
+        max-width: 700px;
+    }
+}
+
+@media all and (min-width: 1024px) and (orientation: landscape) {
+    .media {
+        height: 60vh;
+    }
+
+    .faq {
+        height: 80vh;
+    }
+
+    .faq .btn.lrg {
+        padding: 0.8rem 0.9rem;
+    }
+
+    footer {
+        height: 80vh;
+    }
+}
+
+@media all and (min-width: 1300px) {
+    footer {
+        height: 50vh;
+        padding: 2% 20%;
+    }
+
+    .footer-nav {
+        margin: 0% auto;
+    }
+
+    .footer-links-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .btn.btn.lrg {
+        padding: 0.8rem 0.9rem;
+    }
+
+    .media-wrapper {
+        max-width: 860px;
+    }
+
+    .faq {
+        height: 65vh;
     }
 
     .media {
         height: 50vh;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
     }
 
-    .media-content {
-        width: 40%;
-    }
 
     .media img {
-        width: 60%;
-        max-width: 650px;
+        max-width: 500px;
     }
 
-    .media:nth-child(even) {
-        flex-flow: row-reverse;
-    }
-
-    .faq {
-        height: 53vh;
-    }
-
-    footer {
-        height: 45vh;
-        padding: 5% 10%;
-    }
-
-    .faq-list {
-        max-width: 840px;
-    }
-
-    .footer-links-list {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    form {
-        width: 100%;
-        max-width: 738px;
-        margin: 0 auto;
-    }
-
-} */
+}
