@@ -32,6 +32,10 @@ margin: 0 auto;
 .footer.container{
     background-color: var(--clr-bgr);
     color: var(--clr-light);
+
+}
+
+.special-border{
     border-radius: 5px 25px;
 }
 
@@ -60,6 +64,7 @@ flex-flow: column;
 .subtitle-header{
     font-weight: 300;
 }
+
 .title-header{
     font-size: 2rem;
 }
@@ -81,15 +86,24 @@ flex-flow: column;
     color: var(--clr-bgr);
 }
 
-
-
 /*** || MAIN ***/
 main{
     height: 80vh;
 }
+
 .main.container{
     
 }
+
+
+
+
+
+
+
+
+
+
 /*** || FOOTER ***/
 footer{
     height: 5vh;
