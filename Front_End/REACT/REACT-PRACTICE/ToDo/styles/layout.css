@@ -1,0 +1,17 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+
+:root{
+   --clr-bgr: # ;
+    --clr-text: # ;
+    --clr-highlight: # ;
+}
+
+body{
+    
+}
+
+header,main,footer{
+width:100%;
+height:100%;
+margin: 0 auto;
+}
