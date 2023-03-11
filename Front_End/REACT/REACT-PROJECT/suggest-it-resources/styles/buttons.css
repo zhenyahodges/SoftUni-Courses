@@ -1,0 +1,42 @@
+/* ||BUTTONS start*/
+.btn {
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    box-shadow: 2px 2px 6px 1px #737778;
+}
+
+.btn.highlight {
+    /* color: var(--clr-bgr); */
+    color: var(--clr-light);
+    text-shadow: 1px 1px 1px #132930;
+    background-color: var(--clr-highlight);
+}
+
+.btn.highlight:hover {
+    background-color: var(--clr-light);
+    color: var(--clr-highlight);
+    text-shadow: 1px 1px 1px #4a5b60;
+}
+
+/* 
+.btn.light {
+    color: var(--clr-bgr);
+    background-color: var(--clr-light);
+}
+
+.btn.light:hover {
+    background-color: var(--clr-bgr);
+} */
+
+.btn.dark {
+    background-color: var(--clr-bgr);
+    color: var(--clr-light);
+    font-weight: 500;
+}
+
+.btn.dark:hover {
+    color: var(--clr-highlight);
+}
+/* buttons end */
