@@ -3,50 +3,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap'); */
 
-:root{
-    --clr-bgr: #00393A;
-    --clr-highlight: #C85315;
+:root {
+    /* --clr-bgr: #00393A; */
+    --clr-bgr: #132930;
+    /* --clr-highlight: #C85315; */
+    --clr-highlight: #F79234;
     --clr-light: #E6F4F1;
+    --txt-shadow: 1px 1px 1px #132930;
 }
 
-body{
-    font-family: "Inter","Arial", "sans-serif";
-    background-color: whitesmoke;
-    /* background-image: linear-gradient(to right bottom, #9ed8d8, #8ed5cb, #84d2b9, #81cda3, #86c78b);     */
-    letter-spacing: 0.4px;
+body {
+    font-family: "Inter", "Arial", "sans-serif";
+    /* background-color: #97AFB8; */
+    background-image: linear-gradient(to left top, #a6bec7, #a7cac6, #b7d2bd, #c5c6a8, #f9d8b9);
+    /* background-image: linear-gradient(to right bottom, #a6bec7, #a7cac6, #b7d2bd, #d6d7b5, #f9d8b9); */
+    letter-spacing: 0.6px;
 }
 
-header,main,footer{
-width:100%;
-height:100%;
-margin: 0 auto;
+.suggestit-brand {
+    color: var(--clr-light);
 }
 
-.container{
-    width: 80%;
+
+
+.page.header,
+.page.main,
+.page.footer {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    /* width: 80%; */
+    width: 100%;
     max-width: 1300px;
     margin: 0 auto;
     height: 100%;
+    min-width: 379px;
 }
 
 .header.container,
-.footer.container{
+.footer.container {
     background-color: var(--clr-bgr);
     color: var(--clr-light);
-
 }
 
-.special-border{
+.special-border {
     /* border-radius: 5px 25px; */
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 /*****|| HEADER *****/
-header{
+.page.header {
     height: 10vh;
 }
 
-.header.container{
+.header.container {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -54,55 +67,192 @@ header{
     padding: 0 1.5rem;
 }
 
-.header-wrapper{
-display: flex;
-flex-flow: column;
+.header-wrapper {
+    display: flex;
+    flex-flow: column;
 }
 
-.brand{
+.suggest-it {
     color: var(--clr-highlight);
 }
 
-.subtitle-header{
+.subtitle-header {
     font-weight: 300;
 }
 
-.title-header{
+.title-header {
     font-size: 1.2rem;
 }
-.subtitle-header{
+
+.subtitle-header {
     font-size: 0.8rem;
 }
 
-.nav.header{
+.nav.header {
     color: var(--clr-light);
     padding: 0.5rem 0.7rem;
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
-.nav.header.list a{
+.nav.header.list a {
     text-align: center;
 }
 
-.nav.header.list a:hover{   
+.nav.header.list a:hover {
     background-color: var(--clr-highlight);
     /* background-color: var(--clr-light); */
     color: var(--clr-light);
     /* color: var(--clr-bgr); */
     border-radius: 5px;
-
+    /* text-shadow: 2px 2px 1px #132930; */
+    text-shadow: 1px 1px 1px #132930;
 }
 
 /*** || MAIN ***/
-main{
-    height: 80vh;
+.page.main {
+    height: auto;
+    min-height: 85vh;
 }
 
-.main.container{
-    
+/* .hero{
+height: 50%;
+overflow: hidden;
+
+} */
+
+/* .hero-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+} */
+/* .hero-image::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgb(0,0,0);
+    opacity: 0.4;
+    z-index: 5;
+
+} */
+/* .hero-title{
+    z-index: 10;
+    position: absolute;
+    top:10%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-light);
+} */
+
+
+.main.container {
+    padding: 1rem;
+    text-align: center;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1rem 0;
+}
+
+h3 {
+    /* font-weight: 300; */
+    padding-bottom: 1rem;
+}
+
+.sub-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.btns-wrapper-main {
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* || SAMPLES SECTION */
+.sample.content {
+    padding: 3rem 0 1rem 0;
+}
+
+.samples.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 300px;
+    border-radius: 5px;
+    border: 2px solid var(--clr-bgr);
+}
+
+.samples-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+/* || CATALOG */
+.catalog.window {
+    display: none;
+}
+
+.sugg.list.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.sugg-item-wrapper {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+.card-brand-logo{
+    background-color: var(--clr-bgr);
+    width:100%
+}
+.logo-line{
+    font-size: 1rem;
 }
 
 
+.rank {
+    padding-right: 5px;
+}
+
+/* .rank.highest{
+    font-weight: 800;
+}
+.rank.lowest{
+    font-weight: 200;
+} */
+
+/* add functionality for decreasing font weight with 
+lower likes? or bar */
+
+/* add time limit for suggs */
+
+/* add color preferences */
+
+/* add limit num of suggs? -diminishing*/
 
 
 
@@ -112,14 +262,13 @@ main{
 
 
 /*** || FOOTER ***/
-footer{
+.page.footer {
     height: 5vh;
 }
-.footer.container{
+
+.footer.container {
     text-align: center;
     padding: 1rem 0;
     font-weight: 200;
     font-size: 12px;
 }
-
-

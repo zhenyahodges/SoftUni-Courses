@@ -1,54 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SuggestIt</title>
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/layout.css" />
-  </head>
-  <body>
-    <!-- || HEADER -->
-    <header>
-      <section class="header container special-border">
-        <div class="header-wrapper">
-          <h1 class="title-header">Suggest<span class="brand">It</span></h1>
-          <p class="subtitle-header">Suggestion polls for improvements</p>
-          <p></p>
-        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SuggestIt</title>
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/layout.css" />
+    </head>
+    <body>
+        <!-- || HEADER -->
+        <header class="page header">
+            <section class="header container special-border">
+                <div class="header-wrapper">
+                    <h1 class="title-header">
+                        Suggest<span class="suggest-it">It</span>
+                    </h1>
+                    <p class="subtitle-header">
+                        Suggestion polls for improvements
+                    </p>
+                    <p></p>
+                </div>
 
-        <!-- ||HEADER NAV -->
-        <nav class="nav header">
-          <ul class="nav header list">
-            <a href="#" class="nav header list links">Home</a>
-            <a href="/catalog" class="nav header list links">Catalog</a>
-            <a href="/login" class="nav header list links">Login</a>
-            <a href="/register" class="nav header list links">Register</a>
-            <!-- <a href="/about" class="nav header list links">About</a> -->
-            <!-- <a href="/contact" class="nav header list links">Contact</a> -->
-          </ul>
-        </nav>
-      </section>
-    </header>
+                <!-- ||HEADER NAV -->
+                <nav class="nav header">
+                    <ul class="nav header list">
+                        <a href="#" class="nav header list links">Home</a>
+                        <a href="#" class="nav header list links">Catalog</a>
+                        <a href="#" class="nav header list links">Login</a>
+                        <a href="#" class="nav header list links">Register</a>
+                        <!-- <a href="/about" class="nav header list links">About</a> -->
+                        <!-- <a href="/contact" class="nav header list links">Contact</a> -->
+                    </ul>
+                </nav>
+            </section>
+        </header>
 
-    <!-- || MAIN -->
-    <main>
-      <section class="main container">
-        <section class="public main content">
-          <section class="main content sample">
-            <!-- sample -->
-          </section>
-        </section>
-        <section class="loggedin main content"></section>
-      </section>
-    </main>
+        <!-- || MAIN -->
+        <main class="page main">
+            <!-- <section class="hero container">
+        <img src="./images/david-vierkotter-HkM6gUe6CiU-unsplash.jpg" alt="mountain-top" class="hero-image">
+        
+      </section> -->
 
-    <!-- || FOOTER -->
-    <footer>
-      <section class="footer container special-border">
-        <p>Copyright &copy 2023 Suggest<span class="brand">It</span> All rights reserved</p>
-      </section>
-    </footer>
-  </body>
+            <section class="page main container">
+                <!-- WELCOME -->
+                <section class="welcome window">
+                    <h2 class="main-title">
+                        Suggestions for Continuous Improvements
+                    </h2>
+                    <div class="sub-wrapper">
+                        <h3 class="maiin-subtitle">
+                            Do you want an easy and efficient way to get direct
+                            feedback and ideas for imrovements from your
+                            customers and employees?
+                        </h3>
+                        <p class="main-subtext">
+                            We offer a user-friendly interface for suggestions
+                            which ranks them by popularity
+                        </p>
+                    </div>
+                    <button class="btn highlight register">Register</button>
+
+                    <!-- SAMPLE  -->
+                    <section class="sample content">
+                        <h4 class="samples-title">Sample</h4>
+                        <div class="samples wrapper">
+                            <article class="sugg-card sample">
+                                <header
+                                    class="card-header card-brand-logo suggestit-brand"
+                                >
+                                    <h5 class="brand logo-line">
+                                        Suggest<span class="suggest-it"
+                                            >It</span
+                                        >
+                                    </h5>
+                                </header>
+
+                                <main class="card-main sugg-list-wrapper">
+                                    <ul class="sugg-list" role="list">
+                                        <!-- LIST items start -->
+
+                                        <!-- li start -->
+                                        <li class="sugg-item">
+                                            <div class="sugg-item-wrapper">
+                                                <p class="sugg-text">
+                                                    Lorem ipsum dolor sit, amet
+                                                    consectetur adipisicing.
+                                                </p>
+                                                <p class="sugg-ranking">
+                                                    <span class="rank">15</span
+                                                    ><a class="sugg-like-link"
+                                                        ><i
+                                                            class="like fa-solid fa-heart"
+                                                        ></i
+                                                    ></a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <!-- li end-->
+
+                                        <!-- li start -->
+                                        <li class="sugg item">
+                                            <div class="sugg-item-wrapper">
+                                                <p class="sugg-text">
+                                                    Lorem ipsum dolor sit, amet
+                                                    consectetur adipisicing.
+                                                </p>
+                                                <p class="sugg-ranking">
+                                                    <span class="rank">10</span
+                                                    ><a class="sugg-like-link"
+                                                        ><i
+                                                            class="like fa-solid fa-heart"
+                                                        ></i
+                                                    ></a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <!-- li end-->
+
+                                        <!-- li start -->
+                                        <li class="sugg item">
+                                            <div class="sugg-item-wrapper">
+                                                <p class="sugg-text">
+                                                    Lorem ipsum dolor sit, amet
+                                                    consectetur adipisicing.
+                                                </p>
+                                                <p class="sugg-ranking">
+                                                    <span class="rank">5</span
+                                                    ><a class="sugg-like-link"
+                                                        ><i
+                                                            class="like fa-solid fa-heart"
+                                                        ></i
+                                                    ></a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <!-- li end-->
+
+                                        <!--  LISTitems -->
+                                    </ul>
+                                </main>
+
+                                <footer class="card-footer suggs-card foot">
+                                    Thank you for your contributions!
+                                </footer>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+                <!-- SAMPLE -->
+                <div class="more">
+                  <p class=more-text">Click here to view more examples</p>
+                  <button class="btn dark catalog">Catalog</button>
+                </div>
+
+                <!-- PUBLIC CATALOG -->
+                <section class="catalog window">
+                    <h2 class="catalog title">Catalog</h2>
+                </section>
+            </section>
+
+            <!-- LOGGED -->
+            <section class="logged window"></section>
+            <!-- LOGGED CATALOG -->
+            <section class="public window"></section>
+            <!-- DETAILS -->
+            <!-- REGISTER -->
+            <!-- POST -->
+            <!-- EDIT -->
+            <!-- DELETE -->
+            <!-- </section> -->
+        </main>
+
+        <!-- || FOOTER -->
+        <footer class="page footer">
+            <section class="page footer container special-border">
+                <p>
+                    Copyright &copy 2023 Suggest<span class="suggest-it"
+                        >It</span
+                    >
+                    All rights reserved
+                </p>
+            </section>
+        </footer>
+    </body>
 </html>
