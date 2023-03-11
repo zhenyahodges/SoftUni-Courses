@@ -24,7 +24,33 @@ body {
     color: var(--clr-light);
 }
 
+/* ||BUTTONS start*/
+.btn {
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
 
+.btn.highlight {
+    color: var(--clr-bgr);
+}
+
+.btn.highlight:hover {
+    background-color: var(--clr-highlight);
+}
+
+.btn.dark {
+    background-color: var(--clr-bgr);
+    color: var(--clr-light);
+    font-weight: 500;
+}
+
+.btn.dark:hover {
+    color: var(--clr-highlight);
+}
+
+/* buttons end */
 
 .page.header,
 .page.main,
@@ -245,7 +271,7 @@ article {
     font-weight: 200;
 } */
 
-/* add functionality for decreasing font weight with 
+/* add functionality for increasing font weight and size with 
 lower likes? or bar */
 
 /* add time limit for suggs */
