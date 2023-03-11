@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SuggestIt</title>
         <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="import" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+        <link rel="import" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
         <link rel="stylesheet" href="./styles/layout.css" />
+        <link rel="stylesheet" href="./styles/card.css">
+        <link rel="stylesheet" href="./styles/catalog.css">
     </head>
     <body>
         <!-- || HEADER -->
@@ -67,12 +71,16 @@
                         <h4 class="samples-title">Sample</h4>
 
                         <div class="samples wrapper">
-
-                          <!-- CARD START -->
+                          
+                            <!-- CARD START -->
                             <article class="sugg-card sample">
-                                <header class="card-header card-brand-logo suggestit-brand">
+                                <header
+                                    class="card-header card-brand-logo suggestit-brand"
+                                >
                                     <h5 class="brand logo-line">
-                                        Suggest<span class="suggest-it">It</span>
+                                        Suggest<span class="suggest-it"
+                                            >It</span
+                                        >
                                     </h5>
                                 </header>
 
@@ -100,7 +108,7 @@
                                         <!-- li end-->
 
                                         <!-- li start -->
-                                        <li class="sugg item">
+                                        <li class="sugg-item">
                                             <div class="sugg-item-wrapper">
                                                 <p class="sugg-text">
                                                     Lorem ipsum dolor sit, amet
@@ -119,7 +127,7 @@
                                         <!-- li end-->
 
                                         <!-- li start -->
-                                        <li class="sugg item">
+                                        <li class="sugg-item">
                                             <div class="sugg-item-wrapper">
                                                 <p class="sugg-text">
                                                     Lorem ipsum dolor sit, amet
@@ -142,19 +150,19 @@
                                 </main>
 
                                 <footer class="card-footer suggs-card foot">
-                                    <p class="card-footer-text">Thank you for your contributions!</p>
+                                    <p class="card-footer-text">
+                                        Thank you for your contributions!
+                                    </p>
                                 </footer>
                             </article>
-                             <!-- CARD END -->
-
+                            <!-- CARD END -->
                         </div>
                     </section>
+
+                    <div class="more">                    
+                        <button class="btn dark catalog">Catalog</button>
+                    </div>
                 </section>
-                <!-- SAMPLE -->
-                <div class="more">
-                  <p class=more-text">Click here to view more examples</p>
-                  <button class="btn dark catalog">Catalog</button>
-                </div>
 
                 <!-- PUBLIC CATALOG -->
                 <section class="catalog window">
