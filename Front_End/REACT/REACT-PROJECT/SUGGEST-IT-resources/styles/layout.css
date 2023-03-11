@@ -211,6 +211,13 @@ h3 {
     padding: 3rem 0 1rem 0;
 }
 
+.samples-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
 .samples.wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -218,6 +225,7 @@ h3 {
     align-items: center;
 }
 
+/* || ***Card */
 article {
     display: flex;
     flex-flow: column wrap;
@@ -228,19 +236,18 @@ article {
     border: 2px solid var(--clr-bgr);
 }
 
-.samples-title {
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding-bottom: 1rem;
+/* ***Card Header */
+.card-brand-logo {
+    background-color: var(--clr-bgr);
+    width: 100%
 }
 
-/* || CATALOG */
-.catalog.window {
-    display: none;
+.logo-line {
+    font-size: 1rem;
 }
 
-.sugg.list.wrapper {
+/* *** Card Main */
+.sugg.list {
     display: flex;
     flex-flow: column wrap;
 }
@@ -248,21 +255,66 @@ article {
 .sugg-item-wrapper {
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
-.card-brand-logo{
-    background-color: var(--clr-bgr);
-    width:100%
-}
-.logo-line{
-    font-size: 1rem;
-}
 
+.sugg-text {}
 
 .rank {
-    padding-right: 5px;
+    padding: 0 0 0 0.5rem;
 }
+
+/* icons */
+.like {
+    padding: 5px;
+}
+
+.like:hover {
+    color:
+}
+
+/* icons end */
+
+/* *** Card Footer */
+.card-footer {
+    background-color: var(--clr-bgr);
+    color: var(--clr-light);
+    width: 100%;
+    padding: 5px 0;
+}
+
+.card-footer-text {
+    font-weight: 200;
+    font-style: italic;
+    font-size: 0.7rem;
+}
+
+
+/* || CATALOG */
+/* || PUBLIC CATALOG */
+/* || PRIVATE CATALOG */
+
+/*  */
+.catalog.window {
+    display: none;
+}
+
+/* || PROFILE-LOGGED-COMPANY */
+/* || PROFILE-LOGGED-USER */
+
+/* || LOGIN + REGISTER */
+/* || LOGIN */
+/* || REGISTER */
+
+/* || EDIT */
+/* || DELETE */
+
+/* || DETAILS */
+
+
+
+
 
 /* .rank.highest{
     font-weight: 800;
@@ -271,20 +323,14 @@ article {
     font-weight: 200;
 } */
 
+/* ================== */
 /* add functionality for increasing font weight and size with 
 lower likes? or bar */
-
+/* limit text length */
 /* add time limit for suggs */
-
 /* add color preferences */
-
 /* add limit num of suggs? -diminishing*/
-
-
-
-
-
-
+/* =========== */
 
 
 /*** || FOOTER ***/
