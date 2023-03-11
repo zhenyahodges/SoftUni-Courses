@@ -1,19 +1,27 @@
-import Movie from "./Movie";
+import React from 'react';
+// import { createElement } from 'react';
+import Movie from './Movie';
 
+export default function MovieList({ movies }) {
+    // const movieElements=[];
+    // for(const movie of movies){
+    //     // movieElements.push(React.createElement(Movie,movie));
+    //     movieElements.push(<li><Movie {...movie}/></li>);
+    // }
 
-export default function MovieList({
-    movies,
-}){
+    // s promenliva
+    // let movieList = movies.map((movie) => (
+    //     <li><Movie {...movie} /></li>
+    // ));
 
-    const firstMovie=movies[0]
-
-    return (
-        <Movie
-        title={firstMovie.title}
-        year= {firstMovie.year}
-        plot={firstMovie.plot}
-        posterUrl={firstMovie.posterUrl}
-        director={firstMovie.director}
-        />
-    );
-};
+    return [
+        <ul>
+            {/* map/for each etc+key always ! */}
+            {movies.map((movie) => (
+                <li key={movie.id}>
+                    <Movie  {...movie} />                    
+                </li>
+            ))}
+        </ul>,
+    ];
+}
