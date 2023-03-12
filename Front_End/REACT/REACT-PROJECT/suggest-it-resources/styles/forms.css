@@ -79,7 +79,7 @@ textarea {
 
 /* ***|| LOGIN */
 .login.form-wrapper {
-    /* display: none; */
+    display: none;
     min-height: 40vh;
 }
 
