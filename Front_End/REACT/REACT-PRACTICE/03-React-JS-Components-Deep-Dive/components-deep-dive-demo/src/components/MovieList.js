@@ -6,6 +6,7 @@ export default function MovieList({
     // destructuring the *props* obj:
     movies,
     onMovieDelete,
+    onMovieSelect,
  }) {
     // const movieElements=[];
     // for(const movie of movies){
@@ -17,14 +18,17 @@ export default function MovieList({
     // let movieList = movies.map((movie) => (
     //     <li><Movie {...movie} /></li>
     // ));
-    
+
     
     // !!!!!!!!! map/for each etc+key always !!!!!!!!!!
     return [
         <ul>
             {movies.map((movie) => (
                 <li key={movie.id}>
-                    <Movie  {...movie} onMovieDelete={onMovieDelete}/>                    
+                    <Movie  {...movie}
+                    onMovieDelete={onMovieDelete}
+                    onMovieSelect={onMovieSelect}
+                    />                    
                 </li>
             ))}
         </ul>,
