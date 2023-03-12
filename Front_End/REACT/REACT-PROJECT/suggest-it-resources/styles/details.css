@@ -1,6 +1,6 @@
 /* DETAILS */
 .details-view.container {
-    display: none;
+    /* display: none; */
     min-width: 364px;
 }
 
@@ -10,7 +10,7 @@
     /* width: 100%; */
 }
 
-/* add aricle to details...?!  */
+/* add article to details...?!  */
 
 
 /*** Details CARD special */
