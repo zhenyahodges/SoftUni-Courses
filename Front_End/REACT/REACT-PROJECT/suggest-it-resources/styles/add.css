@@ -4,13 +4,13 @@
 /* if not-regiter */
 
 .add-sugg-wrapper {
-  /* display: none; */
+  display: none;
 }
 
 /* form */
 .add-sugg-wrapper {
   height: 40vh;
-  width: 50%;
+  width: 60%;
   box-shadow: 5px 5px 17px 0px #688589;
   border-radius: 10px;
   margin: 0 auto;
@@ -22,4 +22,11 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+textarea{
+  border: none;
+  width: 100%;
 }

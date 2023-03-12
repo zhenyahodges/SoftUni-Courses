@@ -1054,13 +1054,30 @@
 
                 <!--*** ADD/POST -->
                 <section class="add-sugg-wrapper">
-                  <!-- ?with or without li? -->
-                  <form action="submit" method="post" class="add-sugg form">
-                    <h2>Add a Suggestion</h2>
-                    <p><label for="sugg">Your Suggestion:</label></p>
-                    <textarea id="sugg" name="sugg" rows="2" cols="50"></textarea>
-                    <button type="submit" value="submit" class="btn dark">Submit</input>                 
-                  </form>
+                    <!-- ?with or without li? -->
+                    <form action="submit" id="add-form" class="add-sugg form">
+                        <h2>Add a Suggestion</h2>
+                        <p><label for="sugg">Your Suggestion:</label></p>
+                        <textarea
+                            id="sugg"
+                            form="add-form"
+                            name="sugg"
+                            rows="4"
+                            cols="50"
+                            maxlength="150"
+                            required
+                        >
+                    </textarea>
+                        <button
+                            type="submit"
+                            method="post"
+                            value="submit"
+                            class="btn dark subm"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                    
 
                     <!-- <div class="sugg-item-wrapper">
                         <p class="sugg-text" placeholder="Suggestion">
@@ -1078,18 +1095,65 @@
                             ></a>
                         </p>
                     </div> -->
-
-               
                 </section>
                 <!-- END ADD POST -->
+
+                <!-- REGISTER -->
+                <section class="register wrapper">
+                    <h2>Register</h2>
+                    <form action="submit" method="post" class="register form">
+                        <div class="wrap fname">
+                            <label for="fname" class="reg lbl fname"
+                                >First Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry fname"
+                                name="fname"
+                            />
+                        </div>
+                        <div class="wrap lname">
+                            <label for="lname" class="reg lbl lname"
+                                >Last Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry lname"
+                                name="lname"
+                            />
+                        </div>
+                        <div class="wrap email">
+                            <label for="email" class="reg lbl email"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                class="reg entry email"
+                                name="email"
+                            />
+                        </div>
+                        <div class="wrap code">
+                            <label for="" class="reg lbl code">Code</label>
+                            <input type="text" class="reg entry code" name="" />
+                        </div>
+
+                        <button
+                            type="submit"
+                            method="post"
+                            value="submit"
+                            class="btn dark subm"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </section>
             </section>
+            <!-- end main section -->
 
             <!-- LOGGED -->
             <section class="logged window"></section>
             <!-- LOGGED CATALOG -->
             <section class="public window"></section>
-
-            <!-- REGISTER -->
 
             <!-- EDIT -->
             <!-- DELETE -->

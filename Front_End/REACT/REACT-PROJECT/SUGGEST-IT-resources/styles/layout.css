@@ -2,7 +2,7 @@
 @import url("./catalog.css");
 @import url("./details.css");
 @import url("./add.css");
-
+@import url("./register.css");
 
 :root {
     --clr-bgr: #132930;
