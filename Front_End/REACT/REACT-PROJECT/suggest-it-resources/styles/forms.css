@@ -69,13 +69,13 @@ textarea {
 
 /* ***|| REGISTER */
 .register.form-wrapper {
-    /* display: none; */
+    display: none;
     min-height: 50vh;
 }
 
 /* ***|| LOGIN */
 .login.form-wrapper {
-    /* display: none; */
+    display: none;
     min-height: 40vh;
 }
 
