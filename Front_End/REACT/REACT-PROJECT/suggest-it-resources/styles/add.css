@@ -30,3 +30,7 @@ textarea{
   border: none;
   width: 100%;
 }
+
+.add.sugg.author{
+  display: none;
+}

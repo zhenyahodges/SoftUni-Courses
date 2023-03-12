@@ -1055,7 +1055,12 @@
                 <!--*** ADD/POST -->
                 <section class="add-sugg-wrapper">
                     <!-- ?with or without li? -->
-                    <form action="submit" method="post" id="add-form" class="add-sugg form">
+                    <form
+                        action="submit"
+                        method="post"
+                        id="add-form"
+                        class="add-sugg form"
+                    >
                         <h2>Add a Suggestion</h2>
                         <p><label for="sugg">Your Suggestion:</label></p>
                         <textarea
@@ -1067,7 +1072,10 @@
                             maxlength="150"
                             required
                         >
-                    </textarea>
+                        </textarea>
+                        <span class="add sugg author" id="add-sugg-author">
+                            Me
+                        </span>
                         <button
                             type="submit"
                             method="post"
@@ -1077,11 +1085,10 @@
                             Submit
                         </button>
                     </form>
-                    
 
                     <!-- <div class="sugg-item-wrapper">
                         <p class="sugg-text" placeholder="Suggestion">
-                            <span class="author-nickname">
+                            <span class="author">
                                 Me
                             </span>
                             Another suggestion for you
@@ -1101,7 +1108,12 @@
                 <!-- REGISTER -->
                 <section class="register wrapper">
                     <h2>Register</h2>
-                    <form action="submit" method="post" id="reg-form" class="register form">
+                    <form
+                        action="submit"
+                        method="post"
+                        id="reg-form"
+                        class="register form"
+                    >
                         <div class="wrap fname">
                             <label for="fname" class="reg lbl fname"
                                 >First Name</label
@@ -1159,7 +1171,7 @@
                         </div>
                         <!-- <div class="wrap code">
                             <label for="" class="reg lbl code">Code</label>
-                            <input type="text" class="reg entry code" name="" />
+                            <input type="text" class="reg entry code" name="reg entry code" id="reg-entry-code" />
                         </div> -->
 
                         <button
@@ -1168,6 +1180,89 @@
                             value="submit"
                             class="btn dark subm"
                             form="reg-form"
+                            id="btn-reg-form"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </section>
+
+                <!-- LOGIN -->
+                <section class="register wrapper">
+                    <h2>Register</h2>
+                    <form
+                        action="submit"
+                        method="post"
+                        id="reg-form"
+                        class="register form"
+                    >
+                        <div class="wrap fname">
+                            <label for="fname" class="reg lbl fname"
+                                >First Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry fname"
+                                name="fname"
+                                id="fname"
+                            />
+                        </div>
+                        <div class="wrap lname">
+                            <label for="lname" class="reg lbl lname"
+                                >Last Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry lname"
+                                name="lname"
+                                id="lname"
+                            />
+                        </div>
+                        <div class="wrap email">
+                            <label for="email" class="reg lbl email"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                class="reg entry email"
+                                name="email"
+                                id="email"
+                            />
+                        </div>
+                        <div class="wrap pass">
+                            <label for="pass" class="reg lbl pass"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="reg entry pass"
+                                name="pass"
+                                id="pass"
+                            />
+                        </div>
+                        <div class="wrap repass">
+                            <label for="repass" class="reg lbl repass"
+                                >Confirm Password</label
+                            >
+                            <input
+                                type="password"
+                                class="reg entry repass"
+                                name="repass"
+                                id="repass"
+                            />
+                        </div>
+                        <!-- <div class="wrap code">
+                            <label for="" class="reg lbl code">Code</label>
+                            <input type="text" class="reg entry code" name="reg entry code" id="reg-entry-code" />
+                        </div> -->
+
+                        <button
+                            type="submit"
+                            method="post"
+                            value="submit"
+                            class="btn dark subm"
+                            form="reg-form"
+                            id="btn-reg-form"
                         >
                             Submit
                         </button>
