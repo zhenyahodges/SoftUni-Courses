@@ -1,6 +1,6 @@
 /* DETAILS */
 .details-view.container {
-    /* display: none; */
+    display: none;
     min-width: 364px;
 }
 

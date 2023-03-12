@@ -16,6 +16,10 @@
     gap: 1rem;
 }
 
+form button{
+    margin-top: 1rem;
+}
+
 /* input and label container */
 .wrap {
     width: 100%;
@@ -75,7 +79,7 @@ textarea {
 
 /* ***|| LOGIN */
 .login.form-wrapper {
-    display: none;
+    /* display: none; */
     min-height: 40vh;
 }
 
