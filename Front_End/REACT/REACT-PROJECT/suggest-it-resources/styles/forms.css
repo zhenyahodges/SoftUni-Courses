@@ -6,23 +6,22 @@
     width: 60%;
 }
 
-.form{
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        gap: 1rem;
+.form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
 /* input and label container */
 .wrap {
     width: 100%;
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 5%;
 }
 
 /* ADD/POST  */
@@ -49,11 +48,6 @@ textarea {
 }
 
 /* || REGISTER && LOGIN */
-.register.form-wrapper,
-.login.form-wrapper {
-    height: 50vh;
-}
-
 .register.form,
 .login.form {
     width: 90%;
@@ -73,11 +67,17 @@ textarea {
 }
 
 /* || REGISTER */
-.register.form-wrapper{
-    display: none;
+.register.form-wrapper {
+    /* display: none; */
+    height: 50vh;
 }
 
 /* || LOGIN */
 .login.form-wrapper {
     /* display: none; */
+    height: 40vh;
+}
+
+.login.form-wrapper .login .form {
+    gap: 1rem
 }
