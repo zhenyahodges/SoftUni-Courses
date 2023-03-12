@@ -1,66 +1,22 @@
-/* ADD/POST  */
-
-/* if logged in */
-/* if not-regiter */
-
-.add-sugg-wrapper {
-    display: none;
-  }
-  
-  /* form */
-  .add-sugg-wrapper {
-    height: 40vh;
-    width: 60%;
+/* || FROMS CSS */
+.form-wrapper {
     box-shadow: 5px 5px 17px 0px #688589;
     border-radius: 10px;
     margin: 0 auto;
-  }
-  
-  .add-sugg.form {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  textarea{
-    border: none;
-    width: 100%;
-  }
-  
-  .add.sugg.author{
-    display: none;
-  }
-
-  /* || LOGIN + REGISTER */
-
-  /* || REGISTER */
-
-  /* form */
-.register.wrapper {
-    /* display: none; */
-    height: 50vh;
     width: 60%;
-    box-shadow: 5px 5px 17px 0px #688589;
-    border-radius: 10px;
-    margin: 0 auto;
 }
 
-.register.form {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    width: 90%;
-    margin: 0 auto;
-    padding: 2rem;
+.form{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        gap: 1rem;
 }
 
-.register .wrap {
+/* input and label container */
+.wrap {
     width: 100%;
     display: flex;
     flex-flow: row;
@@ -69,14 +25,59 @@
     gap: 5%;
 }
 
-.reg.lbl {
+/* ADD/POST  */
+
+/* if logged in */
+/* if not-register */
+
+.add-sugg.form-wrapper {
+    display: none;
+    height: 40vh;
+}
+
+.add-sugg.form {
+    width: 80%;
+}
+
+textarea {
+    border: none;
+    width: 100%;
+}
+
+.add.sugg.author {
+    display: none;
+}
+
+/* || REGISTER && LOGIN */
+.register.form-wrapper,
+.login.form-wrapper {
+    height: 50vh;
+}
+
+.register.form,
+.login.form {
+    width: 90%;
+    padding: 2rem;
+}
+
+.reg.lbl,
+.log.lbl {
     flex: 1 0 30%;
     text-align: left;
     font-size: 1.2rem;
 }
 
-.reg.entry {
+.reg.entry,
+.log.entry {
     flex: 1 0 60%;
 }
 
+/* || REGISTER */
+.register.form-wrapper{
+    display: none;
+}
+
 /* || LOGIN */
+.login.form-wrapper {
+    /* display: none; */
+}
