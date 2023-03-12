@@ -10,29 +10,25 @@ export default function Movie({
     director,
     onMovieDelete,
     onMovieSelect,
-    selected
+    selected,
 }) {
     useEffect(() => {
         console.log(`Movie ${title} - mounted`);
-        
-        return()=>{
+
+        return () => {
             console.log(`Movie ${title} - unmounted`);
         };
     }, [title]);
     // useEffect vinagi s masiv!!
-    
-    
-    
+
     useEffect(() => {
         console.log(`Movie ${title} - updated`);
-    }, [selected]);
-    
-    
+    }, [selected, title]);
+
     return (
         <article className={styles['movie-article']}>
             <h3>
-                {title}, {year},
-                {selected && <h4>SELECTED</h4>}
+                {title}, {year},{selected && <h4>SELECTED</h4>}
             </h3>
             <main>
                 <img src={posterUrl} alt={title} />
@@ -41,7 +37,7 @@ export default function Movie({
             <footer>
                 <p>Director: {director}</p>
                 <button onClick={() => onMovieDelete(id)}>Delete</button>
-                <button onClick={()=>onMovieSelect(id)}>Select</button>
+                <button onClick={() => onMovieSelect(id)}>Select</button>
             </footer>
         </article>
     );
