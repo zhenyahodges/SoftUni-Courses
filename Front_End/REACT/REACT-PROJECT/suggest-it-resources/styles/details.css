@@ -13,14 +13,6 @@
 /* add aricle to details...?!  */
 
 
-.details-link{
-    color: var(--clr-highlight);
-}
-
-details-link:hover {
-    color: var(--clr-light);
-}
-
 /*** Details CARD special */
 .sugg-card.details {
     width: 90%;
@@ -47,7 +39,3 @@ details-link:hover {
 }
 
 
-/* ADD/POST  */
-/* .add-sugg-wrapper{
-  display: none;
-} */

@@ -166,25 +166,24 @@
                                 </main>
 
                                 <footer class="card-footer suggs-card foot">
-                                  <div class="card-footer-content">
-                                      <p class="card-footer-text">
-                                          Thank you for your contributions!
-                                      </p>
-                                      <div class="card-footer-links-wrapper">
-                                        
-                                        <!-- display !!?? -->
-                                          <a href="#" class="details-link"
-                                              >Details</a
-                                          >
-                                          <a href="#" class="add-sugg-link"
-                                              >Suggest</a
-                                          >
-                                          <a href="#" class="vote-sugg-link"
-                                              >Vote</a
-                                          >
-                                      </div>
-                                  </div>
-                              </footer>
+                                    <div class="card-footer-content">
+                                        <p class="card-footer-text">
+                                            Thank you for your contributions!
+                                        </p>
+                                        <div class="card-footer-links-wrapper">
+                                            <!-- display !!?? -->
+                                            <a href="#" class="details-link"
+                                                >Details</a
+                                            >
+                                            <a href="#" class="add-sugg-link"
+                                                >Suggest</a
+                                            >
+                                            <a href="#" class="vote-sugg-link"
+                                                >Vote</a
+                                            >
+                                        </div>
+                                    </div>
+                                </footer>
                             </article>
                             <!-- CARD END -->
                         </div>
@@ -1051,27 +1050,38 @@
                         </footer>
                     </article>
                     <!-- </div> -->
-
-                    <!--*** ADD/POST -->
-                    <section class="add-sugg-wrapper">
-                        <div class="sugg-item-wrapper">
-                            <p class="sugg-text">
-                                <span class="author-nickname"> Me </span>
-                                Suggestion for you Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Laboriosam, cum.
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Doloribus, est?
-                            </p>
-
-                            <p class="sugg-ranking">
-                                <span class="rank">15</span>
-                                <a class="sugg-like-link">
-                                    <i class="like fa-solid fa-circle-up"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </section>
                 </section>
+
+                <!--*** ADD/POST -->
+                <section class="add-sugg-wrapper">
+
+                  <!-- ?with or without li? -->
+                  <form action="submit" method="post" class="add-suggestion">
+                    <label for=""></label>
+                    <input type="text">
+                    <button class="">Submit</a>                 
+                  </form>
+
+                    <div class="sugg-item-wrapper">
+                        <p class="sugg-text" placeholder="Suggestion">
+                            <span class="author-nickname">
+                                Me
+                            </span>
+                            Another suggestion for you
+                        </p>
+                        <p class="sugg-ranking">
+                            <span class="rank">10</span
+                            ><a class="sugg-like-link"
+                                ><i
+                                    class="like fa-solid fa-circle-up"
+                                ></i
+                            ></a>
+                        </p>
+                    </div>
+
+               
+                </section>
+                <!-- END ADD POST -->
             </section>
 
             <!-- LOGGED -->
