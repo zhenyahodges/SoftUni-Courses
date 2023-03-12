@@ -1,4 +1,10 @@
 /* || CATALOG */
 .catalog.window {
     display: none;
+    
+}
+
+.catalog-wrapper{
+    display: flex;
+    flex-flow: row wrap;
 }

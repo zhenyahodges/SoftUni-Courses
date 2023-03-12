@@ -1,3 +1,7 @@
+@import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url(./catalog.css);
+@import url(./details.css);
+
 :root {
     --clr-bgr: #132930;
     --clr-highlight: #F79234;
@@ -9,10 +13,20 @@
 
 body {
     background: linear-gradient(119deg, rgba(19, 41, 48, 1) 0%, rgba(202, 235, 247, 1) 49%, rgba(247, 247, 247, 1) 100%);
-    font-family: "Inter", "Arial", "sans-serif";
+    font-family: "Mulish";
     letter-spacing: 0.6px;
-    color: var(--clr-bgr);
 }
+
+/* icons */
+.like {
+    padding-left: 5px;
+}
+
+.like:hover {
+    color: var(--clr-highlight)
+}
+/* icons end */
+
 
 .suggestit-brand {
     color: var(--clr-light);
@@ -37,7 +51,7 @@ body {
 
 .header.container,
 .footer.container {
-     background: linear-gradient(0deg, rgba(19, 41, 48, 1) 0%, rgba(46, 101, 119, 1) 73%, rgba(91, 200, 235, 1) 100%);
+    background: linear-gradient(0deg, rgba(19, 41, 48, 1) 0%, rgba(46, 101, 119, 1) 73%, rgba(91, 200, 235, 1) 100%);
     color: var(--clr-light);
 }
 
@@ -109,34 +123,7 @@ body {
     line-height: 2;
 }
 
-h2 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    padding: 1rem 0;
-}
 
-h3 {
-    padding-bottom: 0.5rem;
-}
-
-.sub-wrapper {
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem 0;
-}
-
-
-/* || SAMPLES SECTION */
-.sample.content {
-    padding: 2rem 0 1rem 0;
-}
-
-.samples-title {
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding-bottom: 0.2rem;
-}
 
 
 
@@ -155,7 +142,7 @@ h3 {
 /* || EDIT */
 /* || DELETE */
 
-/* || DETAILS */
+
 
 
 
