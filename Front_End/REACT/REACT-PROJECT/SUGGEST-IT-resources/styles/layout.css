@@ -3,6 +3,7 @@
 @import url("./details.css");
 @import url("./add.css");
 @import url("./register.css");
+@import url("./forms.css");
 
 :root {
     --clr-bgr: #132930;
@@ -125,25 +126,14 @@ body {
 }
 
 
-
-
-
-
 /* || PUBLIC CATALOG */
 /* || PRIVATE CATALOG */
-
 
 /* || PROFILE-LOGGED-COMPANY */
 /* || PROFILE-LOGGED-USER */
 
-/* || LOGIN + REGISTER */
-/* || LOGIN */
-/* || REGISTER */
-
 /* || EDIT */
 /* || DELETE */
-
-
 
 
 

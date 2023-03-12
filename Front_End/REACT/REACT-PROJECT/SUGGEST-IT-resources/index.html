@@ -1056,13 +1056,14 @@
                 <section class="add-sugg-wrapper">
                     <!-- ?with or without li? -->
                     <form
-                        action="submit"
+                        action="#"
                         method="post"
                         id="add-form"
                         class="add-sugg form"
                     >
-                        <h2>Add a Suggestion</h2>
+                        <h2>Add a Suggestion</h2>                        
                         <p><label for="sugg">Your Suggestion:</label></p>
+
                         <textarea
                             id="sugg"
                             form="add-form"
@@ -1079,8 +1080,11 @@
                         <button
                             type="submit"
                             method="post"
-                            value="submit"
+                            value="Submit"
                             class="btn dark subm"
+                            form="add-form"
+                            id="btn-add-form"
+                            disabled
                         >
                             Submit
                         </button>
@@ -1109,7 +1113,7 @@
                 <section class="register wrapper">
                     <h2>Register</h2>
                     <form
-                        action="submit"
+                        action="#"
                         method="post"
                         id="reg-form"
                         class="register form"
@@ -1123,6 +1127,8 @@
                                 class="reg entry fname"
                                 name="fname"
                                 id="fname"
+                                autocomplete="given-name"
+                                required
                             />
                         </div>
                         <div class="wrap lname">
@@ -1134,6 +1140,8 @@
                                 class="reg entry lname"
                                 name="lname"
                                 id="lname"
+                                autocomplete="family-name"
+                                required
                             />
                         </div>
                         <div class="wrap email">
@@ -1145,6 +1153,8 @@
                                 class="reg entry email"
                                 name="email"
                                 id="email"
+                                autocomplete="email"
+                                required
                             />
                         </div>
                         <div class="wrap pass">
@@ -1156,6 +1166,9 @@
                                 class="reg entry pass"
                                 name="pass"
                                 id="pass"
+                                minlength="5"
+                                placeholder="5 characters minimum"
+                                required
                             />
                         </div>
                         <div class="wrap repass">
@@ -1167,6 +1180,7 @@
                                 class="reg entry repass"
                                 name="repass"
                                 id="repass"
+                                required
                             />
                         </div>
                         <!-- <div class="wrap code">
@@ -1177,94 +1191,62 @@
                         <button
                             type="submit"
                             method="post"
-                            value="submit"
+                            value="Register"
                             class="btn dark subm"
                             form="reg-form"
                             id="btn-reg-form"
+                            disabled
                         >
-                            Submit
+                            Register
                         </button>
                     </form>
                 </section>
 
                 <!-- LOGIN -->
-                <section class="register wrapper">
-                    <h2>Register</h2>
+                <section class="login wrapper">
+                    <h2>login</h2>
                     <form
-                        action="submit"
-                        method="post"
-                        id="reg-form"
-                        class="register form"
+                        action="#"
+                        method="get"
+                        id="log-form"
+                        class="login form"
                     >
-                        <div class="wrap fname">
-                            <label for="fname" class="reg lbl fname"
-                                >First Name</label
-                            >
-                            <input
-                                type="text"
-                                class="reg entry fname"
-                                name="fname"
-                                id="fname"
-                            />
-                        </div>
-                        <div class="wrap lname">
-                            <label for="lname" class="reg lbl lname"
-                                >Last Name</label
-                            >
-                            <input
-                                type="text"
-                                class="reg entry lname"
-                                name="lname"
-                                id="lname"
-                            />
-                        </div>
                         <div class="wrap email">
-                            <label for="email" class="reg lbl email"
+                            <label for="email" class="log lbl email"
                                 >Email</label
                             >
                             <input
                                 type="email"
-                                class="reg entry email"
+                                class="log entry email"
                                 name="email"
                                 id="email"
+                                autocomplete="email
+                                required
                             />
                         </div>
                         <div class="wrap pass">
-                            <label for="pass" class="reg lbl pass"
+                            <label for="pass" class="log lbl pass"
                                 >Password</label
                             >
                             <input
                                 type="password"
-                                class="reg entry pass"
+                                class="log entry pass"
                                 name="pass"
-                                id="pass"
+                                id="pass"  
+                                autocomplete="current-password"                             
+                                required
                             />
                         </div>
-                        <div class="wrap repass">
-                            <label for="repass" class="reg lbl repass"
-                                >Confirm Password</label
-                            >
-                            <input
-                                type="password"
-                                class="reg entry repass"
-                                name="repass"
-                                id="repass"
-                            />
-                        </div>
-                        <!-- <div class="wrap code">
-                            <label for="" class="reg lbl code">Code</label>
-                            <input type="text" class="reg entry code" name="reg entry code" id="reg-entry-code" />
-                        </div> -->
-
                         <button
                             type="submit"
-                            method="post"
-                            value="submit"
+                            method="get"
+                            value="Login"
                             class="btn dark subm"
-                            form="reg-form"
-                            id="btn-reg-form"
+                            form="log-form"
+                            id="btn-log-form"
+                            disabled
                         >
-                            Submit
+                            Login
                         </button>
                     </form>
                 </section>

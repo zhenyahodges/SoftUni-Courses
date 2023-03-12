@@ -39,4 +39,8 @@
 .btn.dark:hover {
     color: var(--clr-highlight);
 }
+
+.btn:disabled{
+    background-color: var(--clr-mid);
+}
 /* buttons end */
