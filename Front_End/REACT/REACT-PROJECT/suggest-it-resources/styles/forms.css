@@ -4,6 +4,7 @@
     border-radius: 10px;
     margin: 0 auto;
     width: 60%;
+    min-width: 380px;
 }
 
 .form {
@@ -31,7 +32,7 @@
 
 .add-sugg.form-wrapper {
     display: none;
-    height: 40vh;
+    min-height: 40vh;
 }
 
 .add-sugg.form {
@@ -63,19 +64,19 @@ textarea {
 
 .reg.entry,
 .log.entry {
-    flex: 1 0 60%;
+    flex: 1 1 60%;
 }
 
-/* || REGISTER */
+/* ***|| REGISTER */
 .register.form-wrapper {
     /* display: none; */
-    height: 50vh;
+    min-height: 50vh;
 }
 
-/* || LOGIN */
+/* ***|| LOGIN */
 .login.form-wrapper {
     /* display: none; */
-    height: 40vh;
+    min-height: 40vh;
 }
 
 .login.form-wrapper .login .form {
