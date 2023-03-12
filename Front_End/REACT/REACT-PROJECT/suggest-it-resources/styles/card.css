@@ -63,10 +63,13 @@
   .sugg-text {
       font-size: 14px;
       flex: 1 1 80%;
+      text-align: left;
   }
+
 
   .sugg-ranking {
       flex: 1 1 20%;
+      text-align: right;
   }
 
   .rank {
@@ -77,7 +80,6 @@
 
   /* *** Card Footer */
   .card-footer {
-      background-color: var(--clr-bgr);
       color: var(--clr-light);
       width: 100%;
       min-height: 15%;
@@ -86,85 +88,28 @@
   .card-footer-content {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      flex: 1 1 50%;
       /* margin: 0 auto; */
-      padding: 5px 20px;
+      /* padding: 5px 20px; */
   }
 
   .card-footer-text {
       font-weight: 200;
       font-style: italic;
       font-size: 0.7rem;
+      flex: 1 0 50%;
+  }
+  .card-footer-links-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 50%;
   }
 
 
-  /* DETAILS */
-  .details-view.container {
-      /* display: none; */
-      min-width: 364px;
-  }
-
-  .details-view.wrapper {
-      /* height: auto; */
-      /* min-height: 85%; */
-      /* width: 100%; */
-  }
-
-  /* add aricle to details...?!  */
-
-
-  .details-link{
-      color: var(--clr-highlight);
-  }
-
-  details-link:hover {
-      color: var(--clr-light);
-  }
-
-  /*** Details CARD special */
-  .sugg-card.details {
-      width: 90%;
-      /* min-height: 70vh; */
-      height: auto;
-  }
-
-  .sugg-card.details .card-header {
-      min-height: 10%;
-  }
-
-  .sugg-card.details .card-footer {
-      min-height: 5%;
-  }
-
-  .sugg-card.details .card-main {
-      /* height: 100%; */
-      min-height: 85%;
-      padding: 1.5rem;
-  }
-
-  .sugg-card.details .card-footer .details-link {
-      display: none;
-  }
-
-  .sugg-card.details .sugg-text {
-      text-align: left;
-  }
-
-  .sugg-card.details .sugg-ranking {
-      text-align: right;
-  }
-
-  .add-sugg-link{
-   color: var(--clr-light);
-  }
-  .add-sugg-link:hover{
-    color: var(--clr-highlight);
-  }
-
-  /* .details-view.wrapper {
-    min-height: auto;
-   
-} */
+  
 
   /* ===***Card END */

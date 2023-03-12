@@ -1,6 +1,6 @@
 /* ***Section WELCOME */
 .welcome.window{
-    display: none;
+    /* display: none; */
 }
 
 h2 {
@@ -30,3 +30,17 @@ h3 {
     font-weight: 600;
     padding-bottom: 0.2rem;
 }
+
+.welcome .add-sugg-link,
+.welcome .vote-sugg-link{
+    display: none;
+}
+
+/* .sugg-card.details .sugg-text {
+    text-align: left;
+}
+
+.sugg-card.details .sugg-ranking {
+    text-align: right;
+} */
+
