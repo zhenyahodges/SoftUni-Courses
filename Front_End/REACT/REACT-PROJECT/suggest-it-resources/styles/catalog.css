@@ -8,6 +8,6 @@
     flex-flow: row wrap;
 }
 
-.catalog .post-sugg-link{
+.catalog .post-sugg.link{
     display: none;
 }
