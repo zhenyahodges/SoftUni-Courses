@@ -1,8 +1,9 @@
-import React from 'react';
+// import React from 'react';
 // import { createElement } from 'react';
 import Movie from './Movie';
 
 export default function MovieList({ 
+    // destructuring the *props* obj:
     movies,
     onMovieDelete,
  }) {
@@ -16,10 +17,11 @@ export default function MovieList({
     // let movieList = movies.map((movie) => (
     //     <li><Movie {...movie} /></li>
     // ));
-
+    
+    
+    // !!!!!!!!! map/for each etc+key always !!!!!!!!!!
     return [
         <ul>
-            {/* map/for each etc+key always ! */}
             {movies.map((movie) => (
                 <li key={movie.id}>
                     <Movie  {...movie} onMovieDelete={onMovieDelete}/>                    
