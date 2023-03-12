@@ -47,14 +47,6 @@ details-link:hover {
 }
 
 
-
-.add-sugg-link{
- color: var(--clr-light);
-}
-.add-sugg-link:hover{
-  color: var(--clr-highlight);
-}
-
 /* ADD/POST  */
 /* .add-sugg-wrapper{
   display: none;

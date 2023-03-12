@@ -88,11 +88,11 @@
   .card-footer-content {
       display: flex;
       flex-flow: row wrap;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       flex: 1 1 50%;
       /* margin: 0 auto; */
-      /* padding: 5px 20px; */
+      padding: 5px;
   }
 
   .card-footer-text {
@@ -109,6 +109,19 @@
     flex: 1 0 50%;
   }
 
+  /* LINKS */
+  .add-sugg-link,
+  .vote-sugg-link,
+  .details-link{
+    color: var(--clr-highlight);
+   }
+   .add-sugg-link:hover,
+   .vote-sugg-link:hover,
+  .details-link:hover{
+     color: var(--clr-light);
+   }
+
+ 
 
   
 
