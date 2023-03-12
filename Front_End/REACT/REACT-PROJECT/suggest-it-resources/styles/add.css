@@ -3,7 +3,23 @@
 /* if logged in */
 /* if not-regiter */
 
-.add-sugg-wrapper{
-    display: none;
-  }
+.add-sugg-wrapper {
+  /* display: none; */
+}
 
+/* form */
+.add-sugg-wrapper {
+  height: 40vh;
+  width: 50%;
+  box-shadow: 5px 5px 17px 0px #688589;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.add-sugg.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
