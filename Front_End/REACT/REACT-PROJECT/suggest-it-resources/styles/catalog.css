@@ -1,10 +1,13 @@
 /* || CATALOG */
 .catalog.window {
-    display: none;
-    
+    display: none;    
 }
 
 .catalog-wrapper{
     display: flex;
     flex-flow: row wrap;
+}
+
+.catalog .post-sugg-link{
+    display: none;
 }
