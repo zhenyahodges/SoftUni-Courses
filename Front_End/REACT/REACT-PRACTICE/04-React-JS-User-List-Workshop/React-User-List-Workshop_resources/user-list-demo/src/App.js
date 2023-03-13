@@ -39,6 +39,9 @@ console.log('Error'+err);
                 <section className='card users-container'>
                     <Search />
                     <UserList users={users}/>
+                    
+      {/* <!-- New user button  --> */}
+      <button className="btn-add btn">Add new user</button>
                 </section>
             </main>
 
