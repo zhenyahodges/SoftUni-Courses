@@ -11,6 +11,7 @@ export const User = (
     phoneNumber,
     updatedAt,
     onInfoClick,
+
  }
 ) => {
     return (

@@ -8,21 +8,24 @@ export const UserList = ({ users }) => {
     const [selectedUser, setSelectedUser] = useState(null);
 
     const onInfoClick = async (userId) => {
-      // const user=users.find(x=>x.id===userId);
-      
-      // if(user){
-      //   setSelectedUser(user);
-      // }
-      
-      const user= await userService.getOne(userId);     
+        // const user=users.find(x=>x.id===userId);
 
-      setSelectedUser(user)
-      
+        // if(user){
+        //   setSelectedUser(user);
+        // }
+
+        const user = await userService.getOne(userId);
+
+        setSelectedUser(user);
+    };
+
+    const onClose=()=>{
+      setSelectedUser(null);
     };
 
     return (
         <>
-            {selectedUser && <UserDetails {...selectedUser}/>}
+            {selectedUser && <UserDetails {...selectedUser} onClose={onClose}/>}
             <div>
                 {/* //   <!-- Table component --> */}
                 {/* <div className='table-wrapper'> */}
@@ -196,7 +199,11 @@ export const UserList = ({ users }) => {
                     <tbody>
                         {/* <!-- Table row component --> */}
                         {users.map((u) => (
-                            <User key={u._id} {...u} onInfoClick={onInfoClick}  />
+                            <User
+                                key={u._id}
+                                {...u}
+                                onInfoClick={onInfoClick}
+                            />
                         ))}
                     </tbody>
                 </table>
