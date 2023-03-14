@@ -1,5 +1,6 @@
 export const CreateUser=({
     onClose,
+    onUserCreateSumbit,
 })=>{
     
 
@@ -20,7 +21,7 @@ export const CreateUser=({
               </svg>
             </button>
           </header>
-          <form>
+          <form onSubmit={onUserCreateSumbit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="firstName">First name</label>

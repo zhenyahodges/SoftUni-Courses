@@ -5,7 +5,10 @@ import { CreateUser } from './CreateUser';
 import { User } from './User';
 import { UserDetails } from './UserDetails';
 
-export const UserList = ({ users }) => {
+export const UserList = ({ 
+    users,
+    onUserCreateSumbit,
+ }) => {
     const [selectedUser, setSelectedUser] = useState(null);
     const [showAddUser,setShowAddUser]=useState(false);
 
@@ -30,10 +33,15 @@ export const UserList = ({ users }) => {
         setShowAddUser(true);
     };
 
+    const onUserCreateSubmitHandler=(e)=>{
+        onUserCreateSumbit(e);
+        setShowAddUser(false);
+    };
+
     return (
         <>
             {selectedUser && <UserDetails {...selectedUser} onClose={onClose}/>}
-            {showAddUser && <CreateUser onClose={onClose}/>}
+            {showAddUser && <CreateUser onClose={onClose} onUserCreateSumbit={onUserCreateSubmitHandler}/>}
             
             <div>
                 {/* //   <!-- Table component --> */}

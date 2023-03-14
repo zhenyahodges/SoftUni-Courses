@@ -26,6 +26,21 @@ function App() {
                 console.log('Error' + err);
             });
     }, []);
+    
+
+    // where users are
+    // DOM way,not react way!
+    const onUserCreateSumbit=async(e)=>{
+      e.preventDefault();
+      const formData=new FormData(e.currentTarget);
+      const data=Object.fromEntries(formData);
+      // send ajax to server
+      const createdUser= await userService.create(data);
+
+      // if succ add new user to the state
+      setUsers(state=>[...state, createdUser]);
+      // close dialog
+    };
 
     return (
         // {/* za da ne pokazvame add div, import Fragment */}
@@ -38,7 +53,7 @@ function App() {
                 {/* <!-- Section component  --> */}
                 <section className='card users-container'>
                     <Search />
-                    <UserList users={users} />
+                    <UserList users={users} onUserCreateSumbit={onUserCreateSumbit}/>
 
                    
                 </section>
