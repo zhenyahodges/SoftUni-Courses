@@ -12,4 +12,4 @@ export const getOne=async(userId)=>{
     const result=await res.json();
 
     return result.user;
-}
+};

@@ -1,5 +1,5 @@
 // import { Fragment } from 'react';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 // import all named exports as service
 import * as userService from './services/userService';
@@ -11,21 +11,21 @@ import './App.css';
 import { UserList } from './components/UserList';
 
 function App() {
+    const [users, setUsers] = useState([]);
 
-  const [users,setUsers] = useState([]);
-  
-  useEffect(()=>{
-    userService.getAll()
-    // .then(users=>{
-    //   setUsers(users);
-    //   console.log(users);
-    // })
-      .then(setUsers)
-    // })
-    .catch(err=>{
-console.log('Error'+err);
-    });
-  },[]);
+    useEffect(() => {
+        userService
+            .getAll()
+            // .then(users=>{
+            //   setUsers(users);
+            //   console.log(users);
+            // })
+            .then(setUsers)
+            // })
+            .catch((err) => {
+                console.log('Error' + err);
+            });
+    }, []);
 
     return (
         // {/* za da ne pokazvame add div, import Fragment */}
@@ -38,10 +38,9 @@ console.log('Error'+err);
                 {/* <!-- Section component  --> */}
                 <section className='card users-container'>
                     <Search />
-                    <UserList users={users}/>
-                    
-      {/* <!-- New user button  --> */}
-      <button className="btn-add btn">Add new user</button>
+                    <UserList users={users} />
+
+                   
                 </section>
             </main>
 

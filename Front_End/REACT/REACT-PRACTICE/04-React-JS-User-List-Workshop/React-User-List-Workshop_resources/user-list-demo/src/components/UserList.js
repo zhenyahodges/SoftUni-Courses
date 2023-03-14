@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import * as userService from '../services/userService';
+import { CreateUser } from './CreateUser';
 
 import { User } from './User';
 import { UserDetails } from './UserDetails';
 
 export const UserList = ({ users }) => {
     const [selectedUser, setSelectedUser] = useState(null);
+    const [showAddUser,setShowAddUser]=useState(false);
 
     const onInfoClick = async (userId) => {
         // const user=users.find(x=>x.id===userId);
@@ -21,11 +23,18 @@ export const UserList = ({ users }) => {
 
     const onClose=()=>{
       setSelectedUser(null);
+      setShowAddUser(false);
+    };
+
+    const onUserAddClick=()=>{
+        setShowAddUser(true);
     };
 
     return (
         <>
             {selectedUser && <UserDetails {...selectedUser} onClose={onClose}/>}
+            {showAddUser && <CreateUser onClose={onClose}/>}
+            
             <div>
                 {/* //   <!-- Table component --> */}
                 {/* <div className='table-wrapper'> */}
@@ -208,6 +217,8 @@ export const UserList = ({ users }) => {
                     </tbody>
                 </table>
             </div>
+             {/* <!-- New user button  --> */}
+             <button className='btn-add btn' onClick={onUserAddClick}>Add new user</button>
         </>
     );
 };
