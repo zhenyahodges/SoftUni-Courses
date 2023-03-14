@@ -1,7 +1,6 @@
-import { formatDate } from "../utils/dateUtils";
+import { formatDate } from '../utils/dateUtils';
 
-export const User = (
- {
+export const User = ({
     _id,
     firstName,
     lastName,
@@ -11,9 +10,9 @@ export const User = (
     phoneNumber,
     updatedAt,
     onInfoClick,
-
- }
-) => {
+    onDeleteClick,
+    onEditClick,
+}) => {
     return (
         <tr>
             <td>
@@ -30,7 +29,11 @@ export const User = (
             <td>{formatDate(createdAt)}</td>
 
             <td className='actions'>
-                <button className='btn edit-btn' title='Edit' >
+                <button
+                    className='btn edit-btn'
+                    title='Edit'
+                    onClick={()=>onEditClick(_id)}
+                >
                     <svg
                         aria-hidden='true'
                         focusable='false'
@@ -47,7 +50,11 @@ export const User = (
                         ></path>
                     </svg>
                 </button>
-                <button className='btn delete-btn' title='Delete'>
+                <button
+                    className='btn delete-btn'
+                    title='Delete'
+                    onClick={() => onDeleteClick(_id)}
+                >
                     <svg
                         aria-hidden='true'
                         focusable='false'
@@ -64,7 +71,11 @@ export const User = (
                         ></path>
                     </svg>
                 </button>
-                <button className='btn info-btn' title='Info' onClick={()=>onInfoClick(_id) }>
+                <button
+                    className='btn info-btn'
+                    title='Info'
+                    onClick={() => onInfoClick(_id)}
+                >
                     <svg
                         aria-hidden='true'
                         focusable='false'

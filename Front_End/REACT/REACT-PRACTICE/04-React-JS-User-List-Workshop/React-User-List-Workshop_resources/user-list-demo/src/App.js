@@ -26,20 +26,37 @@ function App() {
                 console.log('Error' + err);
             });
     }, []);
-    
 
     // where users are
     // DOM way,not react way!
-    const onUserCreateSumbit=async(e)=>{
-      e.preventDefault();
-      const formData=new FormData(e.currentTarget);
-      const data=Object.fromEntries(formData);
-      // send ajax to server
-      const createdUser= await userService.create(data);
+    const onUserCreateSumbit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData);
+        // send ajax to server
+        const createdUser = await userService.create(data);
 
-      // if succ add new user to the state
-      setUsers(state=>[...state, createdUser]);
-      // close dialog
+        // if succ add new user to the state
+        setUsers((state) => [...state, createdUser]);
+        // close dialog
+    };
+
+    const onUserUpdateSubmit=async(e,userId)=>{
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData);
+
+        const updatedUser = await userService.update(userId, data);
+
+        setUsers(state => state.map(x => x._id === userId ? updatedUser : x));
+    };
+
+    const onUserDelete = async (userId) => {
+        //delete from server
+        await userService.remove(userId);
+        // delete from state
+        setUsers((state) => state.filter((x) => x._id !== userId));
     };
 
     return (
@@ -53,9 +70,12 @@ function App() {
                 {/* <!-- Section component  --> */}
                 <section className='card users-container'>
                     <Search />
-                    <UserList users={users} onUserCreateSumbit={onUserCreateSumbit}/>
-
-                   
+                    <UserList
+                        users={users}
+                        onUserCreateSumbit={onUserCreateSumbit}
+                        onUserDelete={onUserDelete}
+                        onUserUpdateSubmit={onUserUpdateSubmit}
+                    />
                 </section>
             </main>
 
