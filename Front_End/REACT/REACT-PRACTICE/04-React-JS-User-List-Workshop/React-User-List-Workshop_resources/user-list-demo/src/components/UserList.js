@@ -42,6 +42,7 @@ export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateS
     const onUserUpdateSubmitHandler=(e,userId)=>{
         onUserUpdateSubmit(e,userId);
         setShowEditUser(null);
+        // onClose();
     };
 
     const onDeleteClick = (userId) => {

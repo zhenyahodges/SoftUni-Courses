@@ -22,7 +22,7 @@ export const CreateUser=({
               </svg>
             </button>
           </header>
-          <form onSubmit={onUserCreateSumbit}>
+          <form onSubmit={(e)=>onUserCreateSumbit(e,user?._id)}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="firstName">First name</label>

@@ -39,11 +39,11 @@ export const remove = async (userId) => {
     const res = await fetch(`${baseUrl}/${userId}`, {
         method: 'DELETE',
     });
-    const result=await res.json();
+    const result = await res.json();
     return result;
 };
 
-export const update = async(userId, userData)=>{
+export const update = async (userId, userData) => {
     const { streetNumber, street, city, country, ...data } = userData;
     data.address = {
         streetNumber,
@@ -62,4 +62,4 @@ export const update = async(userId, userData)=>{
 
     const result = await res.json();
     return result.user;
-}
+};

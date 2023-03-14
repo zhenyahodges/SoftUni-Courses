@@ -43,12 +43,9 @@ function App() {
 
     const onUserUpdateSubmit=async(e,userId)=>{
         e.preventDefault();
-
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData);
-
         const updatedUser = await userService.update(userId, data);
-
         setUsers(state => state.map(x => x._id === userId ? updatedUser : x));
     };
 
