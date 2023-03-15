@@ -6,11 +6,21 @@ import { DeleteUser } from './DeleteUser';
 import { User } from './User';
 import { UserDetails } from './UserDetails';
 
-export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateSubmit }) => {
+export const UserList = ({
+    users,
+    onUserCreateSumbit,
+    onUserDelete,
+    onUserUpdateSubmit,
+    formValues,
+    formChangeHandler,
+    formErrs,
+    validateForm
+
+}) => {
     const [selectedUser, setSelectedUser] = useState(null);
     const [showDeleteUser, setShowDeleteUser] = useState(false);
     const [showAddUser, setShowAddUser] = useState(false);
-    const [showEditUser,setShowEditUser]=useState(null);
+    const [showEditUser, setShowEditUser] = useState(null);
     const onInfoClick = async (userId) => {
         // const user=users.find(x=>x.id===userId);
 
@@ -39,8 +49,8 @@ export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateS
         setShowAddUser(false);
     };
 
-    const onUserUpdateSubmitHandler=(e,userId)=>{
-        onUserUpdateSubmit(e,userId);
+    const onUserUpdateSubmitHandler = (e, userId) => {
+        onUserUpdateSubmit(e, userId);
         setShowEditUser(null);
         // onClose();
     };
@@ -49,12 +59,12 @@ export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateS
         setShowDeleteUser(userId);
     };
 
-    const onDeleteHandler=()=>{
+    const onDeleteHandler = () => {
         onUserDelete(showDeleteUser);
         onClose();
     };
 
-    const onEditClick=async(userId)=>{
+    const onEditClick = async (userId) => {
         const user = await userService.getOne(userId);
         setShowEditUser(user);
     };
@@ -68,10 +78,26 @@ export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateS
                 <CreateUser
                     onClose={onClose}
                     onUserCreateSumbit={onUserCreateSubmitHandler}
+                    formValues={formValues}
+                    formChangeHandler={formChangeHandler}
+                    formErrs={formErrs}
+                    validateForm={validateForm}
                 />
             )}
-            {showDeleteUser && <DeleteUser onClose={onClose} onDelete={onDeleteHandler}/>}
-            {showEditUser && <CreateUser user={showEditUser} onClose={onClose} onUserCreateSubmit={onUserUpdateSubmitHandler} />}
+            {showDeleteUser && (
+                <DeleteUser onClose={onClose} onDelete={onDeleteHandler} />
+            )}
+            {showEditUser && (
+                <CreateUser
+                    user={showEditUser}
+                    onClose={onClose}
+                    onUserCreateSubmit={onUserUpdateSubmitHandler}
+                    formValues={formValues}
+                    formChangeHandler={formChangeHandler}
+                    formErrs={formErrs}
+                    validateForm={validateForm}
+                />
+            )}
 
             <div>
                 {/* //   <!-- Table component --> */}
@@ -260,7 +286,7 @@ export const UserList = ({ users, onUserCreateSumbit, onUserDelete,onUserUpdateS
             {/* <!-- New user button  --> */}
             <button className='btn-add btn' onClick={onUserAddClick}>
                 Add new user
-            </button>        
+            </button>
         </>
     );
 };

@@ -11,6 +11,16 @@ import './App.css';
 import { UserList } from './components/UserList';
 
 function App() {
+    const [formValues,setFormValues]=useState({
+        firstName: '',
+        lastName: ''
+    });
+
+    const [formErrs,setFormErrs]= useState({
+        firstName: '',
+        lastName: ''
+    });
+
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -56,6 +66,28 @@ function App() {
         setUsers((state) => state.filter((x) => x._id !== userId));
     };
 
+    const formChangeHandler=(e)=>{  
+
+        setFormValues(state=>({
+            ...state,[e.target.name]: e.target.value
+        }));
+    };
+
+    const validateForm=(e)=>{
+        const val=e.target.value;
+        const errs={};
+
+        if(val==='firstName' && (val.length<3 || val.length>20)){        
+            errs.firstName='First name shoould be between 3 and 20 chars';
+        };
+
+        
+        if(val==='lastName' && (val.length<3 || val.length>20)){
+            errs.lastName='Last name shoould be between 3 and 20 chars';
+        };
+        setFormErrs(errs);
+    };
+
     return (
         // {/* za da ne pokazvame add div, import Fragment */}
         // <Fragment></Fragment>
@@ -72,6 +104,10 @@ function App() {
                         onUserCreateSumbit={onUserCreateSumbit}
                         onUserDelete={onUserDelete}
                         onUserUpdateSubmit={onUserUpdateSubmit}
+                        formValues={formValues}
+                        formChangeHandler={formChangeHandler}
+                        formErrs={formErrs}
+                        validateForm={validateForm}
                     />
                 </section>
             </main>
