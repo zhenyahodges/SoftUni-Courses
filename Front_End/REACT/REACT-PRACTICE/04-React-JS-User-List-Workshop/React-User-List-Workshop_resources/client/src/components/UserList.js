@@ -8,7 +8,7 @@ import { UserDetails } from './UserDetails';
 
 export const UserList = ({
     users,
-    onUserCreateSumbit,
+    onUserCreateSubmit,
     onUserDelete,
     onUserUpdateSubmit,
     formValues,
@@ -45,7 +45,7 @@ export const UserList = ({
     };
 
     const onUserCreateSubmitHandler = (e) => {
-        onUserCreateSumbit(e);
+        onUserCreateSubmit(e);
         setShowAddUser(false);
     };
 
@@ -77,7 +77,7 @@ export const UserList = ({
             {showAddUser && (
                 <CreateUser
                     onClose={onClose}
-                    onUserCreateSumbit={onUserCreateSubmitHandler}
+                    onUserCreateSubmit={onUserCreateSubmitHandler}
                     formValues={formValues}
                     formChangeHandler={formChangeHandler}
                     formErrs={formErrs}

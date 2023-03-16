@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 // import all named exports as service
 import * as userService from './services/userService';
 
-import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { Search } from './components/Search';
 import './App.css';
 import { UserList } from './components/UserList';
 
 function App() {
-    const [formValues,setFormValues]=useState({
+    const [formValues, setFormValues] = useState({
         firstName: '',
-        lastName: ''
+        lastName: '',
     });
 
-    const [formErrs,setFormErrs]= useState({
+    const [formErrs, setFormErrs] = useState({
         firstName: '',
-        lastName: ''
+        lastName: '',
     });
 
     const [users, setUsers] = useState([]);
@@ -39,7 +39,7 @@ function App() {
 
     // where users are
     // DOM way,not react way!
-    const onUserCreateSumbit = async (e) => {
+    const onUserCreateSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData);
@@ -51,12 +51,14 @@ function App() {
         // close dialog
     };
 
-    const onUserUpdateSubmit=async(e,userId)=>{
+    const onUserUpdateSubmit = async (e, userId) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData);
         const updatedUser = await userService.update(userId, data);
-        setUsers(state => state.map(x => x._id === userId ? updatedUser : x));
+        setUsers((state) =>
+            state.map((x) => (x._id === userId ? updatedUser : x))
+        );
     };
 
     const onUserDelete = async (userId) => {
@@ -66,25 +68,24 @@ function App() {
         setUsers((state) => state.filter((x) => x._id !== userId));
     };
 
-    const formChangeHandler=(e)=>{  
-
-        setFormValues(state=>({
-            ...state,[e.target.name]: e.target.value
+    const formChangeHandler = (e) => {
+        setFormValues((state) => ({
+            ...state,
+            [e.target.name]: e.target.value,
         }));
     };
 
-    const validateForm=(e)=>{
-        const val=e.target.value;
-        const errs={};
+    const validateForm = (e) => {
+        const val = e.target.value;
+        const errs = {};
 
-        if(val==='firstName' && (val.length<3 || val.length>20)){        
-            errs.firstName='First name shoould be between 3 and 20 chars';
-        };
+        if (e.target.name === 'firstName' && (val.length < 3 || val.length > 20)) {
+            errs.firstName = 'First name should be between 3 and 20 chars';
+        }
 
-        
-        if(val==='lastName' && (val.length<3 || val.length>20)){
-            errs.lastName='Last name shoould be between 3 and 20 chars';
-        };
+        if (e.target.name === 'lastName' && (val.length < 3 || val.length > 20)) {
+            errs.lastName = 'Last name should be between 3 and 20 chars';
+        }
         setFormErrs(errs);
     };
 
@@ -101,7 +102,7 @@ function App() {
                     <Search />
                     <UserList
                         users={users}
-                        onUserCreateSumbit={onUserCreateSumbit}
+                        onUserCreateSubmit={onUserCreateSubmit}
                         onUserDelete={onUserDelete}
                         onUserUpdateSubmit={onUserUpdateSubmit}
                         formValues={formValues}

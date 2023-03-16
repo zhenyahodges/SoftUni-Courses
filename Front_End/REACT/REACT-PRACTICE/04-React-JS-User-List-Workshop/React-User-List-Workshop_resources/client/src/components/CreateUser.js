@@ -1,6 +1,6 @@
 export const CreateUser = ({
     onClose,
-    onUserCreateSumbit,
+    onUserCreateSubmit,
     user,
     formValues,
     formChangeHandler,
@@ -33,7 +33,7 @@ export const CreateUser = ({
                             </svg>
                         </button>
                     </header>
-                    <form onSubmit={(e) => onUserCreateSumbit(e, user?._id)}>
+                    <form onSubmit={(e) => onUserCreateSubmit(e, user?._id)}>
                         <div className='form-row'>
                             <div className='form-group'>
                                 <label htmlFor='firstName'>First name</label>
