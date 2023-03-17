@@ -21,6 +21,10 @@ gameService.getAll()
 });
 },[]);
 
+const onCreateGameSubmit=(data)=>{
+console.log(data);
+};
+
     return (
         <div id='box'>
             <Header />
@@ -30,7 +34,7 @@ gameService.getAll()
                 <Route path='/' element={<Home/>} />
                 <Route path='/login' element={<Login/>} />
                 <Route path='/register' element={<Register/>} />
-                <Route path='/createGame' element={<CreateGame/>} />
+                <Route path='/createGame' element={<CreateGame onCreateGameSubmit={onCreateGameSubmit}/>} />
                 <Route path='/catalog' element={<Catalog games={games}/>} />
               </Routes>      
             </main>
