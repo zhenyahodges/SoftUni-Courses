@@ -31,7 +31,7 @@ gameService.getAll()
                 <Route path='/login' element={<Login/>} />
                 <Route path='/register' element={<Register/>} />
                 <Route path='/createGame' element={<CreateGame/>} />
-                <Route path='/catalog' element={<Catalog/>} />
+                <Route path='/catalog' element={<Catalog games={games}/>} />
               </Routes>      
             </main>
       

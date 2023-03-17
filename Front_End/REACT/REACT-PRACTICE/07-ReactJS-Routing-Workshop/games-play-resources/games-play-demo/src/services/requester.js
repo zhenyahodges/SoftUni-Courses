@@ -1,4 +1,4 @@
-const request=async (url,method)=>{
+const request=async (method,url)=>{
     const res=await fetch(url,{
         method
     }); 
