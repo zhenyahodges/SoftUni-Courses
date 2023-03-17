@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { Home } from './components/Home/Home';
@@ -8,10 +8,13 @@ import { CreateGame } from './components/CreateGame/CreateGame';
 import { Catalog } from './components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 import * as gameService from './services/gameService';
+import { GameDetails } from './components/GameDetails/GameDetails';
 
 
 function App() {
+  const nagivate= useNavigate();
 const [games,setGames]=useState([]);
+
 
 useEffect(()=>{
 gameService.getAll()
@@ -21,9 +24,17 @@ gameService.getAll()
 });
 },[]);
 
-const onCreateGameSubmit=(data)=>{
-console.log(data);
+
+const onCreateGameSubmit=async (data)=>{
+ const newGame= await gameService.create(data);
+
+//  add to state
+setGames(state=>[...state,newGame]);
+
+// redirect to gatalog
+nagivate('/catalog');
 };
+
 
     return (
         <div id='box'>
@@ -36,6 +47,7 @@ console.log(data);
                 <Route path='/register' element={<Register/>} />
                 <Route path='/createGame' element={<CreateGame onCreateGameSubmit={onCreateGameSubmit}/>} />
                 <Route path='/catalog' element={<Catalog games={games}/>} />
+                <Route path='/catalog/:gameId' element={<GameDetails />}/>
               </Routes>      
             </main>
       

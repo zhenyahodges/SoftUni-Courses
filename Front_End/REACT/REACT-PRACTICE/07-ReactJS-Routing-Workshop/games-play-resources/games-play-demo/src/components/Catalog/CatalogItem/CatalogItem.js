@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
+
 export const CatalogItem=({
-    name,
+    _id,
+    title,
     imageUrl,
-    genre,
+    category,
 })=>{
 return (
     <div className="allGames">
     <div className="allGames-info">
         <img src={imageUrl}/>
-        <h6>{genre}</h6>
-        <h2>{name}</h2>
-        <a href="#" className="details-button">Details</a>
+        <h6>{category}</h6>
+        <h2>{title}</h2>
+        <Link to={`/catalog/${_id}`} className="details-button">Details</Link>
     </div>
 </div>
 );
