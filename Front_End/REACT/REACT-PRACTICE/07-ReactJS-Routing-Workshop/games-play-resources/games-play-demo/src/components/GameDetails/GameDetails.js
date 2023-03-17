@@ -2,33 +2,45 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import * as gameService from '../../services/gameService';
-import * as commentService from '../../services/commentService';
+// import * as commentService from '../../services/commentService';
 
 export const GameDetails = () => {
     const { gameId } = useParams();
-    const [game, setGame] = useState([]);
-    const [username,setUsername]=useState('');
-    const [comment,setComment] = useState('');
+    const [game, setGame] = useState({});
+    const [username, setUsername] = useState('');
+    const [comment, setComment] = useState('');
+    // const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        gameService.getOne(gameId).then((result) => {
-            setGame(result);
-        });
+        gameService
+            .getOne(gameId)
+            .then((result) => {
+                setGame(result);
+                // return commentService.getAll(gameId);
+            })
+            // .then((result) => {
+            //     setComments(result);
+            // });
     }, [gameId]);
 
-    const onCommentSubmit= async (e)=>{
+    const onCommentSubmit = async (e) => {
         e.preventDefault();
 
-        await commentService.create({
-            gameId,
+        // await commentService.create({
+        //     gameId,
+        //     username,
+        //     comment,
+        // });
+
+           const result=  await gameService.addComment(gameId,{            
             username,
             comment,
         });
+        setGame(state=>({...state,comments: {...state.comments,[result._id]: result}}));
 
         setUsername('');
         setComment('');
     };
-
 
     return (
         <section id='game-details'>
@@ -48,15 +60,19 @@ export const GameDetails = () => {
                     <h2>Comments:</h2>
                     <ul>
                         {/* <!-- list all comments for current game (If any) --> */}
-                        <li className='comment'>
-                            <p>Content: I rate this one quite highly.</p>
-                        </li>
-                        <li className='comment'>
-                            <p>Content: The best game.</p>
-                        </li>
+                        {/* {comments.map((x) => ( */}
+                        {game.comments && Object.values(game.comments).map((x) => (
+                            <li key={x._id} className='comment'>
+                                <p>{x.username}: {x.comment}</p>
+                            </li>
+                        ))}
                     </ul>
-                    {/* <!-- Display paragraph: If there are no games in the database --> */}
-                    <p className='no-comment'>No comments.</p>
+
+                    {/* {Object.values(game.comments).length && ( */}
+                        {/* //   <!-- Display paragraph: If there are no games in the database --> */}
+                    {/* <p className='no-comment'>No comments.</p>
+                    ) } */}
+                  
                 </div>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
@@ -76,12 +92,19 @@ export const GameDetails = () => {
                 <label>Add new comment:</label>
                 <form className='form' onSubmit={onCommentSubmit}>
                     {/*>>added  */}
-                    <input type="text" name="username" placeholder="Pesho" value={username} onChange={(e)=>setUsername(e.target.value)}/>
+                    <input
+                        type='text'
+                        name='username'
+                        placeholder='Pesho'
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
                     {/*  */}
                     <textarea
                         name='comment'
                         placeholder='Comment......'
-                        value={comment} onChange={(e)=>setComment(e.target.value)}
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
                     ></textarea>
                     <input
                         className='btn submit'
