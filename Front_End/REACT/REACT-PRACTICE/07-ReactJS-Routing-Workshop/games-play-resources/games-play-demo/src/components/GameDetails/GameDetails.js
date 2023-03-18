@@ -17,7 +17,7 @@ export const GameDetails = () => {
             .then((result) => {
                 setGame(result);
                 // return commentService.getAll(gameId);
-            })
+            });
             // .then((result) => {
             //     setComments(result);
             // });
@@ -47,7 +47,7 @@ export const GameDetails = () => {
             <h1>Game Details</h1>
             <div className='info-section'>
                 <div className='game-header'>
-                    <img className='game-img' src={game.imageUrl} />
+                    <img className='game-img' src={game.imageUrl} alt=""/>
                     <h1>{game.title}</h1>
                     <span className='levels'>MaxLevel: {game.maxLevel}</span>
                     <p className='type'>{game.category}</p>
