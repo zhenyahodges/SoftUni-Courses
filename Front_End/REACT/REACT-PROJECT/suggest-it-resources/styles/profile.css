@@ -33,22 +33,24 @@ gap: 1rem;
     margin: 2rem 1rem;
 }
 
-.user-title{
-    text-align: left;
-}
-
 /* PUBLISHED */
 .user.published{
     /* display: none; */
+    background-color: red;
+    width: 50%;
+    height: 100vh;
 }
 
 /* CREATE */
 .user.create{
     display: none;
+    background-color: yellow;
+    width: 50%;
+    height: 100vh;
 }
 
 
 /* SUGGESTED */
 .user.suggested{
-    display: none;
+    /* display: none; */
 }
