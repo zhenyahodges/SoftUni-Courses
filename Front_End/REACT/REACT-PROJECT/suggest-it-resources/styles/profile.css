@@ -15,8 +15,8 @@
 .wrap.fname,
 .wrap.lname,
 .wrap.email {
-justify-content: unset;
-gap: 1rem;
+    justify-content: unset;
+    gap: 1rem;
 }
 
 .prof.lbl {
@@ -29,15 +29,15 @@ gap: 1rem;
     background-color: transparent;
 }
 
-.show{
+.show {
     margin: 2rem 1rem;
 }
 
-.user-profile-cards-wrapper{
-margin: 0 auto;
+.user-profile-cards-wrapper {
+    margin: 0 auto;
 }
 
-.user-title{
+.user-title {
     font-style: italic;
     color: var(--clr-drk-mid);
 }
@@ -45,23 +45,27 @@ margin: 0 auto;
 
 
 /* PUBLISHED */
-.user-article-wrapper{
-    /* display: none; */
-display: flex;
-flex-flow: row wrap;
+.user.wrapper {
+    display: none;
+}
+
+.user-article-wrapper {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 /* CREATE */
-.user.create{
+.user.create {
     /* display: none; */
 }
 
 
 /* SUGGESTED */
-.user.suggested{
+.user.suggested {
     /* display: none; */
 }
-.user{
+
+.user {
     width: 100%;
     height: 100vh;
 }
