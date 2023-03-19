@@ -72,6 +72,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
+    position: relative;
 }
 
 .header-wrapper {
@@ -112,6 +113,24 @@ body {
     border-radius: 5px;
     text-shadow: 1px 1px 1px #132930;
 }
+
+/* whos lookin */
+.whos-lookin-wrapper{
+position: absolute;
+top: 70%;
+left: 91%;
+font-style: italic;
+font-size: smaller;
+color: var(--clr-highlight);
+}
+
+.whos-lookin.guest{
+    /* display: none; */
+}
+.whos-lookin.logged-user{
+    display: none;
+}
+
 
 /*** || MAIN ***/
 .page.main {

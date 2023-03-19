@@ -35,7 +35,7 @@ form button{
 /* if not-register */
 
 .add-sugg.form-wrapper {
-    display: none;
+    /* display: none; */
     min-height: 40vh;
 }
 
@@ -69,6 +69,13 @@ textarea {
 .reg.entry,
 .log.entry {
     flex: 1 1 60%;
+}
+
+.link{
+    color: var(--clr-drk-mid);
+}
+.link:hover{
+    color: var(--clr-highlight);
 }
 
 /* ***|| REGISTER */

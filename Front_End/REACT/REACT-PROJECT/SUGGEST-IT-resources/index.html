@@ -14,7 +14,7 @@
             rel="stylesheet"
         />
 
-        <link rel="stylesheet" href="./styles/layout.css" />
+        <link rel="stylesheet" href="./styles/style.css" />
         <link rel="stylesheet" href="./styles/welcome.css" />
         <link rel="stylesheet" href="./styles/card.css" />
         <link rel="stylesheet" href="./styles/buttons.css" />
@@ -28,7 +28,8 @@
                         Suggest<span class="suggest-it">It</span>
                     </h1>
                     <p class="subtitle-header">
-                        Suggestion polls for improvements
+                        Ultimate Feedback
+                        <!-- Suggestion polls for improvements -->
                     </p>
                     <p></p>
                 </div>
@@ -36,14 +37,45 @@
                 <!-- ||HEADER NAV -->
                 <nav class="nav header">
                     <ul class="nav header list">
-                        <a href="#" class="nav header list links">Home</a>
-                        <a href="#" class="nav header list links">Catalog</a>
-                        <a href="#" class="nav header list links">Login</a>
-                        <a href="#" class="nav header list links">Register</a>
+                        <a
+                            href="#"
+                            class="nav header list links home"
+                            id="nav-head-home-link"
+                            >Home</a
+                        >
+                        <a
+                            href="#"
+                            class="nav header list links cat"
+                            id="nav-head-cat-link"
+                            >Catalog</a
+                        >
+                        <a
+                            href="#"
+                            class="nav header list links log"
+                            id="nav-head-log-link"
+                            >Login</a
+                        >
+                        <a
+                            href="#"
+                            class="nav header list links reg"
+                            id="nav-head-reg-link"
+                            >Register</a
+                        >
                         <!-- <a href="/about" class="nav header list links">About</a> -->
                         <!-- <a href="/contact" class="nav header list links">Contact</a> -->
                     </ul>
                 </nav>
+                <div class="whos-lookin-wrapper">
+                    <p class="whos-lookin guest" id="whos-lookin-guest">
+                        Guest
+                    </p>
+                    <p
+                        class="whos-lookin logged-user"
+                        id="whos-lookin-logged-user"
+                    >
+                        Xxxxxxxx
+                    </p>
+                </div>
             </section>
         </header>
 
@@ -54,6 +86,7 @@
                 <section class="welcome window">
                     <section class="welcome-headings">
                         <h2 class="main-title">
+                            <!-- Ultimate Feedback -->
                             Suggestions for Continuous Improvements
                         </h2>
                         <div class="sub-wrapper">
@@ -67,7 +100,9 @@
                                 suggestions which ranks them by popularity
                             </p>
                         </div>
-                        <button class="btn highlight register">Register</button>
+                        <button class="btn highlight login" id="login-btn">
+                            Login
+                        </button>
                     </section>
 
                     <!-- SAMPLE  -->
@@ -187,7 +222,9 @@
                     </section>
 
                     <div class="more">
-                        <button class="btn dark catalog">Catalog</button>
+                        <button class="btn dark catalog" id="catalog-btn">
+                            Catalog
+                        </button>
                     </div>
                 </section>
 
@@ -1134,7 +1171,7 @@
                 <!-- DETAILS -->
                 <section class="details-view container">
                     <h2>Details</h2>
-                        <!-- <div class="details-view wrapper"> -->
+                    <!-- <div class="details-view wrapper"> -->
 
                     <!-- PRIVATE -->
                     <article class="sugg-card details private">
@@ -1444,6 +1481,7 @@
                         </main>
                         <footer class="card-footer suggs-card foot">
                             <div class="card-footer-content">
+                                <p class="card-footer-owner">Owner</p>
                                 <p class="card-footer-text">
                                     Thank you for your contributions!
                                 </p>
@@ -1453,54 +1491,94 @@
                                     <a href="#" class="add-sugg-link"
                                         >Suggest</a
                                     >
+                                    <a href="#" class="print details">Print</a>
+                                    <a href="#" class="print email details"
+                                        >Email</a
+                                    >
+                                    <a href="#" class="card-details delete-card"
+                                        >Delete</a
+                                    >
                                 </div>
                             </div>
                         </footer>
                     </article>
-                         <!-- </div> -->                 
+                    <!-- </div> -->
                 </section>
                 <!-- end details -->
 
-                
-                    <!--*** ADD/POST -->
-                    <section class="add-sugg form-wrapper">
-                        <!-- ?with or without li? -->
-                        <form
-                            action="#"
+                <!--*** ADD/POST -->
+
+                <!-- ask for auth for suggesting -->
+                <section class="poll-code add-sugg form-wrapper">
+                    <form
+                        action="#"
+                        method="post"
+                        id="poll-code add-form"
+                        class="poll-code add-sugg form"
+                    >
+                        <h2>Enter Code</h2>
+                        <input
+                            type="text"
+                            id="poll-code"
+                            name="poll-code"
+                            required
+                        />
+                        <!-- <span class="poll-code add sugg author" id="add-sugg-author">
+                    Me
+                </span> -->
+                        <button
+                            type="submit"
                             method="post"
-                            id="add-form"
-                            class="add-sugg form"
+                            value="Submit"
+                            class="btn dark subm"
+                            form="poll-code add-form"
+                            id="poll-code btn-add-form"
+                            disabled
                         >
-                            <h2>Add a Suggestion</h2>
-                            <p><label for="sugg">Your Suggestion:</label></p>
+                            Submit
+                        </button>
+                    </form>
+                </section>
 
-                            <textarea
-                                id="sugg"
-                                form="add-form"
-                                name="sugg"
-                                rows="4"
-                                cols="50"
-                                maxlength="150"
-                                required
-                            >
-                            </textarea>
-                            <span class="add sugg author" id="add-sugg-author">
-                                Me
-                            </span>
-                            <button
-                                type="submit"
-                                method="post"
-                                value="Submit"
-                                class="btn dark subm"
-                                form="add-form"
-                                id="btn-add-form"
-                                disabled
-                            >
-                                Submit
-                            </button>
-                        </form>
+                <!-- authorised suggestion form -->
+                <section class="add-sugg form-wrapper">
+                    <!-- ?with or without li? -->
+                    <form
+                        action="#"
+                        method="post"
+                        id="add-form"
+                        class="add-sugg form"
+                    >
+                        <h2>Add a Suggestion</h2>
+                        <p><label for="sugg">Your Suggestion:</label></p>
 
-                        <!-- <div class="sugg-item-wrapper">
+                        <textarea
+                            id="sugg"
+                            form="add-form"
+                            name="sugg"
+                            rows="4"
+                            cols="50"
+                            maxlength="150"
+                            required
+                        >
+                        </textarea>
+                        <span class="add sugg author" id="add-sugg-author">
+                            Me
+                        </span>
+                        <button
+                            type="submit"
+                            method="post"
+                            value="Submit"
+                            class="btn dark subm"
+                            form="add-form"
+                            id="btn-add-form"
+                            disabled
+                        >
+                            Submit
+                        </button>
+                    </form>
+
+                    <!-- <div class="sugg-item-wrapper">
                         <p class="sugg-text" placeholder="Suggestion">
                             <span class="author">
                                 Me
@@ -1516,159 +1594,165 @@
                             ></a>
                         </p>
                     </div> -->
-                    </section>
-                    <!-- END ADD POST -->
+                </section>
+                <!-- END ADD POST -->
 
-                    <!-- REGISTER -->
-                    <section class="register form-wrapper">
-                        <h2>Register</h2>
-                        <form
-                            action="#"
-                            method="post"
-                            id="reg-form"
-                            class="register form"
-                        >
-                            <div class="wrap fname">
-                                <label for="fname" class="reg lbl fname"
-                                    >First Name</label
-                                >
-                                <input
-                                    type="text"
-                                    class="reg entry fname"
-                                    name="fname"
-                                    id="fname"
-                                    autocomplete="given-name"
-                                    required
-                                />
-                            </div>
-                            <div class="wrap lname">
-                                <label for="lname" class="reg lbl lname"
-                                    >Last Name</label
-                                >
-                                <input
-                                    type="text"
-                                    class="reg entry lname"
-                                    name="lname"
-                                    id="lname"
-                                    autocomplete="family-name"
-                                    required
-                                />
-                            </div>
-                            <div class="wrap email">
-                                <label for="email" class="reg lbl email"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    class="reg entry email"
-                                    name="email"
-                                    id="email"
-                                    autocomplete="email"
-                                    required
-                                />
-                            </div>
-                            <div class="wrap pass">
-                                <label for="pass" class="reg lbl pass"
-                                    >Password</label
-                                >
-                                <input
-                                    type="password"
-                                    class="reg entry pass"
-                                    name="pass"
-                                    id="pass"
-                                    minlength="6"
-                                    placeholder=" 6 characters minimum"
-                                    required
-                                />
-                            </div>
-                            <div class="wrap repass">
-                                <label for="repass" class="reg lbl repass"
-                                    >Confirm Password</label
-                                >
-                                <input
-                                    type="password"
-                                    class="reg entry repass"
-                                    name="repass"
-                                    id="repass"
-                                    required
-                                />
-                            </div>
-                            <!-- <div class="wrap code">
+                <!-- REGISTER -->
+                <section class="register form-wrapper">
+                    <h2>Register</h2>
+                    <form
+                        action="#"
+                        method="post"
+                        id="reg-form"
+                        class="register form"
+                    >
+                        <div class="wrap fname">
+                            <label for="fname" class="reg lbl fname"
+                                >First Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry fname"
+                                name="fname"
+                                id="fname"
+                                minlength="3"
+                                autocomplete="given-name"
+                                required
+                            />
+                        </div>
+                        <div class="wrap lname">
+                            <label for="lname" class="reg lbl lname"
+                                >Last Name</label
+                            >
+                            <input
+                                type="text"
+                                class="reg entry lname"
+                                name="lname"
+                                id="lname"
+                                minlength="3"
+                                autocomplete="family-name"
+                                required
+                            />
+                        </div>
+                        <div class="wrap email">
+                            <label for="email" class="reg lbl email"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                class="reg entry email"
+                                name="email"
+                                id="email"
+                                autocomplete="email"
+                                required
+                            />
+                        </div>
+                        <div class="wrap pass">
+                            <label for="pass" class="reg lbl pass"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="reg entry pass"
+                                name="pass"
+                                id="pass"
+                                minlength="6"
+                                placeholder=" 6 characters minimum"
+                                required
+                            />
+                        </div>
+                        <div class="wrap repass">
+                            <label for="repass" class="reg lbl repass"
+                                >Confirm Password</label
+                            >
+                            <input
+                                type="password"
+                                class="reg entry repass"
+                                name="repass"
+                                id="repass"
+                                required
+                            />
+                        </div>
+                        <!-- <div class="wrap code">
                             <label for="" class="reg lbl code">Code</label>
                             <input type="text" class="reg entry code" name="reg entry code" id="reg-entry-code" />
                         </div> -->
 
-                            <button
-                                type="submit"
-                                method="post"
-                                value="Register"
-                                class="btn dark subm"
-                                form="reg-form"
-                                id="btn-reg-form"
-                                disabled
-                            >
-                                Register
-                            </button>
-                        </form>
-                    </section>
-                    <!-- END REGISTER -->
-
-                    <!-- LOGIN -->
-                    <section class="login form-wrapper">
-                        <h2>Login</h2>
-                        <form
-                            action="#"
-                            method="get"
-                            id="log-form"
-                            class="login form"
+                        <button
+                            type="submit"
+                            method="post"
+                            value="Register"
+                            class="btn dark subm"
+                            form="reg-form"
+                            id="btn-reg-form"
+                            disabled
                         >
-                            <div class="wrap email">
-                                <label for="email" class="log lbl email"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    class="log entry email"
-                                    name="email"
-                                    id="email"
-                                    autocomplete="email"
-                                    required
-                                />
-                            </div>
-                            <div class="wrap pass">
-                                <label for="pass" class="log lbl pass"
-                                    >Password</label
-                                >
-                                <input
-                                    type="password"
-                                    class="log entry pass"
-                                    name="pass"
-                                    id="pass"
-                                    autocomplete="current-password"
-                                    required
-                                />
-                            </div>
-                            <button
-                                type="submit"
-                                method="get"
-                                value="Login"
-                                class="btn dark subm"
-                                form="log-form"
-                                id="btn-log-form"
-                                disabled
+                            Register
+                        </button>
+
+                        <a href="" class="login link"
+                            >Already have an account? Login</a
+                        >
+                    </form>
+                </section>
+                <!-- END REGISTER -->
+
+                <!-- LOGIN -->
+                <section class="login form-wrapper">
+                    <h2>Login</h2>
+                    <form
+                        action="#"
+                        method="get"
+                        id="log-form"
+                        class="login form"
+                    >
+                        <div class="wrap email">
+                            <label for="email" class="log lbl email"
+                                >Email</label
                             >
-                                Login
-                            </button>
-                        </form>
-                    </section>
-                    <!-- ENDD LOGIN -->
-                
+                            <input
+                                type="email"
+                                class="log entry email"
+                                name="email"
+                                id="email"
+                                autocomplete="email"
+                                required
+                            />
+                        </div>
+                        <div class="wrap pass">
+                            <label for="pass" class="log lbl pass"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="log entry pass"
+                                name="pass"
+                                id="pass"
+                                autocomplete="current-password"
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            method="get"
+                            value="Login"
+                            class="btn dark subm"
+                            form="log-form"
+                            id="btn-log-form"
+                            disabled
+                        >
+                            Login
+                        </button>
+                        <a href="" class="login link"
+                            >Don't have an account? Register</a
+                        >
+                    </form>
+                </section>
+                <!-- END LOGIN -->
 
                 <!-- PROFILE -->
-                <section class="profile window container">
+                <section class="profile window container"></section>
 
-                </section>
-               
                 <!-- LOGGED CATALOG -->
                 <!-- <section class="public window"></section> -->
 

@@ -37,5 +37,23 @@
 .sugg-card.details .card-footer .details-link {
     display: none;
 }
+/* added */
+
+.card-footer-owner{
+    margin-left: 20px;
+}
+
+.print, .delete-card:hover{
+    color: var(--clr-light);
+}
+.print:hover, .delete-card{
+    color: var(--clr-highlight);
+}
+
+.card-footer-owner,
+.print,
+.delete-card{
+    display: none;
+}
 
 
