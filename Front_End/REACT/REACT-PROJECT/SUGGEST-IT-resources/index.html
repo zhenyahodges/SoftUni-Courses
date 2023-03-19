@@ -1758,7 +1758,97 @@
                 <!-- PROFILE -->
                 <section class="profile window container">
                     <h2>Profile</h2>
-                    <div class="profile text wrapper"></div>
+
+                    <div class="profile text wrapper">
+                        <form
+                            action="#"
+                            method="post"
+                            id="prof-form"
+                            class="prof form"
+                        >
+                            <div class="wrap fname">
+                                <label for="fname" class="prof lbl fname"
+                                    >First Name</label
+                                >
+                                <input
+                                    type="text"
+                                    class="prof entry fname"
+                                    name="fname"
+                                    id="fname"
+                                    minlength="3"
+                                    autocomplete="given-name"
+                                    required
+                                />
+                            </div>
+                            <div class="wrap lname">
+                                <label for="lname" class="prof lbl lname"
+                                    >Last Name</label
+                                >
+                                <input
+                                    type="text"
+                                    class="prof entry lname"
+                                    name="lname"
+                                    id="lname"
+                                    minlength="3"
+                                    autocomplete="family-name"
+                                    required
+                                />
+                            </div>
+                            <div class="wrap email">
+                                <label for="email" class="prof lbl email"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="prof entry email"
+                                    name="email"
+                                    id="email"
+                                    autocomplete="email"
+                                    required
+                                />
+                            </div>
+
+                            <!-- <div class="wrap pass">
+                            <label for="pass" class="prof lbl pass"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="prof entry pass"
+                                name="pass"
+                                id="pass"
+                                minlength="6"
+                                placeholder=" 6 characters minimum"
+                                required
+                            />
+                        </div> -->
+
+                            <!-- <div class="wrap repass">
+                            <label for="repass" class="prof lbl repass"
+                                >Confirm Password</label
+                            >
+                            <input
+                                type="password"
+                                class="prof entry repass"
+                                name="repass"
+                                id="repass"
+                                required
+                            />
+                        </div> -->
+
+                            <!-- <button
+                            type="submit"
+                            method="post"
+                            value="Register"
+                            class="btn dark subm"
+                            form="reg-form"
+                            id="btn-reg-form"
+                            disabled
+                        >
+                            Register
+                        </button> -->
+                        </form>
+                    </div>
                 </section>
 
                 <!-- LOGGED CATALOG -->
