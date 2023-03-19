@@ -16,7 +16,7 @@
     gap: 1rem;
 }
 
-form button{
+form button {
     margin-top: 1rem;
 }
 
@@ -29,10 +29,23 @@ form button{
     align-items: center;
 }
 
-/* ADD/POST  */
+
+/*|| ADD/POST || */
 
 /* if logged in */
 /* if not-register */
+
+/* poll-code form */
+.poll-code.form-wrapper {
+    min-height: 30vh;
+}
+
+/* if no poll-code*/
+.error-message {
+    display: none;
+}
+
+/* if poll-code*/
 
 .add-sugg.form-wrapper {
     /* display: none; */
@@ -43,9 +56,10 @@ form button{
     width: 80%;
 }
 
-textarea {
+.sugg-text-add {
     border: none;
     width: 100%;
+    resize: none;
 }
 
 .add.sugg.author {
@@ -71,10 +85,11 @@ textarea {
     flex: 1 1 60%;
 }
 
-.link{
+.link {
     color: var(--clr-drk-mid);
 }
-.link:hover{
+
+.link:hover {
     color: var(--clr-highlight);
 }
 

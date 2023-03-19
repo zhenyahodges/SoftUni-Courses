@@ -1508,13 +1508,13 @@
 
                 <!--*** ADD/POST -->
 
-                <!-- ask for auth for suggesting -->
-                <section class="poll-code add-sugg form-wrapper">
+                <!-- ask for paoll-code auth for suggesting -->
+                <section class="poll-code form-wrapper">
                     <form
                         action="#"
                         method="post"
-                        id="poll-code add-form"
-                        class="poll-code add-sugg form"
+                        id="poll-code-form"
+                        class="poll-code form"
                     >
                         <h2>Enter Code</h2>
                         <input
@@ -1523,6 +1523,11 @@
                             name="poll-code"
                             required
                         />
+                        <p class="error-message">
+                            Sorry, this code is incorrect. Please, try again or
+                            obtain a code from your provider first.
+                        </p>
+
                         <!-- <span class="poll-code add sugg author" id="add-sugg-author">
                     Me
                 </span> -->
@@ -1553,6 +1558,7 @@
                         <p><label for="sugg">Your Suggestion:</label></p>
 
                         <textarea
+                            class="sugg-text-add"
                             id="sugg"
                             form="add-form"
                             name="sugg"
