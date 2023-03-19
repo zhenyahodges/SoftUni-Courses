@@ -9,15 +9,22 @@
 }
 
 #prof-form {
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 }
 
+.wrap.fname,
 .wrap.lname,
-.wrap.email {}
+.wrap.email {
+justify-content: unset;
+gap: 1rem;
+}
+
+.prof.lbl {
+    font-weight: 800;
+}
+
 
 .prof.entry {
     border: none;
     background-color: transparent;
 }
-
-.prof.lbl {}
