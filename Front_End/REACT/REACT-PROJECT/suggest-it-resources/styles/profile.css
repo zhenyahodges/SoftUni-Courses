@@ -33,24 +33,28 @@ gap: 1rem;
     margin: 2rem 1rem;
 }
 
+.user-profile-cards-wrapper{
+margin: 0 auto;
+}
+
 /* PUBLISHED */
 .user.published{
     /* display: none; */
-    background-color: red;
-    width: 50%;
-    height: 100vh;
+display: flex;
+flex-flow: row wrap;
 }
 
 /* CREATE */
 .user.create{
-    display: none;
-    background-color: yellow;
-    width: 50%;
-    height: 100vh;
+    /* display: none; */
 }
 
 
 /* SUGGESTED */
 .user.suggested{
     /* display: none; */
+}
+.user{
+    width: 100%;
+    height: 100vh;
 }
