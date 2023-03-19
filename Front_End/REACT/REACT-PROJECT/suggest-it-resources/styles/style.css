@@ -13,6 +13,7 @@
     --clr-mid: #52696f;
     --clr-light: white;
     --txt-shadow: 1px 1px 1px #132930;
+    --clr-grad: #c2e2ee;
 }
 
 body {
@@ -144,9 +145,6 @@ color: var(--clr-highlight);
     text-align: center;
     line-height: 2;
 }
-
-/* || PROFILE-LOGGED-COMPANY */
-/* || PROFILE-LOGGED-USER */
 
 /* || EDIT */
 /* || DELETE */

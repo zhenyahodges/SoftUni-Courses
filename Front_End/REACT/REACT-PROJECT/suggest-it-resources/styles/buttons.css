@@ -46,8 +46,10 @@
 
 /* styling active/focused buttons */
 .spec:focus{
-    color: var(--clr-bgr);
-background-color: var(--clr-highlight);
+    /* color: var(--clr-bgr);
+background-color: var(--clr-highlight); */
 /* font-weight: 600; */
+background: linear-gradient(0deg, rgba(19, 41, 48, 1) 0%, rgba(46, 101, 119, 1) 73%, rgba(91, 200, 235, 1) 100%);
+color: var(--clr-light);
 }
 /* buttons end */

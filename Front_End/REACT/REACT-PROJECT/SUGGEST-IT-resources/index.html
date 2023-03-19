@@ -1783,8 +1783,10 @@
                                         value="John"
                                     />
                                 </div>
-                                <div class="wrap lname">
-                                    <label for="lname" class="prof lbl lname"
+                                <div class="wrap prof-lname">
+                                    <label
+                                        for="prof-lname"
+                                        class="prof lbl lname"
                                         >Last Name</label
                                     >
                                     <input
@@ -1796,7 +1798,9 @@
                                     />
                                 </div>
                                 <div class="wrap email">
-                                    <label for="email" class="prof lbl email"
+                                    <label
+                                        for="prof-email"
+                                        class="prof lbl email"
                                         >Email</label
                                     >
                                     <input
@@ -3161,7 +3165,7 @@
                                         <div class="wrap card-title">
                                             <label
                                                 for="card-name"
-                                                class="card-name"
+                                                class="lbl card-name"
                                                 >Feedback Form Title</label
                                             >
                                             <input
@@ -3178,8 +3182,8 @@
                                         <div class="wrap card-code">
                                             <label
                                                 for="card-code"
-                                                class="card-code"
-                                                >CCreaye Code</label
+                                                class="lbl card-code"
+                                                >Create Code</label
                                             >
                                             <input
                                                 type="text"
@@ -3188,8 +3192,38 @@
                                                 id="card-code"
                                                 minlength="6"
                                                 placeholder="Create form code"
+                                                required
                                             />
                                         </div>
+                                        <div class="wrap card-timeout">
+                                            <label
+                                                for="card-timeout"
+                                                class="lbl card-timeout"
+                                                >Days Available</label
+                                            >
+                                            <input
+                                                type="number"
+                                                class="card-timeout"
+                                                name="card-timeout"
+                                                id="card-timeout"
+                                                min="1"
+                                                max="30"
+                                                placeholder=" Days"
+                                                required
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            method="post"
+                                            value="Create"
+                                            class="create btn dark subm"
+                                            form="create-card-form"
+                                            id="btn-create-form"
+                                            disabled
+                                        >
+                                            Submit
+                                        </button>
                                     </form>
                                     <!-- <article class="create sugg-card catalog private">
                                         <header
@@ -3236,7 +3270,12 @@
                             <!-- || sec USER SUGGESTIONS -->
                             <section class="user suggested">
                                 <h2 class="user-title">Suggested</h2>
-                                <div class="user-suggs-wrapper"></div>
+                                <div class="user-suggs-wrapper">
+                                    <ul class="user-sugg-list">
+                                        <li class="user-sugg-li-items"></li>
+                                        <li class="user-sugg-li-items"></li>
+                                    </ul>
+                                </div>
                             </section>
                         </section>
                     </div>
