@@ -43,4 +43,11 @@
 .btn:disabled{
     background-color: var(--clr-mid);
 }
+
+/* styling active/focused buttons */
+.spec:focus{
+    color: var(--clr-bgr);
+background-color: var(--clr-highlight);
+/* font-weight: 600; */
+}
 /* buttons end */

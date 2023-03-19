@@ -37,8 +37,15 @@ gap: 1rem;
 margin: 0 auto;
 }
 
+.user-title{
+    font-style: italic;
+    color: var(--clr-drk-mid);
+}
+
+
+
 /* PUBLISHED */
-.user.published{
+.user-article-wrapper{
     /* display: none; */
 display: flex;
 flex-flow: row wrap;
