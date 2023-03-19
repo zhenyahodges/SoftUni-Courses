@@ -4,6 +4,7 @@
 @import url("./forms.css");
 @import url("./mqs.css");
 @import url("./addForm.css");
+@import url("./profile.css");
 
 :root {
     --clr-bgr: #132930;

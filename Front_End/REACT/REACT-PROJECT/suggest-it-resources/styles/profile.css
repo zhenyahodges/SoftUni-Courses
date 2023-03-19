@@ -1,0 +1,23 @@
+.profile.window.container {
+    /* display: none; */
+    box-shadow: 5px 5px 17px 0px #688589;
+}
+
+.profile-wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+#prof-form {
+    flex-flow: row wrap;
+}
+
+.wrap.lname,
+.wrap.email {}
+
+.prof.entry {
+    border: none;
+    background-color: transparent;
+}
+
+.prof.lbl {}
