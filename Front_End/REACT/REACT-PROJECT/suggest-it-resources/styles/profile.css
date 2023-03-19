@@ -28,3 +28,27 @@ gap: 1rem;
     border: none;
     background-color: transparent;
 }
+
+.show{
+    margin: 2rem 1rem;
+}
+
+.user-title{
+    text-align: left;
+}
+
+/* PUBLISHED */
+.user.published{
+    /* display: none; */
+}
+
+/* CREATE */
+.user.create{
+    display: none;
+}
+
+
+/* SUGGESTED */
+.user.suggested{
+    display: none;
+}

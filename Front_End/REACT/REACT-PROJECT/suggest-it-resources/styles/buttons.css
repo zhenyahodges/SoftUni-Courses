@@ -20,15 +20,15 @@
     text-shadow: 1px 1px 1px #4a5b60;
 }
 
-/* 
+
 .btn.light {
     color: var(--clr-bgr);
     background-color: var(--clr-light);
 }
 
 .btn.light:hover {
-    background-color: var(--clr-bgr);
-} */
+    background-color: var(--clr-highlight);
+}
 
 .btn.dark {
     background-color: var(--clr-bgr);
