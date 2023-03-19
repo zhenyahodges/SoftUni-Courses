@@ -1522,7 +1522,7 @@
                             name="poll-code"
                             required
                         />
-                        <p class="error-message">
+                        <p class="poll-code error-message">
                             Sorry, this code is incorrect. Please, try again or
                             obtain a code from your provider first.
                         </p>
@@ -1532,7 +1532,7 @@
                 </span> -->
                         <button
                             type="submit"
-                            method="post"
+                            method="get"
                             value="Submit"
                             class="btn dark subm"
                             form="poll-code-form"
@@ -1574,8 +1574,8 @@
                             type="submit"
                             method="post"
                             value="Submit"
-                            class="btn dark subm"
-                            form="add-form"
+                            class="add-sugg btn dark subm"
+                            form="add-sugg"
                             id="btn-add-form"
                             disabled
                         >
@@ -1619,7 +1619,7 @@
                                 type="text"
                                 class="reg entry fname"
                                 name="fname"
-                                id="fname"
+                                id="reg-fname"
                                 minlength="3"
                                 autocomplete="given-name"
                                 required
@@ -1633,7 +1633,7 @@
                                 type="text"
                                 class="reg entry lname"
                                 name="lname"
-                                id="lname"
+                                id="reg-lname"
                                 minlength="3"
                                 autocomplete="family-name"
                                 required
@@ -1647,7 +1647,7 @@
                                 type="email"
                                 class="reg entry email"
                                 name="email"
-                                id="email"
+                                id="reg-email"
                                 autocomplete="email"
                                 required
                             />
@@ -1660,7 +1660,7 @@
                                 type="password"
                                 class="reg entry pass"
                                 name="pass"
-                                id="pass"
+                                id="reg-pass"
                                 minlength="6"
                                 placeholder=" 6 characters minimum"
                                 required
@@ -1674,7 +1674,7 @@
                                 type="password"
                                 class="reg entry repass"
                                 name="repass"
-                                id="repass"
+                                id="reg-repass"
                                 required
                             />
                         </div>
@@ -1719,7 +1719,7 @@
                                 type="email"
                                 class="log entry email"
                                 name="email"
-                                id="email"
+                                id="log-email"
                                 autocomplete="email"
                                 required
                             />
@@ -1732,7 +1732,7 @@
                                 type="password"
                                 class="log entry pass"
                                 name="pass"
-                                id="pass"
+                                id="log-pass"
                                 autocomplete="current-password"
                                 required
                             />
@@ -1741,7 +1741,7 @@
                             type="submit"
                             method="get"
                             value="Login"
-                            class="btn dark subm"
+                            class="log btn dark subm"
                             form="log-form"
                             id="btn-log-form"
                             disabled
@@ -1768,14 +1768,16 @@
                                 class="prof form"
                             >
                                 <div class="wrap fname">
-                                    <label for="fname" class="prof lbl fname"
+                                    <label
+                                        for="prof-fname"
+                                        class="prof lbl fname"
                                         >First Name</label
                                     >
                                     <input
                                         type="text"
                                         class="prof entry fname"
-                                        name="fname"
-                                        id="fname"
+                                        name="prof-fname"
+                                        id="prof-fname"
                                         value="John"
                                     />
                                 </div>
@@ -1786,8 +1788,8 @@
                                     <input
                                         type="text"
                                         class="prof entry lname"
-                                        name="lname"
-                                        id="lname"
+                                        name="prof-lname"
+                                        id="prof-lname"
                                         value="Johnson"
                                     />
                                 </div>
@@ -1798,8 +1800,8 @@
                                     <input
                                         type="email"
                                         class="prof entry email"
-                                        name="email"
-                                        id="email"
+                                        name="prof-email"
+                                        id="prof-email"
                                         value="johnson@gmail.com"
                                     />
                                 </div>
@@ -1811,8 +1813,8 @@
                             <input
                                 type="password"
                                 class="prof entry pass"
-                                name="pass"
-                                id="pass"
+                                name="prof-pass"
+                                id="prof-pass"
                                 minlength="6"
                                 placeholder=" 6 characters minimum"
                                 required
@@ -1826,8 +1828,8 @@
                             <input
                                 type="password"
                                 class="prof entry repass"
-                                name="repass"
-                                id="repass"
+                                name="prof-repass"
+                                id="prof-repass"
                                 required
                             />
                         </div> -->
@@ -1836,9 +1838,9 @@
                             type="submit"
                             method="post"
                             value="Register"
-                            class="btn dark subm"
-                            form="reg-form"
-                            id="btn-reg-form"
+                            class="prof btn dark subm"
+                            form="prof-form"
+                            id="btn-prof-form"
                             disabled
                         >
                             Register

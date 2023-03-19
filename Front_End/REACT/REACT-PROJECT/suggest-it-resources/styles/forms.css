@@ -42,7 +42,7 @@ form button {
 }
 
 /* if no poll-code*/
-.error-message {
+.poll-code.error-message {
     display: none;
 }
 
