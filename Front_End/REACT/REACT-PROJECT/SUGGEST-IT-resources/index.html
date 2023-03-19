@@ -3152,7 +3152,46 @@
                             <section class="user create">
                                 <h2 class="user-title">Create</h2>
                                 <div class="user-create-wrapper">
-                                    <article class="sugg-card catalog private">
+                                    <form
+                                        action="#"
+                                        method="post"
+                                        id="create-card-form"
+                                        class="create-card form"
+                                    >
+                                        <div class="wrap card-title">
+                                            <label
+                                                for="card-name"
+                                                class="card-name"
+                                                >Feedback Form Title</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="card-name"
+                                                name="card-name"
+                                                id="card-name"
+                                                placeholder="Enter title"
+                                                minlength="3"
+                                                maxlength="30"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="wrap card-code">
+                                            <label
+                                                for="card-code"
+                                                class="card-code"
+                                                >CCreaye Code</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="card-code"
+                                                name="card-code"
+                                                id="card-code"
+                                                minlength="6"
+                                                placeholder="Create form code"
+                                            />
+                                        </div>
+                                    </form>
+                                    <!-- <article class="create sugg-card catalog private">
                                         <header
                                             class="card-header card-brand-logo suggestit-brand"
                                         >
@@ -3163,8 +3202,7 @@
 
                                         <main class="card-main">
                                             <ul class="sugg-list" role="list">
-                                                <!-- LIST items start -->
-                                                <!-- LIST items end -->
+                                               
                                             </ul>
                                         </main>
                                         <footer
@@ -3191,7 +3229,7 @@
                                                 </div>
                                             </div>
                                         </footer>
-                                    </article>
+                                    </article> -->
                                 </div>
                             </section>
 
