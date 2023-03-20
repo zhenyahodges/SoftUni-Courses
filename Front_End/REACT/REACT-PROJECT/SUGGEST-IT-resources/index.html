@@ -1169,7 +1169,7 @@
                     <h2>Details</h2>
                     <!-- <div class="details-view wrapper"> -->
 
-                    <!-- PRIVATE -->
+                    <!--CARD-DETAILS-->
                     <article class="sugg-card details private">
                         <header
                             class="card-header card-brand-logo suggestit-brand"
@@ -1198,6 +1198,7 @@
 
                                         <p class="sugg-ranking">
                                             <span class="rank">15</span>
+                                            <!-- LIKE DISABLED FOR GUESTS -->
                                             <a class="sugg-like-link">
                                                 <i
                                                     class="like fa-solid fa-circle-up"
@@ -1483,13 +1484,21 @@
                                 </p>
 
                                 <div class="card-footer-links-wrapper">
+                                    <!-- NOT VISIBLE WHEN OPENED -->
                                     <a href="#" class="details-link">Details</a>
+
+                                    <!-- VISIBLE FOR LOGGED NOT OWNERS -->
                                     <a href="#" class="add-sugg-link"
                                         >Suggest</a
                                     >
-                                    <a href="#" class="print details">Print</a>
-                                    <a href="#" class="print email details"
+                                    <!-- <a href="#" class="print details">Print</a> -->
+                                    <!-- <a href="#" class="print email details"
                                         >Email</a
+                                    > -->
+
+                                    <!-- VISIBLE FOR LOGGED OWNER ONLY -->
+                                    <a href="#" class="card-details edit-card"
+                                        >Edit</a
                                     >
                                     <a href="#" class="card-details delete-card"
                                         >Delete</a

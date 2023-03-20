@@ -103,6 +103,7 @@ body {
     font-size: 0.8rem;
 }
 
+/* header nav */
 .nav.header {
     color: var(--clr-light);
     padding: 0.5rem 0.7rem;
@@ -114,7 +115,8 @@ body {
     text-align: center;
 }
 
-.nav.header.list a:hover {
+.nav.header.list a:hover,
+.nav.header.list a:active {
     background-color: var(--clr-highlight);
     color: var(--clr-light);
     border-radius: 5px;

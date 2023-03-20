@@ -1,6 +1,6 @@
 /* DETAILS */
 .details-view.container {
-    display: none;
+    /* display: none; */
     min-width: 364px;
 }
 
@@ -37,23 +37,28 @@
 .sugg-card.details .card-footer .details-link {
     display: none;
 }
+
 /* added */
 
-.card-footer-owner{
+.card-footer-owner {
     margin-left: 20px;
 }
 
-.print, .delete-card:hover{
+.print,
+.delete-card:hover,
+.edit-card:hover {
     color: var(--clr-light);
 }
-.print:hover, .delete-card{
+
+.print:hover,
+.delete-card,
+.edit-card {
     color: var(--clr-highlight);
 }
 
 .card-footer-owner,
 .print,
-.delete-card{
-    display: none;
+.delete-card,
+.edit-card {
+    /* display: none; */
 }
-
-

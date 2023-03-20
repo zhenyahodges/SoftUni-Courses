@@ -117,9 +117,14 @@
     color: var(--clr-highlight);
    }
    .add-sugg-link:hover,
-   .vote-sugg-link:hover,
+   /* .vote-sugg-link:hover, */
   .details-link:hover{
      color: var(--clr-light);
+   }
+
+   /* GUESTS-DONT DISPLAY LINK */
+   .sugg-like-link{
+    /* display: none; */
    }
 
  
