@@ -1,11 +1,12 @@
 .profile.window.container {
-    display: none;
+    /* display: none; */
       height: auto;
       padding: 4rem;
     box-shadow: 5px 5px 17px 0px #688589;
     /* background: linear-gradient(144deg, rgba(250,184,122,1) 0%, rgba(194,226,238,1) 56%, rgba(250,184,122,1) 100%); */
     /* background: linear-gradient(144deg, rgba(250,184,122,1) 0%, rgba(255,255,255,1) 56%, rgba(250,184,122,1) 100%); */
-    background: linear-gradient(144deg, rgba(250,184,122,0.8274160005799195) 0%, rgba(255,255,255,1) 56%, rgba(250,184,122,0.821813759683561) 100%);
+    
+    /* background: linear-gradient(144deg, rgba(250,184,122,0.8274160005799195) 0%, rgba(255,255,255,1) 56%, rgba(250,184,122,0.821813759683561) 100%); */
 }
 
 .profile-wrapper {
@@ -67,10 +68,10 @@
 
 /*|| CREATE */
 .user.create {
-    /* display: none; */
+    display: none;
 }
 
-/* CREATE FORM STYLES */
+/* Create Form Styles*/
 .user-create-wrapper {
     width: 70%;
     margin: 0 auto;
@@ -99,5 +100,25 @@ input.card-timeout{
 
 /*|| SUGGESTED */
 .user.suggested {
-    display: none;
+    /* display: none; */
+}
+
+.user-sugged-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    text-align: left;
+}
+
+.edit-user-sugged,
+.delete-user-sugged{
+    color: var(--clr-highlight);
+    padding-left: 1rem;
+    font-weight: 700;
+}
+
+.edit-user-sugged:hover,
+.delete-user-sugged:hover{
+    color: var(---clr-bgr);
+
 }
