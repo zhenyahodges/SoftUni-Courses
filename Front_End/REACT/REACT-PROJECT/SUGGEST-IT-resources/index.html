@@ -224,7 +224,7 @@
                     </div>
                 </section>
 
-                <!-- CATALOG -->
+                <!-- CATALOG vis for all-->
                 <section class="catalog window">
                     <h2 class="catalog title">Catalog</h2>
 
@@ -1164,7 +1164,7 @@
                     </div>
                 </section>
 
-                <!-- DETAILS -->
+                <!-- DETAILS vis for all-->
                 <section class="details-view container">
                     <h2>Details</h2>
                     <!-- <div class="details-view wrapper"> -->
@@ -1198,7 +1198,9 @@
 
                                         <p class="sugg-ranking">
                                             <span class="rank">15</span>
-                                            <!-- LIKE DISABLED FOR GUESTS -->
+
+                                            <!-- LIKE DISABLED FOR GUESTS & OWNERS -->
+                                            <!--===!? LIKE LIMITED voting!?=== -->
                                             <a class="sugg-like-link">
                                                 <i
                                                     class="like fa-solid fa-circle-up"
@@ -1511,8 +1513,8 @@
                 </section>
                 <!-- end details -->
 
-                <!--*** ADD/POST -->
-                <!-- ask for poll-code auth for suggesting -->
+                <!--*** ADD A SUGGESTION -->
+                <!-- ASK for poll-code auth for suggesting -->
                 <section class="poll-code form-wrapper">
                     <form
                         action="#"
@@ -1525,6 +1527,8 @@
                             type="text"
                             id="poll-code"
                             name="poll-code"
+                            minlength="6"
+                            maxlength="6"
                             required
                         />
                         <p class="poll-code error-message">
@@ -1549,7 +1553,7 @@
                     </form>
                 </section>
 
-                <!-- authorised suggestion form -->
+                <!-- authorised ADD SUGGESTION form -->
                 <section class="add-sugg form-wrapper">
                     <!-- ?with or without li? -->
                     <form
@@ -1667,7 +1671,7 @@
                                 name="pass"
                                 id="reg-pass"
                                 minlength="6"
-                                placeholder=" 6 characters minimum"
+                                placeholder="6 characters minimum"
                                 required
                             />
                         </div>
@@ -3195,6 +3199,7 @@
                                                 name="card-code"
                                                 id="card-code"
                                                 minlength="6"
+                                                maxlength="6"
                                                 placeholder="Create form code"
                                                 required
                                             />
@@ -3271,6 +3276,9 @@
                                 </div>
                             </section>
 
+                              <!-- EDIT -->
+                              <!-- DELETE -->
+
                             <!-- || sec USER SUGGESTIONS -->
                             <section class="user suggested">
                                 <h2 class="user-title">Suggested</h2>
@@ -3285,11 +3293,6 @@
                     </div>
                 </section>
 
-                <!-- LOGGED CATALOG -->
-                <!-- <section class="public window"></section> -->
-
-                <!-- EDIT -->
-                <!-- DELETE -->
             </section>
             <!-- end main section -->
         </main>

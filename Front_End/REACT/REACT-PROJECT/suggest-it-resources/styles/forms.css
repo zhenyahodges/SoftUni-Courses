@@ -30,12 +30,12 @@ form button {
 }
 
 
-/*|| ADD/POST || */
+/*|| ADD SUGGESTION || */
 
 /* if logged in */
 /* if not-register */
 
-/* poll-code form */
+/* |**POLL-CODE FORM */
 .poll-code.form-wrapper {
     display: none;
     min-height: 30vh;
@@ -47,7 +47,7 @@ form button {
 }
 
 /* if poll-code*/
-
+/* SUGGEST FORM */
 .add-sugg.form-wrapper {
     display: none;
     min-height: 40vh;
@@ -83,7 +83,7 @@ form button {
 
 .reg.entry,
 .log.entry {
-    flex: 1 1 60%;
+    flex: 0 1 60%;
 }
 
 .link {
@@ -107,5 +107,5 @@ form button {
 }
 
 .login.form-wrapper .login .form {
-    gap: 1rem
+    gap: 1rem;
 }
