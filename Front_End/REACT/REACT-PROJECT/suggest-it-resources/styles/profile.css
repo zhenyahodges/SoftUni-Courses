@@ -91,12 +91,10 @@ input.card-name
     font-weight: 700;
     text-align: left;
 }
+
 input.card-timeout{
-    flex: 0 0 10%;
+    flex: 0 0 17%;
 }
-/* .lbl.card-timeout{
-    flex: 0 0 10%;   
-} */
 
 
 /*|| SUGGESTED */
