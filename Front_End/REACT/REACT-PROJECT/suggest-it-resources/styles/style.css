@@ -1,4 +1,7 @@
 @import url("https://use.fontawesome.com/releases/v6.3.0/css/all.css");
+@import url("./welcome.css");
+@import url("./card.css");
+@import url("./buttons.css");
 @import url("./catalog.css");
 @import url("./details.css");
 @import url("./forms.css");
@@ -15,6 +18,8 @@
     --txt-shadow: 1px 1px 1px #132930;
     --clr-grad: #c2e2ee;
 }
+
+/* <i class="fa-solid fa-circle-arrow-down"></i> */
 
 body {
     background: linear-gradient(119deg, rgba(19, 41, 48, 1) 0%, rgba(202, 235, 247, 1) 49%, rgba(247, 247, 247, 1) 100%);
