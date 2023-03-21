@@ -1,7 +1,7 @@
 /* || CATALOG */
 .catalog.window,
 .catalog.all{
-    display: none;
+    /* display: none; */
 }
 
 .catalog-wrapper {
