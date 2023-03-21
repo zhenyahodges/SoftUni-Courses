@@ -227,7 +227,9 @@
                 <!-- CATALOG vis for all-->
                 <section class="catalog window">
                     <h2 class="catalog title">Catalog</h2>
-                    <div class="loader"></div>
+
+                    <!-- LOADER show when fetching -->
+                    <!-- <div class="loader"></div> -->
 
                     <div class="catalog-wrapper">
                         <!-- PUBLIC CATALOG -->
@@ -1168,7 +1170,9 @@
                 <!-- DETAILS vis for all-->
                 <section class="details-view container">
                     <h2>Details</h2>
-                    <!-- <div class="details-view wrapper"> -->
+                    
+                        <!-- LOADER show when fetching -->
+                    <!-- <div class="loader"></div> -->
 
                     <!--CARD-DETAILS-->
                     <article class="sugg-card details private">
@@ -1195,6 +1199,20 @@
                                             Lorem ipsum dolor sit amet
                                             consectetur adipisicing elit.
                                             Doloribus, est?
+
+                                            <!--IF OWNER & NOT TIMED OUT -->
+                                            <!-- <span class="user-sug-list">
+                                                <a
+                                                    href="#"
+                                                    class="edit-user-sugged link"
+                                                    >Edit</a
+                                                >
+                                                <a
+                                                    href="#"
+                                                    class="delete-user-sugged link"
+                                                    >Delete</a
+                                                >
+                                            </span> -->
                                         </p>
 
                                         <p class="sugg-ranking">
@@ -1335,6 +1353,7 @@
                                     </div>
                                 </li>
                                 <!-- li end-->
+                              
                                 <!-- li start -->
                                 <li class="sugg-item">
                                     <div class="sugg-item-wrapper">
@@ -1354,7 +1373,8 @@
                                         </p>
                                     </div>
                                 </li>
-                                <!-- li end-->
+                                <!-- li end-->                             
+                           
                                 <!-- li start -->
                                 <li class="sugg-item">
                                     <div class="sugg-item-wrapper">
@@ -1365,7 +1385,7 @@
                                             One more suggestion for you
                                         </p>
                                         <p class="sugg-ranking">
-                                            <span class="rank">5</span
+                                            <span class="rank">1</span
                                             ><a class="sugg-like-link"
                                                 ><i
                                                     class="like fa-solid fa-circle-up"
@@ -1375,86 +1395,7 @@
                                     </div>
                                 </li>
                                 <!-- li end-->
-                                <!-- li start -->
-                                <li class="sugg-item">
-                                    <div class="sugg-item-wrapper">
-                                        <p class="sugg-text">
-                                            <span class="author-nickname">
-                                                Me
-                                            </span>
-                                            One more suggestion for you
-                                        </p>
-                                        <p class="sugg-ranking">
-                                            <span class="rank">5</span
-                                            ><a class="sugg-like-link"
-                                                ><i
-                                                    class="like fa-solid fa-circle-up"
-                                                ></i
-                                            ></a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- li end-->
-                                <!-- li start -->
-                                <li class="sugg-item">
-                                    <div class="sugg-item-wrapper">
-                                        <p class="sugg-text">
-                                            <span class="author-nickname">
-                                                Me
-                                            </span>
-                                            One more suggestion for you
-                                        </p>
-                                        <p class="sugg-ranking">
-                                            <span class="rank">5</span
-                                            ><a class="sugg-like-link"
-                                                ><i
-                                                    class="like fa-solid fa-circle-up"
-                                                ></i
-                                            ></a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- li end-->
-                                <!-- li start -->
-                                <li class="sugg-item">
-                                    <div class="sugg-item-wrapper">
-                                        <p class="sugg-text">
-                                            <span class="author-nickname">
-                                                Me
-                                            </span>
-                                            One more suggestion for you
-                                        </p>
-                                        <p class="sugg-ranking">
-                                            <span class="rank">5</span
-                                            ><a class="sugg-like-link"
-                                                ><i
-                                                    class="like fa-solid fa-circle-up"
-                                                ></i
-                                            ></a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- li end-->
-                                <!-- li start -->
-                                <li class="sugg-item">
-                                    <div class="sugg-item-wrapper">
-                                        <p class="sugg-text">
-                                            <span class="author-nickname">
-                                                Me
-                                            </span>
-                                            One more suggestion for you
-                                        </p>
-                                        <p class="sugg-ranking">
-                                            <span class="rank">5</span
-                                            ><a class="sugg-like-link"
-                                                ><i
-                                                    class="like fa-solid fa-circle-up"
-                                                ></i
-                                            ></a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <!-- li end-->
+                               
                                 <!-- li start -->
                                 <li class="sugg-item">
                                     <div class="sugg-item-wrapper">
@@ -1500,6 +1441,12 @@
                                     > -->
 
                                     <!-- VISIBLE FOR LOGGED OWNER ONLY -->
+                                        <!-- <p class="countdown-text"><span class="count-end">20</span> days left</p> -->
+
+                                        <!-- if POLL ENDED -->
+                                        <!-- <p class="countdown-text">Poll ended</p> -->
+
+                                    <!--VISIBLE FOR OWNER IF NOT TIMED OUT -->
                                     <a href="#" class="card-details edit-card"
                                         >Edit</a
                                     >
@@ -1767,7 +1714,7 @@
 
                 <!-- PROFILE -->
                 <section class="profile window container">
-                    <h2>Profile</h2>
+                    <h2>Profile</h2>                    
 
                     <div class="profile-wrapper">
                         <!--||PROF INFO-->
@@ -1877,6 +1824,10 @@
                             <!-- || sec USER-OWNER PUBLISHED polls -->
                             <section class="user published">
                                 <h2 class="user-title">Published</h2>
+
+                                <!-- LOADER show when fetching -->
+                                <!-- <div class="loader"></div> -->
+
                                 <div class="user-article-wrapper">
                                     <!-- 1st card -->
                                     <article class="sugg-card catalog private">
@@ -3164,6 +3115,10 @@
                             <!-- || sec USER-OWNER CREATE polls -->
                             <section class="user create">
                                 <h2 class="user-title">Create</h2>
+
+                                 <!-- LOADER show when fetching -->
+                                <!-- <div class="loader"></div> -->
+
                                 <div class="user-create-wrapper">
                                     <form
                                         action="#"
@@ -3206,7 +3161,7 @@
                                                 required
                                             />
                                         </div>
-                                        <div class="wrap card-timeout">
+                                        <!-- <div class="wrap card-timeout">
                                             <label
                                                 for="card-timeout"
                                                 class="lbl card-timeout"
@@ -3222,7 +3177,7 @@
                                                 value="2023-03-01"
                                                 required
                                             />
-                                        </div>
+                                        </div> -->
 
                                         <button
                                             type="submit"
@@ -3278,12 +3233,13 @@
                                 </div>
                             </section>
 
-                            <!-- EDIT -->
-                            <!-- DELETE -->
-
-                            <!-- || sec USER-OWNER SUGGESTIONS -->
+                            <!-- || USER-OWNER SUGGESTIONS -->
                             <section class="user suggested">
                                 <h2 class="user-title">Suggested</h2>
+
+                               <!-- LOADER show when fetching -->
+                                  <!-- <div class="loader"></div> -->
+
                                 <div class="user-sugged-wrapper">
                                     <!-- ???LIST SHOWS/ANY FUNC?! -->
                                     <ul class="user-sugged-list" role="list">
@@ -3291,6 +3247,8 @@
                                             Lorem ipsum dolor sit amet
                                             consectetur adipisicing elit.
                                             Aliquid, ut.
+
+                                            <!-- VIS IF OWNER & NOT TIMED OUT -->
                                             <span class="user-sug-list">
                                                 <a
                                                     href="#"

@@ -62,3 +62,9 @@
 .edit-card {
     /* display: none; */
 }
+
+.countdown-text{
+    font-style: italic;
+    font-size: smaller;
+    font-weight: 200;
+}
