@@ -40,28 +40,28 @@ function App() {
         setShowAddTodo(false);
     };
 
-    // const onTodoDelClick = async (todoId) => {
-    //     await fetch(`${baseUrl}/${todoId}`, {
-    //         method: 'DELETE',
-    //     });
-    //     setTodos((state) => state.filter((x) => x._id !== todoId));
-    // };
+    const onTodoDelClick = async (todoId) => {
+        await fetch(`${baseUrl}/${todoId}`, {
+            method: 'DELETE',
+        });
+        setTodos((state) => state.filter((x) => x._id !== todoId));
+    };
+
+    const contextValue = {
+        onTodoDelClick,
+    };
 
     return (
-        <TodoContext.Provider value={'Pesho'}>
-        <>
-            <Header />
-            <TodoList
-                todos={todos}
-                onTodoAddClick={onTodoAddClick}
-                // onTodoDelClick={onTodoDelClick}
-            />
-            <AddTodoModal
-                show={showAddTodo}
-                onTodoAdd={onTodoAdd}
-                onTodoAddClose={onTodoAddClose}
-            />
-        </>
+        <TodoContext.Provider value={contextValue}>
+            <>
+                <Header />
+                <TodoList todos={todos} onTodoAddClick={onTodoAddClick} />
+                <AddTodoModal
+                    show={showAddTodo}
+                    onTodoAdd={onTodoAdd}
+                    onTodoAddClose={onTodoAddClose}
+                />
+            </>
         </TodoContext.Provider>
     );
 }
