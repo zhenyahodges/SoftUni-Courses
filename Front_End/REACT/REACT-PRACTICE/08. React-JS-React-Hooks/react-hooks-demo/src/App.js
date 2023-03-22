@@ -48,9 +48,19 @@ function App() {
     };
 
     const onToDoClick = async (todoId) => {
+        const todo = todos.find((x) => x._id === todoId);
+
         await fetch(`${baseUrl}/${todoId}`, {
-            method: 'DELETE',
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                ...todo,
+                isCompleted: !todo.isCompleted,
+            }),
         });
+
         setTodos((state) =>
             state.map((x) =>
                 x._id === todoId ? { ...x, isCompleted: !x.isCompleted } : x
