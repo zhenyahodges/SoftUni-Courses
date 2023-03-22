@@ -47,8 +47,20 @@ function App() {
         setTodos((state) => state.filter((x) => x._id !== todoId));
     };
 
+    const onToDoClick = async (todoId) => {
+        await fetch(`${baseUrl}/${todoId}`, {
+            method: 'DELETE',
+        });
+        setTodos((state) =>
+            state.map((x) =>
+                x._id === todoId ? { ...x, isCompleted: !x.isCompleted } : x
+            )
+        );
+    };
+
     const contextValue = {
         onTodoDelClick,
+        onToDoClick,
     };
 
     return (

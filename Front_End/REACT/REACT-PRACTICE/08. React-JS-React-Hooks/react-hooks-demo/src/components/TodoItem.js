@@ -8,11 +8,11 @@ export const TodoItem = ({
       isCompleted,
      }) => {
 
-        const {onTodoDelClick}=useContext(TodoContext);
+        const {onTodoDelClick,onToDoClick}=useContext(TodoContext);
 
     return (
         <ListGroup.Item action style={{ display: 'flex', justifyContent: 'space-between' }}>
-           {text}
+           <p style={{textDecoration: isCompleted ? 'line-through' : 'none'}} onClick={()=>onToDoClick(_id)}>{text}</p>
             <Button
                 variant='dark'
                 onClick={()=>onTodoDelClick(_id)}>
