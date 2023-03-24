@@ -1,6 +1,6 @@
 export const Home=()=>{
 return (
-    //   {/* <!--Home Page--> */}
+
   <section id="welcome-world">
   
   <div className="welcome-message">
