@@ -52,8 +52,29 @@ function App() {
         isAthenticated: !!auth.accessToken,
     };
 
+    const onRegisterSubmit= async(values)=>{
+      const {confirmPassword,...registerData}=values;
+
+        if(confirmPassword!==registerData.password){
+          return;
+          // message
+        }
+
+      try{
+        const result=await authService.register(registerData);
+
+        setAuth(result);
+
+        navigate('/catalog');
+
+      }catch(err){
+        console.log(err.message);
+        // throw new Error(`Error: ${err.message}`);
+      }
+    };
+
     return (
-        <AuthContext.Provider value={{ onLoginSubmit }}>
+        <AuthContext.Provider value={{ contextData }}>
             <div id='box'>
                 <Header />
                 {/* <!-- Main Content --> */}
@@ -61,7 +82,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Register />} />
+                        <Route path='/register' element={<Register onRegisterSubmit={onRegisterSubmit}/>} />
                         <Route
                             path='/createGame'
                             element={
