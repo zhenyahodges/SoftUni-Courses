@@ -9,50 +9,66 @@ import { Catalog } from './components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 import * as gameService from './services/gameService';
 import { GameDetails } from './components/GameDetails/GameDetails';
-
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
-  const nagivate= useNavigate();
-const [games,setGames]=useState([]);
+    const nagivate = useNavigate();
+    const [games, setGames] = useState([]);
+    const [auth, setAuth] = useState({});
 
+    useEffect(() => {
+        gameService.getAll().then((result) => {
+            console.log(result);
+            setGames(result);
+        });
+    }, []);
 
-useEffect(()=>{
-gameService.getAll()
-.then(result=>{
-  console.log(result);
-  setGames(result);
-});
-},[]);
+    const onCreateGameSubmit = async (data) => {
+        const newGame = await gameService.create(data);
 
+        //  add to state
+        setGames((state) => [...state, newGame]);
 
-const onCreateGameSubmit=async (data)=>{
- const newGame= await gameService.create(data);
+        // redirect to gatalog
+        nagivate('/catalog');
+    };
 
-//  add to state
-setGames(state=>[...state,newGame]);
-
-// redirect to gatalog
-nagivate('/catalog');
-};
-
+    const onLoginSubmit = async (data) => {
+        e.preventDefault();
+    };
 
     return (
-        <div id='box'>
-            <Header />
-            {/* <!-- Main Content --> */}
-            <main id='main-content'>
-              <Routes>
-                <Route path='/' element={<Home/>} />
-                <Route path='/login' element={<Login/>} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/createGame' element={<CreateGame onCreateGameSubmit={onCreateGameSubmit}/>} />
-                <Route path='/catalog' element={<Catalog games={games}/>} />
-                <Route path='/catalog/:gameId' element={<GameDetails />}/>
-              </Routes>      
-            </main>
-      
-            <Footer />
-        </div>
+        <AuthContext.Provider>
+            <div id='box'>
+                <Header />
+                {/* <!-- Main Content --> */}
+                <main id='main-content'>
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/register' element={<Register />} />
+                        <Route
+                            path='/createGame'
+                            element={
+                                <CreateGame
+                                    onCreateGameSubmit={onCreateGameSubmit}
+                                />
+                            }
+                        />
+                        <Route
+                            path='/catalog'
+                            element={<Catalog games={games} />}
+                        />
+                        <Route
+                            path='/catalog/:gameId'
+                            element={<GameDetails />}
+                        />
+                    </Routes>
+                </main>
+
+                <Footer />
+            </div>
+        </AuthContext.Provider>
     );
 }
 
