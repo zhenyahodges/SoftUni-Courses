@@ -8,17 +8,17 @@ import { CreateGame } from './components/CreateGame/CreateGame';
 import { Catalog } from './components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 import * as gameService from './services/gameService';
+import * as authService from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthContext } from './contexts/AuthContext';
 
 function App() {
-    const nagivate = useNavigate();
+    const navigate = useNavigate();
     const [games, setGames] = useState([]);
     const [auth, setAuth] = useState({});
 
     useEffect(() => {
         gameService.getAll().then((result) => {
-            console.log(result);
             setGames(result);
         });
     }, []);
@@ -29,16 +29,31 @@ function App() {
         //  add to state
         setGames((state) => [...state, newGame]);
 
-        // redirect to gatalog
-        nagivate('/catalog');
+        // redirect to catalog
+        navigate('/catalog');
     };
 
     const onLoginSubmit = async (data) => {
-        e.preventDefault();
+        try {
+            const result = await authService.login(data);
+            setAuth(result);
+
+            navigate('/catalog');
+        } catch (err) {
+            throw new Error(`Error: ${err.message}`);
+        }
+    };
+
+    const contextData = {
+        onLoginSubmit,
+        userId: auth._id,
+        token: auth.accessToken,
+        userEmail: auth.email,
+        isAthenticated: !!auth.accessToken,
     };
 
     return (
-        <AuthContext.Provider>
+        <AuthContext.Provider value={{ onLoginSubmit }}>
             <div id='box'>
                 <Header />
                 {/* <!-- Main Content --> */}

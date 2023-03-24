@@ -1,6 +1,12 @@
+import { useContext } from 'react';
 import {Link} from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const Header=()=>{
+
+const {isAthenticated,userEmail}=useContext(AuthContext);
+
+
 return (
     <header>
       {/* <!-- Navigation --> */}
@@ -8,15 +14,18 @@ return (
       <nav>
           <Link to="/catalog">All games</Link>
           {/* <!-- Logged-in users --> */}
-          <div id="user">
+          {isAthenticated && (<div id="user">
+            <span>{userEmail}</span>
               <Link to="/createGame">Create Game</Link>
               <Link to="/logout">Logout</Link>
-          </div>
+          </div>)}
+          
           {/* <!-- Guest users --> */}
-          <div id="guest">
+          {!isAthenticated && (<div id="guest">
               <Link to="/login">Login</Link>
               <Link to="/register">Register</Link>
-          </div>
+          </div>)}
+          
       </nav>
   </header>
 );
