@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 
@@ -8,11 +8,16 @@ import { useService } from '../../hooks/useService';
 import { gameServiceFactory } from '../../services/gameService';
 import { AddComment } from './AddComment/AddComment';
 import * as commentService from '../../services/commentService';
+import { gameReducer } from '../../reducers/gameReducers';
+
+
 
 export const GameDetails = () => {
     const { gameId } = useParams();
-    const { userId, isAuthenticated,email } = useAuthContext();
-    const [game, setGame] = useState({});
+    const { userId, isAuthenticated, email } = useAuthContext();
+
+    // reducer :)
+    const [game, dispatch] = useReducer(gameReducer, {});
 
     // const [comments, setComments] = useState([]);
     const gameService = useService(gameServiceFactory);
@@ -23,7 +28,11 @@ export const GameDetails = () => {
             gameService.getOne(gameId),
             commentService.getAll(gameId),
         ]).then(([gameData, comments]) => {
-            setGame({ ...gameData, comments });
+            // ||DISPATCH/REDUCER
+            const gameState = { ...gameData, comments };
+
+            dispatch({ type: 'GAME_FETCH', payload: gameState });
+
         });
 
         // gameService.getOne(gameId).then((result) => {
@@ -37,18 +46,14 @@ export const GameDetails = () => {
 
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(gameId, values.comment);
+        dispatch ({
+            type: 'COMMENT_ADD',
+            payload: response,
+            // payload: {...response, email: email},
+            email,
+        });
+        // ACTION OBJECT ^ 2ri arg na reducera!
 
-        setGame((state) => ({
-            ...state,
-            comments: [
-                ...state.comments, 
-               { ...response,
-                author: {
-                    email,
-                }
-            }
-            ],
-        }));
 
         // await commentService.create({
         //     gameId,
