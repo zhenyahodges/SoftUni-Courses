@@ -8,9 +8,9 @@ import { CreateGame } from './components/CreateGame/CreateGame';
 import { Catalog } from './components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 // import * as gameService from './services/gameService';
-import {gameServiceFactory}  from './services/gameService';
+import { gameServiceFactory } from './services/gameService';
 // import * as authService from './services/authService';
-import {authServiceFactory} from './services/authService';
+import { authServiceFactory } from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthContext } from './contexts/AuthContext';
 import { Logout } from './components/Logout';
@@ -20,9 +20,8 @@ function App() {
     const navigate = useNavigate();
     const [games, setGames] = useState([]);
     const [auth, setAuth] = useState({});
-    const gameService=gameServiceFactory(auth.accessToken);
-    const authService=authServiceFactory(auth.accessToken);
-
+    const gameService = gameServiceFactory(auth.accessToken);
+    const authService = authServiceFactory(auth.accessToken);
 
     useEffect(() => {
         gameService.getAll().then((result) => {
@@ -74,6 +73,16 @@ function App() {
 
         // setAuth(null);
         setAuth({});
+    };
+
+    const onGameEditSubmit = async (values) => {
+        const result = await gameService.edit(values._id, values);
+
+        // TODO CHANGE STATE-STILL NOT WORKING PROPERLY
+        setGames((state) =>
+            state.map((x) => (x._id === values._id ? result : x))
+        );
+        navigate(`/catalog/${values._id}`);
     };
 
     const contextData = {
@@ -128,7 +137,9 @@ function App() {
                         />
                         <Route
                             path='/catalog/:gameId/edit'
-                            element={<EditGame />}
+                            element={
+                                <EditGame onGameEditSubmit={onGameEditSubmit} />
+                            }
                         />
                     </Routes>
                 </main>

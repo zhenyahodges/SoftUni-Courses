@@ -10,6 +10,7 @@ export const EditGame = ({ onGameEditSubmit }) => {
 
     const {values, changeHandler, onSubmit, changeValues} = useForm(
         {
+            _id: '',
             title: '',
             category: '',
             maxLevel: '',
@@ -24,7 +25,7 @@ export const EditGame = ({ onGameEditSubmit }) => {
         .then((result) => {
             changeValues(result);
         });
-    }, []);
+    }, [gameId]);
 
     return (
         // <!-- Edit Page ( Only for the creator )-->
@@ -73,8 +74,8 @@ export const EditGame = ({ onGameEditSubmit }) => {
                     <textarea
                         name='summary'
                         id='summary'
-                        // value={values.summary}
-                        // onChange={changeHandler}
+                        value={values.summary}
+                        onChange={changeHandler}
                     ></textarea>
                     <input
                         className='btn submit'
