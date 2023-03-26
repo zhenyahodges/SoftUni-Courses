@@ -7,8 +7,10 @@ import { Register } from './components/Register/Register';
 import { CreateGame } from './components/CreateGame/CreateGame';
 import { Catalog } from './components/Catalog/Catalog';
 import { useEffect, useState } from 'react';
-import * as gameService from './services/gameService';
-import * as authService from './services/authService';
+// import * as gameService from './services/gameService';
+import {gameServiceFactory}  from './services/gameService';
+// import * as authService from './services/authService';
+import {authServiceFactory} from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthContext } from './contexts/AuthContext';
 import { Logout } from './components/Logout';
@@ -17,6 +19,9 @@ function App() {
     const navigate = useNavigate();
     const [games, setGames] = useState([]);
     const [auth, setAuth] = useState({});
+    const gameService=gameServiceFactory(auth.accessToken);
+    const authService=authServiceFactory(auth.accessToken);
+
 
     useEffect(() => {
         gameService.getAll().then((result) => {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useService } from '../../hooks/useService';
 
-import * as gameService from '../../services/gameService';
+import { gameServiceFactory } from '../../services/gameService';
 // import * as commentService from '../../services/commentService';
 
 export const GameDetails = () => {
@@ -10,17 +11,16 @@ export const GameDetails = () => {
     const [username, setUsername] = useState('');
     const [comment, setComment] = useState('');
     // const [comments, setComments] = useState([]);
+    const gameService = useService(gameServiceFactory);
 
     useEffect(() => {
-        gameService
-            .getOne(gameId)
-            .then((result) => {
-                setGame(result);
-                // return commentService.getAll(gameId);
-            });
-            // .then((result) => {
-            //     setComments(result);
-            // });
+        gameService.getOne(gameId).then((result) => {
+            setGame(result);
+            // return commentService.getAll(gameId);
+        });
+        // .then((result) => {
+        //     setComments(result);
+        // });
     }, [gameId]);
 
     const onCommentSubmit = async (e) => {
@@ -32,11 +32,14 @@ export const GameDetails = () => {
         //     comment,
         // });
 
-           const result=  await gameService.addComment(gameId,{            
+        const result = await gameService.addComment(gameId, {
             username,
             comment,
         });
-        setGame(state=>({...state,comments: {...state.comments,[result._id]: result}}));
+        setGame((state) => ({
+            ...state,
+            comments: { ...state.comments, [result._id]: result },
+        }));
 
         setUsername('');
         setComment('');
@@ -47,7 +50,7 @@ export const GameDetails = () => {
             <h1>Game Details</h1>
             <div className='info-section'>
                 <div className='game-header'>
-                    <img className='game-img' src={game.imageUrl} alt=""/>
+                    <img className='game-img' src={game.imageUrl} alt='' />
                     <h1>{game.title}</h1>
                     <span className='levels'>MaxLevel: {game.maxLevel}</span>
                     <p className='type'>{game.category}</p>
@@ -61,18 +64,20 @@ export const GameDetails = () => {
                     <ul>
                         {/* <!-- list all comments for current game (If any) --> */}
                         {/* {comments.map((x) => ( */}
-                        {game.comments && Object.values(game.comments).map((x) => (
-                            <li key={x._id} className='comment'>
-                                <p>{x.username}: {x.comment}</p>
-                            </li>
-                        ))}
+                        {game.comments &&
+                            Object.values(game.comments).map((x) => (
+                                <li key={x._id} className='comment'>
+                                    <p>
+                                        {x.username}: {x.comment}
+                                    </p>
+                                </li>
+                            ))}
                     </ul>
 
                     {/* {Object.values(game.comments).length && ( */}
-                        {/* //   <!-- Display paragraph: If there are no games in the database --> */}
+                    {/* //   <!-- Display paragraph: If there are no games in the database --> */}
                     {/* <p className='no-comment'>No comments.</p>
                     ) } */}
-                  
                 </div>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
