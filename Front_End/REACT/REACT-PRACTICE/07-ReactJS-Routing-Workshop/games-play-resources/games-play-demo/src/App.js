@@ -88,6 +88,7 @@ function App() {
     const contextData = {
         onLoginSubmit,
         onRegisterSubmit,
+        onGameEditSubmit,
         onLogout,
         userId: auth._id,
         token: auth.accessToken,
