@@ -11,6 +11,7 @@ import * as gameService from './services/gameService';
 import * as authService from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthContext } from './contexts/AuthContext';
+import { Logout } from './components/Logout';
 
 function App() {
     const navigate = useNavigate();
@@ -43,10 +44,9 @@ function App() {
         }
     };
 
-    
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
-        
+
         if (confirmPassword !== registerData.password) {
             return console.log('Error confirming password');
             // message
@@ -61,17 +61,25 @@ function App() {
             throw new Error(`Error: ${err.message}`);
         }
     };
-    
+
+    const onLogout = async () => {
+        // todo add authorization
+        // await authService.logout();
+
+        // setAuth(null);
+        setAuth({});
+    };
+
     const contextData = {
         onLoginSubmit,
         onRegisterSubmit,
+        onLogout,
         userId: auth._id,
         token: auth.accessToken,
         email: auth.email,
         isAthenticated: !!auth.accessToken,
     };
 
-    
     return (
         <AuthContext.Provider value={contextData}>
             <div id='box'>
@@ -83,6 +91,11 @@ function App() {
                         <Route
                             path='/login'
                             element={<Login onLoginSubmit={onLoginSubmit} />}
+                        />
+                        <Route
+                            path='/logout'
+                            // element={<Logout onLogout={onLogout} />}
+                            element={<Logout />}
                         />
                         <Route
                             path='/register'

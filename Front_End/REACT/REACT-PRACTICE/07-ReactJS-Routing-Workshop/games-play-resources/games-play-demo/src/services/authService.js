@@ -9,3 +9,8 @@ export const login=(data)=>{
 export const register=(data)=>{
     return request.post(`${baseUrl}/register`,data);
 };
+
+export const logout=()=>{
+    // todo add token
+    return request.get(`${baseUrl}/logout`);
+};
