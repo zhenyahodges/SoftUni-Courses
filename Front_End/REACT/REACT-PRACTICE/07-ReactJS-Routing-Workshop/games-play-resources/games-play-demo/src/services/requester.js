@@ -16,14 +16,14 @@ const request = async (method, url, data) => {
 
     // can change to:
     // ==============
-    if(res.status===204){
+    if (res.status === 204) {
         return {};
     }
-    const result=await res.json();
-
-    if(!result.ok){
-        throw result;
+    if (!res.ok) {
+        throw new Error(res.status);
+        // throw result;
     }
+    const result = await res.json();
 
     return result;
     // ==============

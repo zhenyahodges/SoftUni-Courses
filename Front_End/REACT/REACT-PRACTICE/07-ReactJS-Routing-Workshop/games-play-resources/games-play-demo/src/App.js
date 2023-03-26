@@ -35,12 +35,13 @@ function App() {
 
     const onLoginSubmit = async (data) => {
         try {
+          
             const result = await authService.login(data);
-            setAuth(result);
-
+            setAuth(result);          
             navigate('/catalog');
         } catch (err) {
-            throw new Error(`Error: ${err.message}`);
+            console.log(`Error: ${err.message}`);
+            // throw new Error(`Error: ${err.message}`);
         }
     };
 
@@ -48,41 +49,46 @@ function App() {
         onLoginSubmit,
         userId: auth._id,
         token: auth.accessToken,
-        userEmail: auth.email,
+        email: auth.email,
         isAthenticated: !!auth.accessToken,
     };
 
-    const onRegisterSubmit= async(values)=>{
-      const {confirmPassword,...registerData}=values;
+    const onRegisterSubmit = async (values) => {
+        const { confirmPassword, ...registerData } = values;
 
-        if(confirmPassword!==registerData.password){
-          return;
-          // message
+        if (confirmPassword !== registerData.password) {
+            return (console.error);
+            // message
         }
 
-      try{
-        const result=await authService.register(registerData);
+        try {
+            const result = await authService.register(registerData);
 
-        setAuth(result);
+            setAuth(result);
 
-        navigate('/catalog');
-
-      }catch(err){
-        console.log(err.message);
-        // throw new Error(`Error: ${err.message}`);
-      }
+            navigate('/catalog');
+        } catch (err) {
+            // console.log(err.message);
+            throw new Error(`Error: ${err.message}`);
+        }
     };
 
     return (
-        <AuthContext.Provider value={{ contextData }}>
+        <AuthContext.Provider value={contextData}>
             <div id='box'>
                 <Header />
                 {/* <!-- Main Content --> */}
                 <main id='main-content'>
                     <Routes>
                         <Route path='/' element={<Home />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/register' element={<Register onRegisterSubmit={onRegisterSubmit}/>} />
+                        <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit}/>} />
+                        <Route
+                            path='/register'
+                            element={
+                                <Register onRegisterSubmit={onRegisterSubmit} />
+                                // <Register />
+                            }
+                        />
                         <Route
                             path='/createGame'
                             element={
