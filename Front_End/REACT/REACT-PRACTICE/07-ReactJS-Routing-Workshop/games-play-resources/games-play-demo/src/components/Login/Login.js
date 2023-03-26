@@ -1,11 +1,18 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../contexts/AuthContext';
 import { useForm } from '../../hooks/useForm';
 
-export const Login = () => {
+export const Login = (
+    {
+        auth,        
+    }
+) => {
+    const{onLoginSubmit}=auth;
 
-    const { onLoginSubmit } = useContext(AuthContext);
+    // const { onLoginSubmit } = useContext(AuthContext);
+    // const { onLoginSubmit } = useAuthContext();
 
     const { values, changeHandler, onSubmit } = useForm(
         {

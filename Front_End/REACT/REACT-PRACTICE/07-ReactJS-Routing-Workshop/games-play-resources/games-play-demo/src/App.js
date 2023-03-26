@@ -12,16 +12,18 @@ import { gameServiceFactory } from './services/gameService';
 // import * as authService from './services/authService';
 import { authServiceFactory } from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
-import { AuthContext } from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { Logout } from './components/Logout';
 import { EditGame } from './components/EditGame/EditGame';
+import { withAuth } from './hoc/withAuth';
 
 function App() {
     const navigate = useNavigate();
     const [games, setGames] = useState([]);
-    const [auth, setAuth] = useState({});
-    const gameService = gameServiceFactory(auth.accessToken);
-    const authService = authServiceFactory(auth.accessToken);
+    // const [auth, setAuth] = useState({});
+    // const gameService = gameServiceFactory(auth.accessToken);
+    const gameService = gameServiceFactory();
+    // const authService = authServiceFactory(auth.accessToken);
 
     useEffect(() => {
         gameService.getAll().then((result) => {
@@ -32,48 +34,46 @@ function App() {
     const onCreateGameSubmit = async (data) => {
         const newGame = await gameService.create(data);
 
-        //  add to state
         setGames((state) => [...state, newGame]);
 
-        // redirect to catalog
         navigate('/catalog');
     };
 
-    const onLoginSubmit = async (data) => {
-        try {
-            const result = await authService.login(data);
-            setAuth(result);
-            navigate('/catalog');
-        } catch (err) {
-            throw new Error(`Error: ${err.message}`);
-        }
-    };
+    // const onLoginSubmit = async (data) => {
+    //     try {
+    //         const result = await authService.login(data);
+    //         setAuth(result);
+    //         navigate('/catalog');
+    //     } catch (err) {
+    //         throw new Error(`Error: ${err.message}`);
+    //     }
+    // };
 
-    const onRegisterSubmit = async (values) => {
-        const { confirmPassword, ...registerData } = values;
+    // const onRegisterSubmit = async (values) => {
+    //     const { confirmPassword, ...registerData } = values;
 
-        if (confirmPassword !== registerData.password) {
-            return console.log('Error confirming password');
-            // message
-        }
-        try {
-            const result = await authService.register(registerData);
+    //     if (confirmPassword !== registerData.password) {
+    //         return console.log('Error confirming password');
+    //         // message
+    //     }
+    //     try {
+    //         const result = await authService.register(registerData);
 
-            setAuth(result);
+    //         setAuth(result);
 
-            navigate('/catalog');
-        } catch (err) {
-            throw new Error(`Error: ${err.message}`);
-        }
-    };
+    //         navigate('/catalog');
+    //     } catch (err) {
+    //         throw new Error(`Error: ${err.message}`);
+    //     }
+    // };
 
-    const onLogout = async () => {
-        // todo add authorization
-        await authService.logout();
+    // const onLogout = async () => {
+    //     // todo add authorization
+    //     await authService.logout();
 
-        // setAuth(null);
-        setAuth({});
-    };
+    //     // setAuth(null);
+    //     setAuth({});
+    // };
 
     const onGameEditSubmit = async (values) => {
         const result = await gameService.edit(values._id, values);
@@ -82,32 +82,35 @@ function App() {
         setGames((state) =>
             state.map((x) => (x._id === values._id ? result : x))
         );
+
         navigate(`/catalog/${values._id}`);
     };
 
-    const contextData = {
-        onLoginSubmit,
-        onRegisterSubmit,
-        onGameEditSubmit,
-        onLogout,
-        userId: auth._id,
-        token: auth.accessToken,
-        email: auth.email,
-        isAthenticated: !!auth.accessToken,
-    };
+    // const contextData = {
+    //     onLoginSubmit,
+    //     onRegisterSubmit,
+    //     onLogout,
+    //     userId: auth._id,
+    //     token: auth.accessToken,
+    //     email: auth.email,
+    //     isAthenticated: !!auth.accessToken,
+    // };
+
+    const EnhancedLogin = withAuth(Login);
 
     return (
-        <AuthContext.Provider value={contextData}>
+        <AuthProvider>
             <div id='box'>
                 <Header />
                 {/* <!-- Main Content --> */}
                 <main id='main-content'>
                     <Routes>
                         <Route path='/' element={<Home />} />
-                        <Route
+                        {/* <Route
                             path='/login'
-                            element={<Login onLoginSubmit={onLoginSubmit} />}
-                        />
+                            element={<Login />}
+                        /> */}
+                        <Route path='/login' element={<EnhancedLogin />} />
                         <Route
                             path='/logout'
                             // element={<Logout onLogout={onLogout} />}
@@ -116,7 +119,7 @@ function App() {
                         <Route
                             path='/register'
                             element={
-                                <Register onRegisterSubmit={onRegisterSubmit} />
+                                <Register />
                                 // <Register />
                             }
                         />
@@ -147,7 +150,7 @@ function App() {
 
                 <Footer />
             </div>
-        </AuthContext.Provider>
+        </AuthProvider>
     );
 }
 
