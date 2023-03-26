@@ -1,17 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 import { useService } from '../../hooks/useService';
 
 import { gameServiceFactory } from '../../services/gameService';
 // import * as commentService from '../../services/commentService';
 
 export const GameDetails = () => {
+    const { userId } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useState({});
     const [username, setUsername] = useState('');
     const [comment, setComment] = useState('');
     // const [comments, setComments] = useState([]);
     const gameService = useService(gameServiceFactory);
+    const navigate = useNavigate();
 
     useEffect(() => {
         gameService.getOne(gameId).then((result) => {
@@ -36,6 +39,7 @@ export const GameDetails = () => {
             username,
             comment,
         });
+
         setGame((state) => ({
             ...state,
             comments: { ...state.comments, [result._id]: result },
@@ -43,6 +47,17 @@ export const GameDetails = () => {
 
         setUsername('');
         setComment('');
+    };
+
+    const isOwner = game._ownerId === userId;
+
+    const onDeleteClick = async () => {
+        // confirm
+        await gameService.delete(game._id);
+
+        // TODO DELETE FROM STATE
+
+        navigate('/catalog');
     };
 
     return (
@@ -81,14 +96,14 @@ export const GameDetails = () => {
                 </div>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-                <div className='buttons'>
-                    <a href='#' className='button'>
-                        Edit
-                    </a>
-                    <a href='#' className='button'>
-                        Delete
-                    </a>
-                </div>
+                {isOwner && (
+                    <div className='buttons'>
+                        <Link to={`/catalog/${game._id}/edit`} className='button'>Edit</Link>
+                        <button className='button' onClick={onDeleteClick}>
+                            Delete
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* <!-- Bonus --> */}

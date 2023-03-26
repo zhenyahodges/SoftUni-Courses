@@ -14,6 +14,7 @@ import {authServiceFactory} from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthContext } from './contexts/AuthContext';
 import { Logout } from './components/Logout';
+import { EditGame } from './components/EditGame/EditGame';
 
 function App() {
     const navigate = useNavigate();
@@ -69,7 +70,7 @@ function App() {
 
     const onLogout = async () => {
         // todo add authorization
-        // await authService.logout();
+        await authService.logout();
 
         // setAuth(null);
         setAuth({});
@@ -124,6 +125,10 @@ function App() {
                         <Route
                             path='/catalog/:gameId'
                             element={<GameDetails />}
+                        />
+                        <Route
+                            path='/catalog/:gameId/edit'
+                            element={<EditGame />}
                         />
                     </Routes>
                 </main>

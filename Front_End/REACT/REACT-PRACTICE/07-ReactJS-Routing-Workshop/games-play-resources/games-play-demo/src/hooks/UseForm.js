@@ -15,9 +15,16 @@ export const useForm = (initValues, onSubmitHandler) => {
         onSubmitHandler(values);
     };
 
+    const changeValues=(newValues) => {
+        // tr porverka dali novite otg na starite st-sti
+        // validate new values
+        setValues(newValues);
+    };
+
     return {
         values,
         changeHandler,
         onSubmit,
+        changeValues
     };
 };
