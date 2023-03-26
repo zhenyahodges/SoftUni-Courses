@@ -9,8 +9,10 @@ const request = requestFactory();
 
 export const getAll = async (gameId) => {
     //  quotessssssss!!!!!!!!!!!!!!!!!!!!!!!
-    const query = encodeURIComponent(`gameId="${gameId}"`);
-    const result = await request.get(`${baseUrl}?where=${query}`);
+    const searchQuery = encodeURIComponent(`gameId="${gameId}"`);
+    const relationQuery= encodeURIComponent(`author=_ownerId:users`);
+
+    const result = await request.get(`${baseUrl}?where=${searchQuery}&load=${relationQuery}`);
     const comments = Object.values(result);
     return comments;
 };

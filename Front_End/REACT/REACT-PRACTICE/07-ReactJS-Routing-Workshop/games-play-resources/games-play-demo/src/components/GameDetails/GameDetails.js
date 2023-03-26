@@ -11,7 +11,7 @@ import * as commentService from '../../services/commentService';
 
 export const GameDetails = () => {
     const { gameId } = useParams();
-    const { userId, isAuthenticated } = useAuthContext();
+    const { userId, isAuthenticated,email } = useAuthContext();
     const [game, setGame] = useState({});
 
     // const [comments, setComments] = useState([]);
@@ -22,11 +22,8 @@ export const GameDetails = () => {
         Promise.all([
             gameService.getOne(gameId),
             commentService.getAll(gameId),
-        ]).then(([gameData,comments]) => {
-            setGame(
-                {...gameData,
-                comments}
-                );
+        ]).then(([gameData, comments]) => {
+            setGame({ ...gameData, comments });
         });
 
         // gameService.getOne(gameId).then((result) => {
@@ -41,9 +38,16 @@ export const GameDetails = () => {
     const onCommentSubmit = async (values) => {
         const response = await commentService.create(gameId, values.comment);
 
-        setGame(state=>({
+        setGame((state) => ({
             ...state,
-            comments: [...state.comments,response]
+            comments: [
+                ...state.comments, 
+               { ...response,
+                author: {
+                    email,
+                }
+            }
+            ],
         }));
 
         // await commentService.create({
@@ -98,19 +102,19 @@ export const GameDetails = () => {
                         {/* <!-- list all comments for current game (If any) --> */}
                         {/* {comments.map((x) => ( */}
                         {game.comments &&
-                          (game.comments).map((x) => (
+                            game.comments.map((x) => (
                                 <li key={x._id} className='comment'>
                                     <p>
-                                        {x.comment}
+                                        {x.author.email} {x.comment}
                                     </p>
                                 </li>
                             ))}
                     </ul>
 
-                    {/* {Object.values(game.comments).length && ( */}
                     {/* //   <!-- Display paragraph: If there are no games in the database --> */}
-                    {/* <p className='no-comment'>No comments.</p>
-                    ) } */}
+                    {!game.comments?.length && (
+                        <p className='no-comment'>No comments.</p>
+                    )}
                 </div>
 
                 {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}

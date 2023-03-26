@@ -21,7 +21,8 @@ children,
             setAuth(result);
             navigate('/catalog');
         } catch (err) {
-            throw new Error(`Error: ${err.message}`);
+            console.log(err);
+            // throw new Error(`Error: ${err.message}`);
         }
     };
 
@@ -39,7 +40,8 @@ children,
 
             navigate('/catalog');
         } catch (err) {
-            throw new Error(`Error: ${err.message}`);
+            console.log(err);
+            // throw new Error(`Error: ${err.message}`);
         }
     };
 
