@@ -9,10 +9,10 @@ export const AuthContext=createContext();
 export const AuthProvider=({
 children,
 })=>{
+    const [auth, setAuth] = useLocalStorage('auth',{});
 
     const navigate = useNavigate();
     // const [auth, setAuth] = useState({});
-    const [auth, setAuth] = useLocalStorage('auth',{});
     const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {
@@ -47,7 +47,6 @@ children,
         // todo add authorization
         await authService.logout();
 
-        // setAuth(null);
         setAuth({});
     };
 

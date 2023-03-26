@@ -10,12 +10,12 @@ import { useEffect, useState } from 'react';
 // import * as gameService from './services/gameService';
 import { gameServiceFactory } from './services/gameService';
 // import * as authService from './services/authService';
-import { authServiceFactory } from './services/authService';
+// import { authServiceFactory } from './services/authService';
 import { GameDetails } from './components/GameDetails/GameDetails';
 import { AuthProvider } from './contexts/AuthContext';
 import { Logout } from './components/Logout';
 import { EditGame } from './components/EditGame/EditGame';
-import { withAuth } from './hoc/withAuth';
+// import { withAuth } from './hoc/withAuth';
 
 function App() {
     const navigate = useNavigate();

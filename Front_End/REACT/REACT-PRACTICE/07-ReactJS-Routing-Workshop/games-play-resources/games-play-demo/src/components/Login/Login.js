@@ -2,7 +2,7 @@
 // import { AuthContext } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import { withAuth } from '../../hoc/withAuth';
+// import { withAuth } from '../../hoc/withAuth';
 import { useForm } from '../../hooks/useForm';
 
 export const Login = (
