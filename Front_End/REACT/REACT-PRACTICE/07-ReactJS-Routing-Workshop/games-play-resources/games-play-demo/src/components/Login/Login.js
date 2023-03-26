@@ -2,17 +2,18 @@
 // import { AuthContext } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { withAuth } from '../../hoc/withAuth';
 import { useForm } from '../../hooks/useForm';
 
 export const Login = (
-    {
-        auth,        
-    }
+    // {
+    //     // auth,        
+    // }
 ) => {
-    const{onLoginSubmit}=auth;
+    // const{onLoginSubmit}=auth;
 
     // const { onLoginSubmit } = useContext(AuthContext);
-    // const { onLoginSubmit } = useAuthContext();
+    const { onLoginSubmit } = useAuthContext();
 
     const { values, changeHandler, onSubmit } = useForm(
         {
@@ -61,3 +62,6 @@ export const Login = (
         </section>
     );
 };
+
+// export na hoc...
+// export default withAuth(Login);

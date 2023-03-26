@@ -96,7 +96,7 @@ function App() {
     //     isAthenticated: !!auth.accessToken,
     // };
 
-    const EnhancedLogin = withAuth(Login);
+    // const EnhancedLogin = withAuth(Login);
 
     return (
         <AuthProvider>
@@ -110,7 +110,7 @@ function App() {
                             path='/login'
                             element={<Login />}
                         /> */}
-                        <Route path='/login' element={<EnhancedLogin />} />
+                        <Route path='/login' element={<Login />} />
                         <Route
                             path='/logout'
                             // element={<Logout onLogout={onLogout} />}
