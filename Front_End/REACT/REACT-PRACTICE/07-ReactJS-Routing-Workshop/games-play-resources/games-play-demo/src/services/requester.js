@@ -13,7 +13,7 @@ const request = async (method, url, data) => {
     }
 
     const res = await fetch(url, options);
-
+  
     // can change to:
     // ==============
     if (res.status === 204) {

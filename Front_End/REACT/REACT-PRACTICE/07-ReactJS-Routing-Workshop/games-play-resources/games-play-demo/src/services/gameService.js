@@ -10,7 +10,7 @@ export const getAll = async () => {
 
 export const create=async(gameData) =>{
 const result = await request.post(baseUrl,gameData);
-console.log(result);
+
 return result;
 };
 

@@ -35,13 +35,11 @@ function App() {
 
     const onLoginSubmit = async (data) => {
         try {
-          
             const result = await authService.login(data);
-            setAuth(result);          
+            setAuth(result);
             navigate('/catalog');
         } catch (err) {
-            console.log(`Error: ${err.message}`);
-            // throw new Error(`Error: ${err.message}`);
+            throw new Error(`Error: ${err.message}`);
         }
     };
 
@@ -52,15 +50,14 @@ function App() {
         email: auth.email,
         isAthenticated: !!auth.accessToken,
     };
-
+   
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
 
         if (confirmPassword !== registerData.password) {
-            return (console.error);
+            return console.log('Error confirming password');
             // message
         }
-
         try {
             const result = await authService.register(registerData);
 
@@ -68,7 +65,6 @@ function App() {
 
             navigate('/catalog');
         } catch (err) {
-            // console.log(err.message);
             throw new Error(`Error: ${err.message}`);
         }
     };
@@ -81,7 +77,10 @@ function App() {
                 <main id='main-content'>
                     <Routes>
                         <Route path='/' element={<Home />} />
-                        <Route path='/login' element={<Login onLoginSubmit={onLoginSubmit}/>} />
+                        <Route
+                            path='/login'
+                            element={<Login onLoginSubmit={onLoginSubmit} />}
+                        />
                         <Route
                             path='/register'
                             element={

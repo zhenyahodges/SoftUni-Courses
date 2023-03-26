@@ -13,7 +13,6 @@ export const Register = () => {
         },
         onRegisterSubmit
     );
-
     return (
         //   {/* <!-- Register Page ( Only for Guest users ) --> */}
         <section id='register-page' className='content auth'>
