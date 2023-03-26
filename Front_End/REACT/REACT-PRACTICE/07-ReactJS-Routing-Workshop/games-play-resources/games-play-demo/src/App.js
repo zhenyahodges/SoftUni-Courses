@@ -43,17 +43,10 @@ function App() {
         }
     };
 
-    const contextData = {
-        onLoginSubmit,
-        userId: auth._id,
-        token: auth.accessToken,
-        email: auth.email,
-        isAthenticated: !!auth.accessToken,
-    };
-   
+    
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
-
+        
         if (confirmPassword !== registerData.password) {
             return console.log('Error confirming password');
             // message
@@ -68,7 +61,17 @@ function App() {
             throw new Error(`Error: ${err.message}`);
         }
     };
+    
+    const contextData = {
+        onLoginSubmit,
+        onRegisterSubmit,
+        userId: auth._id,
+        token: auth.accessToken,
+        email: auth.email,
+        isAthenticated: !!auth.accessToken,
+    };
 
+    
     return (
         <AuthContext.Provider value={contextData}>
             <div id='box'>
