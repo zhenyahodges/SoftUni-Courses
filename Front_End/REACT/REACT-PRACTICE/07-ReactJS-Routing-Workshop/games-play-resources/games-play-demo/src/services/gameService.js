@@ -38,6 +38,12 @@ export const gameServiceFactory = (token) => {
         return games;
     };
 
+    // export const getOne= async (gameId)=>{
+    const getOne = async (gameId) => {
+        const result = await request.get(`${baseUrl}/${gameId}`);
+        return result;
+    };
+    
     // export const create=async(gameData) =>{
     const create = async (gameData) => {
         const result = await request.post(baseUrl, gameData);
@@ -45,11 +51,6 @@ export const gameServiceFactory = (token) => {
         return result;
     };
 
-    // export const getOne= async (gameId)=>{
-    const getOne = async (gameId) => {
-        const result = await request.get(`${baseUrl}/${gameId}`);
-        return result;
-    };
 
     // export const addComment= async(gameId,data)=>{
         // 
