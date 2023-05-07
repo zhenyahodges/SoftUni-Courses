@@ -27,6 +27,7 @@ const requester = async (method, token, url, data) => {
         return {};
     }
     if (!res.ok) {
+       
         throw new Error(res.status);
         // throw result;
     }
