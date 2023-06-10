@@ -3,6 +3,9 @@
 
 
 //named import
+// es6 module
+// import { calc, multiply } from "./calc.js";
+// commonjs module
 const { calc,multiply } = require("./calc.js");
 
 function init() {
