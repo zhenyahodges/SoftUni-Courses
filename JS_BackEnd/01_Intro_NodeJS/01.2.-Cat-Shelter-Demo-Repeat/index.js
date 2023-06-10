@@ -17,17 +17,21 @@ const catTemplate = (cat) => `
 </li>`;
 
 const server = http.createServer((req, res) => {
+    const url = new URL(req.url, `http://${req.headers.host}`);
+
     res.writeHead(200, {
         'Content-Type': 'text/html',
     });
 
-    if (req.url == '/styles/site.css') {
-        console.log('sty;les');
+    // if (req.url == '/styles/site.css') {
+    if (url.pathname == '/styles/site.css') {
+        // console.log('sty;les');
         res.writeHead(200, {
             'Content-Type': 'text/css',
         });
         res.write(siteCss);
-    } else if (req.url == '/cats/add-cat') {
+        // } else if (req.url == '/cats/add-cat') {
+    } else if (url.pathname == '/cats/add-cat') {
         res.write(addCatPage);
     } else {
         const homePageResult = homePage.replace(
