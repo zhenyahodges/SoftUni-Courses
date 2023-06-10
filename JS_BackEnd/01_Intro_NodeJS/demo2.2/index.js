@@ -2,8 +2,12 @@ const http = require('http');
 const port = 5000;
 
 const server = http.createServer((req, res) => {
-    console.log('Method' + req.method);
-    console.log('Url' + req.url);
+    // console.log('Method' + req.method);
+    // console.log('Url' + req.url);
+
+    res.writeHead(200, {
+        'Content-Type': 'text/plain'
+    })
 
     if (req.url === '/cats') {
         res.write('Some cats');
