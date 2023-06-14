@@ -4,7 +4,6 @@ function calc(a, b) {
 
 //default
 // module.exports=calc
-// ??
 // module.exports={
 //   calc,
 //   multiply
