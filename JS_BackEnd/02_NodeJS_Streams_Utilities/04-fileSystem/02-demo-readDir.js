@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.readdir('./fileSystem', (err, data) => {
+fs.readdir('./04-fileSystem', (err, data) => {
     if (err) {
         return console.log(err);
     }
