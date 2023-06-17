@@ -1,10 +1,14 @@
 const fs = require('fs');
+const zlib = require('zlib');
+
+const gzip = zlib.createGzip();
 
 const readStream = fs.createReadStream('./streams/largeFile.txt', {
     encoding: 'utf8',
     // highWaterMark: 1000,
 });
-const writeStream = fs.createWriteStream('./streams/copyFile.txt', {
+// const writeStream = fs.createWriteStream('./streams/copyFile.txt', {
+    const writeStream = fs.createWriteStream('./streams/copyFileZipped.txt', {
     encoding: 'utf8',
 });
 
@@ -17,7 +21,10 @@ const writeStream = fs.createWriteStream('./streams/copyFile.txt', {
 //     console.log('Finished');
 // });
 
-// shorthand for the above
-readStream.pipe(writeStream);
+// shorthand for the above:
+// readStream.pipe(writeStream);
+
+// adding transform stream:
+readStream.pipe(gzip).pipe(writeStream);
 
 writeStream.on('finish', () => console.log('File is saved'));
