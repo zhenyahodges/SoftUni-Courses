@@ -1,4 +1,4 @@
-const eventBus = require('../eventBus');
+const eventBus = require('./eventBus');
 
 let firstSayHelloUnsubscribe = eventBus.subscribe(
     'say-hello',
@@ -20,9 +20,9 @@ eventBus.subscribe('say-hello', (name, secondName) =>
 );
 eventBus.subscribe('say-bye', (name) =>
     console.log('Event Say bye executed!- ' + name)
-    );
-    
-    eventBus.publish('say-hello', 'Pesho', 'Ivan');
-    firstSayHelloUnsubscribe();
-    eventBus.publish('say-hello', 'Gesho');
-    eventBus.publish('say-bye', 'Pesho');
+);
+
+eventBus.publish('say-hello', 'Pesho', 'Ivan');
+firstSayHelloUnsubscribe();
+eventBus.publish('say-hello', 'Gesho');
+eventBus.publish('say-bye', 'Pesho');
