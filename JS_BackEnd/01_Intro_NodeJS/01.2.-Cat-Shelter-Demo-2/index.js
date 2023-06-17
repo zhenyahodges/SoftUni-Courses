@@ -25,7 +25,7 @@ const server = http.createServer(async (req, res) => {
             'Content-Type': 'text/css',
         });
 
-        let siteCss =await fs.readFile('./styles/site.css', 'utf8');
+        let siteCss = await fs.readFile('./styles/site.css', 'utf8');
 
         res.write(siteCss);
         res.end();
@@ -35,18 +35,17 @@ const server = http.createServer(async (req, res) => {
         res.write(addCatPage);
         res.end();
     } else {
-        let homePage = await fs.readFile('./views/home.html', 'utf-8');
+        let homePageHtml = await fs.readFile('./views/home.html', 'utf-8');
+        let catsResult = await fs.readFile('./cats.json', 'utf-8');
 
-        fs.readFile('./cats.json').then((text) => {
-            let cats = JSON.parse(text);
-            const homePageResult = homePage.replace(
-                '{{cats}}',
-                cats.map((x) => catTemplate(x)).join('')
-                // cats.map(catTemplate)
-            );
-            res.write(homePageResult);
-            res.end();
-        });
+        let cats = JSON.parse(catsResult);
+        const homePageResult = homePageHtml.replace(
+            '{{cats}}',
+            cats.map((x) => catTemplate(x)).join('')
+            // cats.map(catTemplate)
+        );
+        res.write(homePageResult);
+        res.end();
     }
 });
 
