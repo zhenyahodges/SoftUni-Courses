@@ -3,12 +3,12 @@ const zlib = require('zlib');
 
 const gzip = zlib.createGzip();
 
-const readStream = fs.createReadStream('./streams/largeFile.txt', {
+const readStream = fs.createReadStream('./03-streams/largeFile.txt', {
     encoding: 'utf8',
     // highWaterMark: 1000,
 });
 // const writeStream = fs.createWriteStream('./streams/copyFile.txt', {
-    const writeStream = fs.createWriteStream('./streams/copyFileZipped.txt', {
+const writeStream = fs.createWriteStream('./03-streams/copyFileZipped3.gz', {
     encoding: 'utf8',
 });
 

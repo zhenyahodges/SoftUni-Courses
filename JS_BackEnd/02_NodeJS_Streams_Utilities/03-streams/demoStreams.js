@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('./streams/largeFile.txt', {
+const readStream = fs.createReadStream('./03-streams/largeFile.txt', {
     encoding: 'utf8',
     highWaterMark: 1000,
 });
-const writeStream = fs.createWriteStream('./streams/copyFile.txt', {
+const writeStream = fs.createWriteStream('./03-streams/copyFile.txt', {
     encoding: 'utf8',
 });
 
