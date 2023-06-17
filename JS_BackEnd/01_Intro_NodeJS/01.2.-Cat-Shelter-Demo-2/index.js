@@ -15,6 +15,7 @@ const catTemplate = (cat) => `
 
 const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://${req.headers.host}`);
+    // console.log(url.search.split('=')[1]);
 
     res.writeHead(200, {
         'Content-Type': 'text/html',
@@ -39,11 +40,16 @@ const server = http.createServer(async (req, res) => {
         let catsResult = await fs.readFile('./cats.json', 'utf-8');
 
         let cats = JSON.parse(catsResult);
-        const homePageResult = homePageHtml.replace(
-            '{{cats}}',
-            cats.map((x) => catTemplate(x)).join('')
-            // cats.map(catTemplate)
-        );
+
+        const catSearch=url.search.split('=')[1];
+
+        const catsPageResult = cats
+        .filter(c=>
+            catSearch? c.name.toLowerCase().includes(catSearch.toLowerCase())
+            :true )
+        .map((x) => catTemplate(x)).join('');
+
+        const homePageResult = homePageHtml.replace('{{cats}}', catsPageResult);
         res.write(homePageResult);
         res.end();
     }
