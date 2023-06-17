@@ -1,11 +1,6 @@
 const http = require('http');
 const fs = require('fs/promises');
 
-const homePage = require('./views/home');
-const siteCss = require('./styles/site');
-const addCatPage = require('./views/addCat');
-// const cats = require('./cats.json');
-
 const catTemplate = (cat) => `
 <li>
 <img src="${cat.imageUrl}">
@@ -18,7 +13,7 @@ const catTemplate = (cat) => `
 </ul>
 </li>`;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://${req.headers.host}`);
 
     res.writeHead(200, {
@@ -29,13 +24,19 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, {
             'Content-Type': 'text/css',
         });
+
+        let siteCss =await fs.readFile('./styles/site.css', 'utf8');
+
         res.write(siteCss);
         res.end();
-
     } else if (url.pathname == '/cats/add-cat') {
+        let addCatPage = await fs.readFile('./views/addCat.html', 'utf-8');
+
         res.write(addCatPage);
         res.end();
     } else {
+        let homePage = await fs.readFile('./views/home.html', 'utf-8');
+
         fs.readFile('./cats.json').then((text) => {
             let cats = JSON.parse(text);
             const homePageResult = homePage.replace(
