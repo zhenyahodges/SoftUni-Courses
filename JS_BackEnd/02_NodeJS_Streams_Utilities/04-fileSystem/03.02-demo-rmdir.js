@@ -1,9 +1,8 @@
 const fs = require('fs/promises');
 
-// delete file or link
+// delete directory
 
-fs.unlink('./04-fileSystem/text.txt').then(() => {
+fs.rmdir('./test2').then(() => {
     console.log('finished deleting');
 });
-
 
