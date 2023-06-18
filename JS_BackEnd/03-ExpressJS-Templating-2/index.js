@@ -4,13 +4,18 @@ const { catMiddleware } = require('./middlewares');
 
 const app = express();
 
+// use middleware app level(vs route level)
+app.use(catMiddleware);
+
 // action
 
 app.get('/', (req, res) => {
     res.send('Welcome');
 });
 
-app.get('/cats',catMiddleware, (req, res) => {
+// middleware route level
+// app.get('/cats',catMiddleware, (req, res) => {
+app.get('/cats', (req, res) => {
     console.log('cat action');
 
     if (req.cats.length > 0) {
@@ -30,7 +35,8 @@ app.get('/cats/:catId(\\d+)', (req, res) => {
 // //    TODO:
 // })
 
-app.post('/cats/:catName', catMiddleware, (req, res) => {
+// app.post('/cats/:catName', catMiddleware, (req, res) => {
+app.post('/cats/:catName', (req, res) => {
     // TODO: implem posting cats
     const cat = req.params.catName;
 
