@@ -4,12 +4,18 @@ const path = require('path');
 const handlebars = require('express-handlebars');
 const { catMiddleware } = require('./middlewares');
 
+const users = [
+    { name: 'Pesho', age: 20 },
+    { name: 'Gosho', age: 21 },
+    { name: 'Penka', age: 19 },
+];
+
 const app = express();
 
 app.engine(
     'hbs',
     handlebars.engine({
-        extname: 'hbs'
+        extname: 'hbs',
     })
 );
 // app.set('view engine','handlebars');
@@ -23,14 +29,18 @@ app.use(catMiddleware);
 app.use('/public', express.static('public'));
 // middleware
 
-
 // app.get('/', (req, res) => {
-    app.get('/:name?', (req, res) => {
+app.get('/:name?', (req, res) => {
     // res.send('Welcome');
 
     // HANDLEBARS
     // res.render('home', {name: 'Peshka'});
-    res.render('home', {name: req.params.name || 'Guest'});
+    res.render('home', {
+        name: req.params.name || 'Guest',
+        //    users: req.users
+        users,
+        isAuth: true,
+    });
 });
 
 // app.get('/img/:imgName', (req, res) => {
