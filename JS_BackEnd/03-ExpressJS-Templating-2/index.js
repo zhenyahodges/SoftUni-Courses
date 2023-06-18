@@ -30,11 +30,11 @@ app.get('/cats/:catId(\\d+)', (req, res) => {
 // //    TODO:
 // })
 
-app.post('/cats/:catName', (req, res) => {
+app.post('/cats/:catName', catMiddleware, (req, res) => {
     // TODO: implem posting cats
     const cat = req.params.catName;
 
-    cats.push(cat);
+    req.cats.push(cat);
     // console.log(cats);
     res.status(201);
     res.send(`Added ${cat} to the collection`);
