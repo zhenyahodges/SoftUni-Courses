@@ -1,9 +1,8 @@
 const express = require('express');
 const fs = require('fs');
+const { catMiddleware } = require('./middlewares');
 
 const app = express();
-
-const cats = [];
 
 // action
 
@@ -11,9 +10,11 @@ app.get('/', (req, res) => {
     res.send('Welcome');
 });
 
-app.get('/cats', (req, res) => {
-    if (cats.length > 0) {
-        res.send(cats.join(', '));
+app.get('/cats',catMiddleware, (req, res) => {
+    console.log('cat action');
+
+    if (req.cats.length > 0) {
+        res.send(req.cats.join(', '));
     } else {
         res.send('No cats');
     }
@@ -78,7 +79,7 @@ app.get('/download', (req, res) => {
 // express download with inline view
 // opt1
 app.get('/expdownload', (req, res) => {
-    res.sendFile(__dirname+'/sample.pdf');
+    res.sendFile(__dirname + '/sample.pdf');
 });
 // opt2
 app.get('/expdownload', (req, res) => {
@@ -86,8 +87,8 @@ app.get('/expdownload', (req, res) => {
 });
 // opt3
 app.get('/expdownload/:fileName', (req, res) => {
-    const fileName=req.params.fileName
-    res.sendFile(`${fileName}`,{root:'.'});
+    const fileName = req.params.fileName;
+    res.sendFile(`${fileName}`, { root: '.' });
 });
 // --------------------
 
@@ -95,7 +96,7 @@ app.get('/expdownload/:fileName', (req, res) => {
 // default
 app.get('/redirect', (req, res) => {
     res.writeHead(302, {
-        'Location': '/cats'
+        Location: '/cats',
     });
     res.end();
 });
@@ -105,8 +106,6 @@ app.get('/expredirect', (req, res) => {
     res.redirect('/cats');
 });
 // --------------
-
-
 
 app.get('/[0-9]+/', (req, res) => {
     res.send('Only number route');
