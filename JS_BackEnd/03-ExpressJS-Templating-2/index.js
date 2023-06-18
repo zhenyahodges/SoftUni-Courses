@@ -44,6 +44,9 @@ app.put('/cats', (req, res) => {
     res.send('Modify collection');
 });
 
+// ---------------
+
+// ROUTER RESPONSEs-Download files
 // default way(no express)
 app.get('/download', (req, res) => {
     res.writeHead(200, {
@@ -65,15 +68,45 @@ app.get('/download', (req, res) => {
     // res.download('');
 });
 
-app.get('/expdownload', (req, res) => {
-    res.download('sample.pdf');
-    // also
-    // res.attachments('sample.pdf');
-    // doesn't add end,so can send add things
+// app.get('/expdownload', (req, res) => {
+//     res.download('sample.pdf');
+//     // also
+//     // res.attachments('sample.pdf');
+//     // doesn't add end,so can send add things
+// });
 
-    // res.sendFile('sample.pdf');
-    // s callback added
+// express download with inline view
+// opt1
+app.get('/expdownload', (req, res) => {
+    res.sendFile(__dirname+'/sample.pdf');
 });
+// opt2
+app.get('/expdownload', (req, res) => {
+    res.sendFile('sample.pdf', { root: __dirname });
+});
+// opt3
+app.get('/expdownload/:fileName', (req, res) => {
+    const fileName=req.params.fileName
+    res.sendFile(`${fileName}`,{root:'.'});
+});
+// --------------------
+
+// REDIRECT
+// default
+app.get('/redirect', (req, res) => {
+    res.writeHead(302, {
+        'Location': '/cats'
+    });
+    res.end();
+});
+
+// express redirect
+app.get('/expredirect', (req, res) => {
+    res.redirect('/cats');
+});
+// --------------
+
+
 
 app.get('/[0-9]+/', (req, res) => {
     res.send('Only number route');
