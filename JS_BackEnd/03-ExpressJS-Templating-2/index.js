@@ -6,6 +6,7 @@ const app = express();
 
 // use middleware app level(vs route level)
 app.use(catMiddleware);
+// TOP LEVEL BEFORE ROUTES
 
 // action
 
