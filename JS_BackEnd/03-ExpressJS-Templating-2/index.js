@@ -1,26 +1,36 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const handlebars=require('express-handlebars');
+const handlebars = require('express-handlebars');
 const { catMiddleware } = require('./middlewares');
 
 const app = express();
 
-app.engine('hadnlebars', handlebars.engine());
-app.set('view engine','handlebars');
+app.engine(
+    'hbs',
+    handlebars.engine({
+        extname: 'hbs'
+    })
+);
+// app.set('view engine','handlebars');
+app.set('view engine', 'hbs');
 
 // use middleware app level(vs route level)
 app.use(catMiddleware);
 // TOP LEVEL BEFORE ROUTES
 
 // STATIC/PUBLIC FILES - config
-app.use('/public',express.static('public'));
+app.use('/public', express.static('public'));
 // middleware
 
-// action
 
-app.get('/', (req, res) => {
-    res.send('Welcome');
+// app.get('/', (req, res) => {
+    app.get('/:name?', (req, res) => {
+    // res.send('Welcome');
+
+    // HANDLEBARS
+    // res.render('home', {name: 'Peshka'});
+    res.render('home', {name: req.params.name || 'Guest'});
 });
 
 // app.get('/img/:imgName', (req, res) => {
