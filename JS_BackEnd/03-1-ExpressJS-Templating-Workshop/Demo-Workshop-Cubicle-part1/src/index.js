@@ -3,7 +3,8 @@ const handlebars= require('express-handlebars');
 
 const app= express();
 // 1-hbs
-app.use('/static', express.static('public'));
+// app.use('/static', express.static('public'));
+app.use('/static', express.static('src/public'));
 
 // option 2 css change/ all req.s- not ideal solution?!
 // app.use(express.static('public'));
@@ -16,7 +17,7 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 
 // 4-views change
-// app.set('views', './src/views');
+app.set('views', './src/views');
 // 4+views=>layouts folder=> main.hbs file
 // 2nd option=> json change
 
