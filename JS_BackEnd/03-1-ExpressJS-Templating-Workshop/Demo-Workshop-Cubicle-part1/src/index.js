@@ -3,7 +3,10 @@ const handlebars= require('express-handlebars');
 
 const app= express();
 // 1-hbs
-app.use('/static', express.static('public'));
+// app.use('/static', express.static('public'));
+
+// css change/ all req.s
+app.use(express.static('public'));
 // 2-hbs
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
