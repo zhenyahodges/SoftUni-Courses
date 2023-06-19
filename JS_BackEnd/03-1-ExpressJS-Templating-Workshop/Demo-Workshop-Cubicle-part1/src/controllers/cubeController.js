@@ -23,4 +23,8 @@ router.post('/create', async (req, res) => {
     }
 });
 
+router.get('/details/:id', (req, res) => {
+    res.render('details');
+})
+
 module.exports = router;
