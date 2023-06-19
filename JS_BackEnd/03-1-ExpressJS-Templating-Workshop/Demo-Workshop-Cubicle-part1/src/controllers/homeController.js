@@ -9,7 +9,10 @@ const cubeService = require('../services/cubeService');
 //     res.render('about');
 // };
 router.get('/', (req, res) => {
-    const cubes=cubeService.getAll();
+    // queryString
+    let {search,from,to}= req.query;
+
+    const cubes=cubeService.getAll(search,from,to);
     res.render('index', { cubes });
     // cubes:cubes shorthand=> cubes
 });

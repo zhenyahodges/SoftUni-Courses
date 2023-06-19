@@ -15,4 +15,7 @@ exports.save = (cube) => {
 };
 
 exports.getOne = (cubeId) => cubes[cubeId];
-exports.getAll = () =>cubes;
+exports.getAll = (search,from,to) =>{
+    const result=cubes.filter(x=>x.name.toLowerCase().includes(search?.toLowerCase() || ''));
+    return result;
+}
