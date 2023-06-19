@@ -7,12 +7,20 @@ router.get('/', async (req,res)=>{
     res.render('users', {users});
 });
 
-router.get('/create', (req,res)=>{
+router.get('/create',  (req,res)=>{   
     res.render('createUser');
 })
 
-router.post('/create', (req,res)=>{
-    console.log(req.body);
+router.post('/create',async (req,res)=>{
+    // console.log(req.body);
+
+    // ==> option 1 -create db doc
+    // const user=new User(req.body);
+    // let savedUser=await user.save();
+    // // console.log(savedUser);
+
+    // ==> option 2 -create db doc
+    let savedUser=await User.create(req.body);
 
     res.redirect('/users');
 })
