@@ -10,3 +10,5 @@ exports.save = (cube) => {
         encoding: 'utf-8',
     });
 };
+
+exports.getOne = (cubeId) => cubes[cubeId];
