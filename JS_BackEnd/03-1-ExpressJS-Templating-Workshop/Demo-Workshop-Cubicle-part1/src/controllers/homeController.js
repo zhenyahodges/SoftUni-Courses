@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const cubes = require('../db.json');
+const cubeService = require('../services/cubeService');
 
 // exports.index = (req, res) => {
 //     res.render('index', { cubes });
@@ -9,6 +9,7 @@ const cubes = require('../db.json');
 //     res.render('about');
 // };
 router.get('/', (req, res) => {
+    const cubes=cubeService.getAll();
     res.render('index', { cubes });
     // cubes:cubes shorthand=> cubes
 });

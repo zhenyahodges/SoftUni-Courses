@@ -15,3 +15,4 @@ exports.save = (cube) => {
 };
 
 exports.getOne = (cubeId) => cubes[cubeId];
+exports.getAll = () =>cubes;
