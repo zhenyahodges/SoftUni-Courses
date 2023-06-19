@@ -30,5 +30,11 @@
         "description": "gggggggggg",
         "imageUrl": "https://miro.medium.com/v2/resize:fit:636/0*5P_Yma_xvGkSnVfM.jpg",
         "difficultyLevel": "3"
+    },
+    {
+        "name": "pretty",
+        "description": "errrrrrrrr",
+        "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/015/118/253/small/rubik-cube-element-vector.jpg",
+        "difficultyLevel": "2"
     }
 ]
