@@ -36,16 +36,16 @@
     },
     {
         "id": 5,
-        "name": "rubik2",
-        "description": "gggggggggg",
-        "imageUrl": "https://miro.medium.com/v2/resize:fit:636/0*5P_Yma_xvGkSnVfM.jpg",
-        "difficultyLevel": "3"
-    },
-    {
-        "id": 6,
         "name": "pretty",
         "description": "errrrrrrrr",
         "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/015/118/253/small/rubik-cube-element-vector.jpg",
+        "difficultyLevel": "2"
+    },
+    {
+        "id": 6,
+        "name": "yyyyyyyyy",
+        "description": "yyyyyyyy",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSytFBGVhe9TnyjdETQXKZUa3HswsaW_OvonA&usqp=CAU",
         "difficultyLevel": "2"
     }
 ]
