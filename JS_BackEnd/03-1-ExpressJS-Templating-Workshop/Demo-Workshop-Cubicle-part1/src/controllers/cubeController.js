@@ -2,6 +2,7 @@ const router = require('express').Router();
 const cubes = require('../db.json');
 
 const fs = require('fs/promises');
+const path=require('path');
 
 router.get('/create', (req, res) => {
     res.render('create');
@@ -16,7 +17,8 @@ router.post('/create', (req, res) => {
     }
     // SAVE DATA
     cubes.push(cube);
-    fs.writeFile('../db.json', JSON.stringify(cubes))
+    // (json formatting)
+    fs.writeFile(path.resolve('src', 'db.json'), JSON.stringify(cubes, '', 4), {encoding: 'utf-8'})
         .then(() => {
             // REDIRECT TO PAGE
             res.redirect('/');

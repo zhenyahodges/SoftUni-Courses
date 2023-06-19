@@ -18,5 +18,17 @@
         "name": "Pyraminx",
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
         "level": 5
+    },
+    {
+        "name": "rubik",
+        "description": "tttrtr",
+        "imageUrl": "https://miro.medium.com/v2/resize:fit:636/0*5P_Yma_xvGkSnVfM.jpg",
+        "difficultyLevel": "4"
+    },
+    {
+        "name": "rubik2",
+        "description": "gggggggggg",
+        "imageUrl": "https://miro.medium.com/v2/resize:fit:636/0*5P_Yma_xvGkSnVfM.jpg",
+        "difficultyLevel": "3"
     }
 ]
