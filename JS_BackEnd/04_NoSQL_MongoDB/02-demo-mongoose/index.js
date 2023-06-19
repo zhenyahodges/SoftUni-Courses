@@ -1,20 +1,26 @@
 const express = require('express');
 const hbs = require('express-handlebars');
-const mongoose= require('mongoose');
+const mongoose = require('mongoose');
 
-const userController=require('./controllers/userController');
+const userController = require('./controllers/userController');
 
 const app = express();
+
 // const url = 'mongodb://127.0.0.1:27017/';
 const url = 'mongodb://127.0.0.1:27017/user-list';
-mongoose.connect(url)
-.then(()=>{
-    console.log('db connected')
-})
-.catch((err)=>{
-    console.log(`db error: ${err}`);
-})
+
+mongoose
+    .connect(url)
+    .then(() => {
+        console.log('db connected');
+    })
+    .catch((err) => {
+        console.log(`db error: ${err}`);
+    });
+    
 // const usersCollection = db.collection('users');
+
+app.use(express.urlencoded({ extended: false }));
 
 app.engine(
     'hbs',

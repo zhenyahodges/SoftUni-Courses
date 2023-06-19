@@ -7,4 +7,14 @@ router.get('/', async (req,res)=>{
     res.render('users', {users});
 });
 
+router.get('/create', (req,res)=>{
+    res.render('createUser');
+})
+
+router.post('/create', (req,res)=>{
+    console.log(req.body);
+
+    res.redirect('/users');
+})
+
 module.exports = router;
