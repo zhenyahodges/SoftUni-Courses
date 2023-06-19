@@ -11,6 +11,8 @@ const app= express();
 // 1-hbs
 // app.use('/static', express.static('public'));
 app.use('/static', express.static('src/public'));
+// express mw
+app.use(express.urlencoded({extended: false}));
 
 // option 2 css change/ all req.s- not ideal solution?!
 // app.use(express.static('public'));
