@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     // queryString
     let {search,from,to}= req.query;
 
-    const cubes=cubeService.getAll(search,from,to);
+    const cubes=cubeService.getAll(search,Number(from),Number(to));
     res.render('index', { cubes });
     // cubes:cubes shorthand=> cubes
 });
