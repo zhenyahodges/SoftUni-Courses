@@ -41,16 +41,15 @@ userSchema.methods.getInfo = function () {
     return `${this.firstName}-${this.lastName || 'n/a'}`;
 };
 
-userSchema.virtual('isNew')
-.get(function (){
-    return this.phoneNumber>3
+userSchema.virtual('isNew').get(function () {
+    return this.phoneNumber > 3;
 });
 // .set...
 
-//property validation mongoose 
-userSchema.path('firstName').validate(function(){
-    return this.firstName>=2 && this.firstName<=20
-}, `This name should be between 2 and 20 characters`)
+//property validation mongoose
+userSchema.path('firstName').validate(function () {
+    return this.firstName.length >= 2 && this.firstName.length <= 20;
+}, `This name should be between 2 and 20 characters`);
 
 const User = mongoose.model('User', userSchema);
 
