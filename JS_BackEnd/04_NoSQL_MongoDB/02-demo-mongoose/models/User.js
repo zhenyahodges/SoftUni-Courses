@@ -47,6 +47,11 @@ userSchema.virtual('isNew')
 });
 // .set...
 
+//property validation mongoose 
+userSchema.path('firstName').validate(function(){
+    return this.firstName>=2 && this.firstName<=20
+}, `This name should be between 2 and 20 characters`)
+
 const User = mongoose.model('User', userSchema);
 
 exports.User = User;
