@@ -25,6 +25,16 @@ const userSchema = new mongoose.Schema({
     //     type: String,
     //     required: true,
     // }
+
+    // validations:
+    // age: {
+    //     type: Number,
+    //     min: 5,
+    //     max: [25, 'The year must be below 25 you entered {VALUE}'],
+    // },
+    // genre:{
+    //     enum: ['maths', 'arts', 'IT']
+    // }
 });
 
 // METHODS

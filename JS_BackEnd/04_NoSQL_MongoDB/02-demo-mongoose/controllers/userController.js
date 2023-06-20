@@ -2,28 +2,31 @@ const router = require('express').Router();
 const { User } = require('../models/User');
 
 router.get('/', async (req, res) => {
-    // const users=await User.find().lean();
+    const users=await User.find().lean();
     // lean cant use with methods,so:
-    const users= await User.find();
+    // const users= await User.find();
 
-    users.forEach((user) => {
-        console.log(user.getInfo());
-        console.log(user.isNew);
-    });
-    // console.log(users);
+    // users.forEach((user) => {
+    //     console.log(user.getInfo());
+    //     console.log(user.isNew);
+    // });
 
-    // res.render('users', { users });
-
-    res.render('users', { users: []});
+    res.render('users', { users });
+    // res.render('users', { users: []});
 });
+
+router.get('/:userId', async(req, res) => {
+    let user=await User.findOne({_id: req.params.userId});
+    // let user=await User.findById(req.params.userId);
+    res.render('userDetails', {user}); 
+    // let user=await User.findOne({_id: req.params.userId})
+})
 
 router.get('/create', (req, res) => {
     res.render('createUser');
 });
 
 router.post('/create', async (req, res) => {
-    // console.log(req.body);
-
     // ==> option 1 -create db doc
     // const user=new User(req.body);
     // let savedUser=await user.save();
