@@ -17,7 +17,7 @@ mongoose
     .catch((err) => {
         console.log(`db error: ${err}`);
     });
-    
+
 // const usersCollection = db.collection('users');
 
 app.use(express.urlencoded({ extended: false }));
@@ -37,3 +37,4 @@ app.get('/', (req, res) => {
 app.use('/users', userController);
 
 app.listen(5000, () => console.log('Server is listening on port 5000...'));
+

@@ -39,3 +39,6 @@ router.post('/create', async (req, res) => {
 });
 
 module.exports = router;
+
+// CRUD-UPDATE:
+// db.user-list.updateOne({firstName:'iuuuuuuuu'}, {$set: {lastname: 'Doe', phoneNumber: '123456'}});
