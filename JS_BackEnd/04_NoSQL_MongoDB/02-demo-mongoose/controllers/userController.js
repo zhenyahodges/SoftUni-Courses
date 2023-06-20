@@ -15,13 +15,6 @@ router.get('/', async (req, res) => {
     // res.render('users', { users: []});
 });
 
-router.get('/:userId', async(req, res) => {
-    let user=await User.findOne({_id: req.params.userId});
-    // let user=await User.findById(req.params.userId);
-    res.render('userDetails', {user}); 
-    // let user=await User.findOne({_id: req.params.userId})
-})
-
 router.get('/create', (req, res) => {
     res.render('createUser');
 });
@@ -37,6 +30,13 @@ router.post('/create', async (req, res) => {
 
     res.redirect('/users');
 });
+
+router.get('/:userId', async(req, res) => {
+    let user=await User.findOne({_id: req.params.userId});
+    // let user=await User.findById(req.params.userId);
+    res.render('userDetails', {user}); 
+    // let user=await User.findOne({_id: req.params.userId})
+})
 
 module.exports = router;
 
