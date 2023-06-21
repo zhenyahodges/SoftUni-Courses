@@ -8,18 +8,21 @@ exports.getOneDetailed = (cubeId) =>
 exports.getOne = (cubeId) => Cube.findById(cubeId);
 
 exports.getAll = async (search = '', fromInput, toInput) => {
-    let cubes = await Cube.find().lean();
-
     const from = Number(fromInput) || 0;
     const to = Number(toInput) || 6;
 
-    const result = cubes
-        .filter((x) =>
-            x.name.toLowerCase().includes(search?.toLowerCase() || '')
-        )
-        .filter((x) => x.difficultyLevel >= from && x.difficultyLevel <= to);
-    return result;
-    // return cubes;
+    // DB SEARCH
+    // let cubes = await Cube.find({
+    //     name: { $regex: new RegExp(search, 'i') },
+    //     difficultyLevel: { $and: [{ $gte: from }, { $lte: to }] },
+    // }).lean();
+    let cubes = await Cube.find({
+        name: { $regex: new RegExp(search, 'i') }
+    })
+        .where('difficultyLevel')
+        .lte(to).gte(from).lean();
+
+    return cubes;
 };
 
 exports.create = (cube) => Cube.create(cube);
