@@ -17,8 +17,9 @@ router.post('/create', async (req, res) => {
         await cubeService.create(cube);
         // REDIRECT TO PAGE
         res.redirect('/');
-    } catch (error) {
+    } catch (err) {
         // just for here,not to use as this after
+        console.log(err);
         res.status(400).send(err);
     }
 });

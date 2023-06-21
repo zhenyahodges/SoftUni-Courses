@@ -3,14 +3,13 @@ const path = require('path');
 
 const Cube=require('../models/Cube')
 
-exports.create = (cube) => Cube.create(cube);
 
 exports.getOne = (cubeId) => Cube.findById(cubeId);
 
 exports.getAll = (search = '', fromInput, toInput) => {
     // const from = Number(fromInput) || 0;
     // const to = Number(toInput) || 6;
-
+    
     // const result = cubes
     //     .filter((x) =>
     //         x.name.toLowerCase().includes(search?.toLowerCase() || '')
@@ -19,3 +18,5 @@ exports.getAll = (search = '', fromInput, toInput) => {
     // return result;
     return [];
 };
+
+exports.create = (cube) => Cube.create(cube);
