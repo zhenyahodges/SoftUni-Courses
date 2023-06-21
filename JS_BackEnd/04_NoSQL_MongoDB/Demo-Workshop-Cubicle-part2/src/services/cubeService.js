@@ -19,3 +19,8 @@ exports.getAll = async (search = '', fromInput, toInput) => {
 };
 
 exports.create = (cube) => Cube.create(cube);
+
+exports.attachAccessory=(cubeId, accessoryId)=>{
+    console.log(cubeId);
+    console.log(accessoryId);
+}
