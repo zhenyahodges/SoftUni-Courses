@@ -14,7 +14,7 @@ router.post('/create', async (req, res) => {
     }
     // SAVE DATA
     try {
-        await cubeService.save(cube);
+        await cubeService.create(cube);
         // REDIRECT TO PAGE
         res.redirect('/');
     } catch (error) {
