@@ -11,7 +11,7 @@ exports.getAll = async (search = '', fromInput, toInput) => {
     const from = Number(fromInput) || 0;
     const to = Number(toInput) || 6;
 
-    // DB SEARCH
+    // DB SEARCH-this is not working yet,see below
     // let cubes = await Cube.find({
     //     name: { $regex: new RegExp(search, 'i') },
     //     difficultyLevel: { $and: [{ $gte: from }, { $lte: to }] },
