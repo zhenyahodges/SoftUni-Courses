@@ -30,8 +30,6 @@ router.get('/details/:id', async (req, res) => {
 
     res.render('details', { cube });
 
-    // 2nd option
-    // res.render('details', { ...cube });
 });
 
 router.get('/:cubeId/attach-accessory', async (req, res) => {
