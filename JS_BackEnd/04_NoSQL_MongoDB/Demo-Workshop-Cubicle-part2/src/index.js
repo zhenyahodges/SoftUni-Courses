@@ -11,7 +11,7 @@ require('./config/handlebars')(app);
 
 // 1-hbs
 // app.use('/static', express.static('public'));
-app.use('/static', express.static('/public'));
+app.use('/static', express.static('public'));
 // express mw
 app.use(express.urlencoded({ extended: false }));
 
