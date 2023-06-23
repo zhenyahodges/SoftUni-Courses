@@ -43,12 +43,14 @@ app.get('/login/:password?', async (req, res) => {
 });
 
 app.get('/verify/:token', (req, res) => {
-    try{
-        let decodedToken = jwt.verify(req.params.token, secret);
+    jwt.verify(req.params.token, secret, (err, decodedToken) => {
+        if (err) {
+            return res
+                .status(401)
+                .send('You are not authorized to access this');
+        }
         res.json(decodedToken);
-    }catch(err){
-        res.status(401).send('You are not authorized to access this')
-    }
+    });
 });
 
 app.listen(5000, () => {
