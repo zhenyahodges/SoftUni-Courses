@@ -1,20 +1,30 @@
 const express = require('express');
-const cookieParser=require('cookie-parser');
+// const cookieParser=require('cookie-parser');
+const expSession = require('express-session');
 
 const app = express();
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
-app.get('/', (req, res) => {   
-    res.cookie('test', 'Some test value')
-    res.cookie('test2', 'Some test value2')
-    res.send('Hello, world!');
+app.use(
+    expSession({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            secure: false,
+        },
+    })
+);
+
+app.get('/', (req, res) => {
+    (req.session.userName = 'Pesho')
+    res.send('Home page');
 });
 
 app.get('/cats', (req, res) => {
-    let cookies= req.cookies;
-    console.log(cookies);
-    res.send('Cats World');
+    console.log(req.session);
+    res.send('Cats');
 });
 
 app.listen(5000, () => {

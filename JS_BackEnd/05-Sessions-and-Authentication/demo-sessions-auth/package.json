@@ -1,20 +1,23 @@
 {
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  },
-  "name": "demo-sessions-auth",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "cookie-parser": "^1.4.6",
+        "express": "^4.18.2",
+        "express-session": "^1.17.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    },
+    "name": "demo-sessions-auth",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "start:cookieDemo": "nodemon ./cookieDemo",
+        "start:sessionDemo": "nodemon ./sessionDemo"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }
