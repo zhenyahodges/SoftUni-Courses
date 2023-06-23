@@ -15,7 +15,8 @@
     "scripts": {
         "start": "nodemon index.js",
         "start:cookieDemo": "nodemon ./cookieDemo",
-        "start:sessionDemo": "nodemon ./sessionDemo"
+        "start:sessionDemo": "nodemon ./sessionDemo",
+        "start:authDemo": "nodemon ./authDemo"
     },
     "keywords": [],
     "author": "",
