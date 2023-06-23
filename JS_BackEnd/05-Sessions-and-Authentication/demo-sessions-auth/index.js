@@ -1,12 +1,15 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const password = 'mysecretpassword';
 // NB!
 const saltRounds = 10;
-const hashedPassword ='$2b$10$tQW2Nrx1Gg8NSJO1qvf9C.P8RLKrTwJ3ejNHIOYkBOskDh133B03u'
+const hashedPassword =
+    '$2b$10$tQW2Nrx1Gg8NSJO1qvf9C.P8RLKrTwJ3ejNHIOYkBOskDh133B03u';
+const secret = 'Mysupersecret';
 
 app.use(cookieParser());
 
@@ -20,12 +23,32 @@ app.get('/hash/:password?', async (req, res) => {
 });
 
 app.get('/login/:password?', async (req, res) => {
-    const isValidPass = await bcrypt.compare(req.params.password, hashedPassword);
-    isValidPass? res.send('Successful login') : res.send('Invalid pass');
+    const isValidPass = await bcrypt.compare(
+        req.params.password,
+        hashedPassword
+    );
+    if (isValidPass) {
+        // JWT
+        const payload = {
+            username: 'Mariya',
+        };
+        const options = {
+            expiresIn: '1d',
+        };
+        const token = jwt.sign(payload, secret, options);
+        res.send(token);
+    } else {
+    }
+    res.send('Invalid pass');
 });
 
-app.get('/cats', (req, res) => {
-    res.send('Cats World');
+app.get('/verify/:token', (req, res) => {
+    try{
+        let decodedToken = jwt.verify(req.params.token, secret);
+        res.json(decodedToken);
+    }catch(err){
+        res.status(401).send('You are not authorized to access this')
+    }
 });
 
 app.listen(5000, () => {
