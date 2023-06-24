@@ -71,7 +71,7 @@ app.post('/login', async (req, res) => {
     if (isAuth) {
         const token = jwt.sign({ email }, secret, { expiresIn: '2d' });
 
-        res.cookie('session', token);
+        res.cookie('session', token, {httpOnly: true});
         res.redirect('/');
     } else {
         res.status(401).send('Wrong username or password');
