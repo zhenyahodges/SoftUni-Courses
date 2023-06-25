@@ -17,15 +17,19 @@ exports.getAll = async (search = '', fromInput, toInput) => {
     //     difficultyLevel: { $and: [{ $gte: from }, { $lte: to }] },
     // }).lean();
     let cubes = await Cube.find({
-        name: { $regex: new RegExp(search, 'i') }
+        name: { $regex: new RegExp(search, 'i') },
     })
         .where('difficultyLevel')
-        .lte(to).gte(from).lean();
+        .lte(to)
+        .gte(from)
+        .lean();
 
     return cubes;
 };
 
 exports.create = (cube) => Cube.create(cube);
+
+exports.edit = (cubeId, cubeData) => Cube.findByIdAndUpdate(cubeId, cubeData);
 
 exports.attachAccessory = async (cubeId, accessoryId) => {
     const cube = await Cube.findById(cubeId);
