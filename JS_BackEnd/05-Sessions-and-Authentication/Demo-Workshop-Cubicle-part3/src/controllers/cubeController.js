@@ -46,6 +46,7 @@ router.post('/:cubeId/attach-accessory', async (req, res) => {
 
 router.get('/:cubeId/edit', async (req, res) => {
     const cube = await cubeService.getOne(req.params.cubeId).lean();
+    // tobe changed
     cube[`difficultyLevel${cube.difficultyLevel}`]=true;
 
     if (!cube) {
