@@ -10,7 +10,7 @@ exports.register = async ({ username, password, repeatPassword }) => {
     }
     let hashedPassword = await bcrypt.hash(password, saltRounds);
 
-    let createdUser = User.create({
+    let createdUser =  User.create({
         username,
         password: hashedPassword,
     });
