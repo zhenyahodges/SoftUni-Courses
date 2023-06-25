@@ -1,7 +1,10 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+// const {promisify} = require('util');
 
 const User = require('../models/User');
 const saltRounds = 10;
+const secret = 'hkjjuukhh';
 
 exports.register = async ({ username, password, repeatPassword }) => {
     // TODO return form validation message
@@ -34,9 +37,28 @@ exports.login = async ({ username, password }) => {
     const isValid = await bcrypt.compare(password, user.password);
     console.log(isValid);
 
-    if (isValid) {
-        return user;
-    } else {
+    if (!isValid) {
         return;
     }
+
+    // custom promise
+    let result = new Promise((resolve, reject) => {
+        jwt.sign(
+            { _id: user._id, username: user.username },
+            secret,
+            { expiresIn: '2d' },
+            (err, token) => {
+                if (err) {
+                    return reject(err);
+                }
+                resolve(token);
+            }
+        );
+    });
+    return result;
+
+    // const jwtPromiseSign=promisify(jwt.sign());
+    // jwtPromiseSign();
+
+
 };
