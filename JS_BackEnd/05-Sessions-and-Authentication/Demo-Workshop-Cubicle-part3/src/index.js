@@ -2,13 +2,14 @@ const express = require('express');
 const { initializeDB } = require('./config/database');
 const routes = require('./routes');
 const app = express();
+const cookieParser = require('cookie-parser');
+
 
 require('./config/handlebars')(app);
 
 app.use('/static', express.static('public'));
-
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-
 app.use(routes);
 
 initializeDB()
