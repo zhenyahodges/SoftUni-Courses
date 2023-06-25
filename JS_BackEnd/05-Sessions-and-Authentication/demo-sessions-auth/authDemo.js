@@ -35,6 +35,8 @@ app.get('/login/:password?', async (req, res) => {
         const options = {
             expiresIn: '1d',
         };
+
+        //NB!! CHECK THIS IS HOW JWT SHOULD WORK OR NOT-CONFLICTING INFO
         const token = jwt.sign(payload, secret, options);
         res.send(token);
     } else {
