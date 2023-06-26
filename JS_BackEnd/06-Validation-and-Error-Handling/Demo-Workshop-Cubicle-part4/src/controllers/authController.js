@@ -19,13 +19,14 @@ router.post('/register', async (req, res, next) => {
         await authService.register(req.body);
         res.redirect('/auth/login');
     } catch (error) {
-        let text = '';
-        if (error.errors) {
-            text = Object.values(error.errors)[0].message;
-        } else {
-            text = error.message;
-        }
-        res.status(401).render('auth/login', { error: text });
+        // let text = '';
+        // if (error.errors) {
+        //     text = Object.values(error.errors)[0].message;
+        // } else {
+        //     text = error.message;
+        // }
+        // res.status(401).render('auth/login', { error: text });
+        res.status(401).render('auth/login', { error: error.message });
         // next(error);
     }
 });
