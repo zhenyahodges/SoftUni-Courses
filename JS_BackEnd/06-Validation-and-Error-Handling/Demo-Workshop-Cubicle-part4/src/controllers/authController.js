@@ -9,18 +9,24 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', async (req, res, next) => {
-    if (!isEmail(req.body.username)) {
-        // return res.status(404).send('Invalid email address');
-        let error = { message: 'Invalid email address' };
-        next(error);
-    }
+    // if (!isEmail(req.body.username)) {
+    //     // return res.status(404).send('Invalid email address');
+    //     let error = { message: 'Invalid email address' };
+    //     next(error);
+    // }
 
     try {
         await authService.register(req.body);
         res.redirect('/auth/login');
     } catch (error) {
-        console.log(error);    
-        next(error);
+        let text = '';
+        if (error.errors) {
+            text = Object.values(error.errors)[0].message;
+        } else {
+            text = error.message;
+        }
+        res.status(401).render('auth/login', { error: text });
+        // next(error);
     }
 });
 

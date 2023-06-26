@@ -7,7 +7,7 @@ const { saltRounds, secret } = require('../constants');
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,
+        required: [true, 'Username is required'],
     },
     password: {
         type: String,

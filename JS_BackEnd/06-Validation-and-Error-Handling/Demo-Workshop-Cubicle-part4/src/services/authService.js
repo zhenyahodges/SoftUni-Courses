@@ -10,7 +10,7 @@ exports.register = async ({ username, password, repeatPassword }) => {
     // if (password !== repeatPassword) {
     //     return false;
     // }
-    let hashedPassword = await bcrypt.hash(password, saltRounds);
+    // let hashedPassword = await bcrypt.hash(password, saltRounds);
 
     // let createdUser = await User.create({
     //     username,
