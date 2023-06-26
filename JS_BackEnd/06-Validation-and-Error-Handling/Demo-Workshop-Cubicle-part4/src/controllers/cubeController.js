@@ -16,6 +16,10 @@ router.post(
     isAuth,
     body('name', 'Name is required').not().isEmpty(),
     body('description', 'Description is required').isLength({min: 5, max: 120}),
+    body('difficultyLevel', 'Difficulty level should be between 1 and 6').toInt().isInt({min: 1, max: 6}) ,
+    body('name', 'name').custom((value=>{
+        
+    })) ,
     async (req, res) => {
         const cube = req.body;
 
