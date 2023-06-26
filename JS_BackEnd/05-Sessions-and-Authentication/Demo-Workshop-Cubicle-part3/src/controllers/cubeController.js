@@ -51,10 +51,14 @@ router.post('/:cubeId/attach-accessory', async (req, res) => {
     res.redirect('/cube/details/' + req.params.cubeId);
 });
 
-router.get('/:cubeId/edit', async (req, res) => {
+router.get('/:cubeId/edit', isAuth, async (req, res) => {
     // console.log(req.user);
-
     const cube = await cubeService.getOne(req.params.cubeId).lean();
+
+    if (cube.owner != req.user._id) {
+        return res.redirect('/404');
+    }
+
     // tobe changed
     cube[`difficultyLevel${cube.difficultyLevel}`] = true;
 
