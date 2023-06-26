@@ -17,17 +17,14 @@ exports.register = async ({ username, password, repeatPassword }) => {
     //     password: hashedPassword,
     // });
 
-    try {
+
         let createdUser = await User.create({
             username,
             password,
             repeatPassword,
         });
         return createdUser;
-    } catch (err) {
-        console.log(err);
-        return err;
-    }
+   
 
     // await createdUser.save();
 

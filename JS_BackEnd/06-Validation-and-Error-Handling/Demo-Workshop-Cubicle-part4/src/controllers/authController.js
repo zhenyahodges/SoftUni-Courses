@@ -10,18 +10,18 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res, next) => {
     if (!isEmail(req.body.username)) {
-
         // return res.status(404).send('Invalid email address');
-        next({message: 'Invalid email'})
+        let error = { message: 'Invalid email address' };
+        next(error);
     }
 
-    let createdUser = await authService.register(req.body);
-
-    if (createdUser) {
+    try {
+        await authService.register(req.body);
         res.redirect('/auth/login');
-    } else {
-        // TODO: add notification
-        res.redirect('/404');
+    } catch (error) {
+        console.log(error);
+        // let error={message: 'Invalid email address'}
+        next(error);
     }
 });
 
@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
 
         res.redirect('/');
     } catch (error) {
-       res.status(400).render('auth/login', {error: error.message});       
+        res.status(400).render('auth/login', { error: error.message });
     }
 });
 
