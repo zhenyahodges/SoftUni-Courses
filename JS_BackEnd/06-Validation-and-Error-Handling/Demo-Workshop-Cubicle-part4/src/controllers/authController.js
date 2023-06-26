@@ -8,7 +8,7 @@ router.get('/register', (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register',isEmail, async (req, res) => {
+router.post('/register', async (req, res) => {
     if (!isEmail(req.body.username)) {
         return res.status(404).send('Invalid email address');
     }

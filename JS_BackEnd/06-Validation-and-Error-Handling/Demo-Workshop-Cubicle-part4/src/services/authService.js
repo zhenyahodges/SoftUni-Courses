@@ -3,27 +3,35 @@ const jwt = require('jsonwebtoken');
 // const {promisify} = require('util');
 
 const User = require('../models/User');
-const {saltRounds, secret}= require('../constants')
+const { saltRounds, secret } = require('../constants');
 
 exports.register = async ({ username, password, repeatPassword }) => {
     // TODO return form validation message
-    if (password !== repeatPassword) {
-        return false;
-    }
+    // if (password !== repeatPassword) {
+    //     return false;
+    // }
     let hashedPassword = await bcrypt.hash(password, saltRounds);
 
-    let createdUser = await User.create({
-        username,
-        password: hashedPassword,
-    });
-
-    // let createdUser = new User({
+    // let createdUser = await User.create({
     //     username,
     //     password: hashedPassword,
     // });
+
+    try {
+        let createdUser = await User.create({
+            username,
+            password,
+            repeatPassword,
+        });
+        return createdUser;
+    } catch (err) {
+        console.log(err);
+        return err;
+    }
+
     // await createdUser.save();
 
-    return createdUser;
+    // return createdUser;
 };
 
 exports.login = async ({ username, password }) => {
@@ -34,7 +42,7 @@ exports.login = async ({ username, password }) => {
     }
 
     const isValid = await bcrypt.compare(password, user.password);
-    console.log(isValid);
+    // console.log(isValid);
 
     if (!isValid) {
         return;
@@ -58,6 +66,4 @@ exports.login = async ({ username, password }) => {
 
     // const jwtPromiseSign=promisify(jwt.sign());
     // jwtPromiseSign();
-
-
 };
