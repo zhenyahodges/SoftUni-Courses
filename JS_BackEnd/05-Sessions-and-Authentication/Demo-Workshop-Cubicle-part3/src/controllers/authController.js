@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { sessionName } = require('../constants');
 const authService = require('../services/authService');
 
 router.get('/register', (req, res) => {
@@ -22,11 +23,12 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
     let token = await authService.login(req.body);
-    console.log(token);
+    // console.log(token);
+    
     if (!token) {
       return  res.redirect('/404');           
     }
-    res.cookie('session', token, {httpOnly: true});
+    res.cookie(sessionName, token, {httpOnly: true});
 
     res.redirect('/');
 });

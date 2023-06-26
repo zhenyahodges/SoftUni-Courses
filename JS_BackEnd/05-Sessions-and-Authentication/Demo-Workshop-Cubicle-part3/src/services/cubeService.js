@@ -5,6 +5,7 @@ const Accessory = require('../models/Accessory');
 
 exports.getOneDetailed = (cubeId) =>
     Cube.findById(cubeId).populate('accessories');
+    
 exports.getOne = (cubeId) => Cube.findById(cubeId);
 
 exports.getAll = async (search = '', fromInput, toInput) => {

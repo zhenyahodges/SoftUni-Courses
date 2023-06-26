@@ -3,8 +3,7 @@ const jwt = require('jsonwebtoken');
 // const {promisify} = require('util');
 
 const User = require('../models/User');
-const saltRounds = 10;
-const secret = 'hkjjuukhh';
+const {saltRounds, secret}= require('../constants')
 
 exports.register = async ({ username, password, repeatPassword }) => {
     // TODO return form validation message
