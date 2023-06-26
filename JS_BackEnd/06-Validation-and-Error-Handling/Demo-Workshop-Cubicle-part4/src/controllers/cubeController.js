@@ -2,6 +2,7 @@ const router = require('express').Router();
 const cubeService = require('../services/cubeService');
 const accessoryService = require('../services/accessoryService');
 const { isAuth } = require('../middlewares/authMiddleware');
+const { body, validationResult } = require('express-validator');
 
 // route guard
 // router.use(isAuth);
@@ -10,31 +11,41 @@ router.get('/create', isAuth, (req, res) => {
     res.render('create');
 });
 
-router.post('/create', isAuth, async (req, res) => {
-    const cube = req.body;
+router.post(
+    '/create',
+    isAuth,
+    body('name', 'Name is required').not().isEmpty(),
+    body('description', 'Description is required').isLength({min: 5, max: 120}),
+    async (req, res) => {
+        const cube = req.body;
 
-    cube.owner = req.user._id;
+        cube.owner = req.user._id;
+        const errors=validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(400).send(errors.array()[0].msg);
+        }
 
-    // VALIDATE DATA
-    //ex. simple validation:
-    if (cube.name.length < 2) {
-        return res.status(400).send('Invalid request');
+        // VALIDATE DATA
+        //ex. simple validation:
+        if (cube.name.length < 2) {
+            return res.status(400).send('Invalid request');
+        }
+        // SAVE DATA
+        try {
+            await cubeService.create(cube);
+            // REDIRECT TO PAGE
+            res.redirect('/');
+        } catch (err) {
+            // just for here,not to use as this after
+            console.log(err);
+            res.status(400).send(err);
+        }
     }
-    // SAVE DATA
-    try {
-        await cubeService.create(cube);
-        // REDIRECT TO PAGE
-        res.redirect('/');
-    } catch (err) {
-        // just for here,not to use as this after
-        console.log(err);
-        res.status(400).send(err);
-    }
-});
+);
 
 router.get('/details/:id', async (req, res) => {
     const cube = await cubeService.getOneDetailed(req.params.id).lean();
-   const isOwner= cube.owner==req.user?._id;
+    const isOwner = cube.owner == req.user?._id;
 
     res.render('details', { cube, isOwner });
 });
@@ -76,18 +87,18 @@ router.post('/:cubeId/edit', async (req, res) => {
     res.redirect(`/cube/details/${modifiedCube._id}`);
 });
 
-router.get('/:cubeId/delete',async (req, res) => {
-        const cube= await cubeService.getOne(req.params.cubeId).lean();
+router.get('/:cubeId/delete', async (req, res) => {
+    const cube = await cubeService.getOne(req.params.cubeId).lean();
 
-        //TODO: Add is owner validation
+    //TODO: Add is owner validation
 
-        res.render('cube/delete', {cube});
-})
+    res.render('cube/delete', { cube });
+});
 
-router.post('/:cubeId/delete',async (req, res) => {
+router.post('/:cubeId/delete', async (req, res) => {
     await cubeService.delete(req.params.cubeId);
 
     res.redirect('/');
-})
+});
 
 module.exports = router;
