@@ -19,8 +19,7 @@ router.post('/register', async (req, res, next) => {
         await authService.register(req.body);
         res.redirect('/auth/login');
     } catch (error) {
-        console.log(error);
-        // let error={message: 'Invalid email address'}
+        console.log(error);    
         next(error);
     }
 });
