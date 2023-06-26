@@ -8,9 +8,11 @@ router.get('/register', (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', async (req, res, next) => {
     if (!isEmail(req.body.username)) {
-        return res.status(404).send('Invalid email address');
+
+        // return res.status(404).send('Invalid email address');
+        next({message: 'Invalid email'})
     }
 
     let createdUser = await authService.register(req.body);

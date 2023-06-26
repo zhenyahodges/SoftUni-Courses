@@ -4,6 +4,7 @@ const routes = require('./routes');
 const app = express();
 const cookieParser = require('cookie-parser');
 const { auth } = require('./middlewares/authMiddleware');
+const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
 
 require('./config/handlebars')(app);
 
@@ -12,6 +13,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(auth);
 app.use(routes);
+// last after all above
+app.use(errorHandler);
 
 initializeDB()
     .then(() => {
