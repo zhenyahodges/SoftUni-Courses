@@ -9,11 +9,15 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', async (req, res, next) => {
-    // if (!isEmail(req.body.username)) {
-    //     // return res.status(404).send('Invalid email address');
-    //     let error = { message: 'Invalid email address' };
-    //     next(error);
-    // }
+    if (!isEmail(req.body.username)) {
+        // return res.status(404).send('Invalid email address');
+        let error = { 
+            message: 'Invalid email address',
+            status: 401,
+         };
+       
+        next(error);      
+    }
 
     try {
         await authService.register(req.body);
@@ -29,7 +33,7 @@ router.post('/register', async (req, res, next) => {
         // res.status(401).render('auth/login', { error: text });
 
         res.status(401).render('auth/login', { error: error.message });
-        
+
         // ALSO
         // res.locals.error=error.message;
         // res.status(401).render('auth/login');
