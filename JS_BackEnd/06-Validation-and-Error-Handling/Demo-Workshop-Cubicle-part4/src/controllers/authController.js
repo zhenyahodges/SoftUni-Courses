@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { sessionName } = require('../constants');
 const authService = require('../services/authService');
 const validator = require('validator');
-const {isEmail}=require('../utils/validators')
+const { isEmail } = require('../utils/validators');
 
 router.get('/register', (req, res) => {
     res.render('auth/register');
@@ -28,15 +28,18 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    let token = await authService.login(req.body);
     // console.log(token);
+    try {
+        let token = await authService.login(req.body);
+        if (!token) {
+            return res.redirect('/404');
+        }
+        res.cookie(sessionName, token, { httpOnly: true });
 
-    if (!token) {
-        return res.redirect('/404');
+        res.redirect('/');
+    } catch (error) {
+       res.status(400).render('auth/login', {error: error.message});       
     }
-    res.cookie(sessionName, token, { httpOnly: true });
-
-    res.redirect('/');
 });
 
 router.get('/logout', (req, res) => {

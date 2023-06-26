@@ -45,7 +45,9 @@ exports.login = async ({ username, password }) => {
     // console.log(isValid);
 
     if (!isValid) {
-        return;
+        throw {
+            message: 'Invalid username or password.',
+        };
     }
 
     // custom promise
