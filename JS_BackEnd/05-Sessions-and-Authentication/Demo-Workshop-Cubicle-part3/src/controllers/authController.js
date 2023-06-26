@@ -24,12 +24,17 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
     let token = await authService.login(req.body);
     // console.log(token);
-    
-    if (!token) {
-      return  res.redirect('/404');           
-    }
-    res.cookie(sessionName, token, {httpOnly: true});
 
+    if (!token) {
+        return res.redirect('/404');
+    }
+    res.cookie(sessionName, token, { httpOnly: true });
+
+    res.redirect('/');
+});
+
+router.get('/logout', (req, res) => {
+    res.clearCookie(sessionName);
     res.redirect('/');
 });
 
