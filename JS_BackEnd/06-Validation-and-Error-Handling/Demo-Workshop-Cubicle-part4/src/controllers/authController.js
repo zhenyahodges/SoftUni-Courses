@@ -19,6 +19,7 @@ router.post('/register', async (req, res, next) => {
         await authService.register(req.body);
         res.redirect('/auth/login');
     } catch (error) {
+        // OPT if separted and all errs-wip?
         // let text = '';
         // if (error.errors) {
         //     text = Object.values(error.errors)[0].message;
@@ -26,7 +27,14 @@ router.post('/register', async (req, res, next) => {
         //     text = error.message;
         // }
         // res.status(401).render('auth/login', { error: text });
+
         res.status(401).render('auth/login', { error: error.message });
+        
+        // ALSO
+        // res.locals.error=error.message;
+        // res.status(401).render('auth/login');
+
+        // ALSO-glob
         // next(error);
     }
 });
