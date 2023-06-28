@@ -15,6 +15,11 @@
 <!-- check loading -->
 10. Fix static assets and paths
 
+## DB setup
+1. Install mongoose
+2. Config mongoose
+3. Create User model
+
 
 ## Authentication 
 1. Add Auth Controller
