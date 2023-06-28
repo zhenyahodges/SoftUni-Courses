@@ -28,7 +28,14 @@
     * modify hrefs in nav
     * modify names
 3. Add post login and register actions
-4. 
+4. Create user
 5. 
 6. 
+
+## Notifications
+1. Add notification element to layout
+2. 
+
+## Error handling
+1. Add error mapper
 
