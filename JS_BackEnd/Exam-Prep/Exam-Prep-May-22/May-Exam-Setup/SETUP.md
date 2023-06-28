@@ -11,5 +11,6 @@
 7. Add home controller
 8. Add layout
 9. Add home view/ template
-10. 
-
+<!-- check loading -->
+10. Fix static assets and paths
+11. 
