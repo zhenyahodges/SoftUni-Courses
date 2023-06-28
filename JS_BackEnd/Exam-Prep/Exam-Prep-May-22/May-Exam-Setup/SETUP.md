@@ -1,5 +1,6 @@
 # STEPS:
 
+## Initial Setup
 1. Initialize project
 2. Install dependencies: nodemon, express, express-handlebars
 3. Add resources
@@ -13,4 +14,16 @@
 9. Add home view/ template
 <!-- check loading -->
 10. Fix static assets and paths
-11. 
+
+
+## Authentication 
+1. Add Auth Controller
+    * add controller routes
+2. Add login  and register pages
+    * modify hrefs in nav
+    * modify names
+3. Add post login and register actions
+4. 
+5. 
+6. 
+
