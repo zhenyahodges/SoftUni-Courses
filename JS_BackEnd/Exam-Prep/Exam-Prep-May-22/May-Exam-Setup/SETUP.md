@@ -7,3 +7,9 @@
     * body parser
     * static path
 5. Configure express-handlebars
+6. Add router
+7. Add home controller
+8. Add layout
+9. Add home view/ template
+10. 
+
