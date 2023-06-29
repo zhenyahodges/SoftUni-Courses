@@ -42,8 +42,8 @@
 ## Authorization
 1. Auth middleware  
 2. Navigation links
-3. User validation
-4. Route guards
+3. Route guards
+4. 
 
 ## Notifications
 1. Add notification element to layout
