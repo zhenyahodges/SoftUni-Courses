@@ -8,8 +8,9 @@ router.get('/create', isAuth, (req, res) => {
     res.render('publication/create');
 });
 
-router.post('/create', isAuth, async(req, res) => {
-    const createdPublication =await publicationService.create({...req.body, author: req.user._id});
+router.post('/create', isAuth, async (req, res) => {
+    const publicationData = { ...req.body, author: req.user._id };
+    const createdPublication = await publicationService.create(publicationData);
 
     res.redirect('/');
 });
