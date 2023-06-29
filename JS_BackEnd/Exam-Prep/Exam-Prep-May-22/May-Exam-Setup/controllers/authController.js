@@ -2,12 +2,13 @@ const router = require('express').Router();
 const authService = require('../services/authService');
 
 const { COOKIE_SESSION_NAME } = require('../constants');
+const { isAuth, isGuest } = require('../middlewares/authMiddleware');
 
-router.get('/login', (req, res) => {
+router.get('/login', isGuest, (req, res) => {
     res.render('auth/login');
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', isGuest, async (req, res) => {
     const { username, password } = req.body;
 
     try {
@@ -21,11 +22,11 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/register', (req, res) => {
+router.get('/register', isGuest, (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', isGuest, async (req, res) => {
     const { password, repeatPassword, ...userData } = req.body;
 
     if (password !== repeatPassword) {
@@ -46,7 +47,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isAuth, (req, res) => {
     res.clearCookie(COOKIE_SESSION_NAME);
     res.redirect('/');
 });

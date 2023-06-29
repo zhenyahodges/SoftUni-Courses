@@ -1,4 +1,4 @@
-const {promisify}= require('utils');
+const {promisify}= require('util');
 const jwt= require('jsonwebtoken');
 
 exports.verify = promisify(jwt.verify);
