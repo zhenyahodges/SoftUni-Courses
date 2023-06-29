@@ -14,6 +14,7 @@
 9. Add home view/ template
 <!-- check loading -->
 10. Fix static assets and paths
+11. 
 
 ## DB setup
 1. Install mongoose
@@ -37,10 +38,19 @@
 9. Logout
 
 
+## Authorization
+1. Auth middleware
+2. Navigation links
+3. User validation
+4. Route guards
+
 ## Notifications
 1. Add notification element to layout
 2. 
 
 ## Error handling
 1. Add error mapper
+2. 404 page
+3. Global error handling
+
 
