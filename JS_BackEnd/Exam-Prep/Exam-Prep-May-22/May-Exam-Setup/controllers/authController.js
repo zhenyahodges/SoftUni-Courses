@@ -3,6 +3,7 @@ const authService = require('../services/authService');
 
 const { COOKIE_SESSION_NAME } = require('../constants');
 const { isAuth, isGuest } = require('../middlewares/authMiddleware');
+const { getErrorMessage } = require('../utils/errorHelpers');
 
 router.get('/login', isGuest, (req, res) => {
     res.render('auth/login');
@@ -43,7 +44,7 @@ router.post('/register', isGuest, async (req, res) => {
     } catch (error) {
         console.log(error);
         // Add mongoose error mapper
-        return res.render('auth/register', { error: 'Db error' });
+        return res.render('auth/register', { error: getErrorMessage(error) });
     }
 });
 
