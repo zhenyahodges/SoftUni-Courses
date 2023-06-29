@@ -34,6 +34,7 @@
 7. Login service method /find user,validate password/
 8. Generate jwt token
     * add secret to env
+9. Logout
 
 
 ## Notifications
