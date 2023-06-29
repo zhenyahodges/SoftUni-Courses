@@ -15,13 +15,20 @@ const userSchema = new mongoose.Schema({
     address: {
         type: String,
         required: [true, 'Address is required'],
-    }
+    },
+    publications: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Publication',
+        },
+    ],
+    // TODO /?shares
 });
 
 // validation at model level
 userSchema.pre('save', function (next) {
     bcrypt.hash(this.password, SALT_ROUNDS).then((hashedPassword) => {
-        this.password= hashedPassword;
+        this.password = hashedPassword;
         next();
     });
 });
