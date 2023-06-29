@@ -14,9 +14,8 @@ router.post('/login', async (req, res) => {
         const user = await authService.login(username, password);
         const token = await authService.createToken(user);
 
-        res.cookie(COOKIE_SESSION_NAME, token, {httpOnly: false});
+        res.cookie(COOKIE_SESSION_NAME, token, { httpOnly: false });
         res.redirect('/');
-        
     } catch (err) {
         res.render('auth/login', { error: 'Cannot find username or password' });
     }

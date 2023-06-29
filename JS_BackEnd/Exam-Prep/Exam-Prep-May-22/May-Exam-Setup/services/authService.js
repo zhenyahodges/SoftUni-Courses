@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const jwt=require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 const { SECRET } = require('../config/env');
 
 exports.create = (userData) => User.create(userData);
@@ -24,11 +24,12 @@ exports.createToken = (user) => {
     const payload = {
         _id: user._id,
         username: user.username,
-        address: user.address,       
+        address: user.address,
     };
-    console.log(user._id,
-        user.username,
-        user.address,       );
+    // console.log(user._id,
+    //     user.username,
+    //     user.address,       );
+
     // good to be out in constant
     const options = { expiresIn: '2d' };
 
