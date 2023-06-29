@@ -2,7 +2,7 @@
 
 ## Initial Setup
 1. Initialize project
-2. Install dependencies: nodemon, express, express-handlebars
+2. Install dependencies: nodemon, express, express-handlebars, bcrypt, jsonwebtoken, cookie-parser
 3. Add resources
 4. Express config
     * body parser
@@ -28,9 +28,9 @@
     * modify hrefs in nav
     * modify names
 3. Add post login and register actions
-4. Create user
-5. 
-6. 
+4. Create user with register
+5. Hash password
+6. Login
 
 ## Notifications
 1. Add notification element to layout
