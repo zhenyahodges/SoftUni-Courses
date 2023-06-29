@@ -35,11 +35,12 @@
 7. Login service method /find user,validate password/
 8. Generate jwt token
     * add secret to env
+* use http only cookie
 9. Logout
 
 
 ## Authorization
-1. Auth middleware
+1. Auth middleware  
 2. Navigation links
 3. User validation
 4. Route guards

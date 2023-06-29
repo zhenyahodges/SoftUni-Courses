@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
         const user = await authService.login(username, password);
         const token = await authService.createToken(user);
 
-        res.cookie(COOKIE_SESSION_NAME, token, { httpOnly: false });
+        res.cookie(COOKIE_SESSION_NAME, token, { httpOnly: true });
         res.redirect('/');
     } catch (err) {
         res.render('auth/login', { error: 'Cannot find username or password' });
@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
     try {
         const createdUser = await authService.create({ password, ...userData });
         const token = await authService.createToken(createdUser);
-        res.cookie(COOKIE_SESSION_NAME, token);
+        res.cookie(COOKIE_SESSION_NAME, token, { httpOnly: true });
         res.redirect('/');
     } catch (error) {
         console.log(error);
