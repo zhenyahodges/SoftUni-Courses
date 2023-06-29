@@ -3,6 +3,7 @@ const hbs = require('express-handlebars');
 const { PORT } = require('./config/env');
 const routes = require('./routes');
 const { dbInit } = require('./config/db');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -23,3 +24,4 @@ app.use(routes);
 
 dbInit();
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
+app.use(cookieParser());

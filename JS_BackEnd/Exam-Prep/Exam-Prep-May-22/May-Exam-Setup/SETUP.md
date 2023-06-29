@@ -30,7 +30,11 @@
 3. Add post login and register actions
 4. Create user with register
 5. Hash password
-6. Login
+6. Login action
+7. Login service method /find user,validate password/
+8. Generate jwt token
+    * add secret to env
+
 
 ## Notifications
 1. Add notification element to layout

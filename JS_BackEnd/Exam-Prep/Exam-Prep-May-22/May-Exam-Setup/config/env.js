@@ -4,3 +4,5 @@ const opt2 = 'mongodb://127.0.0.1:27017/artGallery';
 exports.DB_QUERYSTRING = `${opt2}` || `${opt1}`;
 
 exports.SALT_ROUNDS = 10;
+exports.SECRET='somerandomsecret';
+
