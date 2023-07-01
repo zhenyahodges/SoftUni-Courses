@@ -8,6 +8,13 @@ router.get('/', async(req, res)=>{
     res.render('publication', {publications})
 })
 
+router.get('/:publicationId/details', async(req,res)=>{
+    const publication=await publicationService.getOneDetailed(req.params.publicationId).lean();
+    const isAuthor=await publication.author._id==req.user?._id;
+
+    res.render('publication/details', {...publication, isAuthor})
+})
+
 router.get('/create', isAuth, (req, res) => {
     res.render('publication/create');
 });
