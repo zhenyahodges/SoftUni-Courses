@@ -20,8 +20,15 @@ router.get('/:publicationId/details', async (req, res) => {
         .getOneDetailed(req.params.publicationId)
         .lean();
     const isAuthor = (await publication.author._id) == req.user?._id;
+    const isShared = publication.usersShared.includes(req.user._id);
 
-    res.render('publication/details', { ...publication, isAuthor });
+    // console.log(isShared);    
+    console.log(req.user._id);
+    console.log(publication.usersShared);
+    // db.collection('inventory').find({
+    //     instock: { warehouse: 'A', qty: 5 }
+
+    res.render('publication/details', { ...publication, isAuthor, isShared });
 });
 
 router.get('/create', isAuth, (req, res) => {
@@ -49,28 +56,32 @@ router.get(
     isAuth,
     preloadPublication,
     isPublicationAuthor,
-     (req, res) => {
+    (req, res) => {
         res.render('publication/edit', { ...req.publication });
     }
 );
 
-router.post('/:publicationId/edit', 
-isAuth, 
-preloadPublication, 
-isPublicationAuthor,
-async (req, res) => {   
-   
-    try {
-        await publicationService.updateOne(req.params.publicationId, req.body);
+router.post(
+    '/:publicationId/edit',
+    isAuth,
+    preloadPublication,
+    isPublicationAuthor,
+    async (req, res) => {
+        try {
+            await publicationService.updateOne(
+                req.params.publicationId,
+                req.body
+            );
 
-        res.redirect(`/publications/${req.params.publicationId}/details`);
-    } catch (err) {
-        res.render('publication/edit', {
-            ...req.body,
-            error: getErrorMessage(err),
-        });
+            res.redirect(`/publications/${req.params.publicationId}/details`);
+        } catch (err) {
+            res.render('publication/edit', {
+                ...req.body,
+                error: getErrorMessage(err),
+            });
+        }
     }
-});
+);
 
 // DELETE
 router.get(
@@ -79,9 +90,21 @@ router.get(
     preloadPublication,
     isPublicationAuthor,
     async (req, res) => {
-       await publicationService.delete(req.params.publicationId);
+        await publicationService.delete(req.params.publicationId);
         res.redirect('/publications');
     }
 );
+
+// SHARE
+router.get('/:publicationId/share', isAuth, async (req, res) => {
+    const publication = await publicationService.getOne(
+        req.params.publicationId
+    );
+
+    publication.usersShared.push(req.user._id);
+    await publication.save();
+
+    res.redirect('/');
+});
 
 module.exports = router;
