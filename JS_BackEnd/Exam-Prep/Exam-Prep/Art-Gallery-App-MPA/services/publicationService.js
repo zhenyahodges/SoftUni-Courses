@@ -8,5 +8,10 @@ exports.getOneDetailed = (publicationId) =>
 // exports.update = (publicationId, publicationData) =>
 //     Publication.findByIdAndUpdate(publicationId)
 
-    exports.update = (publicationId, publicationData) =>
-    Publication.updateOne({_id: publicationId}, {$set: publicationData}, {runValidators: true})
+exports.update = (publicationId, publicationData) =>
+    Publication.updateOne(
+        { _id: publicationId },
+        { $set: publicationData },
+        { runValidators: true }
+    );
+exports.delete = (publicationId) => Publication.deleteOne({_id: publicationId });

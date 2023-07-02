@@ -72,4 +72,16 @@ async (req, res) => {
     }
 });
 
+// DELETE
+router.get(
+    '/:publicationId/delete',
+    isAuth,
+    preloadPublication,
+    isPublicationAuthor,
+    async (req, res) => {
+       await publicationService.delete(req.params.publicationId);
+        res.redirect('/publications');
+    }
+);
+
 module.exports = router;
