@@ -86,8 +86,12 @@ router.get(
     isAuth,
     preloadPublication,
     isPublicationAuthor,
-    async (req, res) => {
+    async (req, res) => {   
+        
+
+
         await publicationService.delete(req.params.publicationId);
+       
         res.redirect('/publications');
     }
 );
