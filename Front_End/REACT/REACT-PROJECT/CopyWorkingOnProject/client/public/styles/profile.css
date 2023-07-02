@@ -1,0 +1,135 @@
+.profile.window.container {
+    height: auto;
+    padding: 4rem;
+    box-shadow: 5px 5px 17px 0px #688589;
+    background: linear-gradient(144deg, rgba(250, 184, 122, 0.8274160005799195) 0%, rgba(255, 255, 255, 1) 56%, rgba(250, 184, 122, 0.821813759683561) 100%);
+}
+
+.profile-form-wrap {
+    margin: 0 auto;
+}
+
+.profile-wrapper {
+    width: 90%;
+    margin: 0% 5%;
+}
+
+#prof-form {
+    flex-flow: row nowrap;
+    width: 90%;
+}
+
+.prof-form {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.prof-lname {
+    justify-content: start;
+}
+
+.wrap.fname,
+.wrap.lname,
+.wrap.email {
+    justify-content: start;
+    gap: 1rem;
+}
+
+.user-details {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+}
+
+.prof.lbl {
+    font-weight: 800;
+}
+
+.prof.entry {
+    border: none;
+    background-color: transparent;
+}
+
+.show {
+    margin: 2rem 1rem;
+}
+
+.user-profile-cards-wrapper {
+    margin: 0 auto;
+}
+
+.user-title {
+    font-style: italic;
+    color: var(--clr-drk-mid);
+}
+
+/* all */
+.user {
+    width: 100%;
+}
+
+/*PROFILE NAVIGATION  */
+.prof-nav {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.user-article-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* Create Form Styles*/
+.user-create-wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+input.card-code,
+input.card-name {
+    flex: 1 0 60%;
+}
+
+.lbl.card-code,
+.lbl.card-name,
+.lbl.card-timeout {
+    flex: 0 1 40%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+input.card-timeout {
+    flex: 0 0 18%;
+}
+
+
+/*|| SUGGESTED */
+.user-sugged-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    text-align: left;
+}
+
+.edit-user-sugged,
+.delete-user-sugged {
+    color: var(--clr-highlight);
+    padding-left: 1rem;
+    font-weight: 700;
+}
+
+.edit-user-sugged:hover,
+.delete-user-sugged:hover {
+    color: var(---clr-bgr);
+}
+
+nav .prof-nav>a .btn.dark {
+    color: var(--clr-light);
+    font-weight: 500;
+}
+
+.prof-nav>.btn.dark:hover {
+    color: var(--clr-highlight);
+}

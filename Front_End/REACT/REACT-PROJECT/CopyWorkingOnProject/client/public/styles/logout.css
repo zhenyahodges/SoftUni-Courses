@@ -1,0 +1,23 @@
+.logout-wrap .logout-text {
+    text-align: center;
+}
+
+.logout-btn-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+}
+
+.logout.log.btn:hover {
+    background-color: var(--clr-highlight);
+    color: var(--clr-bgr);
+    font-weight: 800;
+}
+
+.logout.log.btn {
+    width: 5rem;
+}
+
+.logout.log.btn:active {
+    color: white;
+}
