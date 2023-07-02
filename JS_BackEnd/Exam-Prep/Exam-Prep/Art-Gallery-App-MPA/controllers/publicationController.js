@@ -21,13 +21,7 @@ router.get('/:publicationId/details', async (req, res) => {
         .getOneDetailed(req.params.publicationId)
         .lean();
     const isAuthor = (await publication.author._id) == req.user?._id;
-    const isShared = publication.usersShared.includes(req.user._id);
-
-    // console.log(isShared);
-    console.log(req.user._id);
-    console.log(publication.usersShared);
-    // db.collection('inventory').find({
-    //     instock: { warehouse: 'A', qty: 5 }
+    const isShared = publication.usersShared.some((x) => x._id == req.user._id);
 
     res.render('publication/details', { ...publication, isAuthor, isShared });
 });
@@ -39,7 +33,7 @@ router.get('/create', isAuth, (req, res) => {
 // CREATE PUBLICATION
 router.post('/create', isAuth, async (req, res) => {
     const publicationData = { ...req.body, author: req.user._id };
-    
+
     try {
         const publication = await publicationService.create(publicationData);
         await userService.addPublication(req.user._id, publication._id);
@@ -103,9 +97,13 @@ router.get('/:publicationId/share', isAuth, async (req, res) => {
     const publication = await publicationService.getOne(
         req.params.publicationId
     );
+    const user = await userService.getOne(req.user._id);
 
     publication.usersShared.push(req.user._id);
+    user.shares.push(publication);
+
     await publication.save();
+    await user.save();
 
     res.redirect('/');
 });

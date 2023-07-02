@@ -22,7 +22,12 @@ const userSchema = new mongoose.Schema({
             ref: 'Publication',
         },
     ],
-    // TODO /?shares
+    shares: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Publication',
+        },
+    ],
 });
 
 // validation at model level
