@@ -49,7 +49,7 @@ router.get(
     isAuth,
     preloadPublication,
     isPublicationAuthor,
-    async (req, res) => {
+     (req, res) => {
         res.render('publication/edit', { ...req.publication });
     }
 );
@@ -58,7 +58,7 @@ router.post('/:publicationId/edit',
 isAuth, 
 preloadPublication, 
 isPublicationAuthor,
-async (req, res, next) => {   
+async (req, res) => {   
    
     try {
         await publicationService.update(req.params.publicationId, req.body);

@@ -1,15 +1,17 @@
+const publicationService = require('../services/publicationService');
+
 exports.preloadPublication = async (req, res, next) => {
     const publication = await publicationService
-        .getOneDetailed(req.params.publicationId)
+        .getOne(req.params.publicationId)
         .lean();
 
-    res.publication = publication;
+    req.publication = publication;
     next();
 };
 
 exports.isPublicationAuthor = async (req, res, next) => {
-    if (req.publication.author._id == req.user._id) {
-        next({ message: 'You are not authorized', status: 401 });
+    if (req.publication.author != req.user._id) {
+        return next({ message: 'You are not authorized', status: 401 });
     }
     next();
 };
