@@ -1,4 +1,5 @@
 const Publication = require('../models/Publication');
+const User = require('../models/User');
 
 exports.create = (publicationData) => Publication.create(publicationData);
 exports.getAll = () => Publication.find();
@@ -14,4 +15,6 @@ exports.update = (publicationId, publicationData) =>
         { $set: publicationData },
         { runValidators: true }
     );
-exports.delete = (publicationId) => Publication.deleteOne({_id: publicationId });
+exports.delete = (publicationId) =>
+    Publication.deleteOne({ _id: publicationId });
+

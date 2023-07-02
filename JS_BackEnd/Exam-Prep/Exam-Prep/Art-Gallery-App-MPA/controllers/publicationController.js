@@ -5,6 +5,7 @@ const {
     isPublicationAuthor,
 } = require('../middlewares/publicationMiddleware');
 const publicationService = require('../services/publicationService');
+const userService = require('../services/userService');
 const { getErrorMessage } = require('../utils/errorHelpers');
 
 // ALL PUBLICATIONS
@@ -22,7 +23,7 @@ router.get('/:publicationId/details', async (req, res) => {
     const isAuthor = (await publication.author._id) == req.user?._id;
     const isShared = publication.usersShared.includes(req.user._id);
 
-    // console.log(isShared);    
+    // console.log(isShared);
     console.log(req.user._id);
     console.log(publication.usersShared);
     // db.collection('inventory').find({
@@ -38,8 +39,10 @@ router.get('/create', isAuth, (req, res) => {
 // CREATE PUBLICATION
 router.post('/create', isAuth, async (req, res) => {
     const publicationData = { ...req.body, author: req.user._id };
+    
     try {
-        await publicationService.create(publicationData);
+        const publication = await publicationService.create(publicationData);
+        await userService.addPublication(req.user._id, publication._id);
 
         res.redirect('/publications');
     } catch (err) {
