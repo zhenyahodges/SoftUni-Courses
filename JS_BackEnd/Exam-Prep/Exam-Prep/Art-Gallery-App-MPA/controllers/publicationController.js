@@ -61,7 +61,7 @@ isPublicationAuthor,
 async (req, res) => {   
    
     try {
-        await publicationService.update(req.params.publicationId, req.body);
+        await publicationService.updateOne(req.params.publicationId, req.body);
 
         res.redirect(`/publications/${req.params.publicationId}/details`);
     } catch (err) {
