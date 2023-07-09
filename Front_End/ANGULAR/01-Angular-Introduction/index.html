@@ -43,13 +43,17 @@
             });
 
             render(location.pathname);
+            // render(window.location.pathname);     
 
             window.addEventListener('popstate', (e) => {
                 e.preventDefault();
+                // render(location.pathname);
             });
 
             window.addEventListener('hashChange', (e) => {
                 e.preventDefault();
+                // render(location.pathname);
+
             });
         </script>
     </body>
