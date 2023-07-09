@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intro</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact-us">Contact us</a>
+        </nav>
+
+        <div id="app"></div>
+
+        <script>
+            const routes = {
+                '/': '<h1>Home</h1>',
+                '/about': '<h1>About</h1>',
+                '/contact-us': '<h1>Contact us</h1>',
+            };
+
+            function render(path) {
+                const contentForPath = routes[path];
+                if (!contentForPath) {
+                    return;
+                }
+                app.innerHTML = contentForPath;
+            }
+
+            document.querySelectorAll('a').forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // console.log(e.target);
+                    const { target } = e;
+                    const path = target.getAttribute('href');
+                    // console.log(path);
+                    render(path);
+                });
+            });
+
+            render(location.pathname);
+        </script>
+    </body>
+</html>
