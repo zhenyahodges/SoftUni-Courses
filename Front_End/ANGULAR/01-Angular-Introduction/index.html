@@ -37,10 +37,20 @@
                     const path = target.getAttribute('href');
                     // console.log(path);
                     render(path);
+
+                    history.pushState('', '', path);
                 });
             });
 
             render(location.pathname);
+
+            window.addEventListener('popstate', (e) => {
+                e.preventDefault();
+            });
+
+            window.addEventListener('hashChange', (e) => {
+                e.preventDefault();
+            });
         </script>
     </body>
 </html>
