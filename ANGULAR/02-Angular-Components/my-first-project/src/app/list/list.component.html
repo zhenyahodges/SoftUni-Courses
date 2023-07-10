@@ -1,1 +1,6 @@
-<p id="title">list works!</p>
+<div id="list-container">
+    <!-- vzima div kato template *-->
+    <div *ngFor="let user of users" class="list-item">
+        {{user.firstName}} - {{user.lastName}}
+    </div>
+</div>
