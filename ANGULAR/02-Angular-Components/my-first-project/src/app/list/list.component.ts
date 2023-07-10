@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+const myNumber=1;
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -18,6 +20,7 @@ export class ListComponent {
   ];
 
   showLastName = false;
+  myNumber=myNumber;
 
   constructor() {}
 
