@@ -6,19 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  
-  users=[
+  users = [
     {
       firstName: 'Ivan',
-      lastName: 'Ivanov'
+      lastName: 'Ivanov',
     },
     {
       firstName: 'Petar',
-      lastName: 'Petrov'
-    }
-  ]
+      lastName: 'Petrov',
+    },
+  ];
 
-  constructor() {
-    
-  }
+  showLastName = false;
+
+  constructor() {}
 }

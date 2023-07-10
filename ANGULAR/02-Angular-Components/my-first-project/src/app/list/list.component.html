@@ -1,6 +1,7 @@
 <div id="list-container">
     <!-- vzima div kato template *-->
     <div *ngFor="let user of users" class="list-item">
-        {{user.firstName}} - {{user.lastName}}
+       <span>{{user.firstName}}</span><span *ngIf="showLastName">- {{user.lastName}}</span>
+        <!-- <ng-container *ngIf="false">{{user.firstName}}</ng-container> -->
     </div>
 </div>
