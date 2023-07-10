@@ -1,7 +1,17 @@
-<div id="list-container">
-    <!-- vzima div kato template *-->
-    <div *ngFor="let user of users" class="list-item">
-       <span>{{user.firstName}}</span><span *ngIf="showLastName">- {{user.lastName}}</span>
-        <!-- <ng-container *ngIf="false">{{user.firstName}}</ng-container> -->
-    </div>
-</div>
+<!-- el.addEventListener('click', ($event)=>this.handleClickEvent($event)) -->
+<button (click)="handleClickEvent($event)">
+  <ng-container *ngIf="showLastName">Hide</ng-container>
+  <ng-container *ngIf="!showLastName">Show</ng-container>
+</button>
+
+<!-- <div id="list-container"> -->
+<ul id="list-container">
+  <!-- *ngFor vzima div kato template(<ng-template>) *-->
+  <!-- <div *ngFor="let user of users" class="list-item"></div> -->
+  <li *ngFor="let user of users" class="list-item">
+    <app-list-item [user]="user" [showLastName]="showLastName"></app-list-item>
+    <!-- [] binding  -->
+  </li>
+</ul>
+
+<!-- ngIf ngFor-strukturni direktivi -->

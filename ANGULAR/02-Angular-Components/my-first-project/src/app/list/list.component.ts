@@ -20,4 +20,11 @@ export class ListComponent {
   showLastName = false;
 
   constructor() {}
+
+  handleClickEvent(e: MouseEvent){
+    // console.log('CLICK');
+    console.log(e);
+    this.showLastName = !this.showLastName;
+    
+  }
 }
