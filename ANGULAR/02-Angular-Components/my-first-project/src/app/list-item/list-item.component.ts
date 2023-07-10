@@ -9,4 +9,6 @@ import { Component, Input } from '@angular/core';
 export class ListItemComponent {
   @Input() user!: { firstName: string; lastName: string; };
   @Input() showLastName!: boolean;
+
+  @Input() staticString!: string;
 }
