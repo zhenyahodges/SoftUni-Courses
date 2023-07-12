@@ -11,5 +11,6 @@ export class ListItemComponent {
   @Input() showLastName!: boolean;
 
   // @Input() staticString!: string;
-  @Input() staticString!: number;
+  @Input() staticString!: string;
+  @Input() staticNumber!: number;
 }
