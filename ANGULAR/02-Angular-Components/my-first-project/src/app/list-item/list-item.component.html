@@ -1,6 +1,10 @@
-<span>{{user.firstName}}</span>
-<span *ngIf="showLastName">- {{user.lastName}}</span>
+<span>{{ user.firstName }}</span>
+<span *ngIf="showLastName">- {{ user.lastName }}</span>
 <!-- <ng-container *ngIf="false">{{user.firstName}}</ng-container> -->
 
-{{staticString}}
-{{staticNumber}}
+
+<button (click)="selectClickHandler($event)">Select</button>
+<div>
+  {{ staticString }}
+  {{ staticNumber }}
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { ICustomEvent } from '../list-item/list-item.component';
 
-const myNumber=1;
+const myNumber = 1;
 
 @Component({
   selector: 'app-list',
@@ -20,14 +21,33 @@ export class ListComponent {
   ];
 
   showLastName = false;
-  myNumber=myNumber;
+  myNumber = myNumber;
+  selectedUserIndex!: null | number;
+
+  get showSelectedIndex(): boolean {
+    return (this.selectedUserIndex === null ? -1 : this.selectedUserIndex) >= 0;
+  }
 
   constructor() {}
 
-  handleClickEvent(e: MouseEvent){
+  handleClickEvent(e: MouseEvent) {
     // console.log('CLICK');
     console.log(e);
     this.showLastName = !this.showLastName;
-    
   }
+
+  listItemClickHandler(index: number) {
+    if (this.selectedUserIndex === index) {
+      this.selectedUserIndex = null;
+      return;
+    }
+    this.selectedUserIndex = index;
+  }
+
+
+  customEventHandler($event: ICustomEvent){
+console.log($event);
+
+  }
+
 }
