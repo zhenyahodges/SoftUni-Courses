@@ -1,39 +1,44 @@
 const http = require('http');
+const router = require('./router');
 const { catalogPage } = require('./controllers/catalogController');
-const { homePage, aboutPage, defaultPage } = require('./controllers/homeController');
+const {
+    homePage,
+    aboutPage,
+    defaultPage,
+} = require('./controllers/homeController');
 
-const routes = {
-    '/': homePage,
-    '/about': aboutPage,
-    '/catalog': catalogPage,
-};
+router.register('/', homePage);
+router.register('/about', aboutPage);
+router.register('/catalog', catalogPage);
+router.register('default', defaultPage);
 
-const server = http.createServer((req, res) => {
-    console.log('Req received', req.method, req.url);
+const server = http.createServer(router.match);
+// -----------------
+// const server = http.createServer((req, res) => {
+// console.log('Req received', req.method, req.url);
 
-    const url = new URL(req.url, `http://${req.headers.host}`);
-    console.log(url);
-
-    const handler = routes[url.pathname];
-
-    if (typeof handler === 'function') {
-        handler(req, res);
-    } else {
-        defaultPage(req, res);     
-    }
-    // if (req.url == '/') {
-    // if (url.pathname == '/') {
-    //     // res.writeHead(200, ['Content-Type', 'text-html']);
-    //     res.write(html(homePage));
-    //     res.end();
-    // } else if (url.pathname == '/about') {
-    //     res.write(html(aboutPage));
-    //     res.end();
-    // } else {
-    //     res.statusCode = 404;
-    //     res.write(html(defaultPage));
-    //     res.end();
-    // }
-});
+// const handler = routes[url.pathname];
+// router.match(req,res)
+// --------------
+// if (typeof handler === 'function') {
+//     handler(req, res);
+// } else {
+//     defaultPage(req, res);
+// }
+// ----------
+// if (req.url == '/') {
+// if (url.pathname == '/') {
+//     // res.writeHead(200, ['Content-Type', 'text-html']);
+//     res.write(html(homePage));
+//     res.end();
+// } else if (url.pathname == '/about') {
+//     res.write(html(aboutPage));
+//     res.end();
+// } else {
+//     res.statusCode = 404;
+//     res.write(html(defaultPage));
+//     res.end();
+// }
+// });
 
 server.listen(3000);
