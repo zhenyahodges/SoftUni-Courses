@@ -1,16 +1,6 @@
 const http = require('http');
-
-const homePage = `
-<h1>Home</h1>`;
-
-const aboutPage = `
-<h1>About</h1>`;
-
-const catalogPage = `
-<h1>Catalog</h1>`;
-
-const defaultPage = `
-<h1>404 Not Found</h1>`;
+const { catalogPage } = require('./controllers/catalogController');
+const { homePage, aboutPage, defaultPage } = require('./controllers/homeController');
 
 const routes = {
     '/': homePage,
@@ -24,15 +14,12 @@ const server = http.createServer((req, res) => {
     const url = new URL(req.url, `http://${req.headers.host}`);
     console.log(url);
 
-    const page = routes[url.pathname];
+    const handler = routes[url.pathname];
 
-    if (page != undefined) {
-        res.write(html(page));
-        res.end();
+    if (typeof handler === 'function') {
+        handler(req, res);
     } else {
-        res.statusCode = 404;
-        res.write(html(defaultPage));
-        res.end();
+        defaultPage(req, res);     
     }
     // if (req.url == '/') {
     // if (url.pathname == '/') {
@@ -50,18 +37,3 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000);
-
-function html(body) {
-    return `<!DOCTYPE html>
-<html lang="en">
-<body>  
-    <nav>
-        <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        </ul>
-    </nav>
-${body}
-</body>
-</html>`;
-}
