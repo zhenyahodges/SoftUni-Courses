@@ -17,6 +17,20 @@ ${body}
 </html>`;
 }
 
-module.exports={
-    html
-}
+const data = [
+    {
+        id: 'asd01',
+        name: 'P1',
+        color: 'Red',
+    },
+    {
+        id: 'asd02',
+        name: 'P2',
+        color: 'Yellow',
+    },
+];
+
+module.exports = {
+    html,
+    data,
+};
