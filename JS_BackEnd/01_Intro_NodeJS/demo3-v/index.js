@@ -1,16 +1,17 @@
 const http = require('http');
 const router = require('./router');
-const { catalogPage } = require('./controllers/catalogController');
+const { catalogPage, createPage } = require('./controllers/catalogController');
 const {
     homePage,
     aboutPage,
     defaultPage,
 } = require('./controllers/homeController');
 
-router.register('/', homePage);
-router.register('/about', aboutPage);
-router.register('/catalog', catalogPage);
-router.register('default', defaultPage);
+router.get('/', homePage);
+router.get('/about', aboutPage);
+router.get('/catalog', catalogPage);
+router.get('/create', createPage);
+router.get('default', defaultPage);
 
 const server = http.createServer(router.match);
 // -----------------
