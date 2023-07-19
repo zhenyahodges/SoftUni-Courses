@@ -1,6 +1,10 @@
 const http = require('http');
 const router = require('./router');
-const { catalogPage, createPage, createItem } = require('./controllers/catalogController');
+const {
+    catalogPage,
+    createPage,
+    createItem,
+} = require('./controllers/catalogController');
 const {
     homePage,
     aboutPage,

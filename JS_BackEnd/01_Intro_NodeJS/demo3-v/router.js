@@ -8,8 +8,11 @@ function register(method, path, handler) {
 }
 
 function match(req, res) {
+    // console.log(routes)
     const url = new URL(req.url, `http://${req.headers.host}`);
+
     let handler;
+
     const actions = routes[url.pathname];
     if (actions != undefined) {
         handler = actions[req.method];
@@ -25,7 +28,7 @@ function match(req, res) {
 module.exports = {
     register,
     // get: (path,handler)=>register('GET',path,handler),
-    get: register.bind(null,'GET'),
-    post: register.bind(null,'POST'),
+    get: register.bind(null, 'GET'),
+    post: register.bind(null, 'POST'),
     match,
 };
