@@ -16,7 +16,8 @@ function catalogPage(req, res, catalog) {
 }
 
 function createPage(req, res) {
-    res.write(html(`    
+    res.write(
+        html(`    
     <h1>Create product</h1>
     <form method="POST" action="/create">
         <label>Name: <input type="text" name="name"></label>
@@ -27,11 +28,18 @@ function createPage(req, res) {
         </label>
         <input type="submit" value="Create">
     </form>
-    `));
+    `)
+    );
+    res.end();
+}
+
+function createItem(req,res) {
+    console.log('create req');
     res.end();
 }
 
 module.exports = {
     catalogPage,
     createPage,
+    createItem,
 };
