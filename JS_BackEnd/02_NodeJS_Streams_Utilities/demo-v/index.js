@@ -19,34 +19,55 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
-        if (req.url == '/index.html') {
-            // pipe
-            // / res.writeHead(200, {
-            //         'Content-Type': 'text/html',
-            //     });
-            // const fileStream = fs.readFile('./static/index.html');
-
-            // ----------------
-            // const fileStream = fs.createReadStream('./static/index.html');
-            // res.writeHead(200, {
-            //     'Content-Type': 'text/html',
-            // });
-            // fileStream.on('data', (chunk) => res.write(chunk));
-            // fileStream.on('end', () => res.end());
-
-            // ------------
-            // const file = fs.readFile('./static/index.html', (err, file) => {
-            //     res.writeHead(200, {
-            //         'Content-Type': 'text/html',
-            //     });
-            //     res.write(file);
-            //     res.end();
-            // });
-        } else {
-            res.writeHead(404);
-            res.write('404 not found');
-            res.end();
+        // static
+        let path = req.url;
+        if (path == '/') {
+            path = '/index.html';
         }
+
+        fs.stat(`./static${path}`, (err, stat) => {
+            if (err != null || stat.isFile() != true) {
+                res.writeHead(404);
+                res.write('404 not found');
+                res.end();
+            } else {
+                // res.writeHead(200, {
+                //     'Content-Type': 'text/html',
+                // });
+                fs.createReadStream(`./static${path}`).pipe(res);
+            }
+        });
+
+        // -----------------------
+        // if (req.url == '/index.html') {
+        //     // pipe
+        //     res.writeHead(200, {
+        //         'Content-Type': 'text/html',
+        //     });
+        //     fs.createReadStream('./static/index.html').pipe(res);
+
+        // ----------------
+        // const fileStream = fs.createReadStream('./static/index.html');
+        // res.writeHead(200, {
+        //     'Content-Type': 'text/html',
+        // });
+        // fileStream.on('data', (chunk) => res.write(chunk));
+        // fileStream.on('end', () => res.end());
+
+        // ------------
+        // const file = fs.readFile('./static/index.html', (err, file) => {
+        //     res.writeHead(200, {
+        //         'Content-Type': 'text/html',
+        //     });
+        //     res.write(file);
+        //     res.end();
+        // });
+        // ++++++++
+        // } else {
+        //     res.writeHead(404);
+        //     res.write('404 not found');
+        //     res.end();
+        // }
     } else if (req.method === 'POST') {
         const body = [];
 
@@ -55,8 +76,7 @@ const server = http.createServer((req, res) => {
         });
         req.on('end', () => {
             const result = JSON.parse(body.join(''));
-            // console.log(result);
-
+  
             result.count++;
 
             res.writeHead(200, {
