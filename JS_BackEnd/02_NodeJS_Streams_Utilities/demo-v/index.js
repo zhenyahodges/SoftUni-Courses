@@ -20,13 +20,28 @@ const fs = require('fs');
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
         if (req.url == '/index.html') {
-            const file = fs.readFile('./static/index.html', (err, file) => {
-                res.writeHead(200, {
-                    'Content-Type': 'text/html',
-                });
-                res.write(file);
-                res.end();
-            });
+            // pipe
+            // / res.writeHead(200, {
+            //         'Content-Type': 'text/html',
+            //     });
+            // const fileStream = fs.readFile('./static/index.html');
+
+            // ----------------
+            // const fileStream = fs.createReadStream('./static/index.html');
+            // res.writeHead(200, {
+            //     'Content-Type': 'text/html',
+            // });
+            // fileStream.on('data', (chunk) => res.write(chunk));
+            // fileStream.on('end', () => res.end());
+
+            // ------------
+            // const file = fs.readFile('./static/index.html', (err, file) => {
+            //     res.writeHead(200, {
+            //         'Content-Type': 'text/html',
+            //     });
+            //     res.write(file);
+            //     res.end();
+            // });
         } else {
             res.writeHead(404);
             res.write('404 not found');
