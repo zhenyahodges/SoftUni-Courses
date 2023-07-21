@@ -22,13 +22,33 @@
 
 const fs = require('fs');
 
-const result = fs.readdirSync('.');
+// const result = fs.readdirSync('.');
 
-for(let item of result) {
-    if(fs.statSync(`./${item}`).isDirectory()){
-        console.log(item, 'is a directory');
-    }else{
-        console.log(item,'is a file');
-    }
-}
+// const output = [];
 
+// for (let item of result) {
+//     if (fs.statSync(`./${item}`).isDirectory()) {
+//         output.push(item + ' is a directory');
+//     } else {
+//         output.push(item + ' is a file');
+//     }
+// }
+
+// fs.writeFileSync('./summary.txt', output.join('\n'), 'utf-8');
+
+// FS+STREAM
+const stream=fs.createReadStream('./summary.txt', {
+    highWaterMark: 3
+});
+
+const file= []
+
+stream.on('data', chunk=>{
+console.log(chunk.toString());
+file.push(chunk);
+})
+
+stream.on('end', ()=>{
+console.log(file.join(''));
+console.log('completed');
+})

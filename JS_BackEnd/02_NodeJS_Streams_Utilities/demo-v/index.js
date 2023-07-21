@@ -15,11 +15,23 @@
 
 // STREAMS
 const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
-        res.write('OK');
-        res.end();
+        if (req.url == '/index.html') {
+            const file = fs.readFile('./static/index.html', (err, file) => {
+                res.writeHead(200, {
+                    'Content-Type': 'text/html',
+                });
+                res.write(file);
+                res.end();
+            });
+        } else {
+            res.writeHead(404);
+            res.write('404 not found');
+            res.end();
+        }
     } else if (req.method === 'POST') {
         const body = [];
 
