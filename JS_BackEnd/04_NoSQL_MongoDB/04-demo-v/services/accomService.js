@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync(filename));
 
 async function persist() {
     return new Promise((resolve, reject) => {
-        fs.writeFileSync(filename, JSON.stringify(data), (err) => {
+        fs.writeFileSync(filename, JSON.stringify(data, null, 2), (err) => {
             if ((err = null)) {
                 resolve();
             } else {
