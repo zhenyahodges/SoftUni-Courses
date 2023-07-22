@@ -14,3 +14,16 @@ async function persist() {
         });
     });
 }
+
+function getAll(){
+    return data;
+}
+
+function getById(id) {
+    return data.find(i=>i.id === id);
+}
+
+module.exports={
+    getAll,
+    getById
+}
