@@ -15,15 +15,36 @@ async function persist() {
     });
 }
 
-function getAll(){
+function getAll() {
     return data;
 }
 
 function getById(id) {
-    return data.find(i=>i.id == id);
+    return data.find((i) => i.id == id);
 }
 
-module.exports={
-    getAll,
-    getById
+async function create(roomData) {
+    const room = {
+        id: generateId(),
+        name: roomData.name,
+        description: roomData.description,
+        city: roomData.city,
+        beds: Number(roomData.beds),
+        price: Number(roomData.price),
+    };
+
+    data.push(room);
+    await persist;
+
+    return room;
 }
+
+function generateId() {
+    return ('000000' + (Math.random() * 999999 | 0).toString(16)).slice(-6);
+}
+
+module.exports = {
+    getAll,
+    getById,
+    create,
+};
