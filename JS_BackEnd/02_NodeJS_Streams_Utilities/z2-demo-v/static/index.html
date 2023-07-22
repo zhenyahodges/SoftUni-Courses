@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Image Board</title>
-</head>
-<body>
-    <h1>Image Board</h1>
-    <p>Welcome</p>
-    <div>
-        <h2>Post Image</h2>
-    </div>
-    <div>
-        <h2>Image Gallery</h2>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Image Board</title>
+    </head>
+    <body>
+        <h1>Image Board</h1>
+        <p>Welcome</p>
         <div>
-            <%%imageboard%%>
+            <h2>Post Image</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="img" />
+                <input type="submit" value="Upload" />
+            </form>
         </div>
-    </div>
-</body>
+        <div>
+            <h2>Image Gallery</h2>
+            <div><%%imageboard%%></div>
+        </div>
+    </body>
 </html>
