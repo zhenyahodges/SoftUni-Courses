@@ -1,0 +1,21 @@
+body {
+    background-color: lightyellow;
+}
+
+nav{
+    background-color: rgb(196, 190, 191);
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+}
+nav a{
+    text-decoration: none;
+    background-color: rgb(233, 207, 207) ;
+    padding: 5px;
+}
+nav a:hover{
+    background-color: lightcyan;
+}

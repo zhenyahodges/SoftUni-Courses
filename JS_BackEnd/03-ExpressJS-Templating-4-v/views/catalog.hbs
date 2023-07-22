@@ -1,0 +1,9 @@
+<h1>Catalog</h1>
+<p>List of items</p>
+{{#if products}}
+{{#each products}}
+{{>productCard}}
+{{/each}}
+{{else}}
+<p>NO products</p>
+{{/if}}
