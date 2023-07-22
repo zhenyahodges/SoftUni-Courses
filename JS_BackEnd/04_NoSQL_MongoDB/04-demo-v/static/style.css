@@ -1,3 +1,7 @@
-body{
+main{
     background-color: lightblue;
+}
+
+header{
+    background-color: lightgray;
 }

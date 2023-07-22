@@ -1,0 +1,11 @@
+[
+    {
+        "id":123,
+        "name": "Room",
+        "description": "Lorem ipsum ala bala",
+        "city": "Sofia",
+        "beds": 2,
+        "price":80
+    
+    }
+]
