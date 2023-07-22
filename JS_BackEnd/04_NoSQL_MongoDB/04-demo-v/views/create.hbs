@@ -1,7 +1,10 @@
 <section>
     <h1>New Accomodation</h1>
     {{#if error}}
-    <p class="error">{{error}}</p>
+    {{#each error}}
+    <p class="error">{{this}}</p>
+    {{/each}}
+
     {{/if}}
     <form action="/create" method="post">
         <label for="name">Name

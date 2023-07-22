@@ -16,5 +16,5 @@ form{
 .error{
     color: red;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
