@@ -1,6 +1,7 @@
 // require('express')().listen(3000);
 const express = require('express');
-const catalogController = require('./catalogController')
+const catalogController= require('./catalogController')
+const createController= require('./createController')
 
 const app = express();
 
@@ -9,15 +10,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+'/index.html');
 });
 
-app.route('/create')
-.get((req,res)=>{
-    res.send('what');
-})
-.post((req, res) => {
-    res.status(201).send('post request');
-});
-
-app.use(catalogController)
+app.use('/create', createController)
+app.use('/catalog',catalogController)
 
 app.get('/data', (req,res)=>{
     res.json([
