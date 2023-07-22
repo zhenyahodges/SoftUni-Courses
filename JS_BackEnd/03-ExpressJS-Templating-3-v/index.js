@@ -1,10 +1,12 @@
 // require('express')().listen(3000);
 const express = require('express');
+const catalogController = require('./catalogController')
 
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Hello there');
+    // res.send('Hello there');
+    res.sendFile(__dirname+'/index.html');
 });
 
 app.route('/create')
@@ -15,14 +17,7 @@ app.route('/create')
     res.status(201).send('post request');
 });
 
-app.get('/catalog', (req, res) => {
-    res.send('Catalog');
-});
-
-app.get('/catalog/:productId', (req, res) => {
-    console.log(req.params.productId);
-    res.send('Product details');
-});
+app.use(catalogController)
 
 app.get('/data', (req,res)=>{
     res.json([
