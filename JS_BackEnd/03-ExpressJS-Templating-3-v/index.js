@@ -6,10 +6,13 @@ const logger = require('./logger');
 
 const app = express();
 
-app.get('/', (req, res) => {
-    // res.send('Hello there');
-    res.sendFile(__dirname + '/index.html');
-});
+app.use('/static', express.static('public'))
+app.use(express.static('public'))
+
+// app.get('/', (req, res) => {
+//     // res.send('Hello there');
+//     res.sendFile(__dirname + '/index.html');
+// });
 
 app.use(logger());
 app.use('/create', createController);
