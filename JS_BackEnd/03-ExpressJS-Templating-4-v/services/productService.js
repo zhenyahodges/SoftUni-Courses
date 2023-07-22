@@ -16,16 +16,25 @@ async function create(name, price) {
         name,
         price,
     });
+    await persist();
+}
 
-    return new Promise((resolve,reject) => {
+async function deleteById(id) {
+    const index = data.findIndex((p) => p.id == id);
+    data.splice(index, 1);
+    await persist();
+}
+
+async function persist() {
+    return new Promise((resolve, reject) => {
         fs.writeFile(
-            './services/hh/data.json',
+            './services/data.json',
             JSON.stringify(data, null, 2),
             (err) => {
-                if(err==null){
-                    resolve()
-                }else{
-                    reject(err)
+                if (err == null) {
+                    resolve();
+                } else {
+                    reject(err);
                 }
             }
         );
@@ -36,4 +45,5 @@ module.exports = {
     getList,
     getById,
     create,
+    deleteById
 };
