@@ -1,5 +1,8 @@
 <section>
     <h1>New Accomodation</h1>
+    {{#if error}}
+    <p class="error">{{error}}</p>
+    {{/if}}
     <form action="/create" method="post">
         <label for="name">Name
             <input type="text" name="name">

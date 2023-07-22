@@ -13,4 +13,8 @@ form{
     width: 100px;    
     text-align: left;
 }
-
+.error{
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
