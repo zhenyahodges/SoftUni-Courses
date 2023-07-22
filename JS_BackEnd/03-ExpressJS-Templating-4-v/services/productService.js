@@ -19,7 +19,7 @@ async function create(name, price) {
 
     return new Promise((resolve,reject) => {
         fs.writeFile(
-            './services/data.json',
+            './services/hh/data.json',
             JSON.stringify(data, null, 2),
             (err) => {
                 if(err==null){
