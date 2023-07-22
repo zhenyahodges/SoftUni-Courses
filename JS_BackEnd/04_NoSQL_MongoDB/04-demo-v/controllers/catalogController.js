@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
     const rooms = getAll();
     res.render('catalog', {
         title: 'Catalog',
+        // rooms: [], test empty
         rooms,
     });
 });

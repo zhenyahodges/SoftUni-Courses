@@ -1,11 +1,15 @@
 <section>
 <h1>All Accomodation</h1>
 <main>
+    {{#if rooms}}
     <ul>
         {{#each rooms}}
         {{>roomCard}}
         {{/each}}
     </ul>
+    {{else}}
+    <p>Nothing here yet</p>
+    {{/if}}
 </main>
 
 </section>
