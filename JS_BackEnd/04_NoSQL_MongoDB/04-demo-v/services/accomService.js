@@ -20,7 +20,7 @@ function getAll(){
 }
 
 function getById(id) {
-    return data.find(i=>i.id === id);
+    return data.find(i=>i.id == id);
 }
 
 module.exports={
