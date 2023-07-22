@@ -1,0 +1,32 @@
+[
+  {
+    "id": "123",
+    "name": "Oranges",
+    "price": 1
+  },
+  {
+    "id": "1234",
+    "name": "Artichoke",
+    "price": 2
+  },
+  {
+    "id": "asff5180",
+    "name": "bbanana",
+    "price": 3
+  },
+  {
+    "id": "asff39294",
+    "name": "apple",
+    "price": 1
+  },
+  {
+    "id": "asff29008",
+    "name": "tomato",
+    "price": 4
+  },
+  {
+    "id": "asff36189",
+    "name": "onion",
+    "price": 9
+  }
+]
