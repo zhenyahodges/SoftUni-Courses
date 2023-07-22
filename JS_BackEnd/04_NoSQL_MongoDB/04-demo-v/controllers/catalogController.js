@@ -3,11 +3,17 @@ const { getAll, getById } = require('../services/accomService');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    const rooms = getAll();
+    // search
+    // console.log(req.query);
+    const search=req.query.search || ''
+    
+    // get all rooms
+    const rooms = getAll(search);
     res.render('catalog', {
         title: 'Catalog',
         // rooms: [], test empty
         rooms,
+        search
     });
 });
 
@@ -18,7 +24,7 @@ router.get('/:id', (req, res) => {
     if (room) {
         res.render('details', {
             title: 'Details',
-            room
+            room,
         });
     } else {
         res.render('roomNotFound', {

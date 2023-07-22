@@ -15,8 +15,8 @@ async function persist() {
     });
 }
 
-function getAll() {
-    return data;
+function getAll(search) {
+    return data.filter(r=>r.name.toLowerCase().includes(search.toLowerCase())) ;
 }
 
 function getById(id) {

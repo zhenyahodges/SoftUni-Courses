@@ -18,3 +18,7 @@ form{
     font-weight: bold;
     text-transform: capitalize;
 }
+
+.search{
+    background-color: lightgray;
+}
