@@ -4,7 +4,8 @@ const personSchema = new Schema({
     name: String,
     age: {
         type:Number,
-        required: true
+        required: true,
+        min: [0, 'Age cannot be negative']
     },
 });
 
