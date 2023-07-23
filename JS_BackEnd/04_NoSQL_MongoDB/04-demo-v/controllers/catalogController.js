@@ -6,14 +6,16 @@ router.get('/', (req, res) => {
     // search
     // console.log(req.query);
     const search=req.query.search || ''
+    const city=req.query.city || ''
     
     // get all rooms
-    const rooms = getAll(search);
+    const rooms = getAll(search,city);
     res.render('catalog', {
         title: 'Catalog',
         // rooms: [], test empty
         rooms,
-        search
+        search,
+        city
     });
 });
 

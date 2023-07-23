@@ -15,8 +15,11 @@ async function persist() {
     });
 }
 
-function getAll(search) {
-    return data.filter(r=>r.name.toLowerCase().includes(search.toLowerCase())) ;
+function getAll(search,city) {
+    search=search.toLowerCase()
+    return data
+    .filter(r=>r.name.toLowerCase().includes(search) || r.description.toLowerCase().includes(search))
+    .filter(r=>r.city.toLowerCase().includes(city.toLowerCase()))
 }
 
 function getById(id) {
