@@ -22,11 +22,10 @@
 
 // MONGOOSE
 const mongoose = require('mongoose');
-const Person=require('./models/Person')
-
+const Person = require('./models/Person');
 
 const connectionString = 'mongodb://127.0.0.1:27017/testdb2';
-start()
+start();
 
 async function start() {
     await mongoose.connect(connectionString, {
@@ -34,9 +33,17 @@ async function start() {
         useNewUrlParser: true,
     });
 
-
     console.log('DB connected');
 
-    const data= await Person.find({})
+    // const person=new Person({
+    //     name: 'Peter',
+    //     age:27
+    // })
+
+    // await person.save()
+
+    const data = await Person.find({});
     console.log(data);
+
+    await mongoose.disconnect();
 }
