@@ -1,7 +1,14 @@
 const { Schema, model } = require('mongoose');
 
 const personSchema = new Schema({
-    name: String,
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
+        type: String,
+        required: true,
+    },
     age: {
         type: Number,
         required: true,
@@ -9,9 +16,13 @@ const personSchema = new Schema({
     },
 });
 
-personSchema.methods.sayHi=function(){
-    return `${this.name} says Hi!`
-}
+personSchema.methods.sayHi = function () {
+    return `${this.firstName} says Hi!`;
+};
+
+personSchema.virtual('name').get(function(){
+    return `${this.firstName} ${this.lastName}`
+})
 
 const Person = model('Person', personSchema);
 

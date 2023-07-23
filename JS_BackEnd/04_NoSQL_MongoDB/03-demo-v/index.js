@@ -36,7 +36,8 @@ async function start() {
     console.log('DB connected');
 
     // const person=new Person({
-    //     name: 'Peter',
+    //     firstName: 'Peter',
+    //     lastName: 'Smith',
     //     age:27
     // })
 
@@ -45,6 +46,7 @@ async function start() {
     const data = await Person.find({});
     // console.log(data);
     console.log(data[0].sayHi());
+    console.log(data[0].name);
 
     await mongoose.disconnect();
 }
