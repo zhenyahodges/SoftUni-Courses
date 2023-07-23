@@ -43,7 +43,8 @@ async function start() {
     // await person.save()
 
     const data = await Person.find({});
-    console.log(data);
+    // console.log(data);
+    console.log(data[0].sayHi());
 
     await mongoose.disconnect();
 }
