@@ -42,15 +42,38 @@ async function start() {
     // })
 
     // await person.save()
+    // ----------FIND---------------
+    // const person=await Person.find({firstName: 'Peter'})
+    // console.log(person)
+    // always returns array (+objects)
 
-    const data = await Person.find({});
-    console.log(data);
-    console.log(data[0].sayHi());
-    console.log(data[0].name);
+    // const person=await Person.findOne({firstName: 'Peter'})
+    // console.log(person[0])
+
+    const person = await Person.findById('64bd0ad2a480675474dec48d');
+
+    // console.log(person);
+    // ------------------------
+
+    // const data = await Person.find({});
+    // console.log(data);
+    // console.log(data[0].sayHi());
+    // console.log(data[0].name);
+    // ------------------------
 
     // set data
-    data[0].name = 'Peter Jones';
-    await data[0].save();
+    // data[0].name = 'Peter Jones';
+    // await data[0].save();
+
+    // -------------------
+    // person.age=16
+    // await person.save()
+    // -----------------
+    // NB! this doesn't go through validators unless explicit: {runvalidators:true}
+    // ~needed for updateMAny
+    await Person.findByIdAndUpdate('64bd0ad2a480675474dec48d', {
+        $set: { age: 17 },
+    });
 
     await mongoose.disconnect();
 }
