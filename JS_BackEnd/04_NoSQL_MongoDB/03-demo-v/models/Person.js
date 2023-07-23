@@ -15,9 +15,9 @@ const personSchema = new Schema({
         min: [0, 'Age cannot be negative'],
     },
     nationality: {
-        type:String,
-        enum: ['Bulgarian','British']
-    }
+        type: String,
+        enum: ['Bulgarian', 'British'],
+    },
 });
 
 // CUSTOM validation
