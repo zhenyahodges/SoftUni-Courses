@@ -16,6 +16,11 @@ const personSchema = new Schema({
     },
 });
 
+// CUSTOM validation
+// personSchema.path('age').validate(function () {
+//     return this.age >= 0;
+// }, 'Age cannot be negative2');
+
 personSchema.methods.sayHi = function () {
     return `${this.firstName} says Hi!`;
 };
