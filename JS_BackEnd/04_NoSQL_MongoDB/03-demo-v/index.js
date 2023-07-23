@@ -42,7 +42,7 @@ async function start() {
     // })
 
     // await person.save()
-    // ----------FIND---------------
+    // ----------CRUD---------------
     // const person=await Person.find({firstName: 'Peter'})
     // console.log(person)
     // always returns array (+objects)
@@ -50,7 +50,7 @@ async function start() {
     // const person=await Person.findOne({firstName: 'Peter'})
     // console.log(person[0])
 
-    const person = await Person.findById('64bd0ad2a480675474dec48d');
+    // const person = await Person.findById('64bd0ad2a480675474dec48d');
 
     // console.log(person);
     // ------------------------
@@ -71,9 +71,40 @@ async function start() {
     // -----------------
     // NB! this doesn't go through validators unless explicit: {runvalidators:true}
     // ~needed for updateMAny
-    await Person.findByIdAndUpdate('64bd0ad2a480675474dec48d', {
-        $set: { age: 17 },
-    });
+    // await Person.findByIdAndUpdate('64bd0ad2a480675474dec48d', {
+    //     $set: { age: 17 },
+    // });
+    // =============QUERIES========
+    // await Person.create({
+    //     firstName: 'John',
+    //     lastName: 'Doe',
+    //     age: 18,
+    // },
+    // {
+    //     firstName: 'Ann',
+    //     lastName: 'Jones',
+    //     age: 28,
+    // })
+    // -----
+    const result = await Person.find({})
+        // .where({ age: { $gte: 17 } })
+        // .and({ age: { $lte: 30 } });
+        .where('age')
+        .gte(17)
+        .lte(30)
+        // .select('firstName');
+        // .select('firstName lastName');
+
+        // descending
+        // .sort({age:-1}) 
+        // ascending
+        .sort({age:1})
+        
+        // useful for pagination
+        .skip(10)
+        .limit(10)
+
+    console.log(result);
 
     await mongoose.disconnect();
 }
