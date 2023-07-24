@@ -1,4 +1,10 @@
 <h1>Articles</h1>
+<form action="/articles" method="post">
+<label for="author"><input type="text" name="author">Author</label>
+<label for="title"><input type="text" name="title">Title</label>
+<label for="content"><textarea name="content"></textarea></label>
+<button>Submit</button>
+</form>
 
 <ul>
     {{#each articles}}

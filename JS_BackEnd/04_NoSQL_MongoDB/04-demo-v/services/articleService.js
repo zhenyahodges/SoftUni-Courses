@@ -6,4 +6,12 @@ async function getAllArticles() {
     return data;
 }
 
-module.exports = {getAllArticles};
+async function createArticle(author, title, content) {
+    await Article.create({
+        author,
+        title,
+        content,
+    });
+}
+
+module.exports = { getAllArticles, createArticle };

@@ -15,6 +15,9 @@ async function start() {
     app.engine('.hbs', hbs.engine);
     app.set('view engine', '.hbs');
 
+    // da obraboti body-to
+    app.use(express.urlencoded({extended: true}));
+
     app.use(homeController);
     app.use('/articles',articleController)
 
