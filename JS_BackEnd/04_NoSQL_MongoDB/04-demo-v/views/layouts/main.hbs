@@ -5,9 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo {{title}}</title>
+    <style>
+        ul {
+            list-style: none;        
+        }
+        li{
+            margin: 20px;
+        }
+
+        body {
+            background-color: thistle;
+        }
+        header,footer{
+            background-color: rgb(224, 224, 224);
+        }
+
+        a{
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/articles">Articles</a>
+    </nav>
     {{{body}}}
 
 </body>
