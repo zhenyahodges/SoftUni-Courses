@@ -27,7 +27,7 @@ form{
     width: 350px;
     height: 350px;
     overflow: hidden;
-    object-fit:scale-down
+    object-fit:contain;
 }
 
 ul{
