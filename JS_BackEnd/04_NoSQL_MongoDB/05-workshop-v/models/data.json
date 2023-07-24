@@ -1,0 +1,20 @@
+[
+    {
+        "id":123,
+        "name": "Room",
+        "description": "Lorem ipsum ala bala",
+        "city": "Sofia",
+        "beds": 2,
+        "price":80
+    
+    },
+    {
+        "id":1234,
+        "name": "Room2",
+        "description": "Lorem ipsum ala bala",
+        "city": "Varna",
+        "beds": 6,
+        "price":190
+    
+    }
+]

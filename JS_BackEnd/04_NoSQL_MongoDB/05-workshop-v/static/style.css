@@ -1,0 +1,24 @@
+main{
+    background-color: lightblue;
+}
+
+header{
+    background-color: lightgray;
+}
+
+form{
+    display: flex;
+    flex-flow: row wrap;
+   padding: 5px;
+    width: 100px;    
+    text-align: left;
+}
+.error{
+    color: red;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.search{
+    background-color: lightgray;
+}
