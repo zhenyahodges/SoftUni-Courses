@@ -130,8 +130,10 @@ async function start() {
     // await article.save();
 
     // POPULATE-LOAD ALL DATA REFERENCED WITH THE ENTITY
-    const article= await Article.findOne({}).populate('comments');
+    // const article = await Article.findOne({}).populate('comments');
+    const article = await Article.findOne({}).populate('comments','content');
     console.log(article);
+    // console.log(article.comments[0]);
 
     await mongoose.disconnect();
 }
