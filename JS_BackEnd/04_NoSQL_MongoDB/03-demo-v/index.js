@@ -22,7 +22,10 @@
 
 // MONGOOSE
 const mongoose = require('mongoose');
-const Person = require('./models/Person');
+// const Article = require('./models/Article');
+const Comment = require('./models/Comment');
+const Article = require('./models/Article');
+// const Person = require('./models/Person');
 
 const connectionString = 'mongodb://127.0.0.1:27017/testdb2';
 start();
@@ -86,25 +89,49 @@ async function start() {
     //     age: 28,
     // })
     // -----
-    const result = await Person.find({})
-        // .where({ age: { $gte: 17 } })
-        // .and({ age: { $lte: 30 } });
-        .where('age')
-        .gte(17)
-        .lte(30)
-        // .select('firstName');
-        // .select('firstName lastName');
+    // const result = await Person.find({})
+    //     // .where({ age: { $gte: 17 } })
+    //     // .and({ age: { $lte: 30 } });
+    //     .where('age')
+    //     .gte(17)
+    //     .lte(30)
+    //     // .select('firstName');
+    //     // .select('firstName lastName');
 
-        // descending
-        // .sort({age:-1}) 
-        // ascending
-        .sort({age:1})
-        
-        // useful for pagination
-        .skip(10)
-        .limit(10)
+    //     // descending
+    //     // .sort({age:-1})
+    //     // ascending
+    //     .sort({age:1})
 
-    console.log(result);
+    //     // useful for pagination
+    //     .skip(10)
+    //     .limit(10)
+
+    // console.log(result);
+
+    //** */ RELATIONS
+    // create data
+    // await Article.create({
+    //     author: 'Peter',
+    //     title: 'First Article',
+    //     content: 'llllllllllllllllllllllllllllll'
+    // })
+
+    // await Comment.create({
+    //     author: 'John',
+    //     content: 'Nice article!',
+    // });
+
+    // create relation
+    // const article = await Article.findOne({});
+    // const comment = await Comment.findOne({});
+    // auto save as id
+    // article.comments.push(comment);
+    // await article.save();
+
+    // POPULATE-LOAD ALL DATA REFERENCED WITH THE ENTITY
+    const article= await Article.findOne({}).populate('comments');
+    console.log(article);
 
     await mongoose.disconnect();
 }
