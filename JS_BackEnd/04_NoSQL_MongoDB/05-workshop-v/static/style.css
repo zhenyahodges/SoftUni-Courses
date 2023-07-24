@@ -22,3 +22,17 @@ form{
 .search{
     background-color: lightgray;
 }
+
+.img-cont{
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    object-fit:scale-down
+}
+
+ul{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    list-style: none;
+}

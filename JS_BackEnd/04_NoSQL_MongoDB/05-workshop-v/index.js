@@ -6,9 +6,9 @@ const databaseConfig = require('./config/database');
 async function start() {
     const app = express();
 
+    await databaseConfig(app);
     expressConfig(app);
     routesConfig(app);
-    await databaseConfig(app);
 
     app.listen(3000, () => console.log('Server is listening on port 3000'));
 }
