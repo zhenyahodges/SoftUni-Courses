@@ -8,11 +8,19 @@
         </div>
         <div>
             <p>Facilities</p>
-            {{!-- <ul> --}}
-                {{#each facilities}}
-                <li>{{label}}<img href="{{iconUrl}}"></li>
-                {{/each}}
-            {{!-- </ul> --}}
+            <form action="/facility/{{room._id}}/decorateRoom" method="post">
+                {{!-- <ul> --}}
+                    {{#each facilities}}
+                    <li><label>
+                            <input type="checkbox" name="{{_id}}">{{label}}<span><img class="icon"
+                                    src="{{iconUrl}}"></span>
+                        </label></li>
+                    {{/each}}
+                    {{!--
+                </ul> --}}
+                <button>Submit</button>
+            </form>
+
         </div>
     </main>
 
