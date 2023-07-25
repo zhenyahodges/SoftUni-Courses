@@ -32,6 +32,12 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
     const roomId = req.params.roomId;
     const room = await getById(roomId);
     const facilities = await getAllFacilities();
+
+    facilities.forEach(f=>{
+        if(room.facilities.some(x=>x._id==f._id)){
+            f.checked=true;
+        }
+    })
    
     // console.log('controller',facilities);
 
