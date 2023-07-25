@@ -11,4 +11,7 @@ async function createFacility(label, iconUrl) {
     });
 }
 
-module.exports = { getAllFacilities, createFacility };
+module.exports = {
+    getAllFacilities,
+    createFacility,
+};

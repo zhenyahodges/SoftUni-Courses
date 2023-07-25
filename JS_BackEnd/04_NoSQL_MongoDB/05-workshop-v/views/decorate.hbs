@@ -1,0 +1,19 @@
+<section>
+
+    <h1>{{room.name}} - Edit Facilities</h1>
+    <main>
+
+        <div class="img-cont">
+            <img src="{{room.imageUrl}}">
+        </div>
+        <div>
+            <p>Facilities</p>
+            {{!-- <ul> --}}
+                {{#each facilities}}
+                <li>{{label}}<img href="{{iconUrl}}"></li>
+                {{/each}}
+            {{!-- </ul> --}}
+        </div>
+    </main>
+
+</section>
