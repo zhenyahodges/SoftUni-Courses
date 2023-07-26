@@ -10,6 +10,7 @@ router.get('/',async (req, res) => {
     
     // get all rooms
     const rooms = await getAll(search,city).lean();
+    
     res.render('catalog', {
         title: 'Catalog',
         // rooms: [], test empty

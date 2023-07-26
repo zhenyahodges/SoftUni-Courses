@@ -14,13 +14,13 @@ facilityController.get('/create', async (req, res) => {
 });
 
 facilityController.post('/create', async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
     try {
         await createFacility(req.body.label, req.body.iconUrl);
         res.redirect('/catalog');
     } catch (err) {
-        console.log(err.message);
+        // console.log(err.message);
         res.render('createFacility', {
             title: 'Create New Facility',
         });
@@ -32,14 +32,14 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
     const roomId = req.params.roomId;
     const room = await getById(roomId);
     const facilities = await getAllFacilities();
+    // console.log('controller',facilities);
 
     facilities.forEach(f=>{
-        if(room.facilities.some(x=>x._id==f._id)){
+        if((room.facilities || []).some(id=>id.toString()==f._id.toString())){
             f.checked=true;
         }
     })
    
-    // console.log('controller',facilities);
 
     res.render('decorate', {
         title: 'Edit Facilities',
@@ -49,6 +49,9 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
 });
 
 facilityController.post('/:roomId/decorateRoom', async (req, res) => {
+    console.log('controller', req.params.roomId);
+    console.log('controller', Object.keys(req.body));
+    
     await addFacilities(req.params.roomId, Object.keys(req.body))
    
     res.redirect(`/facility/${req.params.roomId}/decorateRoom`)

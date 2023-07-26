@@ -10,7 +10,11 @@
         <div class="img-cont">
             <img src="{{imageUrl}}">
         </div>
-       
+       <ul>
+        {{#each facilities}}
+        <li>{{label}} <img src="{{iconUrl}}" alt=""></li>
+        {{/each}}
+       </ul>
         
     </main>
     {{/with}}
