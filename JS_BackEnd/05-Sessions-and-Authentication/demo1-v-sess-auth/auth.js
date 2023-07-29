@@ -10,14 +10,26 @@ app.use(session({
 
 app.get('/', (req, res) => {
     console.log(req.session);
-    res.send('hello')
+    if(req.session.user){
+        res.send(`<p>Hello, ${req.session.user}!</p>`);
+
+    }else{
+
+        res.send(`<p>Hello,guest, please <a href="/login">login here</a></p>`);
+    }
 });
 
 app.get('/login', (req, res) => {
     res.send(`<form action="login" method="post">
     <label>Username: <input type="text" name="username"></label>
     <label>Password: <input type="password" name="password"></label>
-    <input type="submit" value="submit">
+    <input type="submit" value="Login">
     </form>`)
 });
+
+app.post('/login',(req, res) => {
+    console.log(req.session);
+    req.session.user='Peter'
+    res.redirect('/');
+})
 app.listen(3000)
