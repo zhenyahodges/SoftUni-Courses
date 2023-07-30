@@ -5,6 +5,7 @@ const defaultController = require('../controllers/defaultController');
 const facilityController = require('../controllers/facilityController');
 const authController = require('../controllers/authController');
 
+
 module.exports = (app) => {
     app.use(homeController);
     app.use('/catalog', catalogController);

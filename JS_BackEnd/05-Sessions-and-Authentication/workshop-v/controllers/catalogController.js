@@ -3,6 +3,10 @@ const { getAll, getById } = require('../services/roomService');
 const router = require('express').Router();
 
 router.get('/',async (req, res) => {
+
+    const user=req.user
+    // console.log('USER==>',user);
+
     // search
     // console.log(req.query);
     const search=req.query.search || ''
