@@ -1,7 +1,7 @@
 const Room = require('../models/Room');
 
 function getAll(search, city) {
-    return Room.find({});
+    return Room.find({}).lean();
 }
 
 function getById(id) {

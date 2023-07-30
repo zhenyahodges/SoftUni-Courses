@@ -1,10 +1,10 @@
 const facilityController = require('express').Router();
-const { getById } = require('../services/roomService');
 const {
     createFacility,
     getAllFacilities,
     addFacilities,
 } = require('../services/facilityService');
+const { getById } = require('../services/roomService');
 
 // ROOMS
 facilityController.get('/create', async (req, res) => {
@@ -32,14 +32,19 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
     const roomId = req.params.roomId;
     const room = await getById(roomId);
     const facilities = await getAllFacilities();
-    // console.log('controller',facilities);
+    // console.log('faccontroller==>',facilities);
+    // console.log('faccontroller room==>', room);
 
-    facilities.forEach(f=>{
-        if((room.facilities || []).some(id=>id.toString()==f._id.toString())){
-            f.checked=true;
-        }
-    })
-   
+    facilities.forEach((f) => {
+        console.log('FFF',f);
+        if ((room.facilities || []).some(
+                (id) => id._id.toString() == f._id.toString()
+            )
+        ) {
+            f.checked = true;               
+        }     
+        console.log('fccc===', room.facilities);      
+    });
 
     res.render('decorate', {
         title: 'Edit Facilities',
@@ -49,12 +54,12 @@ facilityController.get('/:roomId/decorateRoom', async (req, res) => {
 });
 
 facilityController.post('/:roomId/decorateRoom', async (req, res) => {
-    console.log('controller', req.params.roomId);
-    console.log('controller', Object.keys(req.body));
-    
-    await addFacilities(req.params.roomId, Object.keys(req.body))
-   
-    res.redirect(`/facility/${req.params.roomId}/decorateRoom`)
+    // console.log('controller', req.params.roomId);
+    // console.log('controller', Object.keys(req.body));
+
+    await addFacilities(req.params.roomId, Object.keys(req.body));
+
+    res.redirect(`/facility/${req.params.roomId}/decorateRoom`);
 });
 
 module.exports = facilityController;

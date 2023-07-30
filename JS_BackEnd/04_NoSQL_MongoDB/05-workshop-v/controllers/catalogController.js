@@ -9,7 +9,8 @@ router.get('/',async (req, res) => {
     const city=req.query.city || ''
     
     // get all rooms
-    const rooms = await getAll(search,city).lean();
+    const rooms = await getAll(search,city)
+    // .lean();
     
     res.render('catalog', {
         title: 'Catalog',
@@ -23,6 +24,7 @@ router.get('/',async (req, res) => {
 router.get('/:id', async (req, res) => {
     const roomId = req.params.id;
     const room = await getById(roomId);
+    // console.log('catalogcontroller==>',room.facilities);
 
     if (room) {
         res.render('details', {

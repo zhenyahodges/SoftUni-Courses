@@ -8,7 +8,7 @@ const roomsSchema = new Schema({
     price: { type: Number, required: true, min: 0.01 },
     imageUrl: { type: String },
     facilities: {
-        type: [Types.ObjectID],
+        type: [Types.ObjectId],
         default: [],
         ref: 'Facility'
     },

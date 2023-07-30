@@ -16,24 +16,24 @@ async function addFacilities(roomId, facilitiesIds) {
     const room = await Room.findById(roomId).populate('facilities');
     const facilities = await Facility.find({ _id: { $in: facilitiesIds } });
     
-    console.log(room);
-    console.log(facilities);
+    // console.log('room: ',room);
+    // console.log('facilities: ',facilities);
     
     // remove room ref from removed facilities
     const toRemove = room.facilities.filter((f) =>
         facilities.every((x) => x._id.toString() != f._id.toString())
     );
    
-    console.log('toRemove', toRemove);
+    console.log('toRemove: ', toRemove.map(x=>x.label));
     // remove room from facility
     toRemove.forEach((f) => {
         f.rooms.splice(
-            f.rooms.findIndex((rid) => rid.toString() ===roomId),
+            f.rooms.findIndex((rid) => rid.toString() ==roomId),
             1
         );
         room.facilities.splice(
             room.facilities.findIndex(
-                (x) => x._id.toString() === f._id.toString()
+                (x) => x._id.toString() == f._id.toString()
             ),
             1
         );
@@ -45,7 +45,7 @@ async function addFacilities(roomId, facilitiesIds) {
     const newlyAdded = facilities.filter((f) =>
         room.facilities.every((x) => x._id.toString() != f._id.toString())
     );
-    console.log('newlyAdded', newlyAdded);
+    // console.log('newlyAdded: ', newlyAdded.map(x=>x.label));
 
     // add room ref to newly added facilities
     newlyAdded.forEach((f) => {
