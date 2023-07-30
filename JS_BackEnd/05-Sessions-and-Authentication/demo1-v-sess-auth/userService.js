@@ -1,6 +1,8 @@
+const fs=require('fs');
 const bcrypt = require('bcrypt');
 
-const users = [];
+// const users = [];
+const users = JSON.parse(fs.readFileSync('./users.txt'));
 
 async function register(username, password) {
     if (
@@ -13,8 +15,11 @@ async function register(username, password) {
         username,
         hashedPassword: await bcrypt.hash(password, 10),
         failedAttempts: 0,
+        role: ['user']
     };
     users.push(user);
+
+    await new Promise(res=>fs.writeFile('./users.txt', JSON.stringify(users,null,2), res));
 }
 
 async function login(username, password) {

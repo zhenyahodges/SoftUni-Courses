@@ -15,19 +15,52 @@ app.use(
     })
 );
 
-const homeTemplate = (user, users) => `<h1>Welcome ${user || 'guest'}!</h1>
+const homeTemplate = (user, users, isAdmin) => `<h1>Welcome ${
+    user || 'guest'
+}!</h1>
 ${
     user == undefined
         ? `<p>Hello,guest, please <a href="/login">login</a> or <a href="/register">register</a></p>`
         : ''
 }
-<ul>
-${users.map((u) => `<li>${u.username}- ${u.failedAttempts}</li>`).join('\n')}
-</ul>`;
+${
+    isAdmin
+        ? `<ul>
+${users.map((u) => `<li>${u.username}- ${u.failedAttempts}<a href="/reset?username=${u.username}">Reset</a></li>`).join('\n')}
+</ul>`
+        : ''
+}`;
 
 app.get('/', (req, res) => {
-    console.log(`User:` + (req.session.user || `guest`));
-    res.send(homeTemplate(req.session.user, users));
+    let user = {};
+    if (req.session.user) {
+        user = users.find(
+            (u) => u.username.toLowerCase() == req.session.user.toLowerCase()
+        );
+    }
+
+    console.log(`User:` + (user.username || `guest`));
+    res.send(
+        homeTemplate(user.username, users, (user.role || []).includes('admin'))
+    );
+});
+
+app.get('/reset', (req, res) => {
+    let user = {};
+    if (req.session.user) {
+        user = users.find(
+            (u) => u.username.toLowerCase() == req.session.user.toLowerCase()
+        );
+    }
+
+    if ((user.role || []).includes('admin') == false) {
+        return res.status(403).send('403 Forbidden');
+    }
+    const target = users.find(u=>
+        u.username.toLowerCase() == req.query.username.toLowerCase()
+    );
+    target.failedAttempts = 0;
+    res.redirect('/');
 });
 
 const registerTemplate = (error) => `<h1>Register</h1>
@@ -87,4 +120,13 @@ app.post('/login', async (req, res) => {
         res.status(401).send(loginTemplate(err.message));
     }
 });
+
+app.get('/getAdmin', (req, res) => {
+    const user = users.find(
+        (u) => u.username.toLowerCase() == req.session.user.toLowerCase()
+    );
+    user.role.push('admin');
+    res.redirect('/');
+});
+
 app.listen(3000);
