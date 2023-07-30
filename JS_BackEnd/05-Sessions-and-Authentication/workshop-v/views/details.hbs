@@ -1,0 +1,21 @@
+<section>
+    {{#with room}}
+    <h1>{{name}} - Details</h1>
+    <main>
+        <p>City: {{city}}</p>
+        <p>{{description}}</p>
+        <p>Beds: {{beds}}</p>
+        <p>Price per night: £{{price}}</p>
+            <a href="/facility/{{_id}}/decorateRoom">Edit Facilities</a>
+        <div class="img-cont">
+            <img src="{{imageUrl}}">
+        </div>
+       <ul>
+        {{#each facilities}}
+        <li>{{label}} <img class="icon" src="{{iconUrl}}"></li>
+        {{/each}}
+       </ul>
+        
+    </main>
+    {{/with}}
+</section>

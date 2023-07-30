@@ -1,0 +1,20 @@
+[
+    {
+        "id": 123,
+        "name": "Room",
+        "description": "Lorem ipsum ala bala",
+        "city": "Sofia",
+        "beds": 2,
+        "price": 80,
+        "imageUrl": "https://www.thespruce.com/thmb/Yaz6mR23IBvAPvkviKYi1N6clLU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/PAinteriors-7-cafe9c2bd6be4823b9345e591e4f367f.jpg"
+    },
+    {
+        "id": 1234,
+        "name": "Room2",
+        "description": "Lorem ipsum ala bala",
+        "city": "Varna",
+        "beds": 6,
+        "price": 190,
+        "imageUrl": "https://www.thespruce.com/thmb/Afg3IVBq0tV-7DHBME5woSNCZxQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg"
+    }
+]
