@@ -3,8 +3,11 @@ const User = require('../models/User');
 
 async function register(username, password) {
     const existing = await User.findOne({
-        username: { $regex: new RegExp(username), $options: 'i' },
-    });
+        // username: { $regex: new RegExp(username), $options: 'i' },
+        username,
+    })
+    // .collation({ locale: 'en', strength: 2 });
+
     if (existing) {
         throw new Error('Username already registered');
     }
@@ -32,8 +35,10 @@ async function login(username, password) {
     // });
 
     const user = await User.findOne({
-        username: { $regex: new RegExp(username), $options: 'i' },
-    });
+        // username: { $regex: new RegExp(username), $options: 'i' },
+        username,
+    }).collation({ locale: 'en', strength: 2 });
+
     if (!user) {
         throw new Error('Incorrect username or password');
     }
