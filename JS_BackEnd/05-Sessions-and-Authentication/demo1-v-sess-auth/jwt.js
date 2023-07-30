@@ -6,17 +6,26 @@ const secret = 'my secret';
 
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
+app.use((req, res, next) => {
     const token = req.cookies.token;
 
     if (token) {
-        const data = jwt.verify(token,secret);
-        res.write(
-            '<p>Token: </p>' +
-                JSON.stringify(data, null, 2).replace('\n', '<br>')
-        );
+        try {
+            const data = jwt.verify(token, secret);
+            req.user = data;
+        } catch (err) {
+            // res.cookies('token')
+            res.redirect('/login')
+        }
+    }
+    next();
+});
+
+app.get('/', (req, res) => {
+    if (req.user) {
+        res.send(`Hello, ${req.user.username}!`);
     } else {
-        res.send('Hello');
+        res.send(`Hello, guest!`);
     }
 });
 
