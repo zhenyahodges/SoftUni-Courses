@@ -11,6 +11,9 @@
 <body>
     <div id="page-content">
         <header>
+            {{#if hasUser}}
+            <span>Welcome, {{username}}</span>
+            {{/if}}
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>

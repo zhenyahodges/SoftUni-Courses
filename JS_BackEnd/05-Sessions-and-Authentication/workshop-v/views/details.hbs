@@ -6,7 +6,9 @@
         <p>{{description}}</p>
         <p>Beds: {{beds}}</p>
         <p>Price per night: £{{price}}</p>
+        {{#if isOwner}}
             <a href="/facility/{{_id}}/decorateRoom">Edit Facilities</a>
+        {{/if}}
         <div class="img-cont">
             <img src="{{imageUrl}}">
         </div>

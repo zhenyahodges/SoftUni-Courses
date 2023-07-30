@@ -12,6 +12,11 @@ const roomsSchema = new Schema({
         default: [],
         ref: 'Facility'
     },
+    owner: {
+        type: Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
 });
 
 const Room = model('Room', roomsSchema);
