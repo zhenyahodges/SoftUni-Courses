@@ -9,7 +9,8 @@ module.exports = (jwtSecret) => (req, res, next) => {
             // console.log('MW--->', data);
             req.user = data;
         } catch (err) {
-            res.cookie('jwt', '', { maxAge: 0 });
+            // res.cookie('jwt', '', { maxAge: 0 });
+            res.clearCookie('jwt');
             return res.redirect('/login');
         }
     }
