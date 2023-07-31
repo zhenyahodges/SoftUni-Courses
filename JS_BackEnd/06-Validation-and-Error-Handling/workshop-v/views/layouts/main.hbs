@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div id="page-content">
+        <header>
+            {{#if hasUser}}
+            <span>Welcome, {{username}}</span>
+            {{/if}}
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/catalog">Catalog</a></li>
+                    {{#if hasUser}}
+                    <li><a href="/create">Host</a></li>
+                    
+                    <li><a href="/facility/create">New Facility</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    {{else}}
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register">Register</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{{body}}}
+
+        </main>
+    </div>
+</body>
+
+</html>

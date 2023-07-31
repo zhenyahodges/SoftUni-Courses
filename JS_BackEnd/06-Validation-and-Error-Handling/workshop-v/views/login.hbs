@@ -1,0 +1,19 @@
+<section>
+    <h1>Login</h1>
+    {{#if error}}
+    {{#each error}}
+    <p class="error">{{this}}</p>
+    {{/each}}
+
+    {{/if}}
+    <form action="/auth/login" method="post">
+        <label for="username">Username
+            <input type="text" name="username">
+        </label>
+        <label for="password">Password
+            <input type="password" name="password"></input>
+        </label>        
+        <button>Submit</button>
+    </form>
+    <p><a href="/auth/register">Register</a></p>
+</section>

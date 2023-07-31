@@ -1,0 +1,22 @@
+<section>
+    <h1>Register</h1>
+    {{#if error}}
+    {{#each error}}
+    <p class="error">{{this}}</p>
+    {{/each}}
+
+    {{/if}}
+    <form action="/auth/register" method="post">
+        <label for="username">Username
+            <input type="text" name="username">
+        </label>
+        <label for="password">Password
+            <input type="password" name="password"></input>
+        </label>
+          <label for="repass">Repeat Password
+            <input type="password" name="repass"></input>
+        </label>
+        <button>Submit</button>
+    </form>
+    <p><a href="/auth/login">Login</a></p>
+</section>
