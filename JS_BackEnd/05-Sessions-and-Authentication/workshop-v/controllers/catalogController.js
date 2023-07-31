@@ -4,8 +4,8 @@ const router = require('express').Router();
 
 router.get('/',async (req, res) => {
 
-    // const user=req.user
-    // console.log('USER==>',user);
+    const user=req.user
+    console.log('USER==>',user);
 
     // search
     // console.log(req.query);

@@ -1,9 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
 
-const roleSchema = new Schema({
-    value: { type: String, enum: ['user', 'admin'] },
-});
-
 const userSchema = new Schema({
     username: {
         type: String,
@@ -14,7 +10,7 @@ const userSchema = new Schema({
         required: true,
     },
     roles: {
-        type: [roleSchema],
+        type: [{ type: String, enum: ['user', 'admin'] }],
         default: ['user'],
     },
 });
