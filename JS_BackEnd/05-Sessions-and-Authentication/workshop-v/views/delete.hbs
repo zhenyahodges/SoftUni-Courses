@@ -1,0 +1,30 @@
+<section>
+    <h1>Delete Accomodation</h1>
+    {{#if error}}
+    {{#each error}}
+    <p class="error">{{this}}</p>
+    {{/each}}
+
+    {{/if}}
+    {{#with room}}
+    <form action="/room/{{_id}}/delete" method="post">
+        <label for="name">Name
+            <input type="text" name="name" value="{{name}}" disabled>
+        </label>
+        <label for="description">Description
+            <textarea type="text" name="description" disabled>{{description}}</textarea>
+        </label>
+        <label for="city">City
+            <input type="text" name="city" value="{{city}}" disabled>
+        </label>
+        <label for="beds">Beds
+            <input type="text" name="beds" value="{{beds}}" disabled>
+        </label>
+        <label for="price">Price
+            <input type="text" name="price" value="{{price}}" disabled>
+        </label>
+        <label for="imageUrl">ImageUrl:<input name="imageUrl" value="{{imageUrl}}" disabled></label>
+        <button>Confirm Delete</button>
+    </form>
+    {{/with}}
+</section>

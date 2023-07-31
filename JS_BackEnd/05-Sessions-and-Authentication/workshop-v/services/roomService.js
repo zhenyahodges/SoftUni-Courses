@@ -34,7 +34,7 @@ async function update(roomId, roomData) {
     if (missing.length > 0) {
         throw new Error(missing.map((m) => `${m[0]} is Required`).join('\n '));
     }
-    
+
     const room = await Room.findById(roomId);
 
     room.name = roomData.name;
@@ -50,9 +50,14 @@ async function update(roomId, roomData) {
     return room;
 }
 
+async function deleteById(roomId) {
+    return Room.findByIdAndDelete(roomId)
+}
+
 module.exports = {
     getAll,
     getById,
     create,
     update,
+    deleteById
 };
