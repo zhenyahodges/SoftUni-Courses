@@ -6,6 +6,10 @@ roomController.get('/:id/edit', async (req, res) => {
     const roomId = req.params.id;
     const room = await getById(roomId);
 
+    if(!req.user || room.owner!=req.user._id){
+        return res.redirect('/auth/login');
+    }
+
     res.render('edit', {
         title: 'Edit Accomodation',
         room,
@@ -14,6 +18,12 @@ roomController.get('/:id/edit', async (req, res) => {
 
 roomController.post('/:id/edit', async (req, res) => {
     const roomId = req.params.id;
+    const room = await getById(roomId);
+
+    if(!req.user || room.owner!=req.user._id){
+        return res.redirect('/auth/login');
+    }
+
     try {
         const result = await update(roomId, req.body);
         res.redirect('/catalog/' + result._id);
