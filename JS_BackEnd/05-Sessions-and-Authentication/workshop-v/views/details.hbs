@@ -8,6 +8,8 @@
         <p>Price per night: £{{price}}</p>
         {{#if isOwner}}
             <a href="/facility/{{_id}}/decorateRoom">Edit Facilities</a>
+            <a href="/room/{{_id}}/edit">Edit Accomodation</a>
+            <a href="/room/{{_id}}/delete">Delete</a>
         {{/if}}
         <div class="img-cont">
             <img src="{{imageUrl}}">
