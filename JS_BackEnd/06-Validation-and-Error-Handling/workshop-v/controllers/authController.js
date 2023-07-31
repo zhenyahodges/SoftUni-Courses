@@ -1,3 +1,4 @@
+const {body,validationResult} = require('express-validator');
 const { login, register } = require('../services/authService');
 
 const authController = require('express').Router();
@@ -31,12 +32,13 @@ authController.get('/register', (req, res) => {
 
 authController.post('/register', async (req, res) => {
     try {
-        if (req.body.username.trim() == '' || req.body.password.trim() == '') {
+        // return console.log(validator.isEmpty(req.body.username.trim()));
+        if (validator.isEmpty(req.body.username.trim()) || validator.isEmpty(req.body.password.trim())) {
             throw new Error('All fields are required');
         }
-        if (req.body.password.trim() != req.body.repass.trim()) {
-            throw new Error('Passwords do not match');
-        }
+        // if (req.body.password.trim() != req.body.repass.trim()) {
+        //     throw new Error('Passwords do not match');
+        // }
         const result = await register(req.body.username, req.body.password);
         attachToken(req, res, result);
         res.redirect('/');
