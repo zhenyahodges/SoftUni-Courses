@@ -1,5 +1,6 @@
 const facilityController = require('express').Router();
 const { hasRole } = require('../middlewares/guardsMiddleware');
+const { body, validationResult } = require('express-validator');
 const {
     createFacility,
     getAllFacilities,
@@ -8,25 +9,36 @@ const {
 const { getById } = require('../services/roomService');
 
 // ROOMS
-facilityController.get('/create',hasRole('admin'), async (req, res) => {
+facilityController.get('/create', hasRole('admin'), async (req, res) => {
     res.render('createFacility', {
         title: 'Create New Facility',
     });
 });
 
-facilityController.post('/create',hasRole('admin'), async (req, res) => {
-    // console.log(req.body);
+facilityController.post(
+    '/create',
+    hasRole('admin'),
+    body('label').trim()
+    .notEmpty().withMessage('Label is required'),
+    body('iconUrl').trim(),
+    async (req, res) => {
+        // console.log(req.body);
+        const { errors } = validationResult(req);
 
-    try {
-        await createFacility(req.body.label, req.body.iconUrl);
-        res.redirect('/catalog');
-    } catch (err) {
-        // console.log(err.message);
-        res.render('createFacility', {
-            title: 'Create New Facility',
-        });
+        try {
+            if(errors.length > 0) {
+                throw errors;
+            }
+            await createFacility(req.body.label, req.body.iconUrl);
+            res.redirect('/catalog');
+        } catch (error) {
+            console.log(error);
+            res.render('createFacility', {
+                title: 'Create New Facility',
+            });
+        }
     }
-});
+);
 
 // FACILITIES
 facilityController.get('/:roomId/decorateRoom', async (req, res) => {

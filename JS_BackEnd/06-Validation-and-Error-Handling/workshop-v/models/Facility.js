@@ -5,8 +5,8 @@ const {
 } = require('mongoose');
 
 const facilitySchema = new Schema({
-    label: {type: String,required: true},
-    iconUrl: { type: String },
+    label: { type: String, required: true },
+    iconUrl: { type: String, minlength: [1, 'url must be at least 1 ch long'] },
     rooms: { type: [ObjectId], default: [], ref: 'Room' },
 });
 
