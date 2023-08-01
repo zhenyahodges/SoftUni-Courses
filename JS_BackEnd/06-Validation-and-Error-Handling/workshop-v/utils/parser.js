@@ -13,14 +13,17 @@ function parseError(error) {
     } else if (Array.isArray(error)) {
         // validator
         result.messages = error.map((e) => e.msg);
-        result.fields = Object.fromEntries(error.map((e) => [e.param, e.param]));
-
+        result.fields = Object.fromEntries(
+            error.map((e) => [e.param, e.param])
+        );
     } else {
-        result.messages.push(error.message);
+        // result.messages.push(error.message);
+        result.messages = error.message.split('\n ');
     }
+
     return result;
 }
 
-module.exports={
-    parseError
-}
+module.exports = {
+    parseError,
+};

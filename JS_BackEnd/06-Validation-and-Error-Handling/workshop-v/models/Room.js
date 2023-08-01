@@ -6,8 +6,8 @@ const roomsSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     city: { type: String, required: true },
-    beds: { type: Number, required: true, min: 1 },
-    price: { type: Number, required: true, min: 0.01 },
+    beds: { type: Number, required: true, min: [1,'Must have at least 1 bed'] },
+    price: { type: Number, required: true, min: [0.01, 'Price muset be a positive num'] },
     imageUrl: {
         type: String,
         validate: {

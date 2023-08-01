@@ -1,7 +1,7 @@
 <section>
     <h1>Edit Accomodation</h1>
     {{#if error}}
-    {{#each error}}
+    {{#each error.messages}}
     <p class="error">{{this}}</p>
     {{/each}}
 

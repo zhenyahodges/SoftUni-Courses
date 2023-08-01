@@ -1,5 +1,6 @@
 const { body, validationResult } = require('express-validator');
 const { login, register } = require('../services/authService');
+const { parseError } = require('../utils/parser');
 
 const authController = require('express').Router();
 
@@ -10,18 +11,31 @@ authController.get('/login', (req, res) => {
     });
 });
 
-authController.post('/login', async (req, res) => {
-    try {
-        const result = await login(req.body.username, req.body.password);
-        attachToken(req, res, result);
-        res.redirect('/');
-    } catch (err) {
-        res.render('login', {
-            title: 'Login',
-            error: err.message.split('\n '),
-        });
+authController.post(
+    '/login',
+    body(['username', 'password']).trim(),
+    async (req, res) => {
+        try {
+            const result = await login(req.body.username, req.body.password);
+            attachToken(req, res, result);
+            res.redirect('/');
+            // } catch (err) {
+            //     res.render('login', {
+            //         title: 'Login',
+            //         error: err.message.split('\n '),
+            //     });
+            // }
+        } catch (error) {
+            res.render('login', {
+                title: 'Login',
+                body: {
+                    username: req.body.username,
+                },
+                error: parseError(error),
+            });
+        }
     }
-});
+);
 
 authController.get('/register', (req, res) => {
     // res.send('Here is your token');
@@ -70,18 +84,18 @@ authController.post(
             attachToken(req, res, result);
             res.redirect('/');
         } catch (error) {
-            const fields = Object.fromEntries(
-                error.map((e) => [e.path, e.path])
-            );
-            console.log(error);
+            // const fields = Object.fromEntries(
+            //     error.map((e) =>{ [e.path, e.path]})
+            // );
+            // console.log(error);
 
             res.render('register', {
                 title: 'Register',
                 body: {
-                    username: req.body.username
+                    username: req.body.username,
                 },
-                error,
-                fields
+                error: parseError(error),
+                // fields
             });
         }
     }

@@ -1,19 +1,24 @@
 <section>
     <h1>Register</h1>
     {{#if error}}
-    {{#each error}}
-    <p class="error">{{msg}}</p>
+    {{#each error.messages}}
+    {{!-- {{#each error}} --}}
+    {{!-- <p class="error">{{msg}}</p> --}}
+    <p class="error">{{this}}</p>
     {{/each}}
 
     {{/if}}
     <form action="/auth/register" method="post">
         
-        <label for="username">Username<input {{#if fields.username}}class="field-error" {{/if}} type="text" name="username" value="{{body.username}}">
+        {{!-- <label for="username">Username<input {{#if fields.username}}class="field-error" {{/if}} type="text" name="username" value="{{body.username}}"> --}}
+        <label for="username">Username<input {{#if error.fields.username}}class="field-error" {{/if}} type="text" name="username" value="{{body.username}}">
         </label>
-        <label for="password">Password<input {{#if fields.password}}class="field-error" {{/if}} type="password"
+        {{!-- <label for="password">Password<input {{#if fields.password}}class="field-error" {{/if}} type="password" --}}
+        <label for="password">Password<input {{#if error.fields.password}}class="field-error" {{/if}} type="password"
                 name="password"></input>
         </label>
-        <label for="repass">Repeat Password<input {{#if fields.repass}}class="field-error" {{/if}} type="password"
+        {{!-- <label for="repass">Repeat Password<input {{#if fields.repass}}class="field-error" {{/if}} type="password" --}}
+        <label for="repass">Repeat Password<input {{#if error.fields.repass}}class="field-error" {{/if}} type="password"
                 name="repass"></input>
         </label>
        

@@ -1,7 +1,7 @@
 <section>
     <h1>New Accomodation</h1>
     {{#if error}}
-    {{#each error}}
+    {{#each error.messages}}
     <p class="error">{{this}}</p>
     {{/each}}
 
@@ -11,18 +11,18 @@
             <input type="text" name="name">
         </label>
         <label for="description">Description
-            <textarea type="text" name="description"></textarea>
+            <textarea {{#if error.fields.description}}class="field-error" {{/if}} type="text" name="description"></textarea>
         </label>
         <label for="city">City
-            <input type="text" name="city">
+            <input {{#if error.fields.city}}class="field-error" {{/if}} type="text" name="city">
         </label>
         <label for="beds">Beds
-            <input type="text" name="beds">
+            <input {{#if error.fields.beds}}class="field-error" {{/if}} type="text" name="beds">
         </label>
         <label for="price">Price
-            <input type="text" name="price">
+            <input {{#if error.fields.price}}class="field-error" {{/if}} type="text" name="price">
         </label>
-        <label for="imageUrl">ImageUrl:<input name="imageUrl"></label>
+        <label for="imageUrl">ImageUrl:<input {{#if error.fields.imageUrl}}class="field-error" {{/if}} name="imageUrl"></label>
         <button>Submit</button>
     </form>
 </section>

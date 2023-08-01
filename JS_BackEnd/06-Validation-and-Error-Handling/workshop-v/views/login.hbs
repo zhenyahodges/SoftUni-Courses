@@ -1,14 +1,14 @@
 <section>
     <h1>Login</h1>
     {{#if error}}
-    {{#each error}}
+    {{#each error.messages}}
     <p class="error">{{this}}</p>
     {{/each}}
 
     {{/if}}
     <form action="/auth/login" method="post">
         <label for="username">Username
-            <input type="text" name="username">
+            <input type="text" name="username" value="{{body.username}}">
         </label>
         <label for="password">Password
             <input type="password" name="password"></input>
