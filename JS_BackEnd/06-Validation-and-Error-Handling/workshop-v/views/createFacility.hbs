@@ -1,11 +1,19 @@
 <section>
     <h1>New Facility</h1>
+    <div>
+        {{#if error}}
+        {{#each error.messages}}
+        <p class="error">{{this}}</p>
+        {{/each}}
+        {{/if}}
+    </div>
 
     <form action="/facility/create" method="post">
-        <label>Label
-            <input type="text" name="label">
+        <label>Label:
+            <input {{#if error.fields.label}}class="field-error" {{/if}} type="text" name="label" value="{{body.label}}">
         </label>
-        <label>IconUrl:<input type="text" name="iconUrl"></label>
+        <label>IconUrl:
+            <input {{#if error.fields.iconUrl}}class="field-error" {{/if}} type="text" name="iconUrl" value="{{body.iconUrl}}"></label>
         <button>Submit</button>
     </form>
 </section>

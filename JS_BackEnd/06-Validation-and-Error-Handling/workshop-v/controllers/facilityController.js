@@ -7,6 +7,7 @@ const {
     addFacilities,
 } = require('../services/facilityService');
 const { getById } = require('../services/roomService');
+const { parseError } = require('../utils/parser');
 
 // ROOMS
 facilityController.get('/create', hasRole('admin'), async (req, res) => {
@@ -23,6 +24,7 @@ facilityController.post(
     body('iconUrl').trim(),
     async (req, res) => {
         // console.log(req.body);
+
         const { errors } = validationResult(req);
 
         try {
@@ -32,9 +34,12 @@ facilityController.post(
             await createFacility(req.body.label, req.body.iconUrl);
             res.redirect('/catalog');
         } catch (error) {
-            console.log(error);
+            // console.log(error);
+            // console.log(req.body)
             res.render('createFacility', {
                 title: 'Create New Facility',
+                error: parseError(error),
+                body: req.body
             });
         }
     }
