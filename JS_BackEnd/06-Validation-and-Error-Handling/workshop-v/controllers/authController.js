@@ -33,25 +33,31 @@ authController.get('/register', (req, res) => {
 authController.post(
     '/register',
     body('username')
+        .trim()
         .notEmpty()
         .withMessage('Username is required')
+        .bail()
         .isAlphanumeric()
         .withMessage('Username may contain only letters and numbers'),
     body('password')
-        .notEmpty()
-        .withMessage('Password is required')
+        .trim()
         .isLength({ min: 3 })
         .withMessage('Password must be at least 3 characters'),
-    body('repass').custom(async (value, { req }) => {
-        if (value.trim() == req.body.password.trim()) {
-            throw new Error('Passwords must match');
-        }
-    }),
+    body('repass')
+        .trim()
+        // .customSanitizer((value, { req }) => {
+        //     value.trim()
+        // })
+        .custom(async (value, { req }) => {
+            if (value != req.body.password) {
+                throw new Error('Passwords must match');
+            }
+        }),
     async (req, res) => {
         try {
             const { errors } = validationResult(req);
             if (errors.length > 0) {
-                throw new Error('Something happened');
+                throw errors;
             }
             // return console.log(validator.isEmpty(req.body.username.trim()));
             // if (validator.isEmpty(req.body.username.trim()) || validator.isEmpty(req.body.password.trim())) {
@@ -63,10 +69,19 @@ authController.post(
             const result = await register(req.body.username, req.body.password);
             attachToken(req, res, result);
             res.redirect('/');
-        } catch (err) {
+        } catch (error) {
+            const fields = Object.fromEntries(
+                error.map((e) => [e.path, e.path])
+            );
+            console.log(error);
+
             res.render('register', {
                 title: 'Register',
-                error: err.message.split('\n '),
+                body: {
+                    username: req.body.username
+                },
+                error,
+                fields
             });
         }
     }

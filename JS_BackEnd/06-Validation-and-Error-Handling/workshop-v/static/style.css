@@ -41,6 +41,9 @@ ul{
 .icon{
 width: 20px;
 height:20px;
+}
 
+.field-error{
+    border: 1px solid red;
 }
 

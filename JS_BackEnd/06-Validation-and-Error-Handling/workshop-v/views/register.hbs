@@ -2,20 +2,21 @@
     <h1>Register</h1>
     {{#if error}}
     {{#each error}}
-    <p class="error">{{this}}</p>
+    <p class="error">{{msg}}</p>
     {{/each}}
 
     {{/if}}
     <form action="/auth/register" method="post">
-        <label for="username">Username
-            <input type="text" name="username">
+        
+        <label for="username">Username<input {{#if fields.username}}class="field-error" {{/if}} type="text" name="username" value="{{body.username}}">
         </label>
-        <label for="password">Password
-            <input type="password" name="password"></input>
+        <label for="password">Password<input {{#if fields.password}}class="field-error" {{/if}} type="password"
+                name="password"></input>
         </label>
-          <label for="repass">Repeat Password
-            <input type="password" name="repass"></input>
+        <label for="repass">Repeat Password<input {{#if fields.repass}}class="field-error" {{/if}} type="password"
+                name="repass"></input>
         </label>
+       
         <button>Submit</button>
     </form>
     <p><a href="/auth/login">Login</a></p>
