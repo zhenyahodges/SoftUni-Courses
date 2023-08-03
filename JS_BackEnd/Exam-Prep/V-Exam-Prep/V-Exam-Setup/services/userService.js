@@ -58,7 +58,9 @@ function createSession({ _id, username }) {
     return token;
 }
 
-function verifyToken() {}
+function verifyToken(token) {
+    return jwt.verify(token, JWT_SECRET)
+}
 
 module.exports = {
     register,
