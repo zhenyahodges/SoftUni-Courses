@@ -3,27 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
-    {{!-- nav auth --}}
-    <a href="/auth/login">Login</a>
-    <a href="/auth/register">Register</a>
-    <a href="/auth/logout">Logout</a>
+    <div id="container">
+        {{!-- <div>
+            <div class="notification loadingBox">
+                Loading …
+            </div>
+            <div class="notification infoBox">
+                <span>Info</span>
+            </div>
+            <div class="notification errorBox">
+                <span>Error</span>
+            </div>
+        </div> --}}
+        <nav>
+            <div class="left-container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/hotel/create">Add +</a></li>
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register">Register</a></li>
+                </ul>
+            </div>
+            <div class="right-container">
+                <a href="" class="log-out">{{name}}</a>
+                <a href="" class="log-out">Logout</a>
+            </div>
+        </nav>
 
-    {{!-- errors --}}
-    {{#if errors}}
-    <div>
-        {{#each errors}}
-        <p>{{this}}</p>
-        {{/each}}
+        {{{body}}}
+
+        <footer>@SoftUni - JS Back-end - BookingUni 2020</footer>
     </div>
-    {{/if}}
-    {{!-- end errors --}}
-
-    {{{body}}}
 </body>
 
 </html>
