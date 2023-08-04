@@ -9,17 +9,21 @@
 
 <body>
     <div id="container">
-        {{!-- <div>
-            <div class="notification loadingBox">
+        {{#if errors}}
+        <div>
+            {{!-- <div class="notification loadingBox">
                 Loading …
             </div>
             <div class="notification infoBox">
                 <span>Info</span>
-            </div>
+            </div> --}}
             <div class="notification errorBox">
-                <span>Error</span>
+                {{#each errors}}
+                <span>{{this}}</span>
+                {{/each}}
             </div>
-        </div> --}}
+        </div>
+        {{/if}}
         <nav>
             <div class="left-container">
                 <ul>
@@ -30,8 +34,8 @@
                 </ul>
             </div>
             <div class="right-container">
-                <a href="" class="log-out">{{name}}</a>
-                <a href="" class="log-out">Logout</a>
+                <a href="/profile" class="log-out">{{name}}</a>
+                <a href="/auth/logout" class="log-out">Logout</a>
             </div>
         </nav>
 

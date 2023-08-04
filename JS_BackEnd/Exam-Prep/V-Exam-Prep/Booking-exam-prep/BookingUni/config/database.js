@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // TODO: CHANGE DB ACC TO ASSIGNMENT:
 const CONNECTION_STRING =
-    `mongodb://127.0.0.1:27017/scaffoldDb`;   
+    `mongodb://127.0.0.1:27017/bookingUni`;   
 
 module.exports = async (app) => {
     try {
