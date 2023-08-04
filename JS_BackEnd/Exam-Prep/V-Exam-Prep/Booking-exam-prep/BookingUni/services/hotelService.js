@@ -1,8 +1,12 @@
 const Hotel = require('../models/Hotel');
 
-async function getAll() {}
+async function getAll() {
+    return Hotel.find({}).lean();
+}
 
-async function getbyId(id) {}
+async function getById(id) {
+    return Hotel.findById(id).lean();
+}
 
 async function create(hotel) {
     return await Hotel.create(hotel);
@@ -16,7 +20,7 @@ async function bookRoom(hotelId, userId) {}
 
 module.exports = {
     getAll,
-    getbyId,
+    getById,
     create,
     update,
     deleteById,
