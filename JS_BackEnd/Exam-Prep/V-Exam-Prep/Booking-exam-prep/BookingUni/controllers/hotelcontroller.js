@@ -6,6 +6,10 @@ const hotelController = require('express').Router();
 hotelController.get('/:id/details', async (req, res) => {
     const hotel = await getById(req.params.id);
 
+    if (hotel.owner == req.user._id) {
+        hotel.isOwner=true;
+    }
+
     res.render('details', {
         title: 'Hotel Details',
         hotel,
@@ -20,6 +24,7 @@ hotelController.get('/create', (req, res) => {
 });
 
 hotelController.post('/create', async (req, res) => {
+    console.log(req.body);
     const hotel = {
         name: req.body.name,
         city: req.body.city,
@@ -67,7 +72,7 @@ hotelController.post('/:id/edit', async (req, res) => {
     const id = req.params.id;
     const hotel = await getById(id);
 
-    if (user.owner != req.user._id) {
+    if (hotel.owner != req.user._id) {
         return res.redirect('/auth/login');
     }
 
@@ -79,10 +84,9 @@ hotelController.post('/:id/edit', async (req, res) => {
         // owner: req.user._id,
     };
     console.log(edited);
-
-    // console.log(name,city,imageUrl,rooms,owner);
+    
     try {
-        if (Object.values(edited).some((v) => !v)) {
+        if (Object.values(edited).some((v) => !v)) {            
             throw new Error('All fields are required');
         }
 
