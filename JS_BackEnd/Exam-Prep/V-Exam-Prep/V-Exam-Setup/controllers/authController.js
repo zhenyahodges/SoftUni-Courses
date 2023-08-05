@@ -71,6 +71,7 @@ authController.post(
 
 // LOGIN
 authController.get('/login', (req, res) => {
+      // TODO replace with actual view by assignment
     res.render('login', {
         title: 'Login Page',
     });
