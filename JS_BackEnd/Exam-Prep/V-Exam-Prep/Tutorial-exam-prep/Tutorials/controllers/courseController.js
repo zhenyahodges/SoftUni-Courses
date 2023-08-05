@@ -1,4 +1,4 @@
-const { createCourse } = require('../services/courseService');
+const { createCourse, getById } = require('../services/courseService');
 const { parseError } = require('../utils/parser');
 
 const courseController = require('express').Router();
@@ -6,6 +6,16 @@ const courseController = require('express').Router();
 courseController.get('/create', (req, res) => {
     res.render('create', {
         title: 'Create Course',
+    });
+});
+
+courseController.get('/:id', async (req, res) => {
+    const course = await getById(req.params.id);
+    console.log(course);
+
+    res.render('details', {
+        title: course.title,
+        course,
     });
 });
 
