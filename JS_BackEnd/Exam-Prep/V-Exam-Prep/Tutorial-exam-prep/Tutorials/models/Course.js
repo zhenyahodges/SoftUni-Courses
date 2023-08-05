@@ -30,7 +30,7 @@ const courseSchema = new Schema({
     createdAt: {
         type: String,
         required: true,
-        default: () => new Date().toISOString().slice(0, 10),
+        default: () => new Date().toISOString().slice(0, 16),
     },
     users: {
         type: [Types.ObjectId],
