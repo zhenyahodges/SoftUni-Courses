@@ -19,8 +19,7 @@ async function register(username, password) {
         username,
         hashedPassword,
     });
-
-    // TODO see assignment if registration creates user session
+  
     const token = createSession(user);
     return token;
 }
