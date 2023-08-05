@@ -14,14 +14,17 @@ hotelController.get('/:id/details', async (req, res) => {
 
     if (hotel.owner == req.user._id) {
         hotel.isOwner = true;
-    } else if (hotel.bookings.map(b=>b.toString()).includes(req.user._id.toString())) {
+    } else if (
+        hotel.bookings
+            .map((b) => b.toString())
+            .includes(req.user._id.toString())
+    ) {
         hotel.isBooked = true;
     }
 
     res.render('details', {
         title: 'Hotel Details',
         hotel,
-        
     });
 });
 
@@ -124,14 +127,21 @@ hotelController.get('/:id/delete', async (req, res) => {
 // BOOK
 hotelController.get('/:id/book', async (req, res) => {
     const id = req.params.id;
+    const userId = req.user._id;
     const hotel = await getById(id);
 
     try {
-        if (hotel.owner == req.user._id) {
+        if (hotel.owner == userId) {
             hotel.isOwner = true;
             throw new Error('Cannot book your own hotel');
         }
-        await bookRoom(id, req.user._id);
+
+        if (hotel.bookings.map(b=>b.toString()).includes(userId.toString())) {
+            hotel.isBooked = true;
+            throw new Error('Cannot book same room twice');
+        }
+
+        await bookRoom(id, userId);
         res.redirect(`/hotel/${id}/details`);
     } catch (error) {
         res.render('details', {
