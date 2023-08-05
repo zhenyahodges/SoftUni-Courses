@@ -13,12 +13,29 @@ async function createCourse(course) {
 }
 
 async function getById(id) {
-   return Course.findById(id).lean();
+    return Course.findById(id).lean();
+}
+
+async function deleteById(id) {
+    return Course.findByIdAndDelete(id);
+}
+
+async function updateById(id, data) {
+    const existing = await Course.findById(id);
+
+    existing.title = data.title;
+    existing.description = data.description;
+    existing.imageUrl = data.imageUrl;
+    existing.duration = data.duration;
+
+    return existing.save();
 }
 
 module.exports = {
     getAllByDate,
     createCourse,
     getRecent,
-    getById
+    getById,
+    deleteById,
+    updateById
 };
