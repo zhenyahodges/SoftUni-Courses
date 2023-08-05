@@ -1,4 +1,10 @@
-const { create, getById, update } = require('../services/hotelService');
+const {
+    create,
+    getById,
+    update,
+    deleteById,
+    bookRoom,
+} = require('../services/hotelService');
 const { parseError } = require('../utils/parser');
 const hotelController = require('express').Router();
 
@@ -7,12 +13,15 @@ hotelController.get('/:id/details', async (req, res) => {
     const hotel = await getById(req.params.id);
 
     if (hotel.owner == req.user._id) {
-        hotel.isOwner=true;
+        hotel.isOwner = true;
+    } else if (hotel.bookings.map(b=>b.toString()).includes(req.user._id.toString())) {
+        hotel.isBooked = true;
     }
 
     res.render('details', {
         title: 'Hotel Details',
         hotel,
+        
     });
 });
 
@@ -81,12 +90,11 @@ hotelController.post('/:id/edit', async (req, res) => {
         city: req.body.city,
         imageUrl: req.body.imageUrl,
         rooms: Number(req.body.rooms),
-        // owner: req.user._id,
     };
     console.log(edited);
-    
+
     try {
-        if (Object.values(edited).some((v) => !v)) {            
+        if (Object.values(edited).some((v) => !v)) {
             throw new Error('All fields are required');
         }
 
@@ -97,6 +105,39 @@ hotelController.post('/:id/edit', async (req, res) => {
             title: 'Edit Hotel ',
             errors: parseError(error),
             hotel: Object.assign(hotel, { _id: id }),
+        });
+    }
+});
+
+// DELETE
+hotelController.get('/:id/delete', async (req, res) => {
+    const hotel = await getById(req.params.id);
+
+    if (hotel.owner != req.user._id) {
+        return res.redirect('/auth/login');
+    }
+
+    await deleteById(req.params.id);
+    res.redirect('/');
+});
+
+// BOOK
+hotelController.get('/:id/book', async (req, res) => {
+    const id = req.params.id;
+    const hotel = await getById(id);
+
+    try {
+        if (hotel.owner == req.user._id) {
+            hotel.isOwner = true;
+            throw new Error('Cannot book your own hotel');
+        }
+        await bookRoom(id, req.user._id);
+        res.redirect(`/hotel/${id}/details`);
+    } catch (error) {
+        res.render('details', {
+            title: 'Hotel Details',
+            hotel,
+            errors: parseError(error),
         });
     }
 });

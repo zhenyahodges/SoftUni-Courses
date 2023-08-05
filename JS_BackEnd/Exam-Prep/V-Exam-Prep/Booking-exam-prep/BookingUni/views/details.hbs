@@ -16,8 +16,11 @@
             <a href="/hotel/{{_id}}/edit" class="edit">Edit</a>
             <a href="/hotel/{{_id}}/delete" class="remove">Delete</a>
             {{else}}
+            {{#if isBooked}}
             <p><span class="green">You already have booked a room</span></p>
+            {{else}}
             <a href="/hotel/{{_id}}/book" class="book">Book</a>
+            {{/if}}
             {{/if}}
         </div>
     </div>
