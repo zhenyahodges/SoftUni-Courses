@@ -25,21 +25,22 @@ const courseSchema = new Schema({
     },
     duration: {
         type: String,
-        required: true,
+        required: [true, 'Duration is required'],
     },
     createdAt: {
         type: String,
         required: true,
+        default: () => new Date().toISOString().slice(0, 10),
     },
     users: {
         type: [Types.ObjectId],
         ref: 'User',
         default: [],
     },
-    owner:{
+    owner: {
         type: Types.ObjectId,
-        ref: 'User', 
-    }
+        ref: 'User',
+    },
 });
 
 courseSchema.index(

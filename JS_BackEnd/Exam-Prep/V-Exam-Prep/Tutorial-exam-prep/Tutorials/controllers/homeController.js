@@ -1,6 +1,8 @@
 const homeController = require('express').Router();
 
 homeController.get('/', (req, res) => {
+    let courses=[];
+
     if (req.user) {
         // user home page
         res.render('user-home', {
