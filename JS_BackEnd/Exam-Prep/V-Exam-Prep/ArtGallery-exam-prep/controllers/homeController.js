@@ -4,28 +4,19 @@ const homeController = require('express').Router();
 
 // GET STATISTICS
 homeController.get('/', async(req, res) => {
-    // toto replace with real controller by assignment
     const publications= await getAll();
-    console.log(publications);
-    // publications.shared
-
-    // const isEmpty= (shared.length==0)
-    // console.log(isEmpty);
+    // console.log(publications);
 
     res.render('home', {
         title: 'Home Page',
         user: req.user,
-        publications,
-        // isEmpty
+        publications,  
     });
 });
 
 // GET PUBLICATIONS GALLERY
 homeController.get('/gallery',async (req, res) => {
-    // toto replace with real controller by assignment
-    const publications=await getAll();
-
-    console.log(publications);
+    const publications=await getAll();  
 
     res.render('gallery', {
         title: 'Gallery Page',

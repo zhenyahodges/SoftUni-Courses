@@ -1,3 +1,4 @@
+const { hasUser } = require('../middlewares/guards');
 const {
     getById,
     share,
@@ -38,13 +39,13 @@ publicationController.get('/:id/details', async (req, res) => {
 });
 
 // CREATE publication
-publicationController.get('/create', (req, res) => {
+publicationController.get('/create', hasUser(), (req, res) => {
     res.render('create', {
         title: 'Create Publication ',
     });
 });
 
-publicationController.post('/create', async (req, res) => {
+publicationController.post('/create', hasUser(), async (req, res) => {
     // console.log(req.body);
     const publication = {
         title: req.body.title,
@@ -74,7 +75,7 @@ publicationController.post('/create', async (req, res) => {
 });
 
 // EDIT publication
-publicationController.get('/:id/edit', async (req, res) => {
+publicationController.get('/:id/edit', hasUser(), async (req, res) => {
     const publication = await getById(req.params.id);
 
     // console.log(publication.author);
@@ -92,7 +93,7 @@ publicationController.get('/:id/edit', async (req, res) => {
     });
 });
 
-publicationController.post('/:id/edit', async (req, res) => {
+publicationController.post('/:id/edit',hasUser(),  async (req, res) => {
     const id = req.params.id;
     const publication = await getById(id);
 
@@ -125,7 +126,7 @@ publicationController.post('/:id/edit', async (req, res) => {
 });
 
 // DELETE
-publicationController.get('/:id/delete', async (req, res) => {
+publicationController.get('/:id/delete',hasUser(), async (req, res) => {
     const publication = await getById(req.params.id);
 
     if (publication.author != req.user._id) {
@@ -137,7 +138,7 @@ publicationController.get('/:id/delete', async (req, res) => {
 });
 
 // SHARE
-publicationController.get('/:id/share', async (req, res) => {
+publicationController.get('/:id/share',hasUser(), async (req, res) => {
     const id = req.params.id;
     const userId = req.user._id;
     const publication = await getById(id);

@@ -1,26 +1,28 @@
 const { hasUser } = require('../middlewares/guards');
 const User = require('../models/User');
-// const { getByUserBooking } = require('../services/hotelService');
+const {
+    getByUserPublication,
+    getByUserShares,
+} = require('../services/publicationService');
 const profileController = require('express').Router();
 
 profileController.get('/', hasUser(), async (req, res) => {
-    // TODO
-    // const bookings = await getByUserBooking(req.user._id);
-    // console.log(bookings);
-    
-    const userData= await User.findById(req.user._id)
-    const address=userData.address
-    
-    // console.log(address);
-    // console.log(req.user);
+    const publications = await getByUserPublication(req.user._id);
+    const shares = await getByUserShares(req.user._id);
+    console.log('pubs--' + publications);
+    console.log('shares--' + shares);
+
+    const userData = await User.findById(req.user._id);
+    const address = userData.address;
+
+    const publishedByUser = publications.map((p) => p.title).join(', ');
+    const sharedByUser = shares.map((p) => p.title).join(', ');
 
     res.render('profile', {
         title: 'Profile Page',
         user: Object.assign(
-            // { bookings },
-            req.user,
-            {address}
-          
+            { address, publications, publishedByUser, sharedByUser },
+            req.user
         ),
     });
 });

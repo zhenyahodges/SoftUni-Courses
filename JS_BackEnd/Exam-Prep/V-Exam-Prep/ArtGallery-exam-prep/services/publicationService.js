@@ -1,4 +1,4 @@
-const Publication=require('../models/Publication')
+const Publication = require('../models/Publication');
 
 async function getAll() {
     return Publication.find({}).lean();
@@ -9,13 +9,20 @@ async function getById(id) {
 }
 
 async function getByIdUsername(id) {
-    const user= Publication.findById(id).lean();
-    const username = user.username
-    return username
+    const user = Publication.findById(id).lean();
+    const username = user.username;
+    return username;
 }
 
 async function getByUserPublication(userId) {
-    return Publication.find({ publications: [userId] }).lean();
+
+  return  Publication.find({author :userId})
+//   .lean();
+    
+}
+
+async function getByUserShares(userId) {
+    return Publication.find({ shared: [userId] }).lean();
 }
 
 async function createPublication(publication) {
@@ -56,5 +63,6 @@ module.exports = {
     deleteById,
     getByUserPublication,
     share,
-    getByIdUsername
+    getByIdUsername,
+    getByUserShares,
 };
