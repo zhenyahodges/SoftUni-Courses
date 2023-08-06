@@ -1,0 +1,72 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --clr-bgr: #819daf;
+    --clr-border: #323cc4;
+    --clr-highlight: #327dc4;
+}
+
+body {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.highlight {
+    color: var(--clr-highlight)
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    padding: 20px 5px 5px 5px;
+}
+
+.header-text {
+    padding-bottom: 20px;
+}
+
+main { 
+    margin-bottom: 10px 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.btn {
+    width: 150px;
+    border-radius: 15px;
+    background-color: var(--clr-highlight);
+    color: white;
+    padding: 7px 20px;
+    border: 1px solid var(--clr-border);
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.56);
+    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.56);
+
+    outline-color: white;
+    outline-width: 1px;
+}
+
+.card {
+    flex-basis: 30%;
+    background-color: var(--clr-bgr);
+    margin: 10px;
+    border-radius: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card-text {
+    padding: 20px;
+}
+h2{
+    padding: 10px 0 10px 0;
+}
+.text{
+    padding-bottom: 20px;
+}
