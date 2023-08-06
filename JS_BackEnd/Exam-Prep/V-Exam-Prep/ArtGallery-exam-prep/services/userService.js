@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 const JWT_SECRET = 'sfusi8fs9fjs';
 
-async function register(username, password) {
+async function register(username,address, password) {
     const existing = await User.findOne({ username }).collation({
         locale: 'en',
         strength: 2,
@@ -17,10 +17,10 @@ async function register(username, password) {
 
     const user = await User.create({
         username,
+        address,
         hashedPassword,
     });
 
-    // TODO see assignment if registration creates user session
     const token = createSession(user);
     return token;
 }
@@ -46,8 +46,6 @@ async function login(username,password) {
     return token;
 }
 
-async function logout() {}
-
 function createSession({ _id, username }) {
     const payload = {
         _id,
@@ -64,7 +62,6 @@ function verifyToken(token) {
 
 module.exports = {
     register,
-    login,
-    logout,
+    login,  
     verifyToken
 };
