@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const authService = require('../services/authService');
-
 const { COOKIE_SESSION_NAME } = require('../constants');
 const { isAuth, isGuest } = require('../middlewares/authMiddleware');
 const { getErrorMessage } = require('../utils/errorHelpers');
