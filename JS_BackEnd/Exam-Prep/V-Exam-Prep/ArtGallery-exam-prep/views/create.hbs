@@ -3,7 +3,7 @@
         <!-- Do not forget to change the path to the image -->
         <img src="/static/style/img/blog-img12.jpg" alt="image" />
 
-        <form action="#" method="post" class="container-text">
+        <form action="/publication/create" method="post" class="container-text">
             <h2>Create Publication</h2>
             <p>Add your own masterpiece!</p>
 
@@ -12,8 +12,8 @@
                 type="text"
                 id="title"
                 placeholder="Spring in the garden"
-                name=""
-                value=""
+                name="title"
+                value="{{body.title}}"
             />
 
             <label for="painting-tech">Painting technique:</label>
@@ -21,8 +21,8 @@
                 type="text"
                 id="painting-tech"
                 placeholder="Oil paints"
-                name=""
-                value=""
+                name="technique"
+                value="{{body.technique}}"
             />
 
             <label for="picture">Art picture:</label>
@@ -30,8 +30,8 @@
                 type="text"
                 id="picture"
                 placeholder="http://..."
-                name=""
-                value=""
+                name="imageUrl"
+                value="{{body.imageUrl}}"
             />
 
             <label for="certificate">Certificate of authenticity:</label>
@@ -39,8 +39,8 @@
                 type="text"
                 id="certificate"
                 placeholder="Yes"
-                name=""
-                value=""
+                name="certificate"
+                value="{{body.certificate}}"
             />
 
             <button class="create-btn">Create</button>

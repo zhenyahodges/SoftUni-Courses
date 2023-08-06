@@ -1,0 +1,14 @@
+<article class="content-publication">
+
+    <h1>Title: {{title}}</h1>
+
+    {{#if shared}}
+    <!--Otherwise, show the number -->
+    <p>Number of people shared the publication: {{shared.length}}</p>
+    <a href="/{{_id}}/details" class="image-details">View publication</a>
+    {{else}}
+    <!--If no one has shared the post yet, the number should be zero -->
+    <p>Number of people shared the publication: 0</p>
+
+    {{/if}}
+</article>

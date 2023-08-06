@@ -2,24 +2,26 @@
     <div class="edit-container-info">
         <!-- Do not forget to change the path to the image -->
         <img src="/static/style/img/blog-img12.jpg" alt="image" />
+        {{#with publication}}
 
-        <form action="#" method="post" class="container-text">
+        <form action="/publication/{{_id}}/edit" method="post" class="container-text">
             <h2>Edit</h2>
             <p>Edit your masterpiece!</p>
 
             <label for="title">Title:</label>
-            <input type="text" id="title" name="" value="" />
+            <input type="text" id="title" name="title" value="{{title}}" />
 
             <label for="painting-tech">Painting technique:</label>
-            <input type="text" id="painting-tech" name="" value="" />
+            <input type="text" id="painting-tech" name="technique" value="{{technique}}" />
 
             <label for="picture">Art picture:</label>
-            <input type="text" id="picture" name="" value="" />
+            <input type="text" id="picture" name="imageUrl" value="{{imageUrl}}" />
 
             <label for="certificate">Certificate of authenticity:</label>
-            <input type="text" id="certificate" name="" value="" />
+            <input type="text" id="certificate" name="certificate" value="{{certificate}}" />
 
             <button class="edit-btn">Edit</button>
         </form>
+        {{/with}}
     </div>
 </section>

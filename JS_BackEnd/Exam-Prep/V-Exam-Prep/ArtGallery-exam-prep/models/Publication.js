@@ -1,6 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 
-const URL_PATTERN=/^https?:\/\/.+$/i;
+const URL_PATTERN = /^https?:\/\/.+$/i;
 
 const publicationSchema = new Schema({
     title: {
@@ -13,17 +13,21 @@ const publicationSchema = new Schema({
         required: true,
         maxlength: [15, 'Title must be at most 15 characters long'],
     },
-    artPicture:{
-        type:String,
+    imageUrl: {
+        type: String,
         required: true,
         validate: {
-            validator: (value)=>{URL_PATTERN.test(value)},
-            message: 'ImageUrl not valid'
-        }
+            validator: (value) => {
+                URL_PATTERN.test(value);
+            },
+            message: 'ImageUrl not valid',
+        },
     },
     certificate: {
-        enum: ['YES', 'NO'],
+        type: String,
+        enum: ['Yes', 'No'],
         required: true,
+        default: 'No'
     },
     author: {
         type: Types.ObjectId,
