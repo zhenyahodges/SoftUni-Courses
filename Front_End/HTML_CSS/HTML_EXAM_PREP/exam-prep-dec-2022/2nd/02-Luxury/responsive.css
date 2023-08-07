@@ -1,0 +1,155 @@
+ @media screen and (max-width: 600px) {
+
+     div.div-header {
+         display: none;
+     }
+
+     header>h1 {
+         font-size: 1em;
+     }
+
+     header>h3 {
+         font-size: 0.4em;
+     }
+
+     .gallery {
+         display: flex;
+         justify-content: space-around;
+         padding-bottom: 85px;
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .options {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+
+     header .options article a {
+         display: none;
+         text-align: center;
+
+     }
+
+     header .options article {
+         width: 100%;
+         text-align: center;
+         padding-bottom: 25px;
+
+     }
+
+     header .options article h4 {
+         font-size: 14px;
+     }
+
+     .gallery a {
+         display: none;
+     }
+
+     section.gallery article>img {
+         width: 302px;
+         height: 176px;
+     }
+
+     .blog-title span {
+         display: none;
+     }
+
+     .blog .blog-title h4 {
+         font-size: 24px;
+         margin-left: -46px
+     }
+
+     .blog-title a,
+     .blog article img,
+     .magazine .magazine-title a {
+         display: none;
+     }
+
+     div#about-blog {
+         width: 90%;
+
+     }
+
+     div#about-blog h3 {
+         font-size: 0.8em;
+         padding: 24px 0 0px 0;
+
+     }
+
+     div#about-blog p {
+         font-size: 8px;
+         margin: 0px 12px 0px 12px;
+     }
+
+     .magazine .magazine-title h4 {
+         font-size: 18px;
+         margin-left: -50px;
+     }
+
+     section.magazine article {
+         flex-direction: column;
+         align-items: center;
+         align-content: center;
+         width: 100%;
+     }
+
+     .magazine article .magazine-info h2 {
+         font-size: 24px;
+     }
+
+     .magazine article .magazine-info img {
+         width: 544px;
+         height: 200px;
+     }
+
+     .magazine article img#magazine-img {
+         padding-left: 35px;
+         display: block;
+         width: 64%;
+     }
+
+     .magazine article .magazine-info h3,
+     .magazine article .magazine-info p {
+         text-align: center;
+     }
+
+     .magazine article .magazine-info h3 {
+         font-size: 1em;
+         margin-bottom: 18px;
+     }
+
+     .magazine article .magazine-info p {
+         font-size: 20px;
+     }
+
+     .magazine article .magazine-info button {
+         margin: 20px auto;
+         display: block;
+     }
+
+     article div.magazine-info {
+         margin: 0 20px;
+         display: block;
+     }
+
+     footer p {
+         font-size: 12px;
+     }
+
+     footer {
+         display: flex;
+         flex-flow: column;
+     }
+
+     footer .icons a i.fa {
+         display: flex;
+         flex-flow: column;
+         font-size: 14px;
+         padding-top: 5px;
+     }
+
+
+
+ }
