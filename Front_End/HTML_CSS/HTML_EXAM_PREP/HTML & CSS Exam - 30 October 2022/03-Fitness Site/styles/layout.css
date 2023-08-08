@@ -1,0 +1,227 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --clr-bgr: #efefef;
+    --clr-bgr-red: #d01919;
+    --clr-text: #;
+    --clr-highlight: #;
+    --clr-text-grey: #a6a8bf;
+}
+
+body {
+    font-family: "PT Sans", "sans-serif";
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    height: 7vh;
+    background-color: var(--clr-bgr-red);
+    color: white;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 1.2em;
+}
+
+.social i {
+    padding: 0 2px;
+}
+
+.hero {
+    background: url('../image/fitness-main.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 57vh;
+}
+
+/* HERO TEXT */
+.hero-titles {
+    text-align: center;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 0 208px;
+}
+
+.hero-nav {
+    position: relative;
+    top: 31px;
+    left: -14px;
+    z-index: 5;
+    color: white;
+}
+
+.hero-nav-list {
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+}
+
+.hero-nav-list li {
+    padding-right: 80px;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 3.8em;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.hero-text {
+    font-size: 1.2em;
+    padding: 30px 0 15px 0;
+}
+
+button {
+    margin-top: 30px;
+    background-color: var(--clr-bgr-red);
+    color: white;
+    padding: 7px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+/* WELCOME */
+.welcome {
+    height: 50vh;
+
+}
+
+.welcome-title {
+    padding: 30px 0 20px 0;
+    font-size: 2.5em;
+}
+
+.welcome-icons {
+    width: 80px;
+}
+
+.welcome .cards {
+    text-align: center;
+}
+
+.welcome .card {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.welcome-card-content {
+    padding: 30px;
+}
+
+.welcome h3 {
+    padding: 30px 0 20px 0;
+    color: var(--clr-bgr-red);
+    font-size: 1.3em;
+}
+
+.welcome-text {
+    font-size: 1.2em;
+}
+
+/* COACHES */
+.titles {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.coaches-title {
+    padding: 30px 0 40px 0;
+    font-size: 2.5em;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0 80px 0;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 5px;
+    flex-basis: 20%;
+    height: 80%;
+    align-items: center;
+}
+
+.card-img-wrap {
+    height: 50%;
+}
+
+.card .card-image {
+    border-radius: 5px;
+    overflow: hidden;
+    height: auto;
+    width: 100%
+}
+
+.card-content {
+    height: 50%;
+    padding: 15px;
+}
+
+.coaches {
+    background-color: var(--clr-bgr);
+    text-align: center;
+
+}
+
+.instructor {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.sport {
+    color: var(--clr-bgr-red);
+    font-size: 1.1em;
+    padding: 5px 0 20px;
+}
+
+.card-text {
+    color: var(--clr-text-grey);
+    font-size: 1.2em;
+}
+
+.divider {
+    text-align: center;
+    color: var(--clr-bgr-red);
+    width: 50px;
+    border: 2px solid var(--clr-bgr-red);
+}
+
+
+/* FOOTER */
+/* .foot-text{
+    
+} */
+footer {
+    min-height: 4vh;
+    text-align: center;
+    background-color: var(--clr-bgr-red);
+}
+
+.foot-text {
+    padding-top: 5px;
+}
