@@ -3,16 +3,15 @@ function hasUser() {
         if (req.user) {
             next();
         } else {
-            res.redirect('/auth/login');
+            res.redirect('/404');
         }
     };
 }
 
 function isGuest() {
     return (req, res, next) => {
-        if (req.user) {
-            // TODO check assign for correct redirect
-            res.redirect('/');
+        if (req.user) {           
+            res.redirect('/404');
         } else {
             next();
         }

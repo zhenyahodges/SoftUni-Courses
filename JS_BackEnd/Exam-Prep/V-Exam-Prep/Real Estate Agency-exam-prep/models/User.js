@@ -6,7 +6,12 @@ const userSchema = new Schema({
     fullname: {
         type: String,
         required: true,
-        match: [URL_PATTERN, 'Name should be in the format Firstname Lastname'],
+        validate: {
+            validator: (value) => {
+                URL_PATTERN.test(value);
+            },
+            message: 'Name should be in the format Firstname Lastname',
+        },
     },
     username: {
         type: String,
@@ -15,10 +20,10 @@ const userSchema = new Schema({
         minlength: [5, 'Username must be at least 5 characters long'],
     },
     hashedPassword: {
-         type: String,
-          required: true,
-          minlength: [4,'Password must be at least character long ']
-         },
+        type: String,
+        required: true,
+        minlength: [4, 'Password must be at least character long '],
+    },
 });
 
 userSchema.index(
