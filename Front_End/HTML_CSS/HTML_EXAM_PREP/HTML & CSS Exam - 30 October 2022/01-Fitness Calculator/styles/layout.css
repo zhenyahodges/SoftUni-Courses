@@ -1,0 +1,151 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --clr-bgr: #f6f7f8;
+    --clr-text: #;
+    --clr-highlight: #86d862;
+    --clr-grey: #e0e0df;
+    --clr-btn: #05a2d3;
+    --clr-border: #808080;
+
+}
+
+body {
+    font-family: "Open Sans", "sans-serif";
+}
+
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+section {
+    width: 80%;
+    /* min-height: 79vh; */
+    max-height: 79vh;
+    margin: 50px auto;
+    box-shadow: 1px 15px 12px 5px rgba(135, 135, 135, 0.71);
+    background-color: var(--clr-bgr);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row;
+    overflow: hidden;
+    align-items: center;
+    border: 1px solid var(--clr-border);
+
+}
+
+.image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+img {
+    overflow: hidden;
+    filter: brightness(70%);
+}
+
+.content {
+    width: 50%;
+    height: auto;
+    /* padding: 90px; */
+}
+
+.details {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    width:80%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 1.7em;
+    font-weight: 600;
+    padding-bottom: 40px;
+
+}
+
+.units {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    gap: 60px;
+    /* align-items: space-between; */
+    /* align-content: space-between; */
+}
+
+.btn-sm {
+    padding: 5px 20px;
+    font-size: 18px;
+
+    border-radius: 8px;
+    border: 1px solid black;
+
+}
+
+.btn-sm.green {
+    background-color: var(--clr-highlight);
+}
+
+.btn-sm.grey {
+    background-color: var(--clr-grey);
+}
+
+h6 {
+    font-size: 1em;
+   margin:20px;
+}
+.data.gender,.info .data.height{
+    font-size: 10px;
+}
+
+.data.gender {
+    display: flex;
+    flex-flow: row;
+gap: 30px;
+justify-content: center;
+}
+.data.height{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 90%;
+}
+.feet,.inches{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 5px 2px 5px;
+    width: 45%
+}
+.feet{
+    margin-right: 10px;
+}
+
+.pounds{
+    padding:5px;
+    width: 80%;
+}
+
+.select.gender{
+    width: 220px;
+}
+.age {
+    width: 170px;
+}
+.calc{
+    margin-top: 100px;
+    background-color: var(--clr-btn);
+    color:white;
+    font-size: 1em;
+    padding: 10px 30px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0px 19px 18px -3px #A0A0A0;
+}
