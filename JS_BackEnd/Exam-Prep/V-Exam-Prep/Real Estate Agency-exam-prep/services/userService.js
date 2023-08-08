@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 const JWT_SECRET = 'sfusi8fs9fjs';
 
-async function register(username, password) {
+async function register(fullname,username, password) {
     const existing = await User.findOne({ username }).collation({
         locale: 'en',
         strength: 2,
@@ -16,11 +16,11 @@ async function register(username, password) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
+        fullname,
         username,
         hashedPassword,
     });
 
-    // TODO see assignment if registration creates user session
     const token = createSession(user);
     return token;
 }

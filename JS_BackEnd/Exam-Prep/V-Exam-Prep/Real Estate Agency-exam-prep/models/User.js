@@ -1,14 +1,24 @@
 const { Schema, model } = require('mongoose');
 
-// TODO Add user properties and validation accord to assignment
+const URL_PATTERN = /^[A-Z][a-z]+ [A-Z][a-z]+$/gm;
+
 const userSchema = new Schema({
+    fullname: {
+        type: String,
+        required: true,
+        match: [URL_PATTERN, 'Name should be in the format Firstname Lastname'],
+    },
     username: {
         type: String,
         required: true,
         unique: true,
-        minlength: [3, 'Username must be at least 3 characters long'],
+        minlength: [5, 'Username must be at least 5 characters long'],
     },
-    hashedPassword: { type: String, required: true },
+    hashedPassword: {
+         type: String,
+          required: true,
+          minlength: [4,'Password must be at least character long ']
+         },
 });
 
 userSchema.index(

@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator');
+const { validationResult, body } = require('express-validator');
 const { register, login } = require('../services/userService');
 const { parseError } = require('../utils/parser');
 
@@ -6,7 +6,6 @@ const authController = require('express').Router();
 
 // REGISTER
 authController.get('/register', (req, res) => {
-    // TODO replace with actual view by assignment
     res.render('register', {
         title: 'Register Page',
     });
@@ -15,17 +14,13 @@ authController.get('/register', (req, res) => {
 authController.post(
     '/register',
     // TODO VALIDATIONS
-    // body('username')
-    //     .isLength({ min: 5 })
-    //     .withMessage('Username must be at least 5 characters long')
-    //     .isAlphanumeric()
-    //     .withMessage('May contain only letters and numbers'),
+    body('username')
+        .isLength({ min: 5 })
+        .withMessage('Username must be at least 5 characters long'),
+    body('password')
+        .isLength({ min: 4 })
+        .withMessage('Password must be at least 4characters long'),
 
-    // body('password')
-    //     .isLength({ min: 5 })
-    //     .withMessage('Password must be at least 5 characters long')
-    //     .isAlphanumeric()
-    //     .withMessage('May contain only letters and numbers'),
     async (req, res) => {
         try {
             // todo add validations
@@ -33,8 +28,12 @@ authController.post(
             // if (errors.length > 0) {
             //     throw errors;
             // }
-// 
-            if (req.body.username == '' || req.body.password == '') {
+            //
+            if (
+                req.body.fullname == '' ||
+                req.body.username == '' ||
+                req.body.password == ''
+            ) {
                 throw new Error('All fields are required');
             }
 
@@ -48,16 +47,16 @@ authController.post(
                 throw new Error('Passwords must match');
             }
 
-            // TODO check assignment to see if register creates session
-            const token = await register(req.body.username, req.body.password);
-
+            const token = await register(
+                req.body.fullname,
+                req.body.username,
+                req.body.password
+            );
             res.cookie('token', token);
-            // TODO replace with redirect by assignment
             res.redirect('/');
         } catch (error) {
             const errors = parseError(error);
 
-            // TODO add error display to actual template from assignment
             res.render('register', {
                 title: 'Register Page',
                 errors,
@@ -71,7 +70,7 @@ authController.post(
 
 // LOGIN
 authController.get('/login', (req, res) => {
-      // TODO replace with actual view by assignment
+    // TODO replace with actual view by assignment
     res.render('login', {
         title: 'Login Page',
     });
