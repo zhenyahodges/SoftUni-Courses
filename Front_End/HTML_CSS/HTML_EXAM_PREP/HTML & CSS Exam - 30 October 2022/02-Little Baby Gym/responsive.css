@@ -1,3 +1,124 @@
 @media screen and (max-width:600px) {
-    
+
+    .site-header .site-navigation {
+        display: none;
+    }
+
+    main .button-primary {
+        width: 120px;
+    }
+
+    .entry-header {
+        width: 100%;
+
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+            url("./images/header-image.jpg");
+
+        padding: 10rem 0 10rem 0;
+
+
+    }
+
+
+    .site-main {
+        width: 100%;
+        object-fit: cover;
+        margin: 0;
+
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-logos-container {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 100%;
+        object-fit: contain;
+        min-width: unset;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+    }
+
+    .site-information-image {
+        background: none;
+        background-size: cover;
+        flex: 0 0 50%;
+
+    }
+
+
+    .site-information {
+        width: 200%;
+        display: flex;
+        background-size: 75px 100px;
+        justify-content: center;
+        align-items: center;
+        /* height: 90%; */
+    }
+
+    .site-information h2.entry-title {
+        text-align: center;
+
+    }
+
+    .site-information-text {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+
+    }
+
+    .entry-description {
+        width: 62%;
+    }
+
+    .site-form {
+        text-align: center;
+        background: #ff8f57;
+        opacity: 0.6;
+        padding: 4rem 2rem;
+        margin-top: unset;
+    }
+
+    .site-form .entry-title {
+        font-size: 0.5em;
+    }
+
+    .site-form-container p {
+        flex-flow: column;
+
+    }
+
+
+    .site-form-container p input {
+        width: 90%
+    }
+
+    .site-form-container  form .button-primary{
+     margin: 0 auto;
+
+    }
+    .site-blog-container {
+        margin-top: unset;
+    }
+    .site-posts{
+        margin:  0 auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        /* height:  */
+    }
+    footer{
+        flex-flow: column;
+        align-items: center;
+    }
 }
