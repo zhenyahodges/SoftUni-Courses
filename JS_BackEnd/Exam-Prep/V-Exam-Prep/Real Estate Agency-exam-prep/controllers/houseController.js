@@ -4,6 +4,7 @@ const {
     getById,
     rent,
     update,
+    deleteById,
 } = require('../services/houseService');
 const { parseError } = require('../utils/parser');
 
@@ -20,7 +21,6 @@ houseController.get('/:id/details', async (req, res) => {
     if (user && house.owner == req.user._id) {
         house.isOwner = true;
         owner = req.user.username;
-        
     } else if (user && house.owner !== req.user._id) {
         const result = house.rented
             .map((b) => b.toString())
@@ -35,7 +35,7 @@ houseController.get('/:id/details', async (req, res) => {
 
     res.render('details', {
         title: 'House Details',
-        house: Object.assign(house, { owner, user }),
+        house: Object.assign(house, { owner, user },isRented),
         user,
     });
 });

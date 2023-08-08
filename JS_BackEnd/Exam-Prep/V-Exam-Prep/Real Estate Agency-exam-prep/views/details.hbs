@@ -1,7 +1,7 @@
 <main>
     <section id="details-page">
         <div class="wrapper">
-        {{#with house}}
+            {{#with house}}
             <div class="product-img">
                 <img src="{{imageUrl}}" />
             </div>
@@ -15,48 +15,52 @@
                         <p>
                             Description: {{description}}
                         </p>
-                        {{#if user}}
-                        {{#if rented}}
-                        {{/if}}
-                        {{/if}}
 
+                        {{#if isRented}}
                         <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  -->
                         <p>
                             People rented this housing: Alex Petkov, Ivan Dobrev
                         </p>
-
+                        {{else}}
                         <!-- If not display: -->
                         <p>
                             People rented this housing: There are no tenants
                             yet.
                         </p>
+                        {{/if}}
+
                     </div>
                 </div>
 
                 {{#if user}}
                 <!-- if there is no registered user, do not display buttons-->
                 <div class="product-btn">
-
                     {{#if owner}}
-                    <!-- Only for registered user and creator of the housing offer-->
-                    <a href="/house/{{_id}}/edit" class="edit">Edit</a>
-                    <a href="/house/{{_id}}/delete" class="remove">Delete</a>
-
+                        <!-- Only for registered user and creator of the housing offer-->
+                        <a href="/house/{{_id}}/edit" class="edit">Edit</a>
+                        <a href="/house/{{_id}}/delete" class="remove">Delete</a>
                     {{else}}
 
-                    <!-- logged in user with available pieces-->
-                    <a href="/house/{{_id}}/rent" class="rentHome">Rent a home, available {{free}} housing</a>
-                    <p class="alRentHome">You have already rent this home</p>
-                    <!-- logged in user with no available pieces-->
-                    <p class="no-housing">No Housing Available!</p>
-                    
-                    {{/if}}
-                    {{/if}}
+                        {{!-- RENTED/ NOT --}}
+                        {{#if isFree}}
+                        <!-- logged in user with available pieces-->
+                        {{#if hasRented}}
+                        <p class="alRentHome">You have already rent this home</p>
+                        {{else}}
+                        <a href="/house/{{_id}}/rent" class="rentHome">Rent a home, available {{free}} housing</a>
+                        {{/if}}
+                        {{else}}
+                            <!-- logged in user with no available pieces-->
+                        <p class="no-housing">No Housing Available!</p>
+                        {{/if}}
+                        {{!-- end --}}                 
 
+                    {{/if}}
+                {{/if}}
 
                 </div>
             </div>
-        {{/with}}
+            {{/with}}
         </div>
     </section>
 </main>
