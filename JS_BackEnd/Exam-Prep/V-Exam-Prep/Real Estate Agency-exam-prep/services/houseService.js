@@ -60,10 +60,16 @@ async function rent(houseId, userId) {
         {
             $push: { rented: userId },
             $inc: { free: -1 },
-        }
+        },
+        {runValidators:true}
     );
     // house.rented.push(userId);
     // await house.save();
+}
+
+async function search(text){
+
+return await House.find({type:{$regex: text, $options: 'i'}}).lean();
 }
 
 module.exports = {
@@ -77,4 +83,5 @@ module.exports = {
     getByIdUsername,
     // getByUserRented,
     getLastThree,
+    search
 };
