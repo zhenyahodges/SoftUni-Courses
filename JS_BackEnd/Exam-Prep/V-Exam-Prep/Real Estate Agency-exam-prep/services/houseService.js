@@ -8,6 +8,10 @@ async function getById(id) {
     return House.findById(id).lean();
 }
 
+async function getLastThree(){
+    return House.find().sort({createdAt: -1}).limit(3).lean();
+}
+
 async function getByIdUsername(id) {
     const user = House.findById(id).lean();
     const username = user.username;
@@ -68,4 +72,5 @@ module.exports = {
     rent,
     getByIdUsername,
     getByUserRented,
+    getLastThree
 };

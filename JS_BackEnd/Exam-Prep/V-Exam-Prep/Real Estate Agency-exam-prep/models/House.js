@@ -40,7 +40,8 @@ const houseSchema = new Schema({
         type: Types.ObjectId,
         ref: 'User',
     },
-});
+   
+}, {timestamps: true});
 
 const House = model('House', houseSchema);
 

@@ -6,6 +6,7 @@ const {
     update,
     deleteById,
 } = require('../services/houseService');
+const { usernameById } = require('../services/userService');
 const { parseError } = require('../utils/parser');
 
 const houseController = require('express').Router();
@@ -13,29 +14,52 @@ const houseController = require('express').Router();
 // DETAILS
 houseController.get('/:id/details', async (req, res) => {
     const house = await getById(req.params.id);
-    console.log(house);
+    // console.log(house);
 
     let owner;
     const user = req.user;
+    // console.log(user);
 
     if (user && house.owner == req.user._id) {
         house.isOwner = true;
         owner = req.user.username;
     } else if (user && house.owner !== req.user._id) {
+        house.isOwner = false;
+
+        // TENANTS
+        const tenantsIds = house.rented.map((r) => r.toString());
+        // console.log(tenantsIds);
+        let isRented;
+        tenantsIds.length > 0
+            ? (house.isRented = true)
+            : (house.isRented = false);
+
+        let tenantsNames = [];
+        for (let i = 0; i < tenantsIds.length; i++) {
+            let uname = await usernameById(tenantsIds[i]);
+            tenantsNames.push(uname);
+        }
+        house.tenantsList = tenantsNames.join(', ');
+
+        // free
+        
+
+
+        // HAS RENTED
         const result = house.rented
             .map((b) => b.toString())
             .includes(req.user._id.toString());
 
         if (result) {
-            house.isRented = true;
+            house.hasRented = true;
         } else {
-            house.isRented = false;
+            house.hasRented = false;
         }
     }
 
     res.render('details', {
         title: 'House Details',
-        house: Object.assign(house, { owner, user },isRented),
+        house,
         user,
     });
 });

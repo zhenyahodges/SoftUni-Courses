@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 const JWT_SECRET = 'sfusi8fs9fjs';
 
-async function register(fullname,username, password) {
+async function register(fullname, username, password) {
     const existing = await User.findOne({ username }).collation({
         locale: 'en',
         strength: 2,
@@ -26,7 +26,7 @@ async function register(fullname,username, password) {
 }
 
 // LOGIN
-async function login(username,password) {
+async function login(username, password) {
     const user = await User.findOne({ username }).collation({
         locale: 'en',
         strength: 2,
@@ -59,12 +59,23 @@ function createSession({ _id, username }) {
 }
 
 function verifyToken(token) {
-    return jwt.verify(token, JWT_SECRET)
+    return jwt.verify(token, JWT_SECRET);
+}
+
+async function usernameById(_id) {
+    const user = await User.findOne({ _id })
+        .collation({
+            locale: 'en',
+            strength: 2,
+        })
+        .lean();
+    return user.fullname;
 }
 
 module.exports = {
     register,
     login,
     logout,
-    verifyToken
+    verifyToken,
+    usernameById,
 };
