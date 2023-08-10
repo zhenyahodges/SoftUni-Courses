@@ -5,6 +5,7 @@ const {
     rent,
     update,
     deleteById,
+    getByUserRented,
 } = require('../services/houseService');
 const { usernameById } = require('../services/userService');
 const { parseError } = require('../utils/parser');
@@ -14,48 +15,44 @@ const houseController = require('express').Router();
 // DETAILS
 houseController.get('/:id/details', async (req, res) => {
     const house = await getById(req.params.id);
-    // console.log(house);
-
-    let owner;
     const user = req.user;
-    // console.log(user);
+    // console.log(user)
+    // TENANTS?
+    const tenantsIds = house.rented.map((r) => r.toString());
 
-    if (user && house.owner == req.user._id) {
+    tenantsIds.length > 0 ? (house.isRented = true) : (house.isRented = false);
+
+    let tenantsNames = [];
+    for (let i = 0; i < tenantsIds.length; i++) {
+        let uname = await usernameById(tenantsIds[i]);
+        tenantsNames.push(uname);
+    }
+    house.tenantsList = tenantsNames.join(', ');
+
+    // OWNER?
+    if (user && house.owner == user._id) {
         house.isOwner = true;
-        owner = req.user.username;
-    } else if (user && house.owner !== req.user._id) {
+
+    } else if (user && house.owner != user._id) {
         house.isOwner = false;
+        house.user = user;
 
-        // TENANTS
-        const tenantsIds = house.rented.map((r) => r.toString());
-        // console.log(tenantsIds);
-        let isRented;
-        tenantsIds.length > 0
-            ? (house.isRented = true)
-            : (house.isRented = false);
+       // IS FREE TO RENT
+        house.free !== 0 ? (house.isFree = true) : (house.isFree = false);
 
-        let tenantsNames = [];
-        for (let i = 0; i < tenantsIds.length; i++) {
-            let uname = await usernameById(tenantsIds[i]);
-            tenantsNames.push(uname);
-        }
-        house.tenantsList = tenantsNames.join(', ');
-
-        // free
-        
-
-
-        // HAS RENTED
+        // USER hasRENTED
         const result = house.rented
             .map((b) => b.toString())
-            .includes(req.user._id.toString());
+            .includes(user._id.toString());     
 
         if (result) {
             house.hasRented = true;
         } else {
             house.hasRented = false;
         }
+       
     }
+    console.log('HOUSE?==' + Object.entries(house));
 
     res.render('details', {
         title: 'House Details',
