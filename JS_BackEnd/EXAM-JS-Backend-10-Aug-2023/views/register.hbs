@@ -1,0 +1,44 @@
+<main>
+
+    <section id="register-page">
+        <div class="signupSection">
+            <div class="info">
+                <h2>"I hope you're pleased with yourselves. We could all have been killed — or worse, expelled. Now if
+                    you don't mind, I'm going to bed."</h2>
+            </div>
+            <form action="/auth/register" method="post" class="signupForm">
+                <h2>Sign Up</h2>
+                <ul class="noBullet">
+                    <li>
+                        <label for="first-name">First Name:</label>
+                        <input type="text" class="inputFields" id="first-name" name="firstname" placeholder="Alex"
+                            value="{{body.firstname}}" />
+                    </li>
+                    <li>
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" class="inputFields" id="last-name" name="lastname" placeholder="Petkov"
+                            value="{{body.lastname}}" />
+                    </li>
+                    <li>
+                        <label for="email">Email:</label>
+                        <input type="text" class="inputFields" id="email" name="username" placeholder="alex@gmail.com"
+                            value="{{body.username}}" />
+                    </li>
+                    <li>
+                        <label for="password">Password:</label>
+                        <input type="password" class="inputFields" id="password" name="password" placeholder="******" />
+                    </li>
+                    <li>
+                        <label for="repeat-password">Repeat-Password:</label>
+                        <input type="password" class="inputFields" id="repeat-password" name="repass"
+                            placeholder="******" />
+                    </li>
+                    <li id="center-btn">
+                        <button id="join-btn">JOIN</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </section>
+
+</main>

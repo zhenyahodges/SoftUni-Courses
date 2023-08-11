@@ -1,0 +1,332 @@
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --clr-bgr: #d9d9d9;
+    --clr-bgr-light: #ffffff;
+    --clr-text-gr: #595959;
+    /* --clr-highlight: # ; */
+    --clr-orange: #ff7c4c;
+    --clr-plans: #f5f5f5;
+
+}
+
+body {
+    font-family: "Inter", "san-serif";
+
+}
+
+/* BUTTONS */
+.btn {
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+.white {
+    background-color: var(--clr-bgr-light);
+    border: 1px solid black;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.btn.sm {
+    padding: 7px 20px;
+}
+
+.btn.big {
+    padding: 17px 40px;
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    background-color: var(--clr-bgr);
+    height: 10vh;
+}
+
+.head-nav {
+    padding: 40px 0 10px 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.head-nav-list {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.head-nav-items {
+    font-size: 1.3em;
+    padding-right: 20px;
+}
+
+/* HERO */
+.hero {
+    /* background-image: url('../images//background.jpg');
+    background-repeat: no-repeat; */
+    height: 80vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.hero-image {
+    object-fit: cover;
+    position: relative;
+    top: -300px;
+    z-index: -1;
+}
+
+.hero-info {
+    z-index: 5;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 40%;
+    height: 200px;
+}
+
+h1 {
+    font-size: 4em;
+    padding-bottom: 80px;
+    line-height: 1.2;
+}
+
+.hero-text {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-bottom: 20px;
+}
+
+.hero .btn.black {
+    margin-top: 40px;
+}
+
+/* DATA */
+.data {
+    width: 90%;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    height: 33vh;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.num {
+    color: var(--clr-orange);
+    font-size: 3.5em;
+    font-weight: 700;
+    padding-bottom: 30px;
+
+}
+
+.data-title {
+    font-size: 1.3em;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.data-text {
+    color: var(--clr-text-gr);
+}
+
+/* ENTERPRISE */
+.enterprise {
+    /* width: 80%; */
+    padding: 70px 90px;
+    background-color: var(--clr-bgr);
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.enter-top-title,
+.enter-text,
+.author {
+    color: var(--clr-text-gr);
+}
+
+.enter-top-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+
+}
+
+.enter-title {
+    font-size: 2.6em;
+    padding-bottom: 50px;
+}
+
+.enter-text,
+.author,
+.enter-more {
+    font-size: 1.3em;
+}
+
+.enter-more {
+    font-weight: 500;
+}
+
+.enter-card {
+    display: flex;
+    flex-flow: row;
+    /* gap: 50px; */
+}
+
+.enter-image-wrap {
+    flex-basis: 36%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.enter-info {
+    padding-left: 30px;
+    flex-basis: 64%;
+}
+
+.enter-image-wrap img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.author {
+    margin-top: 30px;
+}
+
+/* ============PLANS================================ */
+.plans {
+    height: 70vh;
+    background-color: var(--clr-plans);
+}
+
+.pricing {
+    background-color: #ffffff;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.pricing-card {
+    height:90%;
+    flex-basis: 30%;
+    min-height: 90%;
+}
+
+.orange-p {
+    background-color: var(--clr-orange);
+
+}
+
+.black-p {
+    background-color: black;
+    color: white;
+
+}
+
+/* 1st card */
+.pricing-title {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+
+.pricing-text {
+    font-size: 1.2em;
+    line-height: 1.2;
+    color: var(--clr-text-gr);
+
+}
+
+.pricing-card.first {
+    text-align: left;
+}
+
+
+/* pricing art PLANS CARDS*/
+.pricing-card.plan {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.head-art {
+    min-height: 10%;
+    background-color: transparent;
+}
+.plan-title{
+    font-size: 1.9em;
+    font-weight: 600;
+    padding: 30px 0 0 0;
+}
+.main-art {
+    min-height: 60%;
+
+}
+.price{
+    font-size: 5em;
+    font-weight: 200;
+    padding-bottom: 30px;
+}
+
+.details{
+    font-size: 1.2em;
+    padding-bottom: 12px;
+}
+.sp-details{
+    font-weight: bold;
+}
+
+
+.foot-art {
+    min-height: 20%;
+    background-color: transparent;
+
+}
+
+
+/* FOOTER */
+.bottom {
+    height: 13vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 200px;
+    background-color: var(--clr-bgr);
+}
+.bottom i{
+    font-size: 1.5em;
+}
