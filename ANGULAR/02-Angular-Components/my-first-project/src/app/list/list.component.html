@@ -1,7 +1,7 @@
 <!-- el.addEventListener('click', ($event)=>this.handleClickEvent($event)) -->
 <button (click)="handleClickEvent($event)">
   <ng-container *ngIf="showLastName">Hide</ng-container>
-  <ng-container *ngIf="!showLastName">Show</ng-container>
+  <ng-container *ngIf="!showLastName">Show</ng-container> last name
 </button>
 
 <!-- below:temp solution, will use pipes later on,

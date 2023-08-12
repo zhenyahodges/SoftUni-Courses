@@ -44,10 +44,7 @@ export class ListComponent {
     this.selectedUserIndex = index;
   }
 
-
-  customEventHandler($event: ICustomEvent){
-console.log($event);
-
+  customEventHandler($event: ICustomEvent) {
+    console.log($event);
   }
-
 }
