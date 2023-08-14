@@ -30,13 +30,16 @@ postController.get('/:id/details', async (req, res) => {
     post.votesCount = votersIds.length;
     votersIds.length > 0 ? (post.isVoted = true) : (post.isVoted = false);
 
-    let votersNames = [];
+    let voters = [];
     for (let i = 0; i < votersIds.length; i++) {
-        let uname = await usernameById(votersIds[i]);
-        votersNames.push(uname);
+        const userVoted = await usernameById(votersIds[i]);
+        voters.push(userVoted.username);
     }
-    post.votersList = votersNames.join(', ');
-    console.log(post.votersList);
+    post.votersList = voters.join(', ');
+
+    // THE OWNER IS:
+    const result = await usernameById(post.owner._id);
+    post.author = result.firstname + ' ' + result.lastname;
 
     // OWNER?
     if (user && post.owner == user._id) {
@@ -56,7 +59,6 @@ postController.get('/:id/details', async (req, res) => {
             post.hasVoted = false;
         }
     }
-    console.log('post?==' + Object.entries(post));
 
     res.render('details', {
         title: 'post Details',
