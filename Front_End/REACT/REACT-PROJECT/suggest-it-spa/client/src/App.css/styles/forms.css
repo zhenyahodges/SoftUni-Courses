@@ -1,0 +1,106 @@
+/* || FROMS CSS */
+.form-wrapper {
+    box-shadow: 5px 5px 17px 0px #688589;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 60%;
+    min-width: 380px;
+}
+
+.form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+form button {
+    margin-top: 1rem;
+}
+
+/* input and label container */
+.wrap {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* |**POLL-CODE FORM */
+.poll-code.form-wrapper {
+    display: none;
+    min-height: 30vh;
+}
+
+/* if no poll-code*/
+.poll-code.error-message {
+    display: none;
+    font-size: smaller;
+    color: var(--clr-err);
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* if poll-code*/
+/* SUGGEST FORM */
+.add-sugg.form-wrapper {
+    min-height: 50vh;
+}
+
+.add-sugg.form {
+    width: 80%;
+}
+
+.sugg-text-add {
+    border: none;
+    width: 100%;
+    resize: none;
+}
+
+.add.sugg.author {
+    display: none;
+}
+
+/* || REGISTER && LOGIN */
+.register.form,
+.login.form {
+    width: 90%;
+    padding: 2rem;
+}
+
+.reg.lbl,
+.log.lbl {
+    flex: 1 0 30%;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.reg.entry,
+.log.entry {
+    flex: 0 1 60%;
+}
+
+.link {
+    color: var(--clr-drk-mid);
+}
+
+.link:hover {
+    color: var(--clr-highlight);
+}
+
+/* ***|| REGISTER */
+.register.form-wrapper {
+    min-height: 50vh;
+}
+
+/* ***|| LOGIN */
+.login.form-wrapper {
+    min-height: 40vh;
+}
+
+.login.form-wrapper .login .form {
+    gap: 1rem;
+}

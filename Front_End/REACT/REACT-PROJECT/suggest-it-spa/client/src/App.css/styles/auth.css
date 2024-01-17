@@ -1,0 +1,32 @@
+/* LOGOUT */
+.logout-wrap .logout-text {
+    text-align: center;
+}
+
+.logout-btn-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+}
+
+.logout.log.btn:hover {
+    background-color: var(--clr-highlight);
+    color: var(--clr-bgr);
+    font-weight: 800;
+}
+
+.logout.log.btn {
+    width: 5rem;
+}
+
+.logout.log.btn:active {
+    color: white;
+}
+
+/* LOOGIN */
+/* REGISTER */
+.register.form-wrapper,
+.login.form-wrapper {
+    background: linear-gradient(144deg, rgba(250, 184, 122, 0.8274160005799195) 0%, rgba(255, 255, 255, 1) 56%, rgba(250, 184, 122, 0.821813759683561) 100%);
+
+}

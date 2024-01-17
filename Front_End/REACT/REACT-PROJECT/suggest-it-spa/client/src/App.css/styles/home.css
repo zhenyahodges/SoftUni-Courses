@@ -1,0 +1,62 @@
+/* ***Section WELCOME */
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main-title,
+.main-subtitle,
+.main-subtext{
+  text-shadow: 1px 1px 1px  var(--clr-title-shadow);
+}
+.main-subtext{
+  font-weight: bold;
+}
+
+.main-subtitle {
+  padding-bottom: 0.5rem;
+}
+
+.sub-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* || SAMPLES SECTION */
+.sample.content {
+  padding: 2rem 0 1rem 0;
+}
+
+.samples-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+}
+
+.welcome .add-sugg-link,
+.welcome .vote-sugg-link {
+  display: none;
+}
+
+/* **scroll** */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgba(19, 41, 48, 1) 0%, rgba(46, 101, 119, 1) 73%, rgba(91, 200, 235, 1) 100%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, rgba(19, 41, 48, 1) 0%, rgba(46, 101, 119, 1) 73%, rgba(91, 200, 235, 1) 100%);
+}
