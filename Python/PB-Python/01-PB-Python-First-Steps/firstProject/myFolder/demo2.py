@@ -1,3 +1,3 @@
-username = input()
+username = input('Enter valid username')
 
-print(username)
+print(f'Username - {username}')
