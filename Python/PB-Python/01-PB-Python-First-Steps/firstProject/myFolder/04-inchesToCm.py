@@ -1,4 +1,4 @@
-inches = int(input())
+inches = float(input())
 
 cm = inches * 2.54
 
