@@ -16,4 +16,4 @@ if total > budget:
     print(f'Wingard needs {abs(diff):.2f} leva more.')
 elif total <= budget:
     print("Action!")
-    print(f"Wingard starts filming with {budget - total:.2f} leva left.")
+    print(f"Wingard starts filming with {diff:.2f} leva left.")
