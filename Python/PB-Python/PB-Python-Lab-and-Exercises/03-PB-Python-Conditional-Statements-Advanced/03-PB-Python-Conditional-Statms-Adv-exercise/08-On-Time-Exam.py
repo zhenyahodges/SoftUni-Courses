@@ -16,10 +16,7 @@ if arrival_in_mins <= exam_in_mins:
         print('Early')
 
     if diff < 60:
-        if minutes < 9:
-            print(f'{minutes} minutes before the start')
-        else:
-            print(f'{minutes} minutes before the start')
+        print(f'{minutes} minutes before the start')
     else:
         hours = diff // 60
 
