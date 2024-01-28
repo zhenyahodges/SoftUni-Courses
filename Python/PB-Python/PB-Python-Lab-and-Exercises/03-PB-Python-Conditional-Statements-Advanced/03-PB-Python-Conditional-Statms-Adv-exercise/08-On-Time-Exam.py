@@ -6,8 +6,10 @@ minute_arrival = int(input())
 
 exam_in_mins = hour_exam * 60 + minute_exam
 arrival_in_mins = hour_arrival * 60 + minute_arrival
-diff = exam_in_mins - arrival_in_mins
+
+diff = abs(exam_in_mins - arrival_in_mins)
 minutes = diff % 60
+hours = diff // 60
 
 if arrival_in_mins <= exam_in_mins:
     if diff <= 30:
@@ -18,24 +20,18 @@ if arrival_in_mins <= exam_in_mins:
     if diff < 60:
         print(f'{minutes} minutes before the start')
     else:
-        hours = diff // 60
-
         if minutes > 9:
             print(f'{hours}:{minutes} hours before the start')
         else:
             print(f'{hours}:0{minutes} hours before the start')
 
-elif arrival_in_mins > exam_in_mins:
-    diff_late = arrival_in_mins - exam_in_mins
-    minutes_late = diff_late % 60
-    hours = diff_late // 60
-
+else:
     print('Late')
 
-    if minutes_late < 60 and diff_late < 60:
-        print(f'{minutes_late} minutes after the start')
+    if minutes < 60 and diff < 60:
+        print(f'{minutes} minutes after the start')
     else:
-        if minutes_late > 9:
-            print(f'{hours}:{minutes_late} hours after the start')
+        if minutes > 9:
+            print(f'{hours}:{minutes} hours after the start')
         else:
-            print(f'{hours}:0{minutes_late} hours after the start')
+            print(f'{hours}:0{minutes} hours after the start')
