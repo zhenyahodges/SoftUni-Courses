@@ -7,12 +7,18 @@ while book != 'No More Books':
 
     if book == book_to_find:
         isFound = True
-        print(f'You checked {count} books and found it.')
+        # print(f'You checked {count} books and found it.')
         break
 
     count += 1
     book = str(input())
 
-if not isFound:
+# if not isFound:
+#     print(f'The book you search is not here!')
+#     print(f'You checked {count} books.')
+
+if isFound:
+    print(f'You checked {count} books and found it.')
+else:
     print(f'The book you search is not here!')
     print(f'You checked {count} books.')
