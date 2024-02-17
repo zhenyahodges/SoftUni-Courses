@@ -14,5 +14,6 @@ for first_num in range(start, end + 1):
     if is_found:
         break
 
-if not is_found:
+# if not is_found:
+else:
     print(f"{count} combinations - neither equals {magic_num}")
