@@ -1,6 +1,5 @@
 n = int(input())
 
-# for _ in range(n):
 for x in range(1_111, 10_000):
     num_to_str = str(x)
 
