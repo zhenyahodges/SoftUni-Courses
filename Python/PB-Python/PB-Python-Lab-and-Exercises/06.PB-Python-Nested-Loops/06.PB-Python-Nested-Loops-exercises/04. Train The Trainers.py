@@ -7,7 +7,7 @@ while command != 'Finish':
     presentation = command
     marks = 0
 
-    for mark in range(jury):
+    for _ in range(jury):
         points = float(input())
         count += 1
         marks += points
